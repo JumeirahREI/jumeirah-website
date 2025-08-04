@@ -2,5 +2,5 @@ import { useTranslations } from "next-intl";
 
 export default function Home() {
   const t = useTranslations("HomePage");
-  return <div>{t("hero-description")}</div>;
+  return <main className="container mx-auto">{t("hero-description")}</main>;
 }

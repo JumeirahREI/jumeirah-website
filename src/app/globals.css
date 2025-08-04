@@ -8,10 +8,43 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: #ffcb05;
   --font-sans: var(--font-manrope);
   --font-serif: var(--font-qurova-demo);
 }
 
 body {
   background-color: var(--background);
+}
+
+.bg-gradient-light {
+  @apply relative;
+  background: linear-gradient(
+    271deg,
+    rgba(255, 255, 255, 0.13) -16.65%,
+    rgba(153, 153, 153, 0.13) 119.21%
+  );
+  backdrop-filter: blur(27px);
+}
+.bg-gradient-light::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0px;
+
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    89deg,
+    rgba(204, 204, 204, 0.5) -16.65%,
+    rgba(86, 86, 86, 0.5) 119.21%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
 }

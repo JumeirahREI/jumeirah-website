@@ -27,11 +27,15 @@ export default async function LocaleLayout({
       <body
         className={`bg-background text-foreground font-sans ${qurovaDemoFont.variable} ${manropeFont.variable}`}
       >
-        <Navbar />
         <NextIntlClientProvider locale={locale}>
+          <Navbar />
           {children}
         </NextIntlClientProvider>
       </body>
     </html>
   );
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
 }

@@ -2,7 +2,7 @@ import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
 
 export const manropeFont = Manrope({
-  subsets: ["greek"],
+  subsets: ["latin"],
   variable: "--font-manrope",
 });
 
