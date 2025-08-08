@@ -31,7 +31,7 @@ export default async function LocaleLayout({
       >
         <Image
           src={heroBackgroundImage}
-          className="absolute -z-40 h-[120svh] object-cover object-top"
+          className="absolute -z-40 min-h-[120svh] object-cover object-top"
           alt="Hero image"
           placeholder="blur"
           priority

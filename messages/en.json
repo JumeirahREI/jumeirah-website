@@ -1,12 +1,13 @@
 {
   "Common": {
-    "jumeirah": "jumeirah",
+    "jumeirah": "Jumeirah",
+    "rei": "Real Estate Investment",
     "home": "Home",
     "projects": "Projects",
     "about-us": "About Us",
     "blog": "Blog"
   },
   "HomePage": {
-    "hero-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential."
+    "hero-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential"
   }
 }

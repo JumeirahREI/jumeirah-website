@@ -27,29 +27,33 @@
 
 @utility border-gradient {
   @apply relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0px;
+
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      89deg,
+      rgba(204, 204, 204, 0.5) -16.65%,
+      rgba(86, 86, 86, 0.5) 119.21%
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
 }
 
-.border-gradient::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0px;
-
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(
-    89deg,
-    rgba(204, 204, 204, 0.5) -16.65%,
-    rgba(86, 86, 86, 0.5) 119.21%
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
+*.container {
+  @apply mx-auto px-4;
 }
 
 body {
