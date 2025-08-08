@@ -1,14 +1,8 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import logo from "../../../public/svg/jumeirah-logo.svg";
 
 export default function Logo() {
   const t = useTranslations("Common");
-  return (
-    <Image
-      src="./svg/jumeirah-logo.svg"
-      height={100}
-      width={100}
-      alt={t("jumeirah")}
-    />
-  );
+  return <Image src={logo} alt={t("jumeirah")} className="w-16 md:w-24" />;
 }

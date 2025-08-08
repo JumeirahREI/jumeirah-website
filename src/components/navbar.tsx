@@ -3,8 +3,13 @@
 import Logo from "@/components/ui/logo";
 import LogoType from "@/components/ui/logo-type";
 import { useMessages } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import facebookLogo from "../../public/svg/facebook.svg";
+import instagramLogo from "../../public/svg/instagram.svg";
+import linkedInLogo from "../../public/svg/linkedin.svg";
+import twitterLogo from "../../public/svg/twitter.svg";
 
 const links = [
   {
@@ -25,37 +30,78 @@ const links = [
   },
 ] as const;
 
+const socials = [
+  {
+    href: "https://www.linkedin.com/",
+    icon: linkedInLogo,
+  },
+  {
+    href: "https://www.instagram.com/",
+    icon: instagramLogo,
+  },
+  {
+    href: "https://www.twitter.com/",
+    icon: twitterLogo,
+  },
+  {
+    href: "https://www.facebook.com/",
+    icon: facebookLogo,
+  },
+] as const;
+
 export default function Navbar() {
   const messages = useMessages();
   const pathname = usePathname();
 
   return (
-    <nav className="fixed top-0 right-0 left-0 z-50 container mx-auto grid grid-cols-5">
-      <div className="flex items-baseline gap-2">
-        <Logo />
-        <LogoType />
-      </div>
-      <nav className="col-span-3 flex items-center justify-center">
-        <ul className="bg-gradient-light flex gap-10 rounded-full px-8 py-1 text-lg leading-loose font-medium text-white">
-          {links.map((link) => {
-            return (
-              <li key={link.key} className="relative">
+    <div className="fixed start-0 end-0 top-4 z-50 lg:top-12">
+      <div className="relative container mx-auto flex justify-between">
+        <div className="flex items-center gap-3">
+          <Logo />
+          <LogoType />
+        </div>
+        <div className="hidden lg:block">
+          <nav className="absolute start-1/2 top-0 col-span-3 flex -translate-x-1/2 items-center justify-center">
+            <ul className="md:bg-glass-gradient border-gradient flex gap-10 rounded-full px-8 py-2 text-lg leading-loose font-medium text-white">
+              {links.map((link) => {
+                return (
+                  <li key={link.key} className="relative">
+                    <Link
+                      href={link.href}
+                      className={
+                        pathname === link.href
+                          ? "text-primary font-serif text-xl font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-1.5 after:rounded-full after:bg-white"
+                          : "hover:text-primary transition-colors"
+                      }
+                    >
+                      {messages.Common[link.key]}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+          <div className="flex items-center justify-end gap-3">
+            {socials.map((social) => {
+              return (
                 <Link
-                  href={link.href}
-                  className={
-                    pathname === link.href
-                      ? "text-primary font-serif text-xl font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-2 after:rounded-full after:bg-white"
-                      : ""
-                  }
+                  key={social.href}
+                  href={social.href}
+                  className="bg-glass rounded-full p-3 transition-colors hover:bg-white/20"
+                  target="_blank"
                 >
-                  {messages.Common[link.key]}
+                  <Image
+                    src={social.icon}
+                    className="size-5"
+                    unoptimized
+                    alt={social.icon}
+                  />
                 </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
-      <div></div>
-    </nav>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }

@@ -13,12 +13,7 @@
   --font-serif: var(--font-qurova-demo);
 }
 
-body {
-  background-color: var(--background);
-}
-
-.bg-gradient-light {
-  @apply relative;
+@utility bg-glass-gradient {
   background: linear-gradient(
     271deg,
     rgba(255, 255, 255, 0.13) -16.65%,
@@ -26,7 +21,15 @@ body {
   );
   backdrop-filter: blur(27px);
 }
-.bg-gradient-light::before {
+@utility bg-glass {
+  @apply bg-white/10 backdrop-blur-3xl;
+}
+
+@utility border-gradient {
+  @apply relative;
+}
+
+.border-gradient::before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -47,4 +50,8 @@ body {
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
+}
+
+body {
+  background-color: var(--background);
 }

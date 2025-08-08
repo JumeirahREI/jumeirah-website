@@ -9,6 +9,11 @@ export const manropeFont = Manrope({
 export const qurovaDemoFont = localFont({
   src: [
     {
+      path: "./QurovaDEMO-Light.otf",
+      weight: "200",
+      style: "light",
+    },
+    {
       path: "./QurovaDEMO-Regular.otf",
       weight: "400",
       style: "normal",

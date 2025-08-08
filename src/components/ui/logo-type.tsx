@@ -1,22 +1,15 @@
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 export default function LogoType() {
   const t = useTranslations("Common");
   return (
-    <div>
-      <Image
-        src="./svg/jumeirah-logo-type.svg"
-        height={100}
-        width={110}
-        alt={t("jumeirah")}
-      />
-      <Image
-        src="./svg/slogan.svg"
-        height={100}
-        width={110}
-        alt={t("jumeirah")}
-      />
+    <div className="hidden pt-3 leading-2 md:block">
+      <p className="font-serif text-2xl font-semibold text-gray-200">
+        Jumeirah
+      </p>
+      <p className="font-serif text-[0.63rem] font-light text-gray-200">
+        Real Estate Investment
+      </p>
     </div>
   );
 }
