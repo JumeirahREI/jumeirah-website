@@ -1,10 +1,10 @@
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
 
 type ImageContainerProps = {
   className?: string;
-  src: any;
+  src: StaticImageData;
   alt: string;
 } & PropsWithChildren;
 
