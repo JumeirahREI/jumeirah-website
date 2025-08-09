@@ -75,7 +75,7 @@ export default function Navbar() {
             <nav
               className={`top-0 left-1/2 col-span-3 flex items-center justify-center max-lg:mt-28 max-lg:text-center lg:absolute lg:-translate-x-1/2`}
             >
-              <ul className="lg:bg-glass-gradient lg:border-gradient flex flex-col gap-10 px-8 py-2 text-2xl leading-loose font-medium text-white lg:flex-row lg:rounded-full lg:text-lg">
+              <ul className="lg:bg-glass-gradient-s lg:border-gradient-s flex flex-col gap-10 px-8 py-2 text-2xl leading-loose font-medium text-white lg:flex-row lg:rounded-full lg:text-lg">
                 {links.map((link) => {
                   return (
                     <li key={link.key} className="relative">

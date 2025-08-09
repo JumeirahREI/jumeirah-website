@@ -6,7 +6,8 @@
     "projects": "Projects",
     "about-us": "About Us",
     "blog": "Blog",
-    "contact-us": "Contact Us"
+    "contact-us": "Contact Us",
+    "what-we-create": "What we create <span>?</span>"
   },
   "Metadata": {
     "title": "Jumeirah Real Estate Investments | Premier Properties in Yemen",
@@ -14,8 +15,19 @@
   },
   "HomePage": {
     "hero-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential",
-    "our-projects": "Our Projects",
+    "our-projects": "Our Projects"
+  },
+  "OurServicesSection": {
     "our-services": "<span>O</span>ur <span>S</span>ervices",
-    "our-services-description": "Real estate solutions tailored to exceed your expectations."
+    "our-services-description": "Real estate solutions tailored to exceed your expectations.",
+    "residential-properties": "Residential Properties",
+    "commercial-properties": "Commercial Properties",
+    "interior-design": "Interior Design",
+    "apartments": "Apartments",
+    "luxury-villas": "Luxury Villas",
+    "office-spaces": "Office Spaces",
+    "business-centres": "Business Centres",
+    "space-planning": "Space Planning",
+    "material-design": "Material Design"
   }
 }
