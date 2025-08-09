@@ -1,3 +1,4 @@
+import OurServicesSection from "@/app/[locale]/_sections/our-services.section";
 import GlassCard from "@/components/ui/glass-card";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
 import { useTranslations } from "next-intl";
@@ -50,19 +51,7 @@ export default function Home() {
             <HeroBackground />
           </div>
         </section>
-        <section className="relative">
-          <GridBackgroundEffect className="absolute start-0 top-0 !size-full object-cover" />
-          <div className="container px-2 py-5">
-            <h3 className="font-serif text-3xl">
-              {t.rich("our-services", {
-                span: (s) => <span className="text-primary">{s}</span>,
-              })}
-            </h3>
-            <p className="mt-2 text-sm font-medium text-neutral-200/70">
-              {t("our-services-description")}
-            </p>
-          </div>
-        </section>
+        <OurServicesSection />
       </main>
     </div>
   );

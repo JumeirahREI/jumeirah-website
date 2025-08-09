@@ -6,7 +6,8 @@
     "projects": "المشاريع",
     "about-us": "من نحن",
     "blog": "المدونة",
-    "contact-us": "تواصل بنا"
+    "contact-us": "تواصل بنا",
+    "what-we-create": "ماذا نصنع <span>?</span>"
   },
   "Metadata": {
     "title": "جميرا للاستثمارات العقارية | عقارات فاخرة في اليمن",
@@ -14,8 +15,19 @@
   },
   "HomePage": {
     "hero-description": "نقدم خدمات عقارية مبتكرة ومستدامة تواكب التطورات في التصميم والبناء. تسعى الشركة إلى تعزيز جودة الحياة للسكان والمستثمرين من خلال تطوير المشاريع السكنية",
-    "our-projects": "مشاريعنا",
+    "our-projects": "مشاريعنا"
+  },
+  "OurServicesSection": {
     "our-services": "<span>خ</span>دماتنا",
-    "our-services-description": "خدمات عقارية مبتكرة ومستدامة تواكب التطورات في التصميم والبناء."
+    "our-services-description": "خدمات عقارية مبتكرة ومستدامة تواكب التطورات في التصميم والبناء.",
+    "residential-properties": "عقارات سكنية",
+    "commercial-properties": "عقارات تجارية",
+    "interior-design": "تصميم داخلية",
+    "apartments": "شقق",
+    "luxury-villas": "فلل فاخرة",
+    "office-spaces": "مساحات مكتبية",
+    "business-centres": "مركزات تجارية",
+    "space-planning": "تخطيط المساحات",
+    "material-design": "تصميم المواد"
   }
 }
