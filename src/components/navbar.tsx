@@ -2,10 +2,13 @@
 
 import Logo from "@/components/ui/logo";
 import LogoType from "@/components/ui/logo-type";
-import { useLocale, useMessages } from "next-intl";
+import { cn } from "@/lib/utils";
+import { Squeeze } from "hamburger-react";
+import { useMessages } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import facebookLogo from "../../public/svg/facebook.svg";
 import instagramLogo from "../../public/svg/instagram.svg";
 import linkedInLogo from "../../public/svg/linkedin.svg";
@@ -50,23 +53,29 @@ const socials = [
 ] as const;
 
 export default function Navbar() {
+  const [isOpenMobile, setIsOpenMobile] = useState(false);
   const messages = useMessages();
   const pathname = usePathname();
-  const locale = useLocale();
 
   return (
     <div className="fixed start-0 end-0 top-4 z-50 md:top-8 lg:top-14">
       <div className="container">
-        <div className="max-lg:bg-glass-gradient max-lg:border-gradient mx-auto flex items-center justify-between rounded-3xl max-lg:px-4 max-lg:py-3 lg:relative lg:container">
-          <div className="flex items-center gap-3">
+        <div className="mx-auto flex items-center justify-between rounded-3xl max-lg:px-4 max-lg:py-3 lg:relative lg:container">
+          <div className="z-[100] flex items-center gap-3">
             <Logo className="w-[4.5rem] md:w-20 md:-translate-y-1 lg:w-24" />
             <LogoType />
           </div>
-          <div className="hidden lg:block">
+          <div
+            className={cn(
+              "fixed hidden lg:static lg:block",
+              isOpenMobile &&
+                "max-lg:top-0 max-lg:right-0 max-lg:left-0 max-lg:block max-lg:h-svh max-lg:bg-black/80 max-lg:backdrop-blur-2xl",
+            )}
+          >
             <nav
-              className={`absolute start-1/2 top-0 col-span-3 flex ${locale === "ar" ? "translate-x-1/2" : "-translate-x-1/2"} items-center justify-center`}
+              className={`top-0 left-1/2 col-span-3 flex items-center justify-center lg:absolute lg:-translate-x-1/2`}
             >
-              <ul className="md:bg-glass-gradient border-gradient flex gap-10 rounded-full px-8 py-2 text-lg leading-loose font-medium text-white">
+              <ul className="lg:bg-glass-gradient lg:border-gradient flex flex-col gap-10 rounded-full px-8 py-2 text-lg leading-loose font-medium text-white lg:flex-row">
                 {links.map((link) => {
                   return (
                     <li key={link.key} className="relative">
@@ -85,18 +94,18 @@ export default function Navbar() {
                 })}
               </ul>
             </nav>
-            <div className="flex items-center justify-end gap-3">
+            <div className="flex items-center justify-around gap-3 lg:justify-end">
               {socials.map((social) => {
                 return (
                   <Link
                     key={social.href}
                     href={social.href}
-                    className="bg-glass rounded-full p-4 transition-colors hover:bg-white/20"
+                    className="lg:bg-glass rounded-full p-4 transition-colors lg:hover:bg-white/20"
                     target="_blank"
                   >
                     <Image
                       src={social.icon}
-                      className="size-5"
+                      className="size-8 lg:size-5"
                       unoptimized
                       alt={social.icon}
                     />
@@ -104,6 +113,20 @@ export default function Navbar() {
                 );
               })}
             </div>
+          </div>
+          <div
+            className={cn(
+              "bg-glass scale-90 rounded-full lg:hidden",
+              isOpenMobile && "bg-transparent",
+            )}
+          >
+            <Squeeze
+              size={20}
+              toggle={setIsOpenMobile}
+              toggled={isOpenMobile}
+              hideOutline
+              rounded
+            />
           </div>
         </div>
       </div>

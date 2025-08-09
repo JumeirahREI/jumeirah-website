@@ -44,18 +44,18 @@ export default function Home() {
 
   return (
     <div className="relative min-h-[120svh] overflow-hidden">
-      <main className="container mx-auto grid grid-rows-2 pt-48 md:pt-72 lg:grid-cols-3">
+      <main className="container mx-auto grid grid-rows-2 pt-36 md:pt-72 lg:grid-cols-3">
         <div className="col-span-2 row-span-2">
           <Image
             src={JumeirahLogoType}
             alt={ct("jumeirah")}
             className="w-xs md:w-96 lg:w-lg xl:w-xl"
           />
-          <h2 className="my-2 ps-2 font-serif text-3xl text-gray-200 md:text-4xl lg:text-5xl xl:text-6xl">
+          <h2 className="my-2 ps-2.5 font-serif text-3xl text-gray-200 md:text-4xl lg:text-5xl xl:text-6xl">
             {ct("rei")}
             <span className="text-primary">.</span>
           </h2>
-          <GlassCard className="max-w-2xl">
+          <GlassCard className="ms-2.5 max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
             <p className="leading-6 font-medium text-white/80 md:text-lg md:leading-7 xl:text-xl xl:leading-8">
               {t("hero-description")} <span className="text-primary">.</span>
             </p>
@@ -63,18 +63,18 @@ export default function Home() {
         </div>
       </main>
       <GridBackgroundEffect
-        className={`absolute start-0 top-2/5 z-20 size-full ${locale === "ar" ? "translate-x-1/2" : "-translate-x-1/2"} scale-200 md:h-full md:scale-125 lg:scale-100`}
+        className={`absolute start-0 top-2/5 -z-10 ${locale === "ar" ? "translate-x-1/2" : "-translate-x-1/2"} h-full scale-200 md:scale-125 lg:scale-100`}
       />
       <div
-        className="absolute start-0 top-0 -z-10 h-full w-4/6"
+        className="absolute start-0 top-0 -z-20 h-full w-4/6"
         style={blackGradientStyles[locale]}
       />
       <div
-        className="absolute start-0 bottom-0 -z-10 h-1/3 w-full"
+        className="absolute start-0 bottom-0 -z-20 h-1/3 w-full"
         style={bottomGradientStyles[locale]}
       />
       <div
-        className="absolute -end-32 top-0 -z-10 h-full w-[150svw] md:w-full"
+        className="absolute -end-32 top-0 -z-20 h-full w-[150svw] md:w-full"
         style={blueGradientStyles[locale]}
       />
     </div>
