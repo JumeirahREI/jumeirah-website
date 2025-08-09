@@ -61,31 +61,31 @@ export default function Navbar() {
     <div className="fixed start-0 end-0 top-4 z-50 md:top-8 lg:top-14">
       <div className="container">
         <div className="mx-auto flex items-center justify-between rounded-3xl max-lg:px-4 max-lg:py-3 lg:relative lg:container">
-          <div className="z-[100] flex items-center gap-3">
+          <Link href="/" className="z-[100] flex items-center gap-3">
             <Logo className="w-[4.5rem] md:w-20 md:-translate-y-1 lg:w-24" />
             <LogoType />
-          </div>
+          </Link>
           <div
             className={cn(
               "fixed hidden lg:static lg:block",
               isOpenMobile &&
-                "max-lg:top-0 max-lg:right-0 max-lg:left-0 max-lg:block max-lg:h-svh max-lg:bg-black/80 max-lg:backdrop-blur-2xl",
+                "max-lg:top-0 max-lg:right-0 max-lg:left-0 max-lg:block max-lg:h-svh max-lg:bg-black/80 max-lg:backdrop-blur",
             )}
           >
             <nav
-              className={`top-0 left-1/2 col-span-3 flex items-center justify-center lg:absolute lg:-translate-x-1/2`}
+              className={`top-0 left-1/2 col-span-3 flex items-center justify-center max-lg:mt-28 max-lg:text-center lg:absolute lg:-translate-x-1/2`}
             >
-              <ul className="lg:bg-glass-gradient lg:border-gradient flex flex-col gap-10 rounded-full px-8 py-2 text-lg leading-loose font-medium text-white lg:flex-row">
+              <ul className="lg:bg-glass-gradient lg:border-gradient flex flex-col gap-10 px-8 py-2 text-2xl leading-loose font-medium text-white lg:flex-row lg:rounded-full lg:text-lg">
                 {links.map((link) => {
                   return (
                     <li key={link.key} className="relative">
                       <Link
                         href={link.href}
-                        className={
-                          pathname.includes(link.href)
-                            ? "text-primary font-serif text-xl font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-1.5 after:rounded-full after:bg-white"
-                            : "hover:text-primary transition-colors"
-                        }
+                        className={cn(
+                          "hover:text-primary transition-colors max-lg:w-full max-lg:p-2",
+                          pathname.includes(link.href) &&
+                            "text-primary font-serif text-2xl font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-1.5 after:rounded-full after:bg-white lg:text-xl",
+                        )}
                       >
                         {messages.Common[link.key]}
                       </Link>
@@ -94,7 +94,7 @@ export default function Navbar() {
                 })}
               </ul>
             </nav>
-            <div className="flex items-center justify-around gap-3 lg:justify-end">
+            <div className="flex items-center justify-around gap-3 max-lg:container max-lg:mx-auto max-lg:mt-28 max-lg:w-xs lg:justify-end">
               {socials.map((social) => {
                 return (
                   <Link
@@ -105,7 +105,7 @@ export default function Navbar() {
                   >
                     <Image
                       src={social.icon}
-                      className="size-8 lg:size-5"
+                      className="size-6 lg:size-5"
                       unoptimized
                       alt={social.icon}
                     />

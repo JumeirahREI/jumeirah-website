@@ -5,9 +5,17 @@
     "home": "Home",
     "projects": "Projects",
     "about-us": "About Us",
-    "blog": "Blog"
+    "blog": "Blog",
+    "contact-us": "Contact Us"
+  },
+  "Metadata": {
+    "title": "Jumeirah Real Estate Investments | Premier Properties in Yemen",
+    "description": "Jumeirah REI is a leading real estate investment firm in Yemen, offering a portfolio of luxury properties and expert investment advice to help you achieve your financial goals."
   },
   "HomePage": {
-    "hero-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential"
+    "hero-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential",
+    "our-projects": "Our Projects",
+    "our-services": "<span>O</span>ur <span>S</span>ervices",
+    "our-services-description": "Real estate solutions tailored to exceed your expectations."
   }
 }
