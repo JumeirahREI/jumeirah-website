@@ -83,7 +83,7 @@ export default function Navbar() {
                         href={link.href}
                         className={cn(
                           "hover:text-primary transition-colors max-lg:w-full max-lg:p-2",
-                          pathname.includes(link.href) &&
+                          pathname === link.href &&
                             "text-primary font-serif text-2xl font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-1.5 after:rounded-full after:bg-white lg:text-xl",
                         )}
                       >

@@ -17,22 +17,24 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section className="relative">
-      <GridBackgroundEffect className="absolute start-0 top-0 !size-full object-cover" />
-      <div className="container px-2 py-5">
-        <div className="flex items-center justify-between lg:mb-3">
+    <section className="bg-background relative">
+      <GridBackgroundEffect className="absolute start-1/2 top-0 !h-auto -translate-x-1/2 object-cover object-center opacity-70 lg:!w-full rtl:translate-x-1/2" />
+      <div className="container px-2 py-5 lg:mb-5">
+        <div className="flex items-center justify-between">
           <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl">
             {title}
           </h3>
-          {sectionLink && sectionLink()}
+          {sectionLink?.()}
         </div>
         {description && (
-          <p className="mt-2 text-sm font-medium text-neutral-200/70 md:text-lg lg:text-xl">
+          <p className="mt-2 text-sm font-light text-neutral-200/70 md:text-lg lg:mt-6 lg:text-[1.7rem]">
             {description}
           </p>
         )}
       </div>
-      <div className={cn("container py-3", className)}>{children}</div>
+      <div className={cn("container pt-3 pb-20 lg:pb-36", className)}>
+        {children}
+      </div>
     </section>
   );
 }

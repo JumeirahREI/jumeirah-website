@@ -1,5 +1,8 @@
+import ContactUsSection from "@/components/contact-us-section";
+import FAQsSection from "@/components/faqs-section";
 import Navbar from "@/components/navbar";
-import { manropeFont, qurovaDemoFont } from "@/fonts";
+import ScreenSizeIndicator from "@/components/screen-size-indicator";
+import { aeonikFont, montserratArabicFont } from "@/fonts";
 import { routing } from "@/i18n/routing";
 import { Metadata } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -22,6 +25,12 @@ export default async function RootLayout({
     notFound();
   }
 
+  let font = aeonikFont.className;
+
+  if (locale === "ar") {
+    font = montserratArabicFont.className;
+  }
+
   return (
     <html
       lang={locale}
@@ -29,8 +38,9 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <body
-        className={`bg-background text-foreground max-w-svw overflow-x-hidden font-sans ${qurovaDemoFont.variable} ${manropeFont.variable}`}
+        className={`bg-background text-foreground max-w-svw overflow-x-hidden font-sans ${font}`}
       >
+        {process.env.NODE_ENV === "development" && <ScreenSizeIndicator />}
         <Image
           src={heroBackgroundImage}
           className="from-background to-background/0 absolute -z-40 h-svh max-h-[40rem] bg-gradient-to-t object-cover object-top md:max-h-[50rem] lg:max-h-[60rem]"
@@ -41,7 +51,9 @@ export default async function RootLayout({
         />
         <NextIntlClientProvider locale={locale}>
           <Navbar />
-          {children}
+          <main>{children}</main>
+          <FAQsSection />
+          <ContactUsSection />
         </NextIntlClientProvider>
       </body>
     </html>

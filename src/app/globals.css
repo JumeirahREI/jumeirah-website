@@ -9,8 +9,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: #ffcb05;
-  --font-sans: var(--font-manrope);
-  --font-serif: var(--font-qurova-demo);
+  --font-sans: var(--font-aeonik);
+  --font-serif: var(--font-montserrat-arabic);
 }
 
 @utility bg-glass-gradient-s {
@@ -26,9 +26,13 @@
 }
 
 @utility border-gradient-s {
-  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(90deg,rgba(204,204,204,0.5)_-16.65%,rgba(86,86,86,0.5)_119.21%)] before:p-[1px] before:content-[''] rtl:before:bg-[linear-gradient(270deg,rgba(204,204,204,0.5)_-16.65%,rgba(86,86,86,0.5)_119.21%)];
+  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(90deg,var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''] rtl:before:bg-[linear-gradient(270deg,var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)];
 
   &::before {
+    --tw-border-gradient-width: 1px;
+    --tw-border-gradient-from-stop: rgba(204, 204, 204, 0.5);
+    --tw-border-gradient-to-stop: rgba(86, 86, 86, 0.5);
+
     -webkit-mask:
       linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
@@ -41,9 +45,13 @@
 }
 
 @utility border-gradient-e {
-  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(270deg,rgba(204,204,204,0.5)_-16.65%,rgba(86,86,86,0.5)_119.21%)] before:p-[1px] before:content-[''] rtl:before:bg-[linear-gradient(90deg,rgba(204,204,204,0.5)_-16.65%,rgba(86,86,86,0.5)_119.21%)];
+  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(270deg,var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''] rtl:before:bg-[linear-gradient(90deg,var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)];
 
   &::before {
+    --tw-border-gradient-width: 1px;
+    --tw-border-gradient-from-stop: rgba(204, 204, 204, 0.5);
+    --tw-border-gradient-to-stop: rgba(86, 86, 86, 0.5);
+
     -webkit-mask:
       linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
@@ -52,6 +60,24 @@
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+  }
+}
+
+@utility border-gradient-from-* {
+  &::before {
+    --tw-border-gradient-from-stop: --value(--color-*, [*]);
+  }
+}
+
+@utility border-gradient-to-* {
+  &::before {
+    --tw-border-gradient-to-stop: --value(--color-*, [*]);
+  }
+}
+
+@utility border-gradient-* {
+  &::before {
+    --tw-border-gradient-width: --spacing(--value(number, [*]));
   }
 }
 

@@ -7,13 +7,16 @@
     "about-us": "About Us",
     "blog": "Blog",
     "contact-us": "Contact Us",
-    "what-we-create": "What we create <span>?</span>"
+    "what-we-create": "What we create <span>?</span>",
+    "under-construction": "Under Construction",
+    "complete": "Complete"
   },
   "Metadata": {
     "title": "Jumeirah Real Estate Investments | Premier Properties in Yemen",
     "description": "Jumeirah REI is a leading real estate investment firm in Yemen, offering a portfolio of luxury properties and expert investment advice to help you achieve your financial goals."
   },
   "HomePage": {
+    "jumeirah-hero": "<span>J</span>umeirah",
     "hero-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential",
     "our-projects": "Our Projects"
   },
@@ -26,8 +29,51 @@
     "apartments": "Apartments",
     "luxury-villas": "Luxury Villas",
     "office-spaces": "Office Spaces",
-    "business-centres": "Business Centres",
+    "business-centers": "Business Centers",
     "space-planning": "Space Planning",
     "material-design": "Material Design"
+  },
+  "AboutUsCard": {
+    "title": "<span>W</span>e provide innovative and sustainable real estate services",
+    "description": "Discover the advantages that set Jumeirah Real Estate Investment apart from the competition.",
+    "our-vision": "<span>O</span>ur Vision",
+    "our-vision-subtext": "To be a leader in transforming urban living through innovative designs, sustainable practices, and unmatched luxury.",
+    "our-mission": "<span>O</span>ur Mission",
+    "our-mission-subtext": "Craft iconic spaces that blend luxury, innovation, and sustainability, elevating lifestyles and delivering lasting value."
+  },
+  "ExploreOurProjectsSection": {
+    "explore-our-projects": "<span>E</span>xplore Our Projects",
+    "explore-our-projects-description": "Exceptional residential and commercial developments.",
+    "more-projects": "More projects <span>?</span>"
+  },
+  "ProjectTitles": {
+    "sanaa-towers": "<span>S</span>ana'a Towers",
+    "sanaa-towers-no-span": "Sanaa Towers",
+    "alhathaa-towers": "<span>A</span>l-Hathaa Towers",
+    "alhathaa-towers-no-span": "Al-Hathaa Towers"
+  },
+  "SanaaTowers": {
+    "title": "<span>S</span>anaa Towers"
+  },
+  "Alhathaa-Towers": {
+    "title": "<span>A</span>l-Hathaa Towers"
+  },
+  "FAQsSection": {
+    "title": "<span>F</span>requently Asked Questions"
+  },
+  "ContactUs": {
+    "contact-us": "<span>C</span>ontact Us",
+    "description": "We are happy to hear from you and ready to assist with any inquiries or support you may need.",
+    "first-name": "First Name",
+    "last-name": "Last Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "message": "Message",
+    "send-message": "Send Message",
+    "location": "Yemen, Sana'a – Political District, parallel to Hadda Street, next to Al-Tawfeer Hyper"
+  },
+  "ProjectsPage": {
+    "title": "<span>J</span>umeirah Projects",
+    "sub-title": "Discover our projects that reflect excellence and innovation in the world of investment and real estate. We offer a diverse range of investment and property opportunities tailored to your aspirations"
   }
 }

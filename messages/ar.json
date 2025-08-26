@@ -7,13 +7,16 @@
     "about-us": "من نحن",
     "blog": "المدونة",
     "contact-us": "تواصل بنا",
-    "what-we-create": "ماذا نصنع <span>?</span>"
+    "what-we-create": "ماذا نصنع <span>?</span>",
+    "under-construction": "تحت الإنشاء",
+    "complete": "تم إنجازه"
   },
   "Metadata": {
     "title": "جميرا للاستثمارات العقارية | عقارات فاخرة في اليمن",
     "description": "جميرا للاستثمارات العقارية هي شركة استثمار عقاري رائدة في اليمن، تقدم مجموعة من العقارات الفاخرة والاستشارات الاستثمارية المتخصصة لمساعدتك على تحقيق أهدافك المالية."
   },
   "HomePage": {
+    "jumeirah-hero": "<span>ج</span>ميرا",
     "hero-description": "نقدم خدمات عقارية مبتكرة ومستدامة تواكب التطورات في التصميم والبناء. تسعى الشركة إلى تعزيز جودة الحياة للسكان والمستثمرين من خلال تطوير المشاريع السكنية",
     "our-projects": "مشاريعنا"
   },
@@ -26,8 +29,51 @@
     "apartments": "شقق",
     "luxury-villas": "فلل فاخرة",
     "office-spaces": "مساحات مكتبية",
-    "business-centres": "مركزات تجارية",
+    "business-centers": "مركزات تجارية",
     "space-planning": "تخطيط المساحات",
     "material-design": "تصميم المواد"
+  },
+  "AboutUsCard": {
+    "title": "<span>ن</span>وفر خدمات عقارية مبتكرة ومستدامة",
+    "description": "اكتشف المميزات التي تميز جميرا للاستثمار العقاري عن المنافسة.",
+    "our-vision": "<span>ر</span>ؤيتنا",
+    "our-vision-subtext": "أن نكون روادًا في تحويل الحياة الحضرية من خلال تصاميم مبتكرة وممارسات مستدامة وفخامة لا مثيل لها.",
+    "our-mission": "<span>م</span>همتونا",
+    "our-mission-subtext": "صنع مساحات متميزة تجمع بين الفخامة والابتكار والاستدامة، لرفع مستوى أنماط الحياة وتقديم قيمة دائمة."
+  },
+  "ExploreOurProjectsSection": {
+    "explore-our-projects": "<span>إ</span>ستكشف مشاريعنا",
+    "explore-our-projects-description": "مشاريع عقارية متميزة.",
+    "more-projects": "المشاريع <span>?</span>"
+  },
+  "ProjectTitles": {
+    "sanaa-towers": "<span>ص</span>نعاء تاورز",
+    "sanaa-towers-no-span": " تاورز صنعاء",
+    "alhathaa-towers": "أبراج <span>ال</span>حظاء",
+    "alhathaa-towers-no-span": "أبراج الحظاء"
+  },
+  "SanaaTowers": {
+    "title": "<span>ص</span>نعاء تاورز"
+  },
+  "Alhathaa-Towers": {
+    "title": "أبراج <span>ال</span>حظاء"
+  },
+  "FAQsSection": {
+    "title": "<span>ال</span>أسئلة الشائعة"
+  },
+  "ContactUs": {
+    "contact-us": "<span>ت</span>واصل بنا",
+    "description": "نحن سعداء بالتحدث معك ومستعدون لمساعدتك في أي استفسارات أو دعم تحتاجه.",
+    "first-name": "الاسم",
+    "last-name": "اللقب",
+    "email": "البريد الإلكتروني",
+    "phone": "الهاتف",
+    "message": "الرسالة",
+    "send-message": "إرسال الرسالة",
+    "location": "اليمن، صنعاء – الحي السياسي، مماثلة لشارع حداد، بالقرب من التوفير هايبر"
+  },
+  "ProjectsPage": {
+    "title": "<span>م</span>شاريع جميرا",
+    "sub-title": "اكتشف مشاريعنا التي تعكس التميز والابتكار في عالم الاستثمار والعقارات. نقدم مجموعة متنوعة من فرص الاستثمار والعقارات المخصصة لاحتياجاتك"
   }
 }

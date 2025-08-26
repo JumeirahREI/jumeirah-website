@@ -16,7 +16,7 @@ export default function SectionLink({
     <Link
       href={href}
       className={cn(
-        "rounded-xl border-2 border-neutral-500/60 bg-gradient-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 font-serif text-[0.625rem] md:text-xs rtl:bg-gradient-to-l",
+        "border-gradient-e rtl:border-gradient-s rounded-xl bg-gradient-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 text-center font-serif text-[0.625rem] md:text-xs lg:px-5 lg:pt-2.5 lg:pb-2 lg:text-lg xl:rounded-2xl xl:text-xl rtl:bg-gradient-to-r",
         className,
       )}
     >

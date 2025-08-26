@@ -1,38 +1,41 @@
-import { Manrope } from "next/font/google";
 import localFont from "next/font/local";
 
-export const manropeFont = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-});
-
-export const qurovaDemoFont = localFont({
+export const montserratArabicFont = localFont({
   src: [
     {
-      path: "./QurovaDEMO-Light.otf",
-      weight: "200",
-      style: "light",
-    },
-    {
-      path: "./QurovaDEMO-Regular.otf",
+      path: "./montserrat_arabic/Montserrat-Arabic Regular 400.otf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./QurovaDEMO-Bold.otf",
+      path: "./montserrat_arabic/Montserrat-Arabic Bold 700.otf",
       weight: "700",
-      style: "normal",
+      style: "bold",
     },
     {
-      path: "./QurovaDEMO-Medium.otf",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "./QurovaDEMO-SemiBold.otf",
-      weight: "600",
-      style: "normal",
+      path: "./montserrat_arabic/Montserrat-Arabic Light 300.otf",
+      weight: "300",
+      style: "light",
     },
   ],
-  variable: "--font-qurova-demo",
+});
+
+export const aeonikFont = localFont({
+  src: [
+    {
+      path: "./aeonik/AeonikTRIAL-Light.otf",
+      weight: "300",
+      style: "light",
+    },
+    {
+      path: "./aeonik/AeonikTRIAL-Regular.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./aeonik/AeonikTRIAL-Bold.otf",
+      weight: "700",
+      style: "bold",
+    },
+  ],
 });

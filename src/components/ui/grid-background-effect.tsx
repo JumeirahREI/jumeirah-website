@@ -10,7 +10,7 @@ export default function GridBackgroundEffect({
   return (
     <Image
       src={gridBackgroundEffect}
-      alt="Grid background effect"
+      alt=""
       className={cn(
         "-z-10 w-96 scale-200 opacity-80 md:w-[40rem] md:scale-150 lg:w-[75rem] lg:scale-100",
         className,
