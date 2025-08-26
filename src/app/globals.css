@@ -14,15 +14,15 @@
 }
 
 @utility bg-glass-gradient-s {
-  @apply bg-[linear-gradient(271deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)] backdrop-blur-xl rtl:bg-[linear-gradient(89deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)];
+  @apply bg-[linear-gradient(271deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)] backdrop-blur-lg rtl:bg-[linear-gradient(89deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)];
 }
 
 @utility bg-glass-gradient-e {
-  @apply bg-[linear-gradient(89deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)] backdrop-blur-xl rtl:bg-[linear-gradient(271deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)];
+  @apply bg-[linear-gradient(89deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)] backdrop-blur-lg rtl:bg-[linear-gradient(271deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)];
 }
 
 @utility bg-glass {
-  @apply bg-white/10 backdrop-blur-3xl;
+  @apply bg-white/10 backdrop-blur-lg;
 }
 
 @utility border-gradient-s {
@@ -87,4 +87,11 @@
 
 body {
   background-color: var(--background);
+}
+
+img {
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Standard syntax */
 }

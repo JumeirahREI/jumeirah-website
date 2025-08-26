@@ -7,7 +7,7 @@
     "about-us": "About Us",
     "blog": "Blog",
     "contact-us": "Contact Us",
-    "what-we-create": "What we create <span>?</span>",
+    "what-we-create": "What we create<span>?</span>",
     "under-construction": "Under Construction",
     "complete": "Complete"
   },
@@ -44,7 +44,7 @@
   "ExploreOurProjectsSection": {
     "explore-our-projects": "<span>E</span>xplore Our Projects",
     "explore-our-projects-description": "Exceptional residential and commercial developments.",
-    "more-projects": "More projects <span>?</span>"
+    "more-projects": "More projects<span>?</span>"
   },
   "ProjectTitles": {
     "sanaa-towers": "<span>S</span>ana'a Towers",

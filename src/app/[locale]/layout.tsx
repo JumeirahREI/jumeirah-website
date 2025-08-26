@@ -25,38 +25,48 @@ export default async function RootLayout({
     notFound();
   }
 
-  let font = aeonikFont.className;
+  let font = aeonikFont;
 
   if (locale === "ar") {
-    font = montserratArabicFont.className;
+    font = montserratArabicFont;
   }
 
   return (
     <html
       lang={locale}
       dir={locale === "ar" ? "rtl" : "ltr"}
-      suppressHydrationWarning
+      className={font.className}
     >
-      <body
-        className={`bg-background text-foreground max-w-svw overflow-x-hidden font-sans ${font}`}
-      >
+      <body className="bg-background text-foreground relative max-w-svw overflow-x-clip font-sans">
         {process.env.NODE_ENV === "development" && <ScreenSizeIndicator />}
-        <Image
-          src={heroBackgroundImage}
-          className="from-background to-background/0 absolute -z-40 h-svh max-h-[40rem] bg-gradient-to-t object-cover object-top md:max-h-[50rem] lg:max-h-[60rem]"
-          alt="Hero image"
-          placeholder="blur"
-          priority
-          // fill
-        />
+
         <NextIntlClientProvider locale={locale}>
           <Navbar />
           <main>{children}</main>
           <FAQsSection />
           <ContactUsSection />
         </NextIntlClientProvider>
+        <BackgroundImage />
       </body>
     </html>
+  );
+}
+
+function BackgroundImage() {
+  return (
+    <div className="absolute top-0 right-0 left-0 -z-[9999] h-full max-h-[40rem] overflow-hidden md:max-h-[50rem] lg:max-h-[60rem]">
+      <Image
+        src={heroBackgroundImage}
+        className="-z-50 h-full w-full object-cover object-top"
+        alt="Hero image"
+        placeholder="blur"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+        priority
+        fill
+      />
+      <div className="from-background/0 via-background/0 to-background/60 absolute start-0 top-0 -z-40 h-full w-4/6 bg-gradient-to-tl rtl:bg-gradient-to-tr" />
+      <div className="absolute -end-32 top-0 -z-40 h-full w-[150svw] bg-gradient-to-br from-black/0 to-[#2F3A43]/60 md:w-full rtl:bg-gradient-to-bl" />
+    </div>
   );
 }
 

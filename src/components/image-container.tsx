@@ -19,11 +19,20 @@ export default function ImageContainer({
   children,
 }: ImageContainerProps) {
   return (
-    <Tag className={cn("relative overflow-hidden rounded-[3.5rem]", className)}>
+    <Tag
+      className={cn(
+        "relative overflow-hidden rounded-4xl md:rounded-[3.5rem]",
+        className,
+      )}
+    >
       <Image
         src={src}
         alt={alt}
-        className={cn("-z-10 object-cover", imageClassName)}
+        className={cn(
+          "top-0 right-0 bottom-0 left-0 -z-10 object-cover",
+          imageClassName,
+        )}
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         placeholder="blur"
         fill
       />

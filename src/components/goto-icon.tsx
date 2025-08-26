@@ -18,7 +18,7 @@ export default function GotoIcon({
       <Image
         src={gotoIcon}
         alt={alt}
-        className="shadow-primary/50 z-50 size-full rounded-full object-cover transition-shadow transition-discrete hover:shadow-md hover:brightness-110 focus:shadow-md focus:brightness-110"
+        className="shadow-primary/50 z-50 size-full rounded-full object-cover transition transition-discrete hover:brightness-110 hover:drop-shadow-[0_0_5px_#ffcb05] focus:brightness-110 focus:drop-shadow-[0_0_10px_#ffcb05]"
       />
     </div>
   );

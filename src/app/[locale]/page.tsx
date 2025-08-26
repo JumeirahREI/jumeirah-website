@@ -5,7 +5,6 @@ import AppLink from "@/components/app-link";
 import GlassCard from "@/components/ui/glass-card";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
 import { useTranslations } from "next-intl";
-import Link from "next/link";
 
 export default function Home() {
   const t = useTranslations("HomePage");
@@ -15,7 +14,7 @@ export default function Home() {
     <div className="overflow-hidden">
       <header className="relative">
         <div className="container grid grid-rows-2 pt-44 pb-36 md:pt-72 md:pb-40 lg:grid-cols-3">
-          <div className="col-span-2 row-span-2 space-y-2">
+          <div className="z-30 col-span-2 row-span-2 space-y-2">
             <h1 className="text-foreground ps-2.5 text-5xl font-bold md:text-7xl lg:text-[7rem]">
               {t.rich("jumeirah-hero", {
                 span: (s) => <span className="text-primary">{s}</span>,
@@ -32,12 +31,9 @@ export default function Home() {
               </h2>
             </GlassCard>
             <div className="ms-2.5 mt-4 flex items-center gap-4 text-xs font-semibold md:mt-6 md:text-sm lg:text-base">
-              <Link
-                href="#"
-                className="bg-glass rounded-full border border-white/30 bg-white/[3%] px-7 py-3 backdrop-blur-lg hover:bg-white/20"
-              >
+              <AppLink href="#" variant="outline">
                 {t("our-projects")}
-              </Link>
+              </AppLink>
               <AppLink href="#">{ct("contact-us")}</AppLink>
             </div>
           </div>
@@ -54,10 +50,8 @@ export default function Home() {
 function HeroBackground() {
   return (
     <>
-      <div className="from-background/0 to-background/80 absolute start-0 top-0 -z-20 h-full w-4/6 bg-gradient-to-l rtl:bg-gradient-to-r" />
-      <div className="absolute -end-32 top-0 -z-20 h-full w-[150svw] bg-gradient-to-r from-black/0 to-slate-600/50 md:w-full rtl:bg-gradient-to-l" />
       <div className="from-background/0 to-background via-background absolute start-0 bottom-0 -z-20 h-2/3 w-full translate-y-2/5 bg-gradient-to-b" />
-      <GridBackgroundEffect className="absolute start-0 bottom-0 -translate-x-1/2 translate-y-1/2 rtl:translate-x-1/2" />
+      <GridBackgroundEffect className="absolute start-0 bottom-0 z-20 -translate-x-1/2 translate-y-1/2 rtl:translate-x-1/2" />
     </>
   );
 }

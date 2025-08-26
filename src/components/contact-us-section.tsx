@@ -17,7 +17,7 @@ export default function ContactUsSection() {
         <ContactUsForm />
         <div className="flex flex-col gap-5">
           <Card className="space-y-7 text-xl">
-            <div className="flex gap-10">
+            <div className="flex flex-col gap-10 lg:flex-row">
               <div className="flex items-center gap-4">
                 <Image
                   src={phoneIcon}

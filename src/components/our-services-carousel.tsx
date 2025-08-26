@@ -2,6 +2,7 @@
 
 import ServiceGalleryCard from "@/components/service-gallery-card";
 import "swiper/css";
+import { Virtual } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import commercialPropertiesImage from "../../public/images/commercial-properties.png";
 import interiorDesignImage from "../../public/images/interior-design.png";
@@ -36,7 +37,7 @@ export default function OurServicesCarousel() {
     <>
       <div className="lg:hidden">
         <Swiper
-          // modules={[]}
+          modules={[Virtual]}
           spaceBetween={16}
           slidesPerView={1.2}
           slidesPerGroup={1}
@@ -45,22 +46,19 @@ export default function OurServicesCarousel() {
           wrapperTag="li"
           centeredSlides
           slideToClickedSlide
+          virtual
           // edgeSwipeDetection="prevent"
           // loopAdditionalSlides={3}
           // loop
         >
-          <SwiperSlide>
-            <ServiceGalleryCard {...galleryImages[0]} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ServiceGalleryCard {...galleryImages[1]} />
-          </SwiperSlide>
-          <SwiperSlide>
-            <ServiceGalleryCard {...galleryImages[2]} />
-          </SwiperSlide>
+          {galleryImages.map((image, index) => (
+            <SwiperSlide key={image.title} virtualIndex={index}>
+              <ServiceGalleryCard {...image} />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
-      <ul className="hidden justify-between gap-10 lg:flex">
+      <ul className="mx-auto hidden justify-between gap-5 lg:container lg:flex xl:gap-10">
         {galleryImages.map((image) => (
           <ServiceGalleryCard
             key={image.title}

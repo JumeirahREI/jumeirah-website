@@ -12,9 +12,9 @@ export default function AboutUsCard() {
   const ct = useTranslations("Common");
 
   return (
-    <section className="relative mx-auto my-6 max-md:container max-md:px-4 lg:my-36">
-      <GridBackgroundEffect className="absolute start-1/2 top-0 !h-full !w-full -translate-x-1/2 rotate-180 object-cover object-center opacity-80 rtl:translate-x-1/2" />
-      <div className="rounded-4xl border-2 border-[#7A7A7A]/60 bg-gradient-to-t from-[#1A1A1A] to-[#1A1A1A]/0 px-4 py-6 md:rounded-[3.5rem] md:px-7 md:pt-10 md:pb-12 lg:px-14 lg:pt-14 lg:pb-16 xl:rounded-[6rem] rtl:bg-gradient-to-tl">
+    <section className="relative mx-auto mb-6 max-md:container max-md:px-4 lg:mb-36">
+      <GridBackgroundEffect className="absolute start-1/2 top-0 -z-10 !h-full !w-full -translate-x-1/2 rotate-180 object-cover object-center opacity-90 rtl:translate-x-1/2" />
+      <div className="z-10 rounded-4xl border-2 border-[#7A7A7A]/60 bg-gradient-to-t from-[#1A1A1A] to-[#1A1A1A]/0 px-4 py-6 md:rounded-[3.5rem] md:px-7 md:pt-10 md:pb-12 lg:px-14 lg:pt-14 lg:pb-16 xl:rounded-[6rem] rtl:bg-gradient-to-tl">
         <div className="mx-auto grid grid-flow-dense gap-8 md:container md:grid-cols-2 lg:grid-cols-5 lg:gap-12 lg:gap-x-28">
           <div className="lg:col-span-3">
             <h3 className="text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-5xl">
@@ -39,7 +39,7 @@ export default function AboutUsCard() {
             <div className="z-50 mt-4 flex items-center justify-center gap-2">
               <GotoIcon alt="about-us" />
               <AppLink
-                className="py-1.5 text-sm font-bold lg:px-5 lg:py-2 lg:text-xl"
+                className="py-1.5 text-xs font-bold lg:px-5 lg:py-2 lg:text-xl"
                 href="#"
               >
                 {ct("about-us")}

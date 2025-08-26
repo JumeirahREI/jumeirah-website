@@ -17,9 +17,9 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section className="bg-background relative">
+    <section className="bg-background relative overflow-x-clip">
       <GridBackgroundEffect className="absolute start-1/2 top-0 !h-auto -translate-x-1/2 object-cover object-center opacity-70 lg:!w-full rtl:translate-x-1/2" />
-      <div className="container px-2 py-5 lg:mb-5">
+      <div className="relative z-30 container px-2 py-5 lg:mb-5">
         <div className="flex items-center justify-between">
           <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl">
             {title}
@@ -32,7 +32,9 @@ export default function Section({
           </p>
         )}
       </div>
-      <div className={cn("container pt-3 pb-20 lg:pb-36", className)}>
+      <div
+        className={cn("relative z-30 container pt-3 pb-20 lg:pb-36", className)}
+      >
         {children}
       </div>
     </section>
