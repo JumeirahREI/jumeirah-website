@@ -4,13 +4,21 @@ import Navbar from "@/components/navbar";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { aeonikFont, montserratArabicFont } from "@/fonts";
 import { routing } from "@/i18n/routing";
-import { Metadata } from "next";
+import { Metadata, Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import heroBackgroundImage from "../../../public/images/hero-background-image.jpg";
 import "../globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  maximumScale: 1.0,
+  userScalable: false,
+  themeColor: "#ffcb05",
+};
 
 export default async function RootLayout({
   children,
@@ -37,12 +45,11 @@ export default async function RootLayout({
       dir={locale === "ar" ? "rtl" : "ltr"}
       className={font.className}
     >
-      <body className="bg-background text-foreground relative max-w-svw overflow-x-clip font-sans">
+      <body className="bg-background text-foreground relative max-w-svw overflow-x-clip font-sans md:pt-4 lg:pt-10">
         {process.env.NODE_ENV === "development" && <ScreenSizeIndicator />}
-
         <NextIntlClientProvider locale={locale}>
           <Navbar />
-          <main>{children}</main>
+          <div>{children}</div>
           <FAQsSection />
           <ContactUsSection />
         </NextIntlClientProvider>
@@ -64,8 +71,8 @@ function BackgroundImage() {
         priority
         fill
       />
-      <div className="from-background/0 via-background/0 to-background/60 absolute start-0 top-0 -z-40 h-full w-4/6 bg-gradient-to-tl rtl:bg-gradient-to-tr" />
-      <div className="absolute -end-32 top-0 -z-40 h-full w-[150svw] bg-gradient-to-br from-black/0 to-[#2F3A43]/60 md:w-full rtl:bg-gradient-to-bl" />
+      <div className="from-background/0 to-background/60 absolute start-0 top-0 -z-40 h-full w-4/6 bg-gradient-to-l rtl:bg-gradient-to-r" />
+      <div className="absolute -end-32 top-0 -z-40 h-full w-[150svw] bg-gradient-to-tr from-black/0 from-50% to-[#2F3A43]/60 md:w-full rtl:bg-gradient-to-tl" />
     </div>
   );
 }

@@ -13,22 +13,22 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <header className="relative">
-        <div className="container grid grid-rows-2 pt-44 pb-36 md:pt-72 md:pb-40 lg:grid-cols-3">
+        <div className="container grid grid-rows-2 pt-32 pb-36 md:pt-40 md:pb-40 lg:grid-cols-3">
           <div className="z-30 col-span-2 row-span-2 space-y-2">
-            <h1 className="text-foreground ps-2.5 text-5xl font-bold md:text-7xl lg:text-[7rem]">
+            <h1 className="text-foreground text-5xl font-bold md:text-7xl lg:text-[7rem]">
               {t.rich("jumeirah-hero", {
                 span: (s) => <span className="text-primary">{s}</span>,
               })}
-              <span className="block ps-2.5 font-serif text-2xl text-gray-200 md:text-4xl lg:text-5xl xl:text-6xl">
+              <span className="block font-serif text-2xl text-gray-200 md:text-4xl lg:text-5xl xl:text-6xl">
                 {ct("rei")}
                 <span className="text-primary">.</span>
               </span>
             </h1>
-            <GlassCard className="ms-2.5 max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
-              <h2 className="leading-6 font-medium text-white/80 md:text-lg md:leading-7 xl:text-xl xl:leading-8">
+            <GlassCard className="max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
+              <p className="leading-6 font-medium text-white/80 md:text-lg md:leading-7 xl:text-xl xl:leading-8">
                 {t("hero-description")}
                 <span className="text-primary">.</span>
-              </h2>
+              </p>
             </GlassCard>
             <div className="ms-2.5 mt-4 flex items-center gap-4 text-xs font-semibold md:mt-6 md:text-sm lg:text-base">
               <AppLink href="#" variant="outline">
@@ -40,9 +40,11 @@ export default function Home() {
           <HeroBackground />
         </div>
       </header>
-      <OurServicesSection />
-      <AboutUsCard />
-      <ExploreOutProjectsSection />
+      <main>
+        <OurServicesSection />
+        <AboutUsCard />
+        <ExploreOutProjectsSection />
+      </main>
     </div>
   );
 }

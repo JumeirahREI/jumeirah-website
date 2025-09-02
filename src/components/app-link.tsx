@@ -9,7 +9,7 @@ const appLinkVariants = cva("rounded-full px-5 py-2 lg:px-7 lg:py-3", {
       default:
         "bg-primary text-black hover:brightness-110 focus:brightness-110 hover:drop-shadow-md hover:drop-shadow-[0_0_5px_#ffcb05] focus:drop-shadow-[0_0_5px_#ffcb05] hover:text-black/70 focus:text-black/70 transition-shadow transition transition-discrete",
       outline:
-        "bg-glass border border-white/30 bg-white/[3%] backdrop-blur-lg transition-colors hover:bg-white/20 focus:bg-white/20",
+        "bg-glass border border-white/30 bg-white/5 backdrop-blur-lg transition-colors hover:bg-white/20 focus:bg-white/20",
     },
   },
   defaultVariants: {

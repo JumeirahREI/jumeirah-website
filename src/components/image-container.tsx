@@ -7,7 +7,6 @@ type ImageContainerProps = {
   containerTag?: React.ElementType;
   imageClassName?: string;
   src: StaticImageData;
-  alt: string;
 } & PropsWithChildren;
 
 export default function ImageContainer({
@@ -15,7 +14,6 @@ export default function ImageContainer({
   containerTag: Tag = "div",
   imageClassName,
   src,
-  alt,
   children,
 }: ImageContainerProps) {
   return (
@@ -25,19 +23,22 @@ export default function ImageContainer({
         className,
       )}
     >
-      <Image
-        src={src}
-        alt={alt}
-        className={cn(
-          "top-0 right-0 bottom-0 left-0 -z-10 object-cover",
-          imageClassName,
-        )}
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        placeholder="blur"
-        fill
-      />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-zinc-900/0 to-zinc-900" />
-      {children}
+      <figure>
+        <Image
+          src={src}
+          alt=""
+          aria-hidden="true"
+          className={cn(
+            "top-0 right-0 bottom-0 left-0 -z-10 object-cover",
+            imageClassName,
+          )}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          placeholder="blur"
+          fill
+        />
+        <div className="absolute inset-0 -z-10 bg-linear-[208deg] from-zinc-900/0 to-zinc-900 rtl:bg-linear-[152deg]" />
+        <figcaption>{children}</figcaption>
+      </figure>
     </Tag>
   );
 }

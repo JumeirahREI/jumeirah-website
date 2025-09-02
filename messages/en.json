@@ -7,6 +7,7 @@
     "about-us": "About Us",
     "blog": "Blog",
     "contact-us": "Contact Us",
+    "our-services": "Our Services",
     "what-we-create": "What we create<span>?</span>",
     "under-construction": "Under Construction",
     "complete": "Complete"
@@ -53,7 +54,7 @@
     "alhathaa-towers-no-span": "Al-Hathaa Towers"
   },
   "SanaaTowers": {
-    "title": "<span>S</span>anaa Towers"
+    "title": "<span>S</span>ana'a Towers"
   },
   "Alhathaa-Towers": {
     "title": "<span>A</span>l-Hathaa Towers"
@@ -73,7 +74,29 @@
     "location": "Yemen, Sana'a – Political District, parallel to Hadda Street, next to Al-Tawfeer Hyper"
   },
   "ProjectsPage": {
+    "meta-title": "Projects | Jumeirah Real Estate Investment",
+    "meta-description": "Discover our projects that reflect excellence and innovation in the world of investment and real estate. We offer a diverse range of investment and property opportunities tailored to your aspirations",
     "title": "<span>J</span>umeirah Projects",
-    "sub-title": "Discover our projects that reflect excellence and innovation in the world of investment and real estate. We offer a diverse range of investment and property opportunities tailored to your aspirations"
+    "sub-title": "Discover our projects that reflect excellence and innovation in the world of investment and real estate. We offer a diverse range of investment and property opportunities tailored to your aspirations",
+    "all-projects": "All Projects",
+    "towers": "Towers",
+    "apartments": "Apartments",
+    "villas": "Villas",
+    "sanaa-towers": {
+      "title": "<span>S</span>ana'a Towers",
+      "status": "Under Construction"
+    },
+    "alhathaa-towers": {
+      "title": "<span>A</span>l-Hathaa Towers",
+      "status": "Complete"
+    },
+    "aden-towers": {
+      "title": "<span>A</span>den Towers",
+      "status": "Under Construction"
+    }
+  },
+  "OurPartnersSection": {
+    "title": "<span>O</span>ur Partners",
+    "description": "We take pride in collaborating with a distinguished network of partners who share our vision for excellence, innovation, and sustainable growth."
   }
 }

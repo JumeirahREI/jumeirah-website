@@ -47,7 +47,6 @@ export default function ExploreOutProjectsSection() {
             key={p.title}
             src={p.image}
             className="w-full rounded-3xl lg:w-fit xl:rounded-[4rem]"
-            alt={projectsT(p.titleNoSpan)}
           >
             <div className="flex flex-col justify-between gap-68 px-3 py-2 xl:w-[35rem] xl:gap-[30rem] xl:px-12 xl:pt-10 xl:pb-14">
               <p className="bg-glass self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1.5 text-xs text-white/70 xl:text-lg">
@@ -58,7 +57,7 @@ export default function ExploreOutProjectsSection() {
                   className="lg:size-20 lg:p-3"
                   alt={projectsT(p.titleNoSpan)}
                 />
-                <p className="border-gradient-e border-gradient-to-neutral-500/60 lg:border-gradient-0.5 grow rounded-2xl bg-gradient-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center xl:p-4 xl:text-[2rem] rtl:bg-gradient-to-l">
+                <p className="border-gradient-to-e border-gradient-to-neutral-500/60 lg:border-gradient-0.5 grow rounded-2xl bg-gradient-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center xl:p-4 xl:text-[2rem] rtl:bg-gradient-to-l">
                   {projectsT.rich(p.title, {
                     span: (s) => <span className="text-primary">{s}</span>,
                   })}

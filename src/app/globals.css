@@ -13,11 +13,11 @@
   --font-serif: var(--font-montserrat-arabic);
 }
 
-@utility bg-glass-gradient-s {
+@utility bg-glass-gradient-to-s {
   @apply bg-[linear-gradient(271deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)] backdrop-blur-lg rtl:bg-[linear-gradient(89deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)];
 }
 
-@utility bg-glass-gradient-e {
+@utility bg-glass-gradient-to-e {
   @apply bg-[linear-gradient(89deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)] backdrop-blur-lg rtl:bg-[linear-gradient(271deg,rgba(255,255,255,0.13)_-16.65%,rgba(153,153,153,0.13)_119.21%)];
 }
 
@@ -25,10 +25,11 @@
   @apply bg-white/10 backdrop-blur-lg;
 }
 
-@utility border-gradient-s {
-  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(90deg,var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''] rtl:before:bg-[linear-gradient(270deg,var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)];
+@utility border-gradient-to-s {
+  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(var(--tw-border-gradient-angle),var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''] rtl:before:bg-[linear-gradient(270deg,var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)];
 
   &::before {
+    --tw-border-gradient-angle: 90deg;
     --tw-border-gradient-width: 1px;
     --tw-border-gradient-from-stop: rgba(204, 204, 204, 0.5);
     --tw-border-gradient-to-stop: rgba(86, 86, 86, 0.5);
@@ -44,10 +45,31 @@
   }
 }
 
-@utility border-gradient-e {
-  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(270deg,var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''] rtl:before:bg-[linear-gradient(90deg,var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)];
+@utility border-gradient-to-e {
+  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(var(--tw-border-gradient-angle),var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''] rtl:before:bg-[linear-gradient(var(--tw-border-gradient-angle),var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)];
 
   &::before {
+    --tw-border-gradient-angle: 270deg;
+    --tw-border-gradient-width: 1px;
+    --tw-border-gradient-from-stop: rgba(204, 204, 204, 0.5);
+    --tw-border-gradient-to-stop: rgba(86, 86, 86, 0.5);
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
+@utility border-gradient-t {
+  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(var(--tw-border-gradient-angle),var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''];
+
+  &::before {
+    --tw-border-gradient-angle: 180deg;
     --tw-border-gradient-width: 1px;
     --tw-border-gradient-from-stop: rgba(204, 204, 204, 0.5);
     --tw-border-gradient-to-stop: rgba(86, 86, 86, 0.5);
@@ -75,9 +97,49 @@
   }
 }
 
-@utility border-gradient-* {
+@utility border-gradient-width-* {
   &::before {
     --tw-border-gradient-width: --spacing(--value(number, [*]));
+  }
+}
+
+@utility fade-x {
+  position: relative;
+  display: inline-block;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* IE and Edge */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+  }
+
+  /* Firefox */
+  .no-scrollbar {
+    scrollbar-width: none;
   }
 }
 
@@ -94,4 +156,9 @@ img {
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Standard syntax */
+  -webkit-user-drag: none; /* For WebKit browsers like Chrome, Safari */
+  -khtml-user-drag: none; /* For older Konqueror browsers */
+  -moz-user-drag: none; /* For Mozilla Firefox */
+  -o-user-drag: none; /* For Opera */
+  user-drag: none; /* Standard property */
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import useIsClient from "../../hooks/useIsClient";
+import useIsClient from "../../hooks/use-is-client";
 
 const getInitialSize = () => {
   if (typeof window !== "undefined") {
@@ -37,7 +37,7 @@ export default function ScreenSizeIndicator() {
         <span className="hidden md:block lg:hidden">MD</span>
         <span className="hidden lg:block xl:hidden">LG</span>
         <span className="hidden xl:block 2xl:hidden">XL</span>
-        <span className="max-2xl:hidden">XL</span> - ({width})
+        <span className="max-2xl:hidden">2XL</span> - ({width})
       </p>
     </div>
   );

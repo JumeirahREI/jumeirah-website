@@ -21,9 +21,7 @@ export default function Section({
       <GridBackgroundEffect className="absolute start-1/2 top-0 !h-auto -translate-x-1/2 object-cover object-center opacity-70 lg:!w-full rtl:translate-x-1/2" />
       <div className="relative z-30 container px-2 py-5 lg:mb-5">
         <div className="flex items-center justify-between">
-          <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl">
-            {title}
-          </h3>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl">{title}</h2>
           {sectionLink?.()}
         </div>
         {description && (

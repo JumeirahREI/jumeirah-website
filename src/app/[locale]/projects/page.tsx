@@ -1,29 +1,45 @@
+import OurPartnersSection from "@/app/[locale]/projects/_sections/our-partners.section";
+import ProjectsSection from "@/app/[locale]/projects/_sections/projects.section";
 import AppLink from "@/components/app-link";
 import PageHeader from "@/components/page-header";
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
 export default function ProjectsPage() {
   const t = useTranslations("ProjectsPage");
   const ct = useTranslations("Common");
 
   return (
-    <div>
+    <>
       <PageHeader
         title={t.rich("title", {
           span: (s) => <span className="text-primary">{s}</span>,
         })}
         subTitle={t("sub-title")}
       >
-        <div className="ms-2.5 mt-6 flex items-center justify-center gap-4 text-xs font-semibold md:mt-10 md:text-sm lg:text-base">
-          {/* <Link
-                href="#"
-                className="bg-glass rounded-full border border-white/30 bg-white/[3%] px-7 py-3 backdrop-blur-lg hover:bg-white/20"
-              >
-                {ct("")}
-              </Link> */}
-          <AppLink href="#">{ct("contact-us")}</AppLink>
+        <div className="flex items-center justify-center gap-4 text-xs font-semibold md:gap-6 md:text-sm lg:text-base">
+          <AppLink variant="outline" href="#" className="lg:py-2">
+            {ct("our-services")}
+          </AppLink>
+          <AppLink href="#" className="lg:py-2">
+            {ct("contact-us")}
+          </AppLink>
         </div>
       </PageHeader>
-    </div>
+      <main>
+        <ProjectsSection />
+        <OurPartnersSection />
+      </main>
+    </>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("ProjectsPage");
+
+  return {
+    title: t("meta-title"),
+    description: t("meta-description"),
+  };
 }
