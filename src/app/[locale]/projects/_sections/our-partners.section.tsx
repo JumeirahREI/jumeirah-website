@@ -49,7 +49,7 @@ export default function OurPartnersSection() {
   const t = useTranslations("OurPartnersSection");
 
   return (
-    <section className="container lg:mb-52">
+    <section className="container px-2 lg:mb-52">
       <h2 className="text-center text-3xl md:text-4xl lg:text-5xl">
         {t.rich("title", {
           span: (s) => <span className="text-primary">{s}</span>,

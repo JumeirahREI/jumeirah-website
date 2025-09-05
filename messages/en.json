@@ -10,7 +10,12 @@
     "our-services": "Our Services",
     "what-we-create": "What we create<span>?</span>",
     "under-construction": "Under Construction",
-    "complete": "Complete"
+    "complete": "Complete",
+    "include-two-towers": "<span>The</span> project includes two modern residential towers",
+    "layout": "Layout",
+    "videos": "Videos",
+    "photos": "Photos",
+    "details": "Details"
   },
   "Metadata": {
     "title": "Jumeirah Real Estate Investments | Premier Properties in Yemen",
@@ -54,9 +59,190 @@
     "alhathaa-towers-no-span": "Al-Hathaa Towers"
   },
   "SanaaTowers": {
-    "title": "<span>S</span>ana'a Towers"
+    "meta-title": "Sana'a Towers",
+    "meta-description": "The new Sana'a Towers residential project consists of two towers located in the 50 Street district of the capital, Sana'a. Tower A includes five different types of residential apartments with structurally earthquake-resistant designs, modern luxury, spacious interiors, and practical implementation, including satellite networks and individual water and electricity meters for each apartment. Tower B includes five smaller, more economical models with the same high-quality designs and a compatible residential community.",
+    "title": "<span>S</span>ana'a Towers",
+    "subtitle": "Jumeirah Real Estate Investment Company offers you the opportunity to enjoy luxury and modernity in its latest residential project, Sanaa Towers!",
+    "towers": {
+      "tower-a": {
+        "title": "Tower <span>A</span>",
+        "model-a": {
+          "name": "Model <span>A</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-b": {
+          "name": "Model <span>B</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-c": {
+          "name": "Model <span>C</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-d": {
+          "name": "Model <span>D</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-h": {
+          "name": "Model <span>H</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        }
+      },
+      "tower-b": {
+        "title": "Tower <span>B</span>",
+        "model-j": {
+          "name": "Model <span>J</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-k": {
+          "name": "Model <span>K</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-l": {
+          "name": "Model <span>L</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-m": {
+          "name": "Model <span>M</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-n": {
+          "name": "Model <span>N</span>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-t": {
+          "name": "Model <span>T</span> <i>(Duplex)</i>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        },
+        "model-w": {
+          "name": "Model <span>W</span> <i>(Duplex)</i>",
+          "layout": {
+            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Section",
+              "guest-reception-hall": "Guest Reception Hall: 3.75m x 3.10m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.50m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.00m x 3.75m"
+            }
+          }
+        }
+      }
+    }
   },
   "Alhathaa-Towers": {
+    "meta-title": "Al-Hathaa Towers",
+    "meta-description": "The Al-Hathaa Towers project is a residential development located in the Al-Hathaa district of Sana'a, Yemen. The project includes two towers, each with 12 floors, and a total of 120 apartments. The towers are designed to be earthquake-resistant and feature modern amenities, including a gym, a swimming pool, and a security system. The project is currently under construction and is expected to be completed in 2025.",
     "title": "<span>A</span>l-Hathaa Towers"
   },
   "FAQsSection": {

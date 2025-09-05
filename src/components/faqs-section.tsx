@@ -3,11 +3,15 @@
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, LazyMotion } from "motion/react";
+import * as m from "motion/react-m";
 import { useTranslations } from "next-intl";
 import { StaticImageData } from "next/image";
 import { useState } from "react";
 import faqImage from "../../public/images/faqs-image.png";
+
+const loadFeatures = () =>
+  import("@/app/motion-features/dom-animation").then((res) => res.default);
 
 const question = {
   question: "Lorem ipsum dolor sit amet consectetur. Sagittis id",
@@ -35,17 +39,19 @@ export default function FAQsSection() {
         </SectionLink>
       )}
     >
-      <ul className="relative space-y-8">
-        {questions.map((q, i) => (
-          <FAQCard
-            key={i}
-            {...q}
-            index={i}
-            onClick={() => setActiveIndex(i === activeIndex ? null : i)}
-            isActive={activeIndex === i}
-          />
-        ))}
-      </ul>
+      <LazyMotion features={loadFeatures}>
+        <ul className="relative space-y-8">
+          {questions.map((q, i) => (
+            <FAQCard
+              key={i}
+              {...q}
+              index={i}
+              onClick={() => setActiveIndex(i === activeIndex ? null : i)}
+              isActive={activeIndex === i}
+            />
+          ))}
+        </ul>
+      </LazyMotion>
     </Section>
   );
 }
@@ -67,7 +73,7 @@ function FAQCard({
 }) {
   return (
     <li className="flex gap-5 md:text-lg lg:text-xl" onClick={onClick}>
-      <motion.div
+      <m.div
         layout="position"
         className={cn(
           "flex w-full cursor-pointer gap-6 rounded-4xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl duration-300 ease-in-out md:gap-7 md:px-6 md:py-4 lg:flex-grow-1 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:transition-[flex-grow]",
@@ -81,7 +87,7 @@ function FAQCard({
           <p className="font-bold">{question}</p>
           <AnimatePresence initial={false}>
             {isActive && (
-              <motion.p
+              <m.p
                 initial={{
                   opacity: 0,
                   height: 0,
@@ -104,11 +110,11 @@ function FAQCard({
                 className="overflow-hidden text-neutral-200/70 lg:text-xl"
               >
                 {answer}
-              </motion.p>
+              </m.p>
             )}
           </AnimatePresence>
         </div>
-      </motion.div>
+      </m.div>
       <div className="hidden flex-grow-1 lg:block">
         <button
           className={cn(

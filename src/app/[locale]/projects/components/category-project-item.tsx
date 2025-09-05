@@ -1,6 +1,6 @@
 import GotoIcon from "@/components/goto-icon";
+import { Link } from "@/i18n/navigation";
 import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
 
 type CategoryProjectItemProps = {
   title: string | React.ReactNode;

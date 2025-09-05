@@ -8,7 +8,7 @@
     "blog": "المدونة",
     "contact-us": "تواصل بنا",
     "our-services": "خدماتنا",
-    "what-we-create": "ماذا نصنع <span>?</span>",
+    "what-we-create": "ماذا نصنع<span>؟</span>",
     "under-construction": "تحت الإنشاء",
     "complete": "تم إنجازه"
   },
@@ -54,7 +54,35 @@
     "alhathaa-towers-no-span": "أبراج الحظاء"
   },
   "SanaaTowers": {
-    "title": "<span>ص</span>نعاء تاورز"
+    "meta-title": "صنعاء تاورز",
+    "meta-description": "مشروع صنعاء تاورز السكني الجديد يتألف من برجين ويقع في منطقة الخمسين بالعاصمة صنعاء. يتضمّن البرج A خمسة نماذج مختلفة من الشقق السكنية ذات تصاميم مقاومة للزلازل انشائياً , عصرية فاخرة وواسعة داخليا وعملية تطبيقياً بشبكة ساتلايت وعدادات ماء وكهرباء لكل شقة. ويتضمن البرج B خمسة نماذج اقتصادية أقل مساحةً و بنفس جودة التصاميم ومجتمع السكان المتوافق.",
+    "title": "<span>ص</span>نعاء تاورز",
+    "subtitle": "Jumeirah Real Estate Investment Company offers you the opportunity to enjoy luxury and modernity in its latest residential project, Sanaa Towers!",
+    "towers": {
+      "tower-a": {
+        "title": "Tower A",
+        "models": [
+          {
+            "name": "Model <span>A</span>",
+            "layout": {
+              "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            },
+            "details": {
+              "sections": [
+                {
+                  "title": "Model <span>A</span> Details",
+                  "rooms": [
+                    "Room 1",
+                    "Room 2",
+                    "Room 3"
+                  ]
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
   },
   "Alhathaa-Towers": {
     "title": "أبراج <span>ال</span>حظاء"

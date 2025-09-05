@@ -10,7 +10,7 @@ import {
   useRef,
   useState,
 } from "react";
-import { useBreakpoint } from "../../hooks/use-breakpoint";
+import { useBreakpoint } from "../hooks/use-breakpoint";
 
 type CarouselHandle = {
   next: () => void;

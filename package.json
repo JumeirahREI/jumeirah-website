@@ -9,17 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^15.5.2",
+    "@next/bundle-analyzer": "15.5.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
     "hamburger-react": "^2.5.2",
     "lucide-react": "^0.541.0",
     "motion": "^12.23.12",
-    "next": "15.4.5",
+    "next": "15.5.2",
     "next-intl": "^4.3.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
+    "react": "19.1.1",
+    "react-dom": "19.1.1",
     "react-phone-number-input": "^3.4.12",
     "swiper": "^11.2.10",
     "tailwind-merge": "^3.3.1"
@@ -28,13 +28,19 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "19.1.12",
+    "@types/react-dom": "19.1.9",
     "eslint": "^9",
-    "eslint-config-next": "15.4.5",
+    "eslint-config-next": "15.5.2",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.1.12",
+      "@types/react-dom": "19.1.9"
+    }
   }
 }

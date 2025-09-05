@@ -85,6 +85,26 @@
   }
 }
 
+@utility border-gradient-b {
+  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(var(--tw-border-gradient-angle),var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''];
+
+  &::before {
+    --tw-border-gradient-angle: 0deg;
+    --tw-border-gradient-width: 1px;
+    --tw-border-gradient-from-stop: rgba(204, 204, 204, 0.5);
+    --tw-border-gradient-to-stop: rgba(86, 86, 86, 0.5);
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+}
+
 @utility border-gradient-from-* {
   &::before {
     --tw-border-gradient-from-stop: --value(--color-*, [*]);
@@ -109,8 +129,8 @@
   -webkit-mask-image: linear-gradient(
     to right,
     transparent,
-    black 15%,
-    black 85%,
+    black 5%,
+    black 95%,
     transparent
   );
   -webkit-mask-repeat: no-repeat;
@@ -118,8 +138,8 @@
   mask-image: linear-gradient(
     to right,
     transparent,
-    black 15%,
-    black 85%,
+    black 5%,
+    black 95%,
     transparent
   );
   mask-repeat: no-repeat;
@@ -149,6 +169,44 @@
 
 body {
   background-color: var(--background);
+}
+
+@layer components {
+  .tower-display-grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+    grid-template-areas: "model-tabs" "media" "description" "data-tabs";
+  }
+
+  .model-tabs {
+    grid-area: model-tabs;
+  }
+
+  .media {
+    grid-area: media;
+  }
+
+  .description {
+    grid-area: description;
+  }
+
+  .data-tabs {
+    grid-area: data-tabs;
+  }
+
+  @media (min-width: 768px) {
+    .tower-display-grid {
+      grid-template-rows: auto 1fr 1fr auto;
+      grid-template-columns: 2fr 1fr;
+      grid-template-areas:
+        "model-tabs media"
+        "description media"
+        "description media"
+        "data-tabs media";
+    }
+  }
 }
 
 img {

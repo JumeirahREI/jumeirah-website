@@ -58,6 +58,7 @@ export default function ProjectsSection() {
       }),
       status: t("sanaa-towers.status"),
       image: sanaaTowersImage,
+      href: "/projects/sanaa-towers",
     },
     {
       title: t.rich("alhathaa-towers.title", {
@@ -65,6 +66,7 @@ export default function ProjectsSection() {
       }),
       status: t("alhathaa-towers.status"),
       image: alHathaaTowersImage,
+      href: "/projects/alhathaa-towers",
     },
     {
       title: t.rich("aden-towers.title", {
@@ -72,6 +74,7 @@ export default function ProjectsSection() {
       }),
       status: t("aden-towers.status"),
       image: adenTowersImage,
+      href: "aden-towers",
     },
   ] as const;
 
@@ -107,7 +110,7 @@ export default function ProjectsSection() {
                     title={project.title}
                     status={project.status}
                     img={project.image}
-                    href="#"
+                    href={project.href}
                   />
                 </div>
               ))}

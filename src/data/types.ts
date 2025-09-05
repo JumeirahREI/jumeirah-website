@@ -1,0 +1,43 @@
+import type { Messages, NestedKeyOf } from "next-intl";
+import { StaticImageData } from "next/image";
+
+export type Project = "SanaaTowers" | "Alhathaa-Towers";
+
+// Use relative keys within the given namespace (e.g., "title", "subtitle", "towers.tower-a.title")
+type BaseTranslation<T extends Project> = NestedKeyOf<Messages[T]>;
+
+export type ModelDetailsSection<T extends Project> = {
+  title: BaseTranslation<T>;
+  rooms: BaseTranslation<T>[];
+};
+
+export type ModelData<T extends Project> = {
+  name: BaseTranslation<T>;
+  layout: {
+    description: BaseTranslation<T>;
+    image: StaticImageData;
+  };
+  videos?: string[];
+  photos?: StaticImageData[];
+  details?: {
+    image: StaticImageData;
+    sections: ModelDetailsSection<T>[];
+  };
+};
+
+export type TowerData<T extends Project> = {
+  name: BaseTranslation<T>;
+  models: ModelData<T>[];
+};
+
+export type ProjectData<T extends Project> = {
+  projectKey: T;
+  title: BaseTranslation<T>;
+  subtitle: BaseTranslation<T>;
+  videoSection?: {
+    title: BaseTranslation<T>;
+    description: BaseTranslation<T>;
+    videoUrl: string;
+  };
+  towersSection: TowerData<T>[];
+};

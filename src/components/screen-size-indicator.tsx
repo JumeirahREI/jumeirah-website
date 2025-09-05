@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import useIsClient from "../../hooks/use-is-client";
+import useIsClient from "../hooks/use-is-client";
 
 const getInitialSize = () => {
   if (typeof window !== "undefined") {

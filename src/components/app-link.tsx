@@ -1,6 +1,6 @@
+import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
-import Link from "next/link";
 import React from "react";
 
 const appLinkVariants = cva("rounded-full px-5 py-2 lg:px-7 lg:py-3", {

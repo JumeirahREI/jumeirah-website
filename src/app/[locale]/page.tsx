@@ -1,10 +1,32 @@
 import AboutUsCard from "@/app/[locale]/_sections/about-us-card.section";
 import ExploreOutProjectsSection from "@/app/[locale]/_sections/explore-our-projects.section";
 import OurServicesSection from "@/app/[locale]/_sections/our-services.section";
+import { AnimatedGroup } from "@/components/animated-group";
 import AppLink from "@/components/app-link";
+import { TextEffect } from "@/components/text-effect";
 import GlassCard from "@/components/ui/glass-card";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
 import { useTranslations } from "next-intl";
+
+const transitionVariants = {
+  item: {
+    hidden: {
+      opacity: 0,
+      filter: "blur(12px)",
+      y: 12,
+    },
+    visible: {
+      opacity: 1,
+      filter: "blur(0px)",
+      y: 0,
+      transition: {
+        type: "spring" as const,
+        bounce: 0.3,
+        duration: 1.5,
+      },
+    },
+  },
+};
 
 export default function Home() {
   const t = useTranslations("HomePage");
@@ -15,21 +37,43 @@ export default function Home() {
       <header className="relative">
         <div className="container grid grid-rows-2 pt-32 pb-36 md:pt-40 md:pb-40 lg:grid-cols-3">
           <div className="z-30 col-span-2 row-span-2 space-y-2">
-            <h1 className="text-foreground text-5xl font-bold md:text-7xl lg:text-[7rem]">
-              {t.rich("jumeirah-hero", {
-                span: (s) => <span className="text-primary">{s}</span>,
-              })}
-              <span className="block font-serif text-2xl text-gray-200 md:text-4xl lg:text-5xl xl:text-6xl">
-                {ct("rei")}
-                <span className="text-primary">.</span>
-              </span>
-            </h1>
-            <GlassCard className="max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
-              <p className="leading-6 font-medium text-white/80 md:text-lg md:leading-7 xl:text-xl xl:leading-8">
-                {t("hero-description")}
-                <span className="text-primary">.</span>
-              </p>
-            </GlassCard>
+            <AnimatedGroup variants={transitionVariants}>
+              <h1 className="text-foreground text-5xl font-bold md:text-7xl lg:text-[7rem]">
+                {t.rich("jumeirah-hero", {
+                  span: (s) => <span className="text-primary">{s}</span>,
+                })}
+                <span className="block font-serif text-2xl text-gray-200 md:text-4xl lg:text-5xl xl:text-6xl">
+                  <TextEffect
+                    as="span"
+                    preset="fade-in-blur"
+                    speedSegment={0.3}
+                  >
+                    {ct("rei")}
+                  </TextEffect>
+                  <span className="text-primary">.</span>
+                </span>
+              </h1>
+            </AnimatedGroup>
+            <AnimatedGroup
+              variants={{
+                container: {
+                  visible: {
+                    transition: {
+                      staggerChildren: 0.05,
+                      delayChildren: 0.75,
+                    },
+                  },
+                },
+                ...transitionVariants,
+              }}
+            >
+              <GlassCard className="max-w-md md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
+                <p className="leading-6 font-medium text-white/80 md:text-lg md:leading-7 xl:text-xl xl:leading-8">
+                  {t("hero-description")}
+                  <span className="text-primary">.</span>
+                </p>
+              </GlassCard>
+            </AnimatedGroup>
             <div className="ms-2.5 mt-4 flex items-center gap-4 text-xs font-semibold md:mt-6 md:text-sm lg:text-base">
               <AppLink href="#" variant="outline">
                 {t("our-projects")}
