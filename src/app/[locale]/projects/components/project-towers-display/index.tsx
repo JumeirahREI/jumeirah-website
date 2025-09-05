@@ -40,7 +40,7 @@ export default function ProjectTowersDisplay({
               {t(projectData.towersSection[0].models[0].layout.description)}
             </p>
           </div>
-          <div className="data-tabs pl-4 md:pl-7 lg:pl-14 xl:pl-12 2xl:pl-10 rtl:pr-4 rtl:md:pr-7 rtl:lg:pr-14 rtl:xl:pr-12 rtl:2xl:pr-10">
+          <div className="fade-x data-tabs no-scrollbar overflow-x-scroll pl-4 md:pl-7 lg:pl-14 xl:pl-12 2xl:pl-10 rtl:pr-4 rtl:md:pr-7 rtl:lg:pr-14 rtl:xl:pr-12 rtl:2xl:pr-10">
             <DataTabs projectData={projectData} />
           </div>
         </div>

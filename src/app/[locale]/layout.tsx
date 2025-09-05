@@ -65,7 +65,7 @@ function BackgroundImage() {
       <Image
         src={heroBackgroundImage}
         className="-z-50 h-full w-full object-cover object-top"
-        alt="Hero image"
+        alt=""
         placeholder="blur"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
         priority

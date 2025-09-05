@@ -33,7 +33,8 @@ export default function ImageContainer({
             imageClassName,
           )}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          placeholder="blur"
+          loading="lazy"
+          // placeholder="blur"
           fill
         />
         <div className="absolute inset-0 -z-10 bg-linear-[208deg] from-zinc-900/0 to-zinc-900 rtl:bg-linear-[152deg]" />

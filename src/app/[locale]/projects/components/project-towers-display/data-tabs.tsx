@@ -47,7 +47,7 @@ export default function DataTabs({
   }, [selectedModelData, selectedDataTab]);
 
   return (
-    <div className="flex items-center gap-3 2xl:gap-6">
+    <div className="flex items-center gap-1 2xl:gap-6">
       {tabs.map((tab, index) => {
         const hasData = !!selectedModelData[tab.name];
 

@@ -99,7 +99,9 @@ function ServiceGalleryCard({
           <div className="bg-glass rounded-full border border-white/30 p-4 md:p-4">
             <Image
               src={icon}
-              alt=""
+              loading="lazy"
+              // placeholder="blur"
+              alt={t(title as Parameters<typeof t>[0])}
               className="size-14 lg:size-14 xl:size-20"
             />
           </div>
