@@ -1,6 +1,6 @@
 import DataTabs from "@/app/[locale]/projects/components/project-towers-display/data-tabs";
 import DetailsPanel from "@/app/[locale]/projects/components/project-towers-display/details-panel";
-import MediaContainer from "@/app/[locale]/projects/components/project-towers-display/media-container";
+import MediaPanel from "@/app/[locale]/projects/components/project-towers-display/media-panel";
 import ModelTabs from "@/app/[locale]/projects/components/project-towers-display/model-tabs";
 import TowerTabs from "@/app/[locale]/projects/components/project-towers-display/tower-tabs";
 import { TowersDisplayProvider } from "@/app/[locale]/projects/components/project-towers-display/towers-display-context";
@@ -24,13 +24,8 @@ export default function ProjectTowersDisplay({
           <div className="fade-x model-tabs no-scrollbar overflow-x-scroll pl-4 md:row-start-1 md:pl-7 lg:pl-14 xl:pl-12 2xl:pl-10 rtl:pr-4 rtl:md:pr-7 rtl:lg:pr-14 rtl:xl:pr-12 rtl:2xl:pr-10">
             <ModelTabs projectData={projectData} />
           </div>
-          <div className="media max-md:pl-4 max-md:rtl:pr-4">
-            <MediaContainer
-              className="relative h-full min-h-52"
-              projectKey={projectData.projectKey}
-            />
-          </div>
-          <div className="description text-foreground/90 p-4 md:p-7 lg:p-14 xl:p-12 2xl:p-10">
+          <MediaPanel projectKey={projectData.projectKey} />
+          <div className="description text-foreground/90">
             <DetailsPanel projectData={projectData} />
           </div>
           <div className="fade-x data-tabs no-scrollbar overflow-x-scroll pl-4 md:pl-7 lg:pl-14 xl:pl-12 2xl:pl-10 rtl:pr-4 rtl:md:pr-7 rtl:lg:pr-14 rtl:xl:pr-12 rtl:2xl:pr-10">

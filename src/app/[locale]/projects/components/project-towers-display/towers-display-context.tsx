@@ -105,7 +105,7 @@ export function TowersDisplayProvider({
         if (!details) {
           return;
         }
-        setMediaContainerData(details.images);
+        setMediaContainerData(details[0].images);
         break;
     }
     setSelectedMediaIndex(0);

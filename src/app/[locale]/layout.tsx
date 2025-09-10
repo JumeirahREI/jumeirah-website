@@ -15,9 +15,9 @@ import "../globals.css";
 
 export const viewport: Viewport = {
   width: "device-width",
-  initialScale: 1.0,
-  maximumScale: 1.0,
-  userScalable: false,
+  // initialScale: 1.0,
+  // maximumScale: 1.0,
+  // userScalable: false,
   themeColor: "#ffcb05",
 };
 

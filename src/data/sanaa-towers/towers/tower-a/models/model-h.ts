@@ -20,22 +20,45 @@ export const modelH: ModelData<"SanaaTowers"> = {
       alt: "towers.tower-a.model-h.layout.images.image-1",
     },
   ],
-  details: {
-    images: [
-      {
-        image: modelHNumberedImage,
-        alt: "towers.tower-a.model-h.layout.images.image-1",
-      },
-    ],
-    sections: [
-      {
-        title: "towers.tower-a.model-h.details.guest-section.title",
-        rooms: [
-          "towers.tower-a.model-h.details.guest-section.guest-reception-hall",
-          "towers.tower-a.model-h.details.guest-section.majlis-bathroom",
-          "towers.tower-a.model-h.details.guest-section.majlis-guest-lounge",
-        ],
-      },
-    ],
-  },
+  details: [
+    {
+      images: [
+        {
+          image: modelHNumberedImage,
+          alt: "towers.tower-a.model-h.layout.images.image-1",
+        },
+      ],
+      sections: [
+        {
+          title: "towers.tower-a.model-h.details.guest-section.title",
+          rooms: [
+            "towers.tower-a.model-h.details.guest-section.guest-reception-hall",
+            "towers.tower-a.model-h.details.guest-section.majlis-bathroom",
+            "towers.tower-a.model-h.details.guest-section.majlis-guest-lounge",
+          ],
+        },
+        {
+          title: "towers.tower-a.model-h.details.family-wing-section.title",
+          rooms: [
+            "towers.tower-a.model-h.details.family-wing-section.living-room",
+            "towers.tower-a.model-h.details.family-wing-section.balcony",
+            "towers.tower-a.model-h.details.family-wing-section.dining-room",
+            "towers.tower-a.model-h.details.family-wing-section.kitchen",
+            "towers.tower-a.model-h.details.family-wing-section.bedroom-1",
+            "towers.tower-a.model-h.details.family-wing-section.bedroom-2",
+            "towers.tower-a.model-h.details.family-wing-section.bedroom-3",
+            "towers.tower-a.model-h.details.family-wing-section.main-bathroom",
+          ],
+        },
+        {
+          title: "towers.tower-a.model-h.details.master-bedroom-suite.title",
+          rooms: [
+            "towers.tower-a.model-h.details.master-bedroom-suite.bedroom",
+            "towers.tower-a.model-h.details.master-bedroom-suite.dressing-room",
+            "towers.tower-a.model-h.details.master-bedroom-suite.bathroom",
+          ],
+        },
+      ],
+    },
+  ],
 };

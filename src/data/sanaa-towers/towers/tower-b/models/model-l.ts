@@ -20,22 +20,41 @@ export const modelL: ModelData<"SanaaTowers"> = {
       alt: "towers.tower-b.model-l.layout.images.image-1",
     },
   ],
-  details: {
-    images: [
-      {
-        image: modelLNumberedImage,
-        alt: "towers.tower-b.model-l.layout.images.image-1",
-      },
-    ],
-    sections: [
-      {
-        title: "towers.tower-b.model-l.details.guest-section.title",
-        rooms: [
-          "towers.tower-b.model-l.details.guest-section.guest-reception-hall",
-          "towers.tower-b.model-l.details.guest-section.majlis-bathroom",
-          "towers.tower-b.model-l.details.guest-section.majlis-guest-lounge",
-        ],
-      },
-    ],
-  },
+  details: [
+    {
+      images: [
+        {
+          image: modelLNumberedImage,
+          alt: "towers.tower-b.model-l.layout.images.image-1",
+        },
+      ],
+      sections: [
+        {
+          title: "towers.tower-b.model-l.details.guest-section.title",
+          rooms: [
+            "towers.tower-b.model-l.details.guest-section.majlis-bathroom",
+            "towers.tower-b.model-l.details.guest-section.majlis-guest-lounge",
+          ],
+        },
+        {
+          title: "towers.tower-b.model-l.details.family-wing-section.title",
+          rooms: [
+            "towers.tower-b.model-l.details.family-wing-section.living-room",
+            "towers.tower-b.model-l.details.family-wing-section.balcony",
+            "towers.tower-b.model-l.details.family-wing-section.kitchen",
+            "towers.tower-b.model-l.details.family-wing-section.bedroom",
+            "towers.tower-b.model-l.details.family-wing-section.bathroom",
+          ],
+        },
+        {
+          title: "towers.tower-b.model-l.details.master-bedroom-suite.title",
+          rooms: [
+            "towers.tower-b.model-l.details.master-bedroom-suite.bedroom",
+            "towers.tower-b.model-l.details.master-bedroom-suite.dressing-room",
+            "towers.tower-b.model-l.details.master-bedroom-suite.bathroom",
+          ],
+        },
+      ],
+    },
+  ],
 };

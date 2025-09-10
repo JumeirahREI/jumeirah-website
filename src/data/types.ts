@@ -3,7 +3,6 @@ import { StaticImageData } from "next/image";
 
 export type Project = "SanaaTowers" | "Alhathaa-Towers";
 
-// Use relative keys within the given namespace (e.g., "title", "subtitle", "towers.tower-a.title")
 type BaseTranslation<T extends Project> = NestedKeyOf<Messages[T]>;
 
 export type ModelDetailsSection<T extends Project> = {
@@ -16,6 +15,11 @@ export type ImageData<T extends Project> = {
   alt: BaseTranslation<T>;
 };
 
+export type ModelDetails<T extends Project> = {
+  images: ImageData<T>[];
+  sections: ModelDetailsSection<T>[];
+};
+
 export type ModelData<T extends Project> = {
   name: BaseTranslation<T>;
   layout: {
@@ -24,10 +28,7 @@ export type ModelData<T extends Project> = {
   };
   videos?: string[];
   photos?: ImageData<T>[];
-  details?: {
-    images: ImageData<T>[];
-    sections: ModelDetailsSection<T>[];
-  };
+  details: ModelDetails<T>[];
 };
 
 export type TowerData<T extends Project> = {
