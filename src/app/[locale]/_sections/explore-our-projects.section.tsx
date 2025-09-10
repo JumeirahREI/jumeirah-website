@@ -3,8 +3,8 @@ import ImageContainer from "@/components/image-container";
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { useTranslations } from "next-intl";
-import alHathaaTowersImage from "../../../../public/images/alhathaa-towers.png";
-import sanaaTowersImage from "../../../../public/images/sanaa-towers.png";
+import alHathaaTowersImage from "../../../../public/images/alhathaa-towers.webp";
+import sanaaTowersImage from "../../../../public/images/sanaa-towers.webp";
 
 const projects = [
   {

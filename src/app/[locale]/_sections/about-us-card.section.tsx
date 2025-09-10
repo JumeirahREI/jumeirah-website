@@ -4,7 +4,7 @@ import Card from "@/components/ui/card";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import villaImage from "../../../../public/images/villa-image.png";
+import villaImage from "../../../../public/images/villa-image.webp";
 import missionIcon from "../../../../public/svg/mission-icon.svg";
 import targetIcon from "../../../../public/svg/target-icon.svg";
 

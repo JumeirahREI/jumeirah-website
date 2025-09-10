@@ -7,6 +7,7 @@ type SectionProps = {
   description?: string | React.ReactNode;
   className?: string;
   sectionLink?: () => React.ReactNode;
+  imgClassName?: string;
 } & PropsWithChildren;
 
 export default function Section({
@@ -15,10 +16,16 @@ export default function Section({
   sectionLink,
   className,
   children,
+  imgClassName,
 }: SectionProps) {
   return (
     <section className="bg-background relative overflow-x-clip">
-      <GridBackgroundEffect className="absolute start-1/2 top-0 !h-auto -translate-x-1/2 object-cover object-center opacity-70 lg:!w-full rtl:translate-x-1/2" />
+      <GridBackgroundEffect
+        className={cn(
+          "absolute start-1/2 top-0 !h-auto -translate-x-1/2 object-cover object-center opacity-70 lg:!w-full rtl:translate-x-1/2",
+          imgClassName,
+        )}
+      />
       <div className="relative z-30 container px-2 py-5 lg:mb-5">
         <div className="flex items-center justify-between">
           <h2 className="text-3xl md:text-4xl lg:text-5xl">{title}</h2>

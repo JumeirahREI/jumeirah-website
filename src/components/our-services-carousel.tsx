@@ -2,14 +2,12 @@
 
 import GotoIcon from "@/components/goto-icon";
 import ImageContainer from "@/components/image-container";
-import { useTranslations } from "next-intl";
+import useEmblaCarousel from "embla-carousel-react";
+import { useLocale, useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
-import "swiper/css";
-import { Virtual } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-import commercialPropertiesImage from "../../public/images/commercial-properties.png";
-import interiorDesignImage from "../../public/images/interior-design.png";
-import residentialPropertiesImage from "../../public/images/residential-properties.png";
+import commercialPropertiesImage from "../../public/images/commercial-properties.webp";
+import interiorDesignImage from "../../public/images/interior-design.webp";
+import residentialPropertiesImage from "../../public/images/residential-properties.webp";
 import commercialIcon from "../../public/svg/commercial-properties-icon.svg";
 import homeIcon from "../../public/svg/home-icon.svg";
 import interiorDesignIcon from "../../public/svg/interior-design-icon.svg";
@@ -36,30 +34,43 @@ const galleryImages = [
 ];
 
 export default function OurServicesCarousel() {
+  const locale = useLocale();
+  const [emplaRef] = useEmblaCarousel({
+    align: "center",
+    containScroll: false,
+    direction: locale === "ar" ? "rtl" : "ltr",
+    skipSnaps: true,
+    loop: true,
+    breakpoints: {
+      "(min-width: 768px)": {
+        align: "start",
+        loop: false,
+        dragFree: true,
+        containScroll: "keepSnaps",
+        slidesToScroll: 1,
+        skipSnaps: true,
+      },
+    },
+  });
+
   return (
     <>
       <div className="lg:hidden">
-        <Swiper
-          modules={[Virtual]}
-          spaceBetween={16}
-          slidesPerView={1.2}
-          slidesPerGroup={1}
-          loopAddBlankSlides
-          tag="ul"
-          wrapperTag="li"
-          centeredSlides
-          slideToClickedSlide
-          virtual
-          // edgeSwipeDetection="prevent"
-          // loopAdditionalSlides={3}
-          // loop
+        <div
+          ref={emplaRef}
+          className="embla w-full overflow-hidden md:px-4 xl:px-32"
         >
-          {galleryImages.map((image, index) => (
-            <SwiperSlide key={image.title} virtualIndex={index}>
-              <ServiceGalleryCard {...image} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+          <div className="embla__container flex">
+            {galleryImages.map((image, index) => (
+              <div
+                className="embla__slide mx-3 flex-[0_0_80%] md:flex-[0_0_47%]"
+                key={index}
+              >
+                <ServiceGalleryCard {...image} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
       <ul className="mx-auto hidden justify-between gap-5 lg:container lg:flex xl:gap-10">
         {galleryImages.map((image) => (
@@ -100,7 +111,7 @@ function ServiceGalleryCard({
             <Image
               src={icon}
               loading="lazy"
-              // placeholder="blur"
+              placeholder="empty"
               alt={t(title as Parameters<typeof t>[0])}
               className="size-14 lg:size-14 xl:size-20"
             />

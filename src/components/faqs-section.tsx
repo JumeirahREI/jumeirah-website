@@ -3,15 +3,11 @@
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { cn } from "@/lib/utils";
-import { AnimatePresence, LazyMotion } from "motion/react";
-import * as m from "motion/react-m";
+import { AnimatePresence, m } from "motion/react";
 import { useTranslations } from "next-intl";
 import { StaticImageData } from "next/image";
 import { useState } from "react";
-import faqImage from "../../public/images/faqs-image.png";
-
-const loadFeatures = () =>
-  import("@/app/motion-features/dom-animation").then((res) => res.default);
+import faqImage from "../../public/images/faqs-image.webp";
 
 const question = {
   question: "Lorem ipsum dolor sit amet consectetur. Sagittis id",
@@ -39,19 +35,17 @@ export default function FAQsSection() {
         </SectionLink>
       )}
     >
-      <LazyMotion features={loadFeatures}>
-        <ul className="relative space-y-8">
-          {questions.map((q, i) => (
-            <FAQCard
-              key={i}
-              {...q}
-              index={i}
-              onClick={() => setActiveIndex(i === activeIndex ? null : i)}
-              isActive={activeIndex === i}
-            />
-          ))}
-        </ul>
-      </LazyMotion>
+      <ul className="relative space-y-8">
+        {questions.map((q, i) => (
+          <FAQCard
+            key={i}
+            {...q}
+            index={i}
+            onClick={() => setActiveIndex(i === activeIndex ? null : i)}
+            isActive={activeIndex === i}
+          />
+        ))}
+      </ul>
     </Section>
   );
 }

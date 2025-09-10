@@ -1,8 +1,12 @@
 "use client";
 
-import { createContext, use, useState } from "react";
+import { ImageData, Project, ProjectData } from "@/data/types";
+import { createContext, use, useLayoutEffect, useState } from "react";
 
 type DataTab = "layout" | "videos" | "photos" | "details";
+
+type MediaContainerData = ImageData<Project> | ImageData<Project>[] | string;
+// | string[];
 
 interface TowersDisplayContextValue {
   selectedTower: number;
@@ -11,6 +15,10 @@ interface TowersDisplayContextValue {
   setSelectedModel: (model: number) => void;
   selectedDataTab: DataTab;
   setSelectedDataTab: (tab: DataTab) => void;
+  mediaContainerData: MediaContainerData;
+  setMediaContainerData: (data: MediaContainerData) => void;
+  selectedMediaIndex: number;
+  setSelectedMediaIndex: (index: number) => void;
 }
 
 const TowersDisplayContext = createContext<TowersDisplayContextValue>({
@@ -20,16 +28,27 @@ const TowersDisplayContext = createContext<TowersDisplayContextValue>({
   setSelectedModel: () => {},
   selectedDataTab: "layout",
   setSelectedDataTab: () => {},
+  mediaContainerData: [],
+  setMediaContainerData: () => {},
+  selectedMediaIndex: 0,
+  setSelectedMediaIndex: () => {},
 });
 
 export function TowersDisplayProvider({
   children,
+  projectData,
 }: {
   children: React.ReactNode;
+  projectData: ProjectData<Project>;
 }) {
   const [selectedTower, setSelectedTower] = useState(0);
   const [selectedModel, setSelectedModel] = useState(0);
   const [selectedDataTab, setSelectedDataTab] = useState<DataTab>("layout");
+  const [mediaContainerData, setMediaContainerData] =
+    useState<MediaContainerData>(
+      projectData.towersSection[0].models[0].layout.images,
+    );
+  const [selectedMediaIndex, setSelectedMediaIndex] = useState(0);
 
   const handleTowerSelection = (tower: number) => {
     if (selectedTower === tower) {
@@ -55,6 +74,43 @@ export function TowersDisplayProvider({
     setSelectedDataTab(tab);
   };
 
+  useLayoutEffect(() => {
+    switch (selectedDataTab) {
+      case "layout":
+        const imageData =
+          projectData.towersSection[selectedTower].models[selectedModel].layout
+            .images;
+        setMediaContainerData(imageData);
+        break;
+      case "videos":
+        const videos =
+          projectData.towersSection[selectedTower].models[selectedModel].videos;
+        if (!videos) {
+          return;
+        }
+        setMediaContainerData(videos[0]);
+        break;
+      case "photos":
+        const photos =
+          projectData.towersSection[selectedTower].models[selectedModel].photos;
+        if (!photos) {
+          return;
+        }
+        setMediaContainerData(photos);
+        break;
+      case "details":
+        const details =
+          projectData.towersSection[selectedTower].models[selectedModel]
+            .details;
+        if (!details) {
+          return;
+        }
+        setMediaContainerData(details.images);
+        break;
+    }
+    setSelectedMediaIndex(0);
+  }, [selectedDataTab, selectedTower, selectedModel]);
+
   return (
     <TowersDisplayContext.Provider
       value={{
@@ -64,6 +120,10 @@ export function TowersDisplayProvider({
         setSelectedModel: handleModelSelection,
         selectedDataTab,
         setSelectedDataTab: handleDataTabSelection,
+        mediaContainerData,
+        setMediaContainerData,
+        selectedMediaIndex,
+        setSelectedMediaIndex,
       }}
     >
       {children}

@@ -11,16 +11,21 @@ export type ModelDetailsSection<T extends Project> = {
   rooms: BaseTranslation<T>[];
 };
 
+export type ImageData<T extends Project> = {
+  image: StaticImageData;
+  alt: BaseTranslation<T>;
+};
+
 export type ModelData<T extends Project> = {
   name: BaseTranslation<T>;
   layout: {
     description: BaseTranslation<T>;
-    image: StaticImageData;
+    images: ImageData<T>[];
   };
   videos?: string[];
-  photos?: StaticImageData[];
+  photos?: ImageData<T>[];
   details?: {
-    image: StaticImageData;
+    images: ImageData<T>[];
     sections: ModelDetailsSection<T>[];
   };
 };

@@ -1,5 +1,6 @@
 import ContactUsSection from "@/components/contact-us-section";
 import FAQsSection from "@/components/faqs-section";
+import LazyMotionProvider from "@/components/lazy-motion-provider";
 import Navbar from "@/components/navbar";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { aeonikFont, montserratArabicFont } from "@/fonts";
@@ -9,7 +10,7 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import heroBackgroundImage from "../../../public/images/hero-background-image.jpg";
+import heroBackgroundImage from "../../../public/images/hero-background-image.webp";
 import "../globals.css";
 
 export const viewport: Viewport = {
@@ -46,14 +47,16 @@ export default async function RootLayout({
       className={font.className}
     >
       <body className="bg-background text-foreground relative max-w-svw overflow-x-clip font-sans md:pt-4 lg:pt-10">
-        {process.env.NODE_ENV === "development" && <ScreenSizeIndicator />}
-        <NextIntlClientProvider locale={locale}>
-          <Navbar />
-          <div>{children}</div>
-          <FAQsSection />
-          <ContactUsSection />
-        </NextIntlClientProvider>
-        <BackgroundImage />
+        <LazyMotionProvider>
+          {process.env.NODE_ENV === "development" && <ScreenSizeIndicator />}
+          <NextIntlClientProvider locale={locale}>
+            <Navbar />
+            <div>{children}</div>
+            <FAQsSection />
+            <ContactUsSection />
+          </NextIntlClientProvider>
+          <BackgroundImage />
+        </LazyMotionProvider>
       </body>
     </html>
   );

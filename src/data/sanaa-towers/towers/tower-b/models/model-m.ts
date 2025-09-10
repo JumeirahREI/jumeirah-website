@@ -1,0 +1,41 @@
+import modelMImage from "../../../../../../public/images/sanaa-towers/sanaa-towers-model-m.webp";
+import modelMNumberedImage from "../../../../../../public/images/sanaa-towers/sanaa-towers-numbered-model-m.webp";
+import { ModelData } from "../../../../types";
+
+export const modelM: ModelData<"SanaaTowers"> = {
+  name: "towers.tower-b.model-m.name",
+  layout: {
+    description: "towers.tower-b.model-m.layout.description",
+    images: [
+      {
+        image: modelMImage,
+        alt: "towers.tower-b.model-m.layout.images.image-1",
+      },
+    ],
+  },
+  videos: ["https://www.youtube.com/watch?v=wueQKy86aSY&pp=ugUEEgJlbg%3D%3D"],
+  photos: [
+    {
+      image: modelMImage,
+      alt: "towers.tower-b.model-m.layout.images.image-1",
+    },
+  ],
+  details: {
+    images: [
+      {
+        image: modelMNumberedImage,
+        alt: "towers.tower-b.model-m.layout.images.image-1",
+      },
+    ],
+    sections: [
+      {
+        title: "towers.tower-b.model-m.details.guest-section.title",
+        rooms: [
+          "towers.tower-b.model-m.details.guest-section.guest-reception-hall",
+          "towers.tower-b.model-m.details.guest-section.majlis-bathroom",
+          "towers.tower-b.model-m.details.guest-section.majlis-guest-lounge",
+        ],
+      },
+    ],
+  },
+};

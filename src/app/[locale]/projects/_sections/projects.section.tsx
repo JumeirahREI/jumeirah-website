@@ -4,23 +4,20 @@ import CategoriesTabBar from "@/app/[locale]/projects/components/categories-tab-
 import CategoryProjectItem from "@/app/[locale]/projects/components/category-project-item";
 import CarouselArrowButton from "@/components/carousel-arrow-button";
 import useEmblaCarousel from "embla-carousel-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/virtual";
-import { Virtual } from "swiper/modules";
-import { Swiper } from "swiper/react";
-import adenTowersImage from "../../../../../public/images/aden-towers.png";
-import alHathaaTowersImage from "../../../../../public/images/alhathaa-towers.png";
-import sanaaTowersImage from "../../../../../public/images/sanaa-towers.png";
+import adenTowersImage from "../../../../../public/images/aden-towers.webp";
+import alHathaaTowersImage from "../../../../../public/images/alhathaa-towers.webp";
+import sanaaTowersImage from "../../../../../public/images/sanaa-towers.webp";
 
 export default function ProjectsSection() {
   const t = useTranslations("ProjectsPage");
   const [selectedTab, setSelectedTab] = useState("all-projects");
+  const locale = useLocale();
   const [emblaRef, emblaApi] = useEmblaCarousel({
     align: "center",
     containScroll: false,
+    direction: locale === "ar" ? "rtl" : "ltr",
     skipSnaps: true,
     breakpoints: {
       "(min-width: 768px)": {
@@ -121,50 +118,3 @@ export default function ProjectsSection() {
     </section>
   );
 }
-
-const OldSlider = () => {
-  return (
-    <Swiper
-      modules={[Virtual]}
-      spaceBetween={32}
-      slidesPerView={3}
-      centerInsufficientSlides
-      tag="section"
-      slideToClickedSlide
-      virtual
-      breakpoints={{
-        0: {
-          slidesPerView: 1,
-          slidesPerGroup: 1,
-          slidesPerGroupSkip: 1,
-        },
-        768: {
-          slidesPerView: 2,
-          slidesPerGroup: 2,
-          slidesPerGroupSkip: 2,
-        },
-        1024: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
-          slidesPerGroupSkip: 3,
-        },
-        1280: {
-          slidesPerView: 4,
-          slidesPerGroup: 4,
-          slidesPerGroupSkip: 4,
-        },
-      }}
-    >
-      {/* {projects.map((project, index) => (
-      <SwiperSlide key={index} virtualIndex={index}>
-        <CategoryProjectItem
-          title={project.title}
-          status={project.status}
-          img={project.image}
-          href="#"
-        />
-      </SwiperSlide>
-    ))} */}
-    </Swiper>
-  );
-};

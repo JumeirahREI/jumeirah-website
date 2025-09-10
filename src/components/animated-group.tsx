@@ -1,5 +1,6 @@
 "use client";
-import { motion, Variants } from "motion/react";
+import { Variants, m } from "motion/react";
+// import * as m from "motion/react-m";
 import React, { ReactNode } from "react";
 
 export type PresetType =
@@ -17,6 +18,7 @@ export type PresetType =
 export type AnimatedGroupProps = {
   children: ReactNode;
   className?: string;
+  childrenClassName?: string;
   variants?: {
     container?: Variants;
     item?: Variants;
@@ -102,6 +104,7 @@ const addDefaultVariants = (variants: Variants) => ({
 function AnimatedGroup({
   children,
   className,
+  childrenClassName,
   variants,
   preset,
   as = "div",
@@ -114,8 +117,8 @@ function AnimatedGroup({
   const containerVariants = variants?.container || selectedVariants.container;
   const itemVariants = variants?.item || selectedVariants.item;
 
-  const MotionComponent = React.useMemo(() => motion.create(as), [as]);
-  const MotionChild = React.useMemo(() => motion.create(asChild), [asChild]);
+  const MotionComponent = React.useMemo(() => m.create(as), [as]);
+  const MotionChild = React.useMemo(() => m.create(asChild), [asChild]);
 
   return (
     <MotionComponent
@@ -125,7 +128,11 @@ function AnimatedGroup({
       className={className}
     >
       {React.Children.map(children, (child, index) => (
-        <MotionChild key={index} variants={itemVariants}>
+        <MotionChild
+          key={index}
+          variants={itemVariants}
+          className={childrenClassName}
+        >
           {child}
         </MotionChild>
       ))}

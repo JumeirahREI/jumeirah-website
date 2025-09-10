@@ -15,7 +15,9 @@
     "layout": "Layout",
     "videos": "Videos",
     "photos": "Photos",
-    "details": "Details"
+    "details": "Details",
+    "first-floor": "First Floor",
+    "second-floor": "Second Floor"
   },
   "Metadata": {
     "title": "Jumeirah Real Estate Investments | Premier Properties in Yemen",
@@ -79,6 +81,9 @@
         "model-a": {
           "name": "Model <span>A</span>",
           "layout": {
+            "images": {
+              "image-1": "Model A layout"
+            },
             "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
@@ -93,7 +98,10 @@
         "model-b": {
           "name": "Model <span>B</span>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model B layout"
+            },
+            "description": " With a total area of 330 square meters, Model B features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -107,7 +115,10 @@
         "model-c": {
           "name": "Model <span>C</span>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model C layout"
+            },
+            "description": " With a total area of 346 square meters, Model C features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -121,7 +132,10 @@
         "model-d": {
           "name": "Model <span>D</span>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model D layout"
+            },
+            "description": " With a total area of 326 square meters, Model D features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -135,7 +149,10 @@
         "model-h": {
           "name": "Model <span>H</span>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model H layout"
+            },
+            "description": " With a total area of 300 square meters, Model H features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -152,7 +169,10 @@
         "model-j": {
           "name": "Model <span>J</span>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model J layout"
+            },
+            "description": " With a total area of 230 square meters, Model J features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -166,7 +186,10 @@
         "model-k": {
           "name": "Model <span>K</span>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model K layout"
+            },
+            "description": " With a total area of 272 square meters, Model K features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -180,7 +203,10 @@
         "model-l": {
           "name": "Model <span>L</span>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model L layout"
+            },
+            "description": " With a total area of 171 square meters, Model L features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -194,7 +220,10 @@
         "model-m": {
           "name": "Model <span>M</span>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model M layout"
+            },
+            "description": " With a total area of 230 square meters, Model M features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -208,7 +237,10 @@
         "model-n": {
           "name": "Model <span>N</span>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model N layout"
+            },
+            "description": " With a total area of 212 square meters, Model N features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -222,7 +254,11 @@
         "model-t": {
           "name": "Model <span>T</span> <i>(Duplex)</i>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model T first floor layout",
+              "image-2": "Model T second floor layout"
+            },
+            "description": " With an area of 171 square meters giving a total area of 342 square meters for both floors, Model T features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -236,7 +272,11 @@
         "model-w": {
           "name": "Model <span>W</span> <i>(Duplex)</i>",
           "layout": {
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "images": {
+              "image-1": "Model W first floor layout",
+              "image-2": "Model W second floor layout"
+            },
+            "description": " With an area of 212 square meters giving a total area of 424 square meters for both floors, Model W features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -294,5 +334,32 @@
   "OurPartnersSection": {
     "title": "<span>O</span>ur Partners",
     "description": "We take pride in collaborating with a distinguished network of partners who share our vision for excellence, innovation, and sustainable growth."
+  },
+  "AboutUs": {
+    "meta-title": "About Us",
+    "meta-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential.",
+    "title": "<span>A</span>bout Us",
+    "subtitle": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential.",
+    "description": "At <strong>Jumeirah</strong>, we believe finding a home is more than a transaction—it’s about creating a space where dreams grow. Founded by a team of dedicated real estate professionals, we set out to make the home buying, selling, and renting process seamless and personal. With a focus on understanding each client's unique needs, we’ve helped countless individuals and families find homes that truly fit their lifestyle and aspirations.",
+    "our-vision": "Our Vision",
+    "our-vision-title": "Leading with Excellence, Integrity, and Innovation in Real Estate",
+    "our-vision-subtitle": "Our vision is to become a trusted leader in the real estate industry by delivering excellence, integrity, and innovation in every transaction.",
+    "our-mission": "Our Mission",
+    "our-mission-title": "Tailored Real Estate Solutions for Every Client",
+    "our-mission-subtitle": "Our mission is to provide clients with seamless real estate solutions tailored to their unique needs, ensuring a rewarding and fulfilling experience at every step.",
+    "what-we-stand-for": "<span>W</span>hat We Stand For",
+    "what-we-stand-for-subtitle": "Core principles that guide every transaction, ensuring excellence and client satisfaction.",
+    "integrity": "<span>I</span>ntegrity",
+    "integrity-description": "We are always honest and transparent in all dealings, ensuring that clients receive clear and accurate information to make informed decisions.",
+    "excellence": "<span>E</span>xcellence",
+    "excellence-description": "We strive to exceed expectations by delivering outstanding results, paying close attention to detail and committing fully to the quality of our services.",
+    "customer-centricity": "<span>C</span>ustomer-Centricity",
+    "customer-centricity-description": "Our clients are our top priority; we listen carefully to their needs and provide personalized solutions tailored to each individual.",
+    "innovation": "<span>I</span>nnovation",
+    "innovation-description": "We continuously adopt the latest technologies and ideas to offer better, more efficient, and relevant services in the ever-evolving real estate market.",
+    "collaboration": "<span>C</span>ollaboration",
+    "collaboration-description": "We believe in the power of teamwork, both internally and with our clients, ensuring that every project benefits from collective expertise and shared goals.",
+    "sustainability": "<span>S</span>ustainability",
+    "sustainability-description": "We are dedicated to supporting eco-friendly practices and sustainable development, ensuring a positive impact on both the community and the environment."
   }
 }

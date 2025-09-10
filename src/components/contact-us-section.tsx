@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { PropsWithChildren } from "react";
-import footerImage from "../../public/images/footer-image.png";
+import footerImage from "../../public/images/footer-image.webp";
 import emailIcon from "../../public/svg/email-icon.svg";
 import locationIcon from "../../public/svg/location-icon.svg";
 import phoneIcon from "../../public/svg/phone-icon.svg";

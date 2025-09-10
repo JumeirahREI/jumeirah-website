@@ -46,7 +46,7 @@
 }
 
 @utility border-gradient-to-e {
-  @apply relative before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:bg-[linear-gradient(var(--tw-border-gradient-angle),var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''] rtl:before:bg-[linear-gradient(var(--tw-border-gradient-angle),var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)];
+  @apply relative before:absolute before:inset-0 before:z-10 before:rounded-[inherit] before:bg-[linear-gradient(var(--tw-border-gradient-angle),var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)] before:p-[var(--tw-border-gradient-width)] before:content-[''] rtl:before:bg-[linear-gradient(var(--tw-border-gradient-angle),var(--tw-border-gradient-from-stop)_-16.65%,var(--tw-border-gradient-to-stop)_119.21%)];
 
   &::before {
     --tw-border-gradient-angle: 270deg;
@@ -205,6 +205,14 @@ body {
         "description media"
         "description media"
         "data-tabs media";
+    }
+
+    .tower-display-grid:has(div[aria-label="details"]) {
+      grid-template-areas:
+        "model-tabs model-tabs"
+        "description description"
+        "description description"
+        "data-tabs data-tabs";
     }
   }
 }
