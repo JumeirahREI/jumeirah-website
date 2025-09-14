@@ -1,7 +1,7 @@
 "use client";
 import { Variants, m } from "motion/react";
 // import * as m from "motion/react-m";
-import React, { ReactNode } from "react";
+import React, { ReactNode, Ref } from "react";
 
 export type PresetType =
   | "fade"
@@ -26,12 +26,18 @@ export type AnimatedGroupProps = {
   preset?: PresetType;
   as?: React.ElementType;
   asChild?: React.ElementType;
+  inView?:
+    | boolean
+    | { once?: boolean; amount?: number | "some" | "all"; margin?: string };
+  disabled?: boolean;
+  inherit?: boolean;
+  ref?: Ref<any>;
 };
 
 const defaultContainerVariants: Variants = {
   visible: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
     },
   },
 };
@@ -109,6 +115,10 @@ function AnimatedGroup({
   preset,
   as = "div",
   asChild = "div",
+  inView = false,
+  disabled = false,
+  inherit = false,
+  ref,
 }: AnimatedGroupProps) {
   const selectedVariants = {
     item: addDefaultVariants(preset ? presetVariants[preset] : {}),
@@ -120,12 +130,39 @@ function AnimatedGroup({
   const MotionComponent = React.useMemo(() => m.create(as), [as]);
   const MotionChild = React.useMemo(() => m.create(asChild), [asChild]);
 
+  if (disabled) {
+    const ContainerTag = as as React.ElementType;
+    const ChildTag = asChild as React.ElementType;
+    return (
+      <ContainerTag className={className}>
+        {React.Children.map(children, (child, index) => (
+          <ChildTag key={index} className={childrenClassName}>
+            {child}
+          </ChildTag>
+        ))}
+      </ContainerTag>
+    );
+  }
+
+  const motionVisibilityProps = inherit
+    ? {}
+    : inView
+      ? {
+          initial: "hidden" as const,
+          whileInView: "visible" as const,
+          viewport:
+            typeof inView === "object"
+              ? inView
+              : { once: true, amount: 0.5, marginTop: "-300px" },
+        }
+      : { initial: "hidden" as const, animate: "visible" as const };
+
   return (
     <MotionComponent
-      initial="hidden"
-      animate="visible"
+      {...motionVisibilityProps}
       variants={containerVariants}
       className={className}
+      ref={ref}
     >
       {React.Children.map(children, (child, index) => (
         <MotionChild

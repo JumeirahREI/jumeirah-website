@@ -226,5 +226,9 @@ img {
   -khtml-user-drag: none; /* For older Konqueror browsers */
   -moz-user-drag: none; /* For Mozilla Firefox */
   -o-user-drag: none; /* For Opera */
-  user-drag: none; /* Standard property */
+  /* user-drag: none; */
+}
+
+@utility space-sections {
+  @apply space-y-16;
 }

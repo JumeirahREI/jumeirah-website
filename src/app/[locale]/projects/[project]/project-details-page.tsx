@@ -10,8 +10,6 @@ interface ProjectDetailsProps {
 }
 
 export default function ProjectDetails({ projectData }: ProjectDetailsProps) {
-  console.log(projectData);
-
   const t = useTranslations(projectData.projectKey);
   const ct = useTranslations("Common");
 

@@ -6,14 +6,17 @@ export default function ContactUsFrom() {
   const t = useTranslations("ContactUs");
 
   return (
-    <GlassCard className="space-y-4 rounded-4xl md:space-y-6 lg:rounded-[3rem] lg:px-8 lg:py-7">
+    <GlassCard
+      disableGlow
+      className="space-y-4 rounded-4xl backdrop-blur-lg md:space-y-6 lg:rounded-[3rem] lg:px-8 lg:py-7"
+    >
       <div>
         <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl">
           {t.rich("contact-us", {
             span: (s) => <span className="text-primary">{s}</span>,
           })}
         </h3>
-        <h4 className="mt-2 text-sm font-light text-neutral-200/70 md:text-base lg:mt-4 lg:text-xl">
+        <h4 className="mt-2 text-sm font-light text-[#9C9C9C] md:text-base lg:mt-4 lg:text-xl">
           {t("description")}
         </h4>
       </div>
@@ -47,7 +50,7 @@ function Input({ className, ...props }: React.ComponentProps<"input">) {
   return (
     <input
       className={cn(
-        "rounded-full border border-white/30 bg-white/5 p-3 placeholder-white/30",
+        "rounded-full border border-white/30 bg-white/5 px-5 py-3 placeholder-white/30",
         className,
       )}
       maxLength={255}
@@ -61,7 +64,7 @@ function TextArea({ className, ...props }: React.ComponentProps<"textarea">) {
     <textarea
       rows={5}
       className={cn(
-        "resize-none rounded-3xl border border-white/30 bg-white/5 p-3 placeholder-white/30",
+        "resize-none rounded-3xl border border-white/30 bg-white/5 px-5 py-3 placeholder-white/30",
         className,
       )}
       {...props}

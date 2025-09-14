@@ -1,4 +1,8 @@
+import { AnimatedGroup } from "@/components/animated-group";
+import SectionWrapper from "@/components/section-wrapper";
+import { TextEffect } from "@/components/text-effect";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
+import { transitionVariants } from "@/lib/transition";
 import { cn } from "@/lib/utils";
 import { PropsWithChildren } from "react";
 
@@ -7,6 +11,7 @@ type SectionProps = {
   description?: string | React.ReactNode;
   className?: string;
   sectionLink?: () => React.ReactNode;
+  enableAnimation?: boolean;
   imgClassName?: string;
 } & PropsWithChildren;
 
@@ -15,11 +20,12 @@ export default function Section({
   description,
   sectionLink,
   className,
+  enableAnimation = false,
   children,
   imgClassName,
 }: SectionProps) {
   return (
-    <section className="bg-background relative overflow-x-clip">
+    <SectionWrapper enableAnimation={enableAnimation}>
       <GridBackgroundEffect
         className={cn(
           "absolute start-1/2 top-0 !h-auto -translate-x-1/2 object-cover object-center opacity-70 lg:!w-full rtl:translate-x-1/2",
@@ -28,13 +34,31 @@ export default function Section({
       />
       <div className="relative z-30 container px-2 py-5 lg:mb-5">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl">{title}</h2>
-          {sectionLink?.()}
+          <TextEffect
+            preset="fade-in-blur"
+            as="h2"
+            className="text-3xl md:text-4xl xl:text-5xl"
+            inherit
+          >
+            {title}
+          </TextEffect>
+          {sectionLink && (
+            <AnimatedGroup variants={transitionVariants} inherit>
+              {sectionLink()}
+            </AnimatedGroup>
+          )}
         </div>
         {description && (
-          <p className="mt-2 text-sm font-light text-neutral-200/70 md:text-lg lg:mt-6 lg:text-[1.7rem]">
+          <TextEffect
+            preset="fade-in-blur"
+            as="p"
+            delay={0.2}
+            speedReveal={2.4}
+            className="mt-2 text-sm font-light text-[#9C9C9C] md:text-lg lg:text-xl xl:mt-6 xl:text-[1.7rem]"
+            inherit
+          >
             {description}
-          </p>
+          </TextEffect>
         )}
       </div>
       <div
@@ -42,6 +66,6 @@ export default function Section({
       >
         {children}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -1,4 +1,4 @@
-import OurServicesCarousel from "@/components/our-services-carousel";
+import OurServicesCarousel from "@/app/[locale]/components/our-services-carousel";
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { useTranslations } from "next-intl";
@@ -20,7 +20,8 @@ export default function OurServicesSection() {
           })}
         </SectionLink>
       )}
-      className="!max-w-none !px-0 lg:!px-4"
+      className="!px-0 max-lg:!max-w-none lg:!px-4"
+      enableAnimation
     >
       <OurServicesCarousel />
     </Section>

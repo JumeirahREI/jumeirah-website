@@ -5,6 +5,7 @@
     "home": "Home",
     "projects": "Projects",
     "about-us": "About Us",
+    "about": "About",
     "blog": "Blog",
     "contact-us": "Contact Us",
     "our-services": "Our Services",
@@ -17,7 +18,11 @@
     "photos": "Photos",
     "details": "Details",
     "first-floor": "1<sup>st</sup> Floor",
-    "second-floor": "2<sup>nd</sup> Floor"
+    "second-floor": "2<sup>nd</sup> Floor",
+    "company": "Company",
+    "subscribe": "Subscribe to our newsletter",
+    "subscribe-description": "Be the first to receive exciting news, insider tips, and special promotions.",
+    "all-projects": "All Projects"
   },
   "Metadata": {
     "title": "Jumeirah Real Estate Investments | Premier Properties in Yemen",

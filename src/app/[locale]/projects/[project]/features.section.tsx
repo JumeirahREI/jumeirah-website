@@ -20,7 +20,7 @@ export default function FeaturesSection({
             span: (s) => <span className="text-primary">{s}</span>,
           })}
         </h2>
-        <p className="mt-2 mb-4 text-center text-sm font-light text-wrap text-neutral-200/70 md:text-lg lg:mx-32 lg:mt-3 lg:mb-10 lg:text-xl lg:leading-relaxed xl:mx-52 xl:text-2xl 2xl:mx-80">
+        <p className="mt-2 mb-4 text-center text-sm font-light text-wrap text-[#9C9C9C] md:text-lg lg:mx-32 lg:mt-3 lg:mb-10 lg:text-xl lg:leading-relaxed xl:mx-52 xl:text-2xl 2xl:mx-80">
           {t(fs.subtitle)}
         </p>
         <ul className="grid grid-cols-2 gap-2.5 md:grid-cols-3 2xl:gap-8">

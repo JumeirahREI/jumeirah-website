@@ -20,8 +20,6 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
     notFound();
   }
 
-  console.log(projects[project]);
-
   return <ProjectDetails projectData={projects[project]} />;
 }
 

@@ -1,16 +1,16 @@
-"use client";
-
+import commercialPropertiesImage from "@/../public/images/commercial-properties.webp";
+import interiorDesignImage from "@/../public/images/interior-design.webp";
+import residentialPropertiesImage from "@/../public/images/residential-properties.webp";
+import commercialIcon from "@/../public/svg/commercial-properties-icon.svg";
+import homeIcon from "@/../public/svg/home-icon.svg";
+import interiorDesignIcon from "@/../public/svg/interior-design-icon.svg";
+import { AnimatedGroup } from "@/components/animated-group";
+import Carousel from "@/components/carousel";
 import GotoIcon from "@/components/goto-icon";
 import ImageContainer from "@/components/image-container";
-import useEmblaCarousel from "embla-carousel-react";
-import { useLocale, useTranslations } from "next-intl";
+import { transitionVariants } from "@/lib/transition";
+import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
-import commercialPropertiesImage from "../../public/images/commercial-properties.webp";
-import interiorDesignImage from "../../public/images/interior-design.webp";
-import residentialPropertiesImage from "../../public/images/residential-properties.webp";
-import commercialIcon from "../../public/svg/commercial-properties-icon.svg";
-import homeIcon from "../../public/svg/home-icon.svg";
-import interiorDesignIcon from "../../public/svg/interior-design-icon.svg";
 
 const galleryImages = [
   {
@@ -33,58 +33,46 @@ const galleryImages = [
   },
 ];
 
-export default function OurServicesCarousel() {
-  const locale = useLocale();
-  const [emplaRef] = useEmblaCarousel({
-    align: "center",
-    containScroll: false,
-    direction: locale === "ar" ? "rtl" : "ltr",
-    skipSnaps: true,
-    loop: true,
-    breakpoints: {
-      "(min-width: 768px)": {
-        align: "start",
-        loop: false,
-        dragFree: true,
-        containScroll: "keepSnaps",
-        slidesToScroll: 1,
-        skipSnaps: true,
-      },
+const carouselOptions = {
+  align: "center",
+  containScroll: false,
+  skipSnaps: true,
+  breakpoints: {
+    "(min-width: 768px)": {
+      align: "start",
+      loop: false,
+      dragFree: true,
+      containScroll: "keepSnaps",
+      slidesToScroll: 1,
+      skipSnaps: true,
     },
-  });
+    "(min-width: 1024px)": {
+      align: "center",
+      slidesToScroll: 3,
+      active: false,
+    },
+  },
+} as const;
 
+export default function OurServicesCarousel() {
   return (
-    <>
-      <div className="lg:hidden">
-        <div
-          ref={emplaRef}
-          className="embla w-full overflow-hidden md:px-4 xl:px-32"
+    <div className="lg:container">
+      <Carousel
+        options={carouselOptions}
+        className="w-full overflow-hidden md:px-4"
+      >
+        <AnimatedGroup
+          variants={transitionVariants}
+          className="embla__container flex lg:justify-between lg:gap-5"
+          inherit
+          childrenClassName="embla__slide lg:mx-0 lg:gap-5 lg:justify-between mx-3 flex-[0_0_80%] lg:flex-[0_0_32.5%] md:flex-[0_0_44%]"
         >
-          <div className="embla__container flex">
-            {galleryImages.map((image, index) => (
-              <div
-                className="embla__slide mx-3 flex-[0_0_80%] md:flex-[0_0_47%]"
-                key={index}
-              >
-                <ServiceGalleryCard {...image} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-      <ul className="mx-auto hidden justify-between gap-5 lg:container lg:flex xl:gap-10">
-        {galleryImages.map((image) => (
-          <ServiceGalleryCard
-            key={image.title}
-            src={image.src}
-            title={image.title}
-            tag="li"
-            icon={image.icon}
-            options={image.options}
-          />
-        ))}
-      </ul>
-    </>
+          {galleryImages.map((image, index) => (
+            <ServiceGalleryCard key={index} {...image} />
+          ))}
+        </AnimatedGroup>
+      </Carousel>
+    </div>
   );
 }
 
@@ -104,7 +92,11 @@ function ServiceGalleryCard({
   const t = useTranslations("OurServicesSection");
 
   return (
-    <ImageContainer src={src} containerTag={tag} className="flex-1 text-center">
+    <ImageContainer
+      src={src}
+      containerTag={tag}
+      className="h-full flex-1 text-center"
+    >
       <div className="flex h-full flex-col items-center justify-center gap-4 p-5 pt-16 lg:pt-30 xl:pt-44">
         <div className="flex w-full grow flex-col items-center gap-2">
           <div className="bg-glass rounded-full border border-white/30 p-4 md:p-4">
@@ -131,7 +123,7 @@ function ServiceGalleryCard({
           </div>
         </div>
         <GotoIcon
-          className="size-10 lg:size-10 lg:p-1.5 xl:mb-4 xl:size-14 xl:p-2"
+          className="size-10 justify-self-end lg:size-10 lg:p-1.5 xl:mb-4 xl:size-14 xl:p-2"
           alt={t(title as Parameters<typeof t>[0])}
         />
       </div>

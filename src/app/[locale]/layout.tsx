@@ -1,3 +1,4 @@
+import heroBackgroundImage from "@/../public/images/hero-background-image.webp";
 import ContactUsSection from "@/components/contact-us-section";
 import FAQsSection from "@/components/faqs-section";
 import LazyMotionProvider from "@/components/lazy-motion-provider";
@@ -10,7 +11,6 @@ import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import heroBackgroundImage from "../../../public/images/hero-background-image.webp";
 import "../globals.css";
 
 export const viewport: Viewport = {
