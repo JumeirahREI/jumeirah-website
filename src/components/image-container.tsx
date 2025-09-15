@@ -39,7 +39,10 @@ export default function ImageContainer({
           // placeholder="blur"
           fill
         />
-        <div className="absolute inset-0 -z-10 bg-linear-[208deg] from-zinc-900/0 to-zinc-900 rtl:bg-linear-[152deg]" />
+        <div
+          aria-hidden
+          className="!pointer-events-none absolute inset-0 -z-10 bg-linear-[208deg] from-zinc-900/0 to-zinc-900 rtl:bg-linear-[152deg]"
+        />
         {children && <figcaption className="size-full">{children}</figcaption>}
       </figure>
     </Tag>

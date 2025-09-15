@@ -11,6 +11,8 @@
   --color-primary: #ffcb05;
   --font-sans: var(--font-aeonik);
   --font-serif: var(--font-montserrat-arabic);
+  --fade-start: 0%;
+  --fade-end: 100%;
 }
 
 @utility bg-glass-gradient-to-s {
@@ -123,27 +125,61 @@
   }
 }
 
-@utility fade-x {
+.fade,
+.fade-start,
+.fade-end,
+.fade-x {
+  @apply [--fade-direction:right] rtl:[--fade-direction:left];
   position: relative;
   display: inline-block;
   -webkit-mask-image: linear-gradient(
-    to right,
+    to var(--fade-direction),
     transparent,
-    black 5%,
-    black 95%,
+    black var(--fade-start),
+    black var(--fade-end),
     transparent
   );
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: 100% 100%;
   mask-image: linear-gradient(
-    to right,
+    to var(--fade-direction),
     transparent,
-    black 5%,
-    black 95%,
+    black var(--fade-start),
+    black var(--fade-end),
     transparent
   );
   mask-repeat: no-repeat;
   mask-size: 100% 100%;
+
+  transition-property: --fade-start, --fade-end;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.fade-start:not(.fade-end) {
+  --fade-start: 10%;
+}
+
+.fade-end:not(.fade-start) {
+  --fade-end: 90%;
+}
+
+.fade-start.fade-end {
+  --fade-start: 10%;
+  --fade-end: 90%;
+}
+
+@utility fade-start {
+  --fade-end: 100%;
+}
+
+@utility fade-end {
+  --fade-start: 0%;
+}
+
+@utility fade-x {
+  --fade-start: 10%;
+  --fade-end: 90%;
 }
 
 @layer utilities {
@@ -209,7 +245,7 @@ body {
 
     .tower-display-grid:has(div[aria-label="details"]) {
       grid-template-areas:
-        "model-tabs model-tabs"
+        "model-tabs floor-tabs"
         "description description"
         "description description"
         "data-tabs data-tabs";

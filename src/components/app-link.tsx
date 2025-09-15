@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { cva, VariantProps } from "class-variance-authority";
 import React from "react";
 
-const appLinkVariants = cva("rounded-full px-5 py-3 lg:px-7 lg:py-3", {
+const appLinkVariants = cva("rounded-full z-40 px-5 py-3 lg:px-7 lg:py-3", {
   variants: {
     variant: {
       default:

@@ -5,7 +5,6 @@ import commercialIcon from "@/../public/svg/commercial-properties-icon.svg";
 import homeIcon from "@/../public/svg/home-icon.svg";
 import interiorDesignIcon from "@/../public/svg/interior-design-icon.svg";
 import { AnimatedGroup } from "@/components/animated-group";
-import Carousel from "@/components/carousel";
 import GotoIcon from "@/components/goto-icon";
 import ImageContainer from "@/components/image-container";
 import { transitionVariants } from "@/lib/transition";
@@ -33,45 +32,19 @@ const galleryImages = [
   },
 ];
 
-const carouselOptions = {
-  align: "center",
-  containScroll: false,
-  skipSnaps: true,
-  breakpoints: {
-    "(min-width: 768px)": {
-      align: "start",
-      loop: false,
-      dragFree: true,
-      containScroll: "keepSnaps",
-      slidesToScroll: 1,
-      skipSnaps: true,
-    },
-    "(min-width: 1024px)": {
-      align: "center",
-      slidesToScroll: 3,
-      active: false,
-    },
-  },
-} as const;
-
 export default function OurServicesCarousel() {
   return (
-    <div className="lg:container">
-      <Carousel
-        options={carouselOptions}
-        className="w-full overflow-hidden md:px-4"
+    <div className="container">
+      <AnimatedGroup
+        variants={transitionVariants}
+        className="flex flex-col gap-7 lg:flex-row lg:justify-between lg:gap-7"
+        childrenClassName="flex-1"
+        inherit
       >
-        <AnimatedGroup
-          variants={transitionVariants}
-          className="embla__container flex lg:justify-between lg:gap-5"
-          inherit
-          childrenClassName="embla__slide lg:mx-0 lg:gap-5 lg:justify-between mx-3 flex-[0_0_80%] lg:flex-[0_0_32.5%] md:flex-[0_0_44%]"
-        >
-          {galleryImages.map((image, index) => (
-            <ServiceGalleryCard key={index} {...image} />
-          ))}
-        </AnimatedGroup>
-      </Carousel>
+        {galleryImages.map((image, index) => (
+          <ServiceGalleryCard key={index} {...image} />
+        ))}
+      </AnimatedGroup>
     </div>
   );
 }
@@ -95,7 +68,7 @@ function ServiceGalleryCard({
     <ImageContainer
       src={src}
       containerTag={tag}
-      className="h-full flex-1 text-center"
+      className="h-full w-full flex-1 text-center"
     >
       <div className="flex h-full flex-col items-center justify-center gap-4 p-5 pt-16 lg:pt-30 xl:pt-44">
         <div className="flex w-full grow flex-col items-center gap-2">
@@ -105,13 +78,13 @@ function ServiceGalleryCard({
               loading="lazy"
               placeholder="empty"
               alt={t(title as Parameters<typeof t>[0])}
-              className="size-14 lg:size-14 xl:size-20"
+              className="size-12 md:size-14 lg:size-14 xl:size-20"
             />
           </div>
-          <h3 className="z-10 text-2xl lg:text-xl xl:text-4xl">
+          <h3 className="z-10 text-2xl xl:text-3xl 2xl:text-4xl">
             {t(title as Parameters<typeof t>[0])}
           </h3>
-          <div className="mt-4 mb-10 flex justify-center gap-3 self-stretch text-sm lg:mt-2 lg:gap-2 lg:text-xs xl:mt-4 xl:mb-10 xl:text-base">
+          <div className="mt-4 mb-4 flex justify-center gap-3 self-stretch text-sm md:mb-10 lg:mt-2 lg:gap-2 lg:text-xs xl:mt-4 xl:mb-10 xl:text-base">
             {options.map((option) => (
               <span
                 key={option}

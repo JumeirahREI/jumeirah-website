@@ -18,10 +18,10 @@ export default function TowerDisplayImage({
         onLoadStart={() => setIsLoading(true)}
         fill={fill}
         {...props}
-        className={cn("w-full scale-125 object-contain", props.className)}
+        className={cn("w-full scale-110 object-contain", props.className)}
       />
       {isLoading && (
-        <div className="absolute top-0 right-0 bottom-0 left-0 z-50 flex items-center justify-center">
+        <div className="absolute top-0 right-0 bottom-0 left-0 z-20 flex items-center justify-center">
           <Loader2 className="size-1/12 animate-spin" />
         </div>
       )}

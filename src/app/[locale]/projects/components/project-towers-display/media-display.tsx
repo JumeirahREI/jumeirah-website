@@ -4,6 +4,7 @@ import MediaContainer from "@/app/[locale]/projects/components/project-towers-di
 import TowerDisplayImage from "@/app/[locale]/projects/components/project-towers-display/tower-display-image";
 import { useTowersDisplayContext } from "@/app/[locale]/projects/components/project-towers-display/towers-display-context";
 import { Project } from "@/data/types";
+import { m } from "motion/react";
 import { useTranslations } from "next-intl";
 
 export default function MediaDisplay({
@@ -26,33 +27,39 @@ export default function MediaDisplay({
   if (Array.isArray(mediaContainerData)) {
     return (
       <MediaContainer className={className}>
-        {mediaContainerData.length > 1 &&
-          (selectedDataTab === "layout" || selectedDataTab === "details") && (
-            <div className="absolute start-4 bottom-4 z-40 flex items-center justify-center gap-2">
-              <FloorButton
-                onClick={() => setSelectedMediaIndex(0)}
-                isSelected={selectedMediaIndex === 0}
-              >
-                {ct.rich("first-floor", {
-                  sup: (children) => <sup>{children}</sup>,
-                })}
-              </FloorButton>
-              <FloorButton
-                onClick={() => setSelectedMediaIndex(1)}
-                isSelected={selectedMediaIndex === 1}
-              >
-                {ct.rich("second-floor", {
-                  sup: (children) => <sup>{children}</sup>,
-                })}
-              </FloorButton>
-            </div>
-          )}
-        <TowerDisplayImage
-          key={mediaContainerData[selectedMediaIndex].image.src}
-          src={mediaContainerData[selectedMediaIndex].image}
-          alt={t(mediaContainerData[selectedMediaIndex].alt)}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-        />
+        <m.div
+          layout
+          layoutId="towerDisplayImage"
+          className="absolute top-0 right-0 bottom-0 left-0"
+        >
+          {mediaContainerData.length > 1 &&
+            (selectedDataTab === "layout" || selectedDataTab === "details") && (
+              <div className="absolute start-4 bottom-4 z-40 flex items-center justify-center gap-2">
+                <FloorButton
+                  onClick={() => setSelectedMediaIndex(0)}
+                  isSelected={selectedMediaIndex === 0}
+                >
+                  {ct.rich("first-floor", {
+                    sup: (children) => <sup>{children}</sup>,
+                  })}
+                </FloorButton>
+                <FloorButton
+                  onClick={() => setSelectedMediaIndex(1)}
+                  isSelected={selectedMediaIndex === 1}
+                >
+                  {ct.rich("second-floor", {
+                    sup: (children) => <sup>{children}</sup>,
+                  })}
+                </FloorButton>
+              </div>
+            )}
+          <TowerDisplayImage
+            key={mediaContainerData[selectedMediaIndex].image.src}
+            src={mediaContainerData[selectedMediaIndex].image}
+            alt={t(mediaContainerData[selectedMediaIndex].alt)}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+          />
+        </m.div>
       </MediaContainer>
     );
   }

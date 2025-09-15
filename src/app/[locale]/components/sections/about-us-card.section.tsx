@@ -78,7 +78,7 @@ export default function AboutUsCard() {
               <GotoIcon alt="about-us" className="lg:max-xl:size-12" />
               <AppLink
                 className="z-10 py-1.5 text-xs font-bold lg:px-5 lg:py-2 lg:text-base xl:text-xl"
-                href="#"
+                href="/about"
               >
                 {ct("about-us")}
               </AppLink>

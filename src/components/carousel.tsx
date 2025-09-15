@@ -1,25 +1,38 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { EmblaCarouselType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { useLocale } from "next-intl";
+import { useEffect } from "react";
+
+export type CarouselOptions = Parameters<typeof useEmblaCarousel>[0];
+export type CarouselApi = EmblaCarouselType;
 
 type CarouselProps = {
   children: React.ReactNode;
   className?: string;
-  options: Parameters<typeof useEmblaCarousel>[0];
+  options: CarouselOptions;
+  onReady?(emblaApi: CarouselApi): void;
 };
 
 export default function Carousel({
   children,
   className,
   options,
+  onReady,
 }: CarouselProps) {
   const locale = useLocale();
-  const [emplaRef] = useEmblaCarousel({
+  const [emplaRef, emblaApi] = useEmblaCarousel({
     direction: locale === "ar" ? "rtl" : "ltr",
     ...options,
   });
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    onReady?.(emblaApi);
+  }, [emblaApi, onReady]);
 
   return (
     <div ref={emplaRef} className={cn("embla", className)}>

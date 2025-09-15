@@ -31,15 +31,15 @@ export default function DetailsPanel({
 
   if (selectedDataTab === "layout") {
     return (
-      <p className="p-4 leading-normal md:p-7 lg:p-14 xl:p-12 2xl:w-9/12 2xl:p-10 2xl:text-2xl">
-        {t(projectData.towersSection[0].models[0].layout.description)}
+      <p className="py-4 leading-normal md:py-7 lg:py-14 xl:py-12 2xl:w-9/12 2xl:py-10 2xl:text-2xl">
+        {t(selectedModelData.layout.description)}
       </p>
     );
   }
 
   if (selectedDataTab === "photos" && Array.isArray(mediaContainerData)) {
     return (
-      <div className="grid grid-flow-col grid-rows-2 gap-4 p-4 md:p-7 lg:p-14 xl:p-12 2xl:p-10">
+      <div className="grid grid-flow-col grid-rows-2 gap-4 py-4 md:py-7 lg:py-14 xl:py-12 2xl:py-10">
         {mediaContainerData.map((image, index) => (
           <div
             key={index}
@@ -85,64 +85,63 @@ function ModelDetailsPanel({
   );
 
   return (
-    <div className="2xl:pl-8 2xl:rtl:pr-8">
-      <div
-        aria-label="details"
-        className="grid grid-cols-1 gap-4 px-4 md:px-7 lg:grid-cols-2 lg:grid-rows-[1fr_auto] lg:px-14 xl:grid-cols-3 xl:px-12 2xl:gap-10 2xl:px-10 2xl:py-4"
-      >
-        <MediaDisplay
+    <div
+      aria-label="details"
+      className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:grid-rows-[1fr_auto] xl:grid-cols-3 2xl:gap-10 2xl:py-4"
+    >
+      <MediaDisplay
+        projectKey={projectKey}
+        className="h-52 lg:col-start-2 lg:row-start-1 lg:h-full xl:col-span-2 xl:col-start-2"
+      />
+      <div className="row-span-2 space-y-12 lg:py-5">
+        <SectionDetails
+          section={modelDetails.sections[0]}
           projectKey={projectKey}
-          className="h-52 lg:col-start-2 lg:row-start-1 lg:h-full xl:col-span-2 xl:col-start-2"
+          start={1}
         />
-        <div className="row-span-2 space-y-12 lg:py-5">
+        <SectionDetails
+          section={modelDetails.sections[1]}
+          projectKey={projectKey}
+          start={modelDetails.sections[0].rooms.length + 1}
+        />
+        {totalRooms <= 10 && modelDetails.sections.length > 2 && (
           <SectionDetails
-            section={modelDetails.sections[0]}
+            section={modelDetails.sections[2]}
             projectKey={projectKey}
-            start={1}
+            start={
+              modelDetails.sections[0].rooms.length +
+              modelDetails.sections[1].rooms.length +
+              1
+            }
           />
+        )}
+      </div>
+      {totalRooms > 10 && modelDetails.sections.length > 2 && (
+        <div className="flex justify-around xl:col-span-2 xl:col-start-2 2xl:gap-10">
           <SectionDetails
-            section={modelDetails.sections[1]}
+            section={modelDetails.sections[2]}
             projectKey={projectKey}
-            start={modelDetails.sections[0].rooms.length + 1}
+            start={
+              modelDetails.sections[0].rooms.length +
+              modelDetails.sections[1].rooms.length +
+              1
+            }
           />
-          {totalRooms <= 10 && modelDetails.sections.length > 2 && (
+          {modelDetails.sections.length > 3 && (
             <SectionDetails
-              section={modelDetails.sections[2]}
+              section={modelDetails.sections[3]}
               projectKey={projectKey}
               start={
                 modelDetails.sections[0].rooms.length +
                 modelDetails.sections[1].rooms.length +
+                modelDetails.sections[2].rooms.length +
                 1
               }
             />
           )}
         </div>
-        {totalRooms > 10 && modelDetails.sections.length > 2 && (
-          <div className="flex justify-around xl:col-span-2 xl:col-start-2 2xl:gap-10">
-            <SectionDetails
-              section={modelDetails.sections[2]}
-              projectKey={projectKey}
-              start={
-                modelDetails.sections[0].rooms.length +
-                modelDetails.sections[1].rooms.length +
-                1
-              }
-            />
-            {modelDetails.sections.length > 3 && (
-              <SectionDetails
-                section={modelDetails.sections[3]}
-                projectKey={projectKey}
-                start={
-                  modelDetails.sections[0].rooms.length +
-                  modelDetails.sections[1].rooms.length +
-                  modelDetails.sections[2].rooms.length +
-                  1
-                }
-              />
-            )}
-          </div>
-        )}
-        {/* {modelDetails.sections.map((section, index) => {
+      )}
+      {/* {modelDetails.sections.map((section, index) => {
         const details = (
           <SectionDetails
             key={index}
@@ -156,7 +155,6 @@ function ModelDetailsPanel({
 
         return details;
       })} */}
-      </div>
     </div>
   );
 }

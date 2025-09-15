@@ -64,7 +64,7 @@ export function TowersDisplayProvider({
       return;
     }
     setSelectedModel(model);
-    // setSelectedDataTab("layout");
+    setSelectedMediaIndex(0);
   };
 
   const handleDataTabSelection = (tab: DataTab) => {

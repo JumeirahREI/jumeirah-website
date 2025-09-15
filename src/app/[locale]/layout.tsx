@@ -72,6 +72,7 @@ function BackgroundImage() {
         placeholder="blur"
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
         priority
+        fetchPriority="high"
         fill
       />
       <div className="from-background/0 to-background/60 absolute start-0 top-0 -z-40 h-full w-4/6 bg-gradient-to-l rtl:bg-gradient-to-r" />

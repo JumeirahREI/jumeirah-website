@@ -5,7 +5,7 @@ import LogoType from "@/components/ui/logo-type";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Squeeze } from "hamburger-react";
-import { AnimatePresence, m } from "motion/react";
+import { m, Variants } from "motion/react";
 import { useMessages } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -54,6 +54,16 @@ const socials = [
 
 const SCROLL_THRESHOLD = 110;
 
+const navMenuVariants: Variants = {
+  open: {
+    opacity: 1,
+    height: "auto",
+  },
+  closed: {
+    opacity: 0,
+    height: 0,
+  },
+};
 export default function Navbar() {
   const [isOpenMobile, setIsOpenMobile] = useState(false);
   const messages = useMessages();
@@ -61,18 +71,25 @@ export default function Navbar() {
   const [showNavBackground, setShowNavBackground] = useState(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
+    const handleScroll = () => {
       if (window.scrollY > SCROLL_THRESHOLD) {
         setShowNavBackground(true);
       } else {
         setShowNavBackground(false);
       }
-    });
+      setIsOpenMobile(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", () => {});
+      window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [setIsOpenMobile]);
+
+  useEffect(() => {
+    setIsOpenMobile(false);
+  }, [pathname]);
 
   return (
     <nav className="fixed start-0 end-0 top-0 z-[9999] md:py-4 lg:pointer-events-none lg:sticky">
@@ -83,7 +100,7 @@ export default function Navbar() {
           showNavBackground && "opacity-80",
         )}
       />
-      <div className="container max-lg:pt-2 max-md:!px-2">
+      <div className="container max-lg:pt-2 max-md:!px-3">
         <div
           className={cn(
             "transition-[border-radius, backdrop-filter, background-color, border-color] mx-auto grid grid-cols-2 items-center justify-between rounded-md border border-white/0 backdrop-blur-none duration-400 max-lg:px-4 max-lg:py-1 lg:relative lg:container lg:flex lg:border-none lg:bg-transparent lg:backdrop-blur-none",
@@ -163,50 +180,47 @@ export default function Navbar() {
               rounded
             />
           </div>
-          <AnimatePresence>
-            {isOpenMobile && (
-              <m.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: "auto" }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2, ease: "easeOut" }}
-                className="col-span-2"
-              >
-                <ul className="space-y-2 py-4 text-lg">
-                  {links.map((link) => {
-                    const isActive =
-                      link.href === "/"
-                        ? pathname === link.href
-                        : pathname.startsWith(link.href);
+          <m.div
+            variants={navMenuVariants}
+            initial="closed"
+            animate={isOpenMobile ? "open" : "closed"}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="col-span-2 lg:hidden"
+          >
+            <ul className="space-y-2 py-4 text-lg">
+              {links.map((link) => {
+                const isActive =
+                  link.href === "/"
+                    ? pathname === link.href
+                    : pathname.startsWith(link.href);
 
-                    return (
-                      <li key={link.key} className="relative">
-                        <Link
-                          href={link.href}
-                          className={cn(
-                            "hover:text-primary transition-colors max-lg:w-full max-lg:p-2",
-                            isActive && "text-primary font-serif font-medium",
-                          )}
-                          onClick={(e) => {
-                            if (pathname === link.href) {
-                              e.preventDefault();
-                              window.scrollTo({
-                                top: 0,
-                                behavior: "smooth",
-                              });
-                            }
-                            setIsOpenMobile(false);
-                          }}
-                        >
-                          {messages.Common[link.key]}
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </m.div>
-            )}
-          </AnimatePresence>
+                return (
+                  <li key={link.key} className="relative">
+                    <Link
+                      href={link.href}
+                      prefetch
+                      className={cn(
+                        "hover:text-primary transition-colors max-lg:w-full max-lg:p-2",
+                        isActive && "text-primary font-serif font-medium",
+                      )}
+                      onClick={(e) => {
+                        if (pathname === link.href) {
+                          e.preventDefault();
+                          window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                          });
+                        }
+                        setIsOpenMobile(false);
+                      }}
+                    >
+                      {messages.Common[link.key]}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </m.div>
         </div>
       </div>
     </nav>
