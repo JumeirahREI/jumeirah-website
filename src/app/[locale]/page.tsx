@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <div className="space-sections overflow-hidden">
-      <header className="relative">
+      <header className="relative z-10">
         <div className="container grid grid-rows-2 pt-40 pb-16 md:pt-28 md:pb-40 lg:grid-cols-3 lg:pt-24">
           <div className="z-30 col-span-2 row-span-2 space-y-2 2xl:space-y-5 rtl:space-y-8">
             <AnimatedGroup
@@ -60,8 +60,8 @@ export default function Home() {
               </GlassCard>
             </AnimatedGroup>
             <AnimatedGroup
-              className="ms-2.5 mt-4 flex items-center justify-center gap-4 text-xs font-semibold md:mt-6 md:justify-start md:text-sm lg:text-base"
-              childrenClassName="rounded-full z-[-1]"
+              className="z-20 ms-2.5 mt-4 flex items-center justify-center gap-4 text-xs font-semibold md:mt-6 md:justify-start md:text-sm lg:text-base"
+              childrenClassName="rounded-full"
               variants={{
                 container: {
                   visible: {
@@ -99,7 +99,7 @@ function HeroBackground() {
   return (
     <>
       <div className="from-background/0 to-background via-background absolute start-0 bottom-0 -z-20 h-2/3 w-full translate-y-2/5 bg-gradient-to-b" />
-      <GridBackgroundEffect className="absolute start-0 bottom-0 z-20 -translate-x-1/2 translate-y-1/2 rtl:translate-x-1/2" />
+      <GridBackgroundEffect className="absolute start-0 bottom-0 -z-10 -translate-x-1/2 translate-y-1/2 rtl:translate-x-1/2" />
     </>
   );
 }
