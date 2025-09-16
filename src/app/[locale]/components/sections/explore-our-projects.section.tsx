@@ -7,7 +7,7 @@ import ImageContainer from "@/components/image-container";
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { Link } from "@/i18n/navigation";
-import { transitionVariants } from "@/lib/transition";
+import { transitionVariants } from "@/lib/transitions";
 import { useTranslations } from "next-intl";
 
 const projects = [
@@ -16,14 +16,14 @@ const projects = [
     titleNoSpan: "sanaa-towers-no-span",
     status: "under-construction",
     image: sanaaTowersImage,
-    href: "/sanaa-towers",
+    href: "/projects/sanaa-towers",
   },
   {
     title: "alhathaa-towers",
     titleNoSpan: "alhathaa-towers-no-span",
     status: "complete",
     image: alHathaaTowersImage,
-    href: "/alhathaa-towers",
+    href: "/projects/alhathaa-towers",
   },
 ] as const;
 
@@ -58,7 +58,6 @@ export default function ExploreOutProjectsSection() {
           })}
         </SectionLink>
       )}
-      className="pb-20 lg:pb-36"
       enableAnimation
     >
       <Carousel options={carouselOptions} className="w-full md:px-4">
@@ -72,7 +71,7 @@ export default function ExploreOutProjectsSection() {
             <ImageContainer
               key={p.title}
               src={p.image}
-              className="group transition-[filter, scale] w-full cursor-pointer overflow-hidden rounded-4xl duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem]"
+              className="group transition-[filter, scale] w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem]"
               imageClassName="transition-[filter] duration-300 ease-in-out lg:group-hover:brightness-125"
             >
               <Link

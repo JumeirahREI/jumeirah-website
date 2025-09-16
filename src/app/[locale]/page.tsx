@@ -6,7 +6,7 @@ import AppLink from "@/components/app-link";
 import { TextEffect } from "@/components/text-effect";
 import GlassCard from "@/components/ui/glass-card";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
-import { transitionVariants } from "@/lib/transition";
+import { luxuryPresets } from "@/lib/luxury-presets";
 import { useTranslations } from "next-intl";
 
 export default function Home() {
@@ -16,40 +16,25 @@ export default function Home() {
   return (
     <div className="space-sections overflow-hidden">
       <header className="relative z-10">
-        <div className="container grid grid-rows-2 pt-40 pb-16 md:pt-28 md:pb-40 lg:grid-cols-3 lg:pt-24">
+        <div className="container grid grid-rows-2 pt-52 pb-16 md:pt-28 md:pb-40 lg:grid-cols-3 lg:pt-5 xl:pt-16">
           <div className="z-30 col-span-2 row-span-2 space-y-2 2xl:space-y-5 rtl:space-y-8">
-            <AnimatedGroup
-              className="max-md:mb-10"
-              variants={transitionVariants}
+            <TextEffect
+              as="h1"
+              per="word"
+              variants={luxuryPresets.hero}
+              className="text-foreground drop-shadow-background/70 md:drop-shadow-background/20 text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-5xl lg:leading-tight xl:text-6xl rtl:leading-tight [&>span:nth-child(2)]:block"
             >
-              <h1 className="text-foreground drop-shadow-background/60 md:drop-shadow-background/20 text-center text-7xl leading-tight font-bold drop-shadow-xl md:text-start md:text-7xl lg:text-8xl xl:text-[7rem] rtl:leading-tight">
+              <span className="text-7xl font-bold md:text-8xl lg:text-[7rem] xl:text-[7rem]">
                 {t.rich("jumeirah-hero", {
                   span: (s) => <span className="text-primary">{s}</span>,
                 })}
-                <TextEffect
-                  as="span"
-                  preset="fade-in-blur"
-                  delay={0.25}
-                  className="md:text-4x block font-serif text-3xl lg:text-5xl xl:text-6xl"
-                >
-                  {ct("rei")}
-                  <span className="text-primary">.</span>
-                </TextEffect>
-              </h1>
-            </AnimatedGroup>
+              </span>{" "}
+              {ct("rei")}
+              <span className="text-primary">.</span>
+            </TextEffect>
             <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.05,
-                      delayChildren: 0.8,
-                    },
-                  },
-                },
-                ...transitionVariants,
-              }}
-              className="max-md:mb-10"
+              preset="slide"
+              className="max-md:mb-4"
               childrenClassName="backdrop-blur-xl w-fit rounded-3xl lg:rounded-4xl"
             >
               <GlassCard className="max-w-md backdrop-blur-none md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
@@ -61,21 +46,8 @@ export default function Home() {
             </AnimatedGroup>
             <AnimatedGroup
               className="z-20 ms-2.5 mt-4 flex items-center justify-center gap-4 text-xs font-semibold md:mt-6 md:justify-start md:text-sm lg:text-base"
-              childrenClassName="rounded-full"
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      staggerChildren: 0.3,
-                      delayChildren: 1,
-                    },
-                  },
-                },
-                item: {
-                  hidden: { opacity: 0, y: 12, backdropFilter: "blur(0px)" },
-                  visible: { opacity: 1, y: 0, backdropFilter: "blur(24px)" },
-                },
-              }}
+              childrenClassName="rounded-full backdrop-blur-lg"
+              preset="slide"
             >
               <AppLink href="/projects" variant="outline">
                 {t("our-projects")}

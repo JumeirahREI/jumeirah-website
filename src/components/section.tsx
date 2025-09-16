@@ -2,7 +2,7 @@ import { AnimatedGroup } from "@/components/animated-group";
 import SectionWrapper from "@/components/section-wrapper";
 import { TextEffect } from "@/components/text-effect";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
-import { transitionVariants } from "@/lib/transition";
+import { transitionVariants } from "@/lib/transitions";
 import { cn } from "@/lib/utils";
 import { PropsWithChildren } from "react";
 
@@ -35,7 +35,7 @@ export default function Section({
       <div className="relative z-30 container px-2 py-5 lg:mb-5">
         <div className="flex items-center justify-between">
           <TextEffect
-            preset="fade-in-blur"
+            preset="slide"
             as="h2"
             className="text-3xl md:text-4xl xl:text-5xl"
             inherit
@@ -50,10 +50,9 @@ export default function Section({
         </div>
         {description && (
           <TextEffect
-            preset="fade-in-blur"
+            preset="skew-fade"
             as="p"
-            delay={0.2}
-            speedReveal={2.4}
+            speedReveal={2}
             className="mt-2 text-sm font-light text-[#9C9C9C] md:text-lg lg:text-xl xl:mt-6 xl:text-[1.7rem]"
             inherit
           >
@@ -61,9 +60,7 @@ export default function Section({
           </TextEffect>
         )}
       </div>
-      <div
-        className={cn("relative z-30 container pt-3 pb-20 lg:pb-36", className)}
-      >
+      <div className={cn("relative z-30 container pt-3", className)}>
         {children}
       </div>
     </SectionWrapper>

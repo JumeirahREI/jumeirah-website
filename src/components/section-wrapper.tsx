@@ -18,8 +18,8 @@ export default function SectionWrapper({
         ? {
             initial: "hidden" as const,
             whileInView: "visible" as const,
-            transition: { staggerChildren: 0.2, ease: "easeInOut" },
-            viewport: { once: true, amount: 0.5, margin: "-50px" },
+            transition: { staggerChildren: 0.1 },
+            viewport: { once: true, amount: 0.2 },
           }
         : {})}
       className="bg-background relative overflow-x-clip"

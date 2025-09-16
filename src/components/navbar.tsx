@@ -185,7 +185,7 @@ export default function Navbar() {
             initial="closed"
             animate={isOpenMobile ? "open" : "closed"}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="col-span-2 lg:hidden"
+            className="col-span-2 overflow-hidden lg:hidden"
           >
             <ul className="space-y-2 py-4 text-lg">
               {links.map((link) => {

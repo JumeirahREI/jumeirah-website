@@ -7,7 +7,7 @@ import interiorDesignIcon from "@/../public/svg/interior-design-icon.svg";
 import { AnimatedGroup } from "@/components/animated-group";
 import GotoIcon from "@/components/goto-icon";
 import ImageContainer from "@/components/image-container";
-import { transitionVariants } from "@/lib/transition";
+import { transitionVariants } from "@/lib/transitions";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 

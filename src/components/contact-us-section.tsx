@@ -21,8 +21,8 @@ export default function ContactUsSection() {
   const projects = useTranslations("ProjectTitles");
 
   return (
-    <section className="relative">
-      <div className="container grid grid-cols-1 gap-5 pb-16 lg:grid-cols-2">
+    <section className="relative pb-16">
+      <div className="container grid grid-cols-1 gap-5 lg:grid-cols-2">
         <ContactUsForm />
         <div className="flex flex-col gap-5">
           <Card className="space-y-5 text-lg xl:text-xl 2xl:space-y-7 2xl:text-2xl [&_p]:text-[#9C9C9C]">

@@ -9,7 +9,17 @@ import type {
 import { AnimatePresence, m } from "motion/react";
 import React, { Children, isValidElement, ReactNode } from "react";
 
-export type PresetType = "blur" | "fade-in-blur" | "scale" | "fade" | "slide";
+export type PresetType =
+  | "blur"
+  | "fade-in-blur"
+  | "scale"
+  | "fade"
+  | "slide"
+  | "rise"
+  | "clip"
+  | "skew-fade"
+  | "cascade"
+  | "mask-slide";
 export type PerType = "word" | "char" | "line";
 
 export type TextEffectProps = {
@@ -41,7 +51,7 @@ export type TextEffectProps = {
 
 const defaultStaggerTimes: Record<PerType, number> = {
   char: 0.03,
-  word: 0.08,
+  word: 0.05,
   line: 0.1,
 };
 
@@ -55,6 +65,102 @@ const defaultItemVariants: Variants = {
   hidden: { opacity: 0 },
   visible: { opacity: 1 },
   exit: { opacity: 0 },
+};
+
+const luxuryPresets: Record<
+  "rise" | "clip" | "skew-fade" | "cascade" | "mask-slide",
+  { container: Variants; item: Variants }
+> = {
+  rise: {
+    container: defaultContainerVariants,
+    item: {
+      hidden: { opacity: 0, y: 24 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 1.1,
+          ease: [0.16, 1, 0.3, 1],
+        },
+      },
+      exit: { opacity: 0, y: 24 },
+    },
+  },
+
+  clip: {
+    container: defaultContainerVariants,
+    item: {
+      hidden: { opacity: 0, clipPath: "inset(0 0 100% 0)" },
+      visible: {
+        opacity: 1,
+        clipPath: "inset(0 0 0% 0)",
+        transition: {
+          duration: 1,
+          ease: [0.83, 0, 0.17, 1],
+        },
+      },
+      exit: { opacity: 0, clipPath: "inset(0 0 100% 0)" },
+    },
+  },
+
+  "skew-fade": {
+    container: defaultContainerVariants,
+    item: {
+      hidden: { opacity: 0, skewY: 8, y: 20 },
+      visible: {
+        opacity: 1,
+        skewY: 0,
+        y: 0,
+        transition: {
+          duration: 0.9,
+          ease: [0.19, 1, 0.22, 1],
+        },
+      },
+      exit: { opacity: 0, skewY: 8, y: 20 },
+    },
+  },
+
+  cascade: {
+    container: {
+      hidden: { opacity: 0 },
+      visible: {
+        opacity: 1,
+        transition: {
+          staggerChildren: 0.08,
+          delayChildren: 0.2,
+        },
+      },
+    },
+    item: {
+      hidden: { opacity: 0, y: 16 },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: {
+          duration: 0.9,
+          ease: [0.25, 1, 0.5, 1],
+        },
+      },
+      exit: { opacity: 0, y: 16 },
+    },
+  },
+
+  "mask-slide": {
+    container: defaultContainerVariants,
+    item: {
+      hidden: { opacity: 0, x: -30, clipPath: "inset(0 100% 0 0)" },
+      visible: {
+        opacity: 1,
+        x: 0,
+        clipPath: "inset(0 0% 0 0)",
+        transition: {
+          duration: 1.2,
+          ease: [0.77, 0, 0.175, 1],
+        },
+      },
+      exit: { opacity: 0, x: -30, clipPath: "inset(0 100% 0 0)" },
+    },
+  },
 };
 
 const presetVariants: Record<
@@ -101,6 +207,11 @@ const presetVariants: Record<
       exit: { opacity: 0, y: 20 },
     },
   },
+  rise: luxuryPresets.rise,
+  clip: luxuryPresets.clip,
+  "skew-fade": luxuryPresets["skew-fade"],
+  cascade: luxuryPresets.cascade,
+  "mask-slide": luxuryPresets["mask-slide"],
 };
 
 const AnimationComponent: React.FC<{
@@ -168,7 +279,9 @@ const splitChildren = (children: ReactNode, per: PerType): ReactNode[] => {
   Children.forEach(children, (child) => {
     if (typeof child === "string") {
       if (per === "line") {
-        child.split("\n").forEach((line) => result.push(line));
+        child.split("\n").forEach((line) => {
+          result.push(line);
+        });
       } else {
         child.split(/(\s+)/).forEach((part) => {
           if (part === " ") {
@@ -184,6 +297,8 @@ const splitChildren = (children: ReactNode, per: PerType): ReactNode[] => {
     }
   });
   result.push(segments);
+  console.log(result);
+
   return result;
 };
 

@@ -8,7 +8,7 @@ import SectionWrapper from "@/components/section-wrapper";
 import { TextEffect } from "@/components/text-effect";
 import Card from "@/components/ui/card";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
-import { transitionVariants } from "@/lib/transition";
+import { transitionVariants } from "@/lib/transitions";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -27,7 +27,7 @@ export default function AboutUsCard() {
           <div className="xl:col-span-3">
             <TextEffect
               className="text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-4xl xl:text-5xl"
-              preset="fade-in-blur"
+              preset="cascade"
               as="h2"
               inherit
             >
@@ -37,7 +37,7 @@ export default function AboutUsCard() {
             </TextEffect>
             <TextEffect
               className="mt-2 text-sm font-light text-[#DFDFDF] md:mt-5 md:text-lg lg:text-xl xl:text-[1.7rem]"
-              preset="fade-in-blur"
+              preset="cascade"
               as="p"
               inherit
             >
@@ -96,7 +96,7 @@ export default function AboutUsCard() {
                 className="size-6 lg:size-8 xl:size-10"
               />
               <TextEffect
-                preset="fade-in-blur"
+                preset="cascade"
                 as="h3"
                 inherit
                 className="text-[1.4rem] md:text-[1.6rem] lg:text-4xl xl:text-5xl"
@@ -107,7 +107,7 @@ export default function AboutUsCard() {
               </TextEffect>
             </AnimatedGroup>
             <TextEffect
-              preset="fade-in-blur"
+              preset="cascade"
               as="p"
               delay={0.4}
               inherit
@@ -128,7 +128,7 @@ export default function AboutUsCard() {
                 className="size-6 md:size-8 lg:size-9 xl:size-11"
               />
               <TextEffect
-                preset="fade-in-blur"
+                preset="cascade"
                 as="h3"
                 inherit
                 className="text-[1.4rem] md:text-[1.6rem] lg:text-4xl xl:text-5xl"
@@ -139,7 +139,7 @@ export default function AboutUsCard() {
               </TextEffect>
             </AnimatedGroup>
             <TextEffect
-              preset="fade-in-blur"
+              preset="cascade"
               as="p"
               delay={0.4}
               inherit
