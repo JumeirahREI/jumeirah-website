@@ -92,7 +92,7 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="fixed start-0 end-0 top-0 z-[9999] md:py-4 lg:pointer-events-none lg:sticky">
+    <nav className="fixed start-0 end-0 top-0 z-[9999] !mb-0 md:py-4 lg:pointer-events-none lg:sticky">
       <div
         aria-hidden
         className={cn(
@@ -112,12 +112,12 @@ export default function Navbar() {
             href="/"
             className="pointer-events-auto z-[100] flex items-baseline gap-2 md:items-center md:gap-3"
           >
-            <Logo className="w-[3.5rem] md:w-20 md:-translate-y-1 lg:w-24" />
+            <Logo className="w-[3.5rem] md:w-20 md:-translate-y-1 lg:w-20 xl:w-24" />
             <LogoType />
           </Link>
           <div className="static hidden lg:block">
-            <nav className="pointer-events-auto top-0 left-1/2 col-span-3 flex items-center justify-center max-lg:mt-28 max-lg:text-center lg:absolute lg:-translate-x-1/2">
-              <ul className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s flex flex-col gap-10 px-8 py-2 text-2xl leading-loose font-medium text-white lg:flex-row lg:rounded-full lg:text-lg">
+            <div className="pointer-events-auto top-0 left-1/2 col-span-3 flex items-center justify-center max-lg:mt-28 max-lg:text-center lg:absolute lg:-translate-x-1/2">
+              <ul className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s flex flex-col gap-10 px-6 py-1.5 text-base leading-loose font-medium text-white lg:flex-row lg:rounded-full xl:px-8 xl:py-2 xl:text-lg">
                 {links.map((link) => {
                   const isActive =
                     link.href === "/"
@@ -131,7 +131,7 @@ export default function Navbar() {
                         className={cn(
                           "hover:text-primary transition-colors max-lg:w-full max-lg:p-2",
                           isActive &&
-                            "text-primary font-serif text-2xl font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-1.5 after:rounded-full after:bg-white lg:text-xl",
+                            "text-primary font-serif text-lg font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-1.5 after:rounded-full after:bg-white xl:text-xl",
                         )}
                         onClick={(e) => {
                           if (pathname === link.href) {
@@ -149,19 +149,19 @@ export default function Navbar() {
                   );
                 })}
               </ul>
-            </nav>
+            </div>
             <div className="pointer-events-auto flex items-center justify-around gap-3 max-lg:container max-lg:mx-auto max-lg:mt-28 max-lg:w-xs lg:justify-end">
               {socials.map((social) => {
                 return (
                   <a
                     key={social.href}
                     href={social.href}
-                    className="lg:bg-glass rounded-full p-4 transition-colors lg:hover:bg-white/20"
+                    className="lg:bg-glass rounded-full p-3 transition-colors lg:hover:bg-white/20 xl:p-4"
                     target="_blank"
                   >
                     <Image
                       src={social.icon}
-                      className="size-6 lg:size-5"
+                      className="size-5 xl:size-5"
                       unoptimized
                       alt={social.icon}
                     />

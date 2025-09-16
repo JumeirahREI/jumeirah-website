@@ -266,5 +266,5 @@ img {
 }
 
 @utility space-sections {
-  @apply space-y-28 xl:space-y-16;
+  @apply space-y-28 xl:space-y-48;
 }

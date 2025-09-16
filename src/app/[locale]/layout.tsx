@@ -46,17 +46,19 @@ export default async function RootLayout({
       dir={locale === "ar" ? "rtl" : "ltr"}
       className={font.className}
     >
-      <body className="bg-background space-sections text-foreground relative max-w-svw overflow-x-clip font-sans md:pt-4 lg:pt-10">
-        <LazyMotionProvider>
-          <BackgroundImage />
-          {process.env.NODE_ENV === "development" && <ScreenSizeIndicator />}
-          <NextIntlClientProvider locale={locale}>
-            <Navbar />
-            <div>{children}</div>
-            <FAQsSection />
-            <ContactUsSection />
-          </NextIntlClientProvider>
-        </LazyMotionProvider>
+      <body className="bg-background text-foreground relative max-w-svw overflow-x-clip font-sans md:pt-4 lg:pt-10">
+        <div className="space-sections">
+          <LazyMotionProvider>
+            <BackgroundImage />
+            {process.env.NODE_ENV === "development" && <ScreenSizeIndicator />}
+            <NextIntlClientProvider locale={locale}>
+              <Navbar />
+              <div>{children}</div>
+              <FAQsSection />
+              <ContactUsSection />
+            </NextIntlClientProvider>
+          </LazyMotionProvider>
+        </div>
       </body>
     </html>
   );
@@ -66,7 +68,7 @@ function BackgroundImage() {
   return (
     <div
       aria-hidden
-      className="absolute top-0 right-0 left-0 -z-[9999] h-full max-h-[40rem] overflow-hidden md:max-h-[50rem] lg:max-h-[60rem]"
+      className="absolute top-0 right-0 left-0 -z-[9999] !mb-0 h-full max-h-[40rem] overflow-hidden md:max-h-[50rem] lg:max-h-[60rem]"
     >
       <Image
         src={heroBackgroundImage}

@@ -20,7 +20,7 @@ export default function OurServicesSection() {
           })}
         </SectionLink>
       )}
-      className="!px-0 max-lg:!max-w-none lg:!px-4"
+      className="bg-background !px-0 max-lg:!max-w-none lg:!px-4"
       enableAnimation
     >
       <OurServicesCarousel />

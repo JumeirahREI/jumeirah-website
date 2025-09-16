@@ -40,8 +40,6 @@ export default function ModelTabs({
     emblaApi.reInit();
   }, [models.length]);
 
-  console.log(selectedSnap, snapCount);
-
   return (
     <div
       className={cn(

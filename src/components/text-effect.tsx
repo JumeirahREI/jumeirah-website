@@ -297,7 +297,6 @@ const splitChildren = (children: ReactNode, per: PerType): ReactNode[] => {
     }
   });
   result.push(segments);
-  console.log(result);
 
   return result;
 };
