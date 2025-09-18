@@ -24,7 +24,7 @@ export default function Home() {
               delay={0.2}
               speedSegment={0.25}
               variants={luxuryPresets.hero}
-              className="text-foreground drop-shadow-background/70 first-letter:text-primary md:drop-shadow-background/20 text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-4xl lg:leading-tight xl:text-6xl rtl:leading-tight [&>span:nth-child(2)]:block"
+              className="text-foreground drop-shadow-background/70 [&>span:nth-child(2)]:first-letter:text-primary md:drop-shadow-background/20 text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-4xl lg:leading-tight xl:text-6xl rtl:leading-tight [&>span:nth-child(2)]:block"
             >
               <span className="text-7xl font-bold md:text-7xl lg:text-7xl xl:text-[7rem]">
                 {t("jumeirah-hero")}
