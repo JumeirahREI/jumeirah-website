@@ -25,9 +25,7 @@ export default function FAQsSection() {
 
   return (
     <Section
-      title={t.rich("title", {
-        span: (s) => <span className="text-primary">{s}</span>,
-      })}
+      title={t("title")}
       sectionLink={() => (
         <SectionLink className="hidden md:block" href="#">
           {ct.rich("what-we-create", {

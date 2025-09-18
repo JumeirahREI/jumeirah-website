@@ -6,7 +6,6 @@ import CarouselArrowButton from "@/components/carousel-arrow-button";
 import useEmblaCarousel from "embla-carousel-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
-import adenTowersImage from "../../../../../public/images/aden-towers.webp";
 import alHathaaTowersImage from "../../../../../public/images/alhathaa-towers.webp";
 import sanaaTowersImage from "../../../../../public/images/sanaa-towers.webp";
 
@@ -50,28 +49,16 @@ export default function ProjectsSection() {
 
   const projects = [
     {
-      title: t.rich("sanaa-towers.title", {
-        span: (s) => <span className="text-primary">{s}</span>,
-      }),
+      title: t("sanaa-towers.title"),
       status: t("sanaa-towers.status"),
       image: sanaaTowersImage,
       href: "/projects/sanaa-towers",
     },
     {
-      title: t.rich("alhathaa-towers.title", {
-        span: (s) => <span className="text-primary">{s}</span>,
-      }),
+      title: t("alhathaa-towers.title"),
       status: t("alhathaa-towers.status"),
       image: alHathaaTowersImage,
       href: "/projects/alhathaa-towers",
-    },
-    {
-      title: t.rich("aden-towers.title", {
-        span: (s) => <span className="text-primary">{s}</span>,
-      }),
-      status: t("aden-towers.status"),
-      image: adenTowersImage,
-      href: "aden-towers",
     },
   ] as const;
 

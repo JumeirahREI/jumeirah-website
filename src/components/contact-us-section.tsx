@@ -29,7 +29,7 @@ export default function ContactUsSection() {
             <div className="flex flex-col gap-5 lg:flex-row lg:gap-5 xl:gap-10">
               <div className="flex items-center gap-4">
                 <Icon src={phoneIcon} alt="Phone Icon" />
-                <p>+(967) 778265522</p>
+                <p dir="ltr">+(967) 778265522</p>
               </div>
               <div className="flex items-center gap-4">
                 <Icon src={emailIcon} alt="Email Icon" />
@@ -69,10 +69,10 @@ export default function ContactUsSection() {
                     {common("all-projects")}
                   </FooterLink>
                   <FooterLink href="/projects/sanaa-towers">
-                    {projects("sanaa-towers-no-span")}
+                    {projects("sanaa-towers")}
                   </FooterLink>
                   <FooterLink href="/projects/alhathaa-towers">
-                    {projects("alhathaa-towers-no-span")}
+                    {projects("alhathaa-towers")}
                   </FooterLink>
                 </ul>
               </div>

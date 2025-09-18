@@ -9,9 +9,7 @@ export default function OurServicesSection() {
 
   return (
     <Section
-      title={t.rich("our-services", {
-        span: (s) => <span className="text-primary">{s}</span>,
-      })}
+      title={t("our-services")}
       description={t("our-services-description")}
       sectionLink={() => (
         <SectionLink href="/projects">

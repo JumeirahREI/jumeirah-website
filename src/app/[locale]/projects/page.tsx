@@ -12,12 +12,7 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <PageHeader
-        title={t.rich("title", {
-          span: (s) => <span className="text-primary">{s}</span>,
-        })}
-        subTitle={t("sub-title")}
-      >
+      <PageHeader title={t("title")} subTitle={t("sub-title")}>
         <div className="flex items-center justify-center gap-4 text-xs font-semibold md:gap-6 md:text-sm lg:text-base">
           <AppLink variant="outline" href="#" className="lg:py-2">
             {ct("our-services")}

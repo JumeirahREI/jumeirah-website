@@ -29,12 +29,12 @@
     "description": "Jumeirah REI is a leading real estate investment firm in Yemen, offering a portfolio of luxury properties and expert investment advice to help you achieve your financial goals."
   },
   "HomePage": {
-    "jumeirah-hero": "<span>J</span>umeirah",
+    "jumeirah-hero": "Jumeirah",
     "hero-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential",
     "our-projects": "Our Projects"
   },
   "OurServicesSection": {
-    "our-services": "<span>O</span>ur <span>S</span>ervices",
+    "our-services": "Our Services",
     "our-services-description": "Real estate solutions tailored to exceed your expectations.",
     "residential-properties": "Residential Properties",
     "commercial-properties": "Commercial Properties",
@@ -47,31 +47,28 @@
     "material-design": "Material Design"
   },
   "AboutUsCard": {
-    "title": "<span>W</span>e provide innovative and sustainable real estate services",
+    "title": "We provide innovative and sustainable real estate services",
     "description": "Discover the advantages that set Jumeirah Real Estate Investment apart from the competition.",
-    "our-vision": "<span>O</span>ur Vision",
+    "our-vision": "Our Vision",
     "our-vision-subtext": "To be a leader in transforming urban living through innovative designs, sustainable practices, and unmatched luxury.",
-    "our-mission": "<span>O</span>ur Mission",
+    "our-mission": "Our Mission",
     "our-mission-subtext": "Craft iconic spaces that blend luxury, innovation, and sustainability, elevating lifestyles and delivering lasting value."
   },
   "ExploreOurProjectsSection": {
-    "explore-our-projects": "<span>E</span>xplore Our Projects",
+    "explore-our-projects": "Explore Our Projects",
     "explore-our-projects-description": "Exceptional residential and commercial developments.",
     "more-projects": "More projects<span>?</span>"
   },
   "ProjectTitles": {
-    "sanaa-towers": "<span>S</span>ana'a Towers",
-    "sanaa-towers-no-span": "Sanaa Towers",
-    "alhathaa-towers": "<span>A</span>l-Hathaa Towers",
-    "alhathaa-towers-no-span": "Al-Hathaa Towers"
+    "sanaa-towers": "Sana'a Towers",
+    "alhathaa-towers": "Al-Hathaa Towers"
   },
   "SanaaTowers": {
-    "meta-title": "Sana'a Towers",
     "meta-description": "The new Sana'a Towers residential project consists of two towers located in the 50 Street district of the capital, Sana'a. Tower A includes five different types of residential apartments with structurally earthquake-resistant designs, modern luxury, spacious interiors, and practical implementation, including satellite networks and individual water and electricity meters for each apartment. Tower B includes five smaller, more economical models with the same high-quality designs and a compatible residential community.",
-    "title": "<span>S</span>ana'a Towers",
+    "title": "Sana'a Towers",
     "subtitle": "Jumeirah Real Estate Investment Company offers you the opportunity to enjoy luxury and modernity in its latest residential project, Sanaa Towers!",
     "featuresSection": {
-      "title": "<span>S</span>ana'a Towers Features",
+      "title": "Sana'a Towers Features",
       "subtitle": "Real estate solutions tailored to exceed your expectations.",
       "earthquake-resistance": "Earthquake-Resistant",
       "private-parking": "Private Parking",
@@ -89,7 +86,7 @@
             "images": {
               "image-1": "Model A layout"
             },
-            "description": " With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
+            "description": "With a total area of 310 square meters, Model A features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite. A unique design that perfectly blends comfort and elegance."
           },
           "details": {
             "guest-section": {
@@ -548,15 +545,14 @@
     }
   },
   "Alhathaa-Towers": {
-    "meta-title": "Al-Hathaa Towers",
     "meta-description": "The Al-Hathaa Towers project is a residential development located in the Al-Hathaa district of Sana'a, Yemen. The project includes two towers, each with 12 floors, and a total of 120 apartments. The towers are designed to be earthquake-resistant and feature modern amenities, including a gym, a swimming pool, and a security system. The project is currently under construction and is expected to be completed in 2025.",
-    "title": "<span>A</span>l-Hathaa Towers"
+    "title": "Al-Hathaa Towers"
   },
   "FAQsSection": {
-    "title": "<span>F</span>requently Asked Questions"
+    "title": "Frequently Asked Questions"
   },
   "ContactUs": {
-    "contact-us": "<span>C</span>ontact Us",
+    "contact-us": "Contact Us",
     "description": "We are happy to hear from you and ready to assist with any inquiries or support you may need.",
     "first-name": "First Name",
     "last-name": "Last Name",
@@ -569,23 +565,19 @@
   "ProjectsPage": {
     "meta-title": "Projects | Jumeirah Real Estate Investment",
     "meta-description": "Discover our projects that reflect excellence and innovation in the world of investment and real estate. We offer a diverse range of investment and property opportunities tailored to your aspirations",
-    "title": "<span>J</span>umeirah Projects",
+    "title": "Jumeirah Projects",
     "sub-title": "Discover our projects that reflect excellence and innovation in the world of investment and real estate. We offer a diverse range of investment and property opportunities tailored to your aspirations",
     "all-projects": "All Projects",
     "towers": "Towers",
     "apartments": "Apartments",
     "villas": "Villas",
     "sanaa-towers": {
-      "title": "<span>S</span>ana'a Towers",
+      "title": "Sana'a Towers",
       "status": "Under Construction"
     },
     "alhathaa-towers": {
-      "title": "<span>A</span>l-Hathaa Towers",
+      "title": "Al-Hathaa Towers",
       "status": "Complete"
-    },
-    "aden-towers": {
-      "title": "<span>A</span>den Towers",
-      "status": "Under Construction"
     }
   },
   "OurPartnersSection": {
@@ -595,7 +587,7 @@
   "AboutUs": {
     "meta-title": "About Us",
     "meta-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential.",
-    "title": "<span>A</span>bout Us",
+    "title": "About Us",
     "subtitle": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential.",
     "description": "At <strong>Jumeirah</strong>, we believe finding a home is more than a transaction—it’s about creating a space where dreams grow. Founded by a team of dedicated real estate professionals, we set out to make the home buying, selling, and renting process seamless and personal. With a focus on understanding each client's unique needs, we’ve helped countless individuals and families find homes that truly fit their lifestyle and aspirations.",
     "our-vision": "Our Vision",
@@ -604,19 +596,19 @@
     "our-mission": "Our Mission",
     "our-mission-title": "Tailored Real Estate Solutions for Every Client",
     "our-mission-subtitle": "Our mission is to provide clients with seamless real estate solutions tailored to their unique needs, ensuring a rewarding and fulfilling experience at every step.",
-    "what-we-stand-for": "<span>W</span>hat We Stand For",
+    "what-we-stand-for": "What We Stand For",
     "what-we-stand-for-subtitle": "Core principles that guide every transaction, ensuring excellence and client satisfaction.",
-    "integrity": "<span>I</span>ntegrity",
+    "integrity": "Integrity",
     "integrity-description": "We are always honest and transparent in all dealings, ensuring that clients receive clear and accurate information to make informed decisions.",
-    "excellence": "<span>E</span>xcellence",
+    "excellence": "Excellence",
     "excellence-description": "We strive to exceed expectations by delivering outstanding results, paying close attention to detail and committing fully to the quality of our services.",
-    "customer-centricity": "<span>C</span>ustomer-Centricity",
+    "customer-centricity": "Customer-Centricity",
     "customer-centricity-description": "Our clients are our top priority; we listen carefully to their needs and provide personalized solutions tailored to each individual.",
-    "innovation": "<span>I</span>nnovation",
+    "innovation": "Innovation",
     "innovation-description": "We continuously adopt the latest technologies and ideas to offer better, more efficient, and relevant services in the ever-evolving real estate market.",
-    "collaboration": "<span>C</span>ollaboration",
+    "collaboration": "Collaboration",
     "collaboration-description": "We believe in the power of teamwork, both internally and with our clients, ensuring that every project benefits from collective expertise and shared goals.",
-    "sustainability": "<span>S</span>ustainability",
+    "sustainability": "Sustainability",
     "sustainability-description": "We are dedicated to supporting eco-friendly practices and sustainable development, ensuring a positive impact on both the community and the environment."
   }
 }

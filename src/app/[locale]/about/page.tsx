@@ -56,12 +56,7 @@ export default function AboutUsPage() {
 
   return (
     <>
-      <PageHeader
-        title={t.rich("title", {
-          span: (s) => <span className="text-primary">{s}</span>,
-        })}
-        subTitle={t("subtitle")}
-      >
+      <PageHeader title={t("title")} subTitle={t("subtitle")}>
         <div className="flex items-center justify-center gap-4">
           <AppLink
             href="#"
@@ -78,7 +73,7 @@ export default function AboutUsPage() {
               <ImageContainer
                 className="z-30 h-full min-h-72"
                 src={sanaaTowersImage}
-                alt={pt("sanaa-towers-no-span")}
+                alt={pt("sanaa-towers")}
               />
             </div>
             <div className="lg:col-span-3">
@@ -106,7 +101,7 @@ export default function AboutUsPage() {
               <ImageContainer
                 className="z-30 h-full min-h-72"
                 src={sanaaTowersImage}
-                alt={pt("sanaa-towers-no-span")}
+                alt={pt("sanaa-towers")}
               />
             </div>
           </article>
@@ -115,7 +110,7 @@ export default function AboutUsPage() {
               <ImageContainer
                 className="z-30 h-full min-h-72"
                 src={sanaaTowersImage}
-                alt={pt("sanaa-towers-no-span")}
+                alt={pt("sanaa-towers")}
               />
             </div>
             <div className="space-y-3 lg:col-span-3 lg:my-12 lg:space-y-2">
@@ -137,9 +132,7 @@ export default function AboutUsPage() {
           </article>
         </section>
         <Section
-          title={t.rich("what-we-stand-for", {
-            span: (s) => <span className="text-primary">{s}</span>,
-          })}
+          title={t("what-we-stand-for")}
           description={t("what-we-stand-for-subtitle")}
           imgClassName="opacity-30"
         >
@@ -148,9 +141,7 @@ export default function AboutUsPage() {
               <WhatWeStandFor
                 key={item.title}
                 icon={item.icon}
-                title={t.rich(item.title, {
-                  span: (s) => <span className="text-primary">{s}</span>,
-                })}
+                title={t(item.title)}
                 description={t(item.description)}
               />
             ))}
@@ -167,7 +158,7 @@ function WhatWeStandFor({
   description,
 }: {
   icon: StaticImageData;
-  title: React.ReactNode;
+  title: string;
   description: string;
 }) {
   return (
@@ -176,7 +167,7 @@ function WhatWeStandFor({
         <div className="border-gradient-t border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] rounded-full bg-gradient-to-t from-[#1A1A1A] to-[#1A1A1A]/0 p-4">
           <Image src={icon} alt="icon" className="size-8 md:size-10" />
         </div>
-        <h3 className="text-xl font-semibold md:text-xl lg:text-2xl xl:text-3xl">
+        <h3 className="first-letter:text-primary text-xl font-semibold md:text-xl lg:text-2xl xl:text-3xl">
           {title}
         </h3>
         <p className="opacity-70 xl:text-xl">{description}</p>

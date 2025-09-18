@@ -11,10 +11,8 @@ export default function ContactUsFrom() {
       className="space-y-4 rounded-4xl backdrop-blur-lg md:space-y-6 lg:rounded-[3rem] lg:px-8 lg:py-7"
     >
       <div>
-        <h3 className="font-serif text-3xl md:text-4xl lg:text-5xl">
-          {t.rich("contact-us", {
-            span: (s) => <span className="text-primary">{s}</span>,
-          })}
+        <h3 className="first-letter:text-primary font-serif text-3xl md:text-4xl lg:text-5xl">
+          {t("contact-us")}
         </h3>
         <h4 className="mt-2 text-sm font-light text-[#9C9C9C] md:text-base lg:mt-4 lg:text-xl">
           {t("description")}

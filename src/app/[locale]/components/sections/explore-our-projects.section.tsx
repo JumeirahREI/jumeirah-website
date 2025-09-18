@@ -47,9 +47,7 @@ export default function ExploreOutProjectsSection() {
 
   return (
     <Section
-      title={t.rich("explore-our-projects", {
-        span: (s) => <span className="text-primary">{s}</span>,
-      })}
+      title={t("explore-our-projects")}
       description={t("explore-our-projects-description")}
       sectionLink={() => (
         <SectionLink href="#">
@@ -84,13 +82,11 @@ export default function ExploreOutProjectsSection() {
                 <div className="flex items-center justify-center gap-2 xl:gap-4">
                   <GotoIcon
                     className="md:size-10 md:p-1.5 xl:size-20 xl:p-3"
-                    alt={projectsT(p.titleNoSpan)}
+                    alt={projectsT(p.title)}
                   />
-                  <p className="border-gradient-to-e border-gradient-to-neutral-500/60 xl:border-gradient-width-0.5 grow rounded-2xl bg-gradient-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center md:text-lg xl:p-4 xl:text-[2rem] rtl:bg-gradient-to-l">
-                    {projectsT.rich(p.title, {
-                      span: (s) => <span className="text-primary">{s}</span>,
-                    })}
-                  </p>
+                  <h3 className="border-gradient-to-e border-gradient-to-neutral-500/60 xl:border-gradient-width-0.5 first-letter:text-primary grow rounded-2xl bg-gradient-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center md:text-lg xl:p-4 xl:text-[2rem] rtl:bg-gradient-to-l">
+                    {projectsT(p.title)}
+                  </h3>
                 </div>
               </Link>
             </ImageContainer>

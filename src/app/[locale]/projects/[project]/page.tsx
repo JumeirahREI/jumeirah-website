@@ -41,7 +41,7 @@ export async function generateMetadata({
   const t = await getTranslations(projects[project].projectKey);
 
   return {
-    title: t("meta-title"),
+    title: t("title"),
     description: t("meta-description"),
   };
 }
