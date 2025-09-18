@@ -16,9 +16,7 @@ export default function ProjectDetails({ projectData }: ProjectDetailsProps) {
   return (
     <>
       <PageHeader
-        title={t.rich(projectData.title, {
-          span: (s) => <span className="text-primary">{s}</span>,
-        })}
+        title={t(projectData.title)}
         subTitle={t(projectData.subtitle)}
       >
         <div className="flex items-center justify-center gap-4">
