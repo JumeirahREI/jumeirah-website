@@ -25,11 +25,14 @@ export default function ContactUsFrom() {
           name="email"
           className="col-span-full"
           placeholder={t("email")}
+          type="email"
         />
         <Input
           name="phone"
+          dir="rtl"
           className="col-span-full"
           placeholder={t("phone")}
+          type="tel"
         />
         <TextArea
           name="message"

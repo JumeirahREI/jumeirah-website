@@ -104,7 +104,7 @@ function FAQCard({
   isActive: boolean;
 }) {
   return (
-    <li className="flex gap-5 md:text-lg lg:text-xl">
+    <li className="flex gap-5 text-sm md:text-lg lg:text-xl">
       <LayoutGroup>
         <m.div
           layout="position"
@@ -112,16 +112,16 @@ function FAQCard({
           initial="inactive"
           animate={isActive ? "active" : "inactive"}
           className={cn(
-            "flex w-full cursor-pointer gap-6 rounded-4xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl duration-300 ease-in-out [--max-width-active:100%] [--max-width-inactive:100%] md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:[--max-width-active:90%] lg:[--max-width-inactive:66%] 2xl:[--max-width-inactive:50%]",
+            "flex w-full cursor-pointer gap-6 rounded-2xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl duration-300 ease-in-out [--max-width-active:100%] [--max-width-inactive:100%] md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:[--max-width-active:90%] lg:[--max-width-inactive:66%] 2xl:[--max-width-inactive:50%]",
             // isActive && "lg:flex-grow-40",
           )}
           onClick={onClick}
         >
-          <span className="text-primary pt-2 text-2xl font-semibold md:pt-0 md:text-lg lg:text-xl">
+          <span className="text-primary text-xl font-semibold md:text-lg lg:text-xl">
             {String(index + 1).padStart(2, "0")}
           </span>
           <div>
-            <p className="font-bold">{question}</p>
+            <p className="my-auto font-bold">{question}</p>
             <AnimatePresence initial={false}>
               {isActive && (
                 <m.div

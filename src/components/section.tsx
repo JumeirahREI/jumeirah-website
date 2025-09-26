@@ -37,10 +37,13 @@ export default function Section({
           <TextEffect
             preset="slide"
             as="h2"
-            className="ltr:first-letter-primary from-primary to-foreground bg-linear-to-r from-[0.85ch] to-[0.85ch] bg-clip-text pb-1 text-3xl md:text-4xl xl:text-5xl rtl:bg-linear-to-l rtl:text-transparent"
+            // speedSegment={0.01}
+            // className="ltr:first-letter-primary from-primary to-foreground bg-linear-to-r from-[0.85ch] to-[0.85ch] pb-1 text-3xl md:text-4xl xl:text-5xl rtl:bg-linear-to-l rtl:text-transparent"
             inherit
           >
-            {title}
+            <span className="ltr:first-letter-primary from-primary to-foreground bg-linear-to-r from-[0.85ch] to-[0.85ch] bg-clip-text pb-1 text-3xl md:text-4xl xl:text-5xl rtl:bg-linear-to-l rtl:text-transparent">
+              {title}
+            </span>
           </TextEffect>
           {sectionLink && (
             <AnimatedGroup variants={transitionVariants} inherit>
