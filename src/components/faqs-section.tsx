@@ -10,18 +10,38 @@ import { StaticImageData } from "next/image";
 import { useState } from "react";
 import faqImage from "../../public/images/faqs-image.webp";
 
-const question = {
-  question: "Lorem ipsum dolor sit amet consectetur. Sagittis id",
-  answer:
-    "Lorem ipsum dolor sit amet consectetur. In augue ipsum tellus ultrices.  Ac pharetra ultrices consectetur consequat tellus massa. Nec aliquam cras sagittis duis sed euismod arcu hac. Ornare amet ligula ornare lacus aliquam aenean. Eu lacus imperdiet urna amet congue adipiscing. Faucibus magna nisl ullamcorper in facilisis consequat aliquam. Id placerat dui habitasse quisque nisl tincidunt facilisi mi id. Dictum elit velit.",
-  image: faqImage,
-};
-const questions = [question, question, question];
-
 export default function FAQsSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const t = useTranslations("FAQsSection");
   const ct = useTranslations("Common");
+
+  const questions = [
+    {
+      question: t("q1.question"),
+      answer: t("q1.answer"),
+      image: faqImage,
+    },
+    {
+      question: t("q2.question"),
+      answer: t("q2.answer"),
+      image: faqImage,
+    },
+    {
+      question: t("q3.question"),
+      answer: t("q3.answer"),
+      image: faqImage,
+    },
+    {
+      question: t("q4.question"),
+      answer: t("q4.answer"),
+      image: faqImage,
+    },
+    {
+      question: t("q5.question"),
+      answer: t("q5.answer"),
+      image: faqImage,
+    },
+  ];
 
   return (
     <Section

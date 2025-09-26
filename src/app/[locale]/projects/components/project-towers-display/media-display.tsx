@@ -88,7 +88,7 @@ function FloorButton({
     <button
       data-selected={isSelected}
       onClick={onClick}
-      className="group border-gradient-t border-gradient-to-[#14141400] data-[selected=true]:border-gradient-from-[#7A7A7A99] data-[selected=true]:text-foreground border-gradient-from-[#7A7A7A00] active:text-foreground/50 relative z-30 cursor-pointer items-center rounded-2xl bg-[#1A1A1A]/80 bg-gradient-to-t from-[#1A1A1A]/0 to-[#1A1A1A]/0 p-3 font-bold text-nowrap text-[#DFDFDF]/70 transition-colors before:transition-colors hover:bg-neutral-600 active:bg-neutral-600 data-[select=false]:border data-[selected=true]:from-[#1A1A1A]"
+      className="group border-gradient-t border-gradient-to-[#14141400] data-[selected=true]:border-gradient-from-[#7A7A7A99] data-[selected=true]:text-foreground border-gradient-from-[#7A7A7A00] active:text-foreground/50 relative z-30 cursor-pointer items-center rounded-2xl bg-[#1A1A1A]/80 bg-linear-to-t from-[#1A1A1A]/0 to-[#1A1A1A]/0 p-3 font-bold text-nowrap text-[#DFDFDF]/70 transition-colors before:transition-colors hover:bg-neutral-600 active:bg-neutral-600 data-[select=false]:border data-[selected=true]:from-[#1A1A1A]"
     >
       {children}
     </button>

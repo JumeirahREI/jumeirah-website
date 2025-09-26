@@ -10,7 +10,7 @@ export default function MediaPanel({ projectKey }: { projectKey: Project }) {
   if (selectedDataTab === "details") return;
 
   return (
-    <div className="media max-md:pl-4 max-md:rtl:pr-4">
+    <div className="media">
       <MediaDisplay
         className="relative h-full min-h-52"
         projectKey={projectKey}

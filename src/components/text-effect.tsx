@@ -241,7 +241,7 @@ const AnimationComponent: React.FC<{
     if (per === "word") {
       return wrap(
         <m.span
-          aria-hidden="true"
+          aria-hidden
           variants={variants}
           className="inline-block whitespace-pre"
         >
@@ -254,7 +254,7 @@ const AnimationComponent: React.FC<{
         {segment.split("").map((char, charIndex) => (
           <m.span
             key={`char-${charIndex}`}
-            aria-hidden="true"
+            aria-hidden
             variants={variants}
             className="inline-block whitespace-pre"
           >
@@ -266,7 +266,11 @@ const AnimationComponent: React.FC<{
   }
 
   return wrap(
-    <m.span variants={variants} className="inline-block whitespace-pre">
+    <m.span
+      variants={variants}
+      aria-hidden
+      className="inline-block whitespace-pre"
+    >
       {segment}
     </m.span>,
   );
@@ -430,7 +434,6 @@ export function TextEffect({
           onAnimationStart={onAnimationStart}
           style={style}
         >
-          {per !== "line" ? <span className="sr-only">{children}</span> : null}
           {segments.map((segment, index) => (
             <AnimationComponent
               key={`${per}-${index}`}
@@ -440,6 +443,7 @@ export function TextEffect({
               segmentWrapperClassName={segmentWrapperClassName}
             />
           ))}
+          {per !== "line" ? <span className="sr-only">{children}</span> : null}
         </MotionTag>
       )}
     </AnimatePresence>

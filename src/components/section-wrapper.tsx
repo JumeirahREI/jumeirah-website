@@ -22,7 +22,7 @@ export default function SectionWrapper({
             viewport: { once: true, amount: 0.2 },
           }
         : {})}
-      className="bg-background relative overflow-x-clip"
+      className="bg-background relative overflow-hidden"
     >
       {children}
     </m.section>

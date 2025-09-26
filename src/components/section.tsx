@@ -37,7 +37,7 @@ export default function Section({
           <TextEffect
             preset="slide"
             as="h2"
-            className="[&>span:nth-child(2)]:first-letter:text-primary text-3xl md:text-4xl xl:text-5xl"
+            className="ltr:first-letter-primary from-primary to-foreground bg-linear-to-r from-[0.85ch] to-[0.85ch] bg-clip-text pb-1 text-3xl md:text-4xl xl:text-5xl rtl:bg-linear-to-l rtl:text-transparent"
             inherit
           >
             {title}

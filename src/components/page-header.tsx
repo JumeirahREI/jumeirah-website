@@ -17,7 +17,7 @@ export default function PageHeader({
   return (
     <header
       className={cn(
-        "from-background to-background/0 relative z-20 overflow-x-clip bg-gradient-to-t from-40% to-80% text-center",
+        "from-background to-background/0 relative z-20 overflow-x-clip bg-linear-to-t from-40% to-80% text-center",
         className,
       )}
     >

@@ -268,3 +268,17 @@ img {
 @utility space-sections {
   @apply space-y-28 xl:space-y-48;
 }
+
+@utility bg-clip-text {
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0px 0px #00000000;
+}
+
+@utility first-letter-primary-second-span {
+  @apply [&>span:nth-child(2)]:first-letter:text-primary;
+}
+
+@utility first-letter-primary {
+  @apply first-letter:text-primary [&>span:first-child]:first-letter:text-primary;
+}

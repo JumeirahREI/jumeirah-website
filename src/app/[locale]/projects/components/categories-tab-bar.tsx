@@ -14,7 +14,7 @@ export default function CategoriesTabBar({
   setSelectedTab,
 }: CategoriesTabBarProps) {
   return (
-    <nav className="border-gradient-t border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] mx-4 flex items-center justify-start rounded-2xl bg-gradient-to-t from-[#1A1A1A]/90 to-[#1A1A1A]/10 md:mx-auto md:w-fit">
+    <nav className="border-gradient-t border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] mx-4 flex items-center justify-start rounded-2xl bg-linear-to-t from-[#1A1A1A]/90 to-[#1A1A1A]/10 md:mx-auto md:w-fit">
       <ul
         role="tablist"
         className="no-scrollbar flex w-full items-center justify-start gap-6 overflow-x-scroll px-6 py-4 md:text-lg xl:gap-16 xl:px-8 xl:py-4 xl:text-2xl"

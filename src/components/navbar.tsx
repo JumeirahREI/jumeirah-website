@@ -105,7 +105,7 @@ export default function Navbar() {
           className={cn(
             "transition-[border-radius, backdrop-filter, background-color, border-color] mx-auto grid grid-cols-2 items-center justify-between rounded-md border border-white/0 backdrop-blur-none duration-400 max-lg:px-4 max-lg:py-1 lg:relative lg:container lg:flex lg:border-none lg:bg-transparent lg:backdrop-blur-none",
             (showNavBackground || isOpenMobile) &&
-              "bg-background/40 rounded-2xl border-white/20 backdrop-blur",
+              "rounded-2xl border-white/20 bg-[#00010151] backdrop-blur",
           )}
         >
           <Link

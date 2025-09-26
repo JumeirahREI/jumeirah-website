@@ -34,7 +34,7 @@ export default function CategoryProjectItem({
               className="size-9 lg:size-11 lg:p-1.5 xl:size-13 xl:p-2"
               alt=""
             />
-            <h3 className="first-letter:text-primary border-gradient-to-e border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] border-gradient-width-0.5 grow rounded-2xl bg-gradient-to-r from-[#1A1A1AE6] to-[#1A1A1A10] p-2 text-center text-lg lg:text-xl xl:rounded-xl xl:text-xl 2xl:rounded-[1.3rem] 2xl:text-3xl rtl:bg-gradient-to-r">
+            <h3 className="first-letter:text-primary border-gradient-to-e border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] border-gradient-width-0.5 grow rounded-2xl bg-linear-to-r from-[#1A1A1AE6] to-[#1A1A1A10] p-2 text-center text-lg lg:text-xl xl:rounded-xl xl:text-xl 2xl:rounded-[1.3rem] 2xl:text-3xl rtl:bg-linear-to-r">
               {title}
             </h3>
           </div>

@@ -1,5 +1,5 @@
 import AboutUsCard from "@/app/[locale]/components/sections/about-us-card.section";
-import ExploreOutProjectsSection from "@/app/[locale]/components/sections/explore-our-projects.section";
+import OurProjectsSection from "@/app/[locale]/components/sections/our-projects.section";
 import OurServicesSection from "@/app/[locale]/components/sections/our-services.section";
 import { AnimatedGroup } from "@/components/animated-group";
 import AppLink from "@/components/app-link";
@@ -14,9 +14,9 @@ export default function Home() {
   const ct = useTranslations("Common");
 
   return (
-    <div className="space-sections overflow-hidden">
+    <div className="overflow-hidden">
       <header className="relative z-10">
-        <div className="container grid grid-rows-2 pt-52 pb-14 md:pt-36 lg:grid-cols-3 lg:pt-20 xl:pt-24">
+        <div className="container grid grid-rows-2 pt-52 pb-28 md:pt-36 lg:grid-cols-3 lg:pt-20 xl:pt-24">
           <div className="z-30 col-span-2 row-span-2 space-y-2 2xl:space-y-5 rtl:space-y-8">
             <TextEffect
               as="h1"
@@ -24,9 +24,9 @@ export default function Home() {
               delay={0.2}
               speedSegment={0.25}
               variants={luxuryPresets.hero}
-              className="text-foreground drop-shadow-background/70 [&>span:nth-child(2)]:first-letter:text-primary md:drop-shadow-background/20 text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-4xl lg:leading-tight xl:text-6xl rtl:leading-tight [&>span:nth-child(2)]:block"
+              className="text-foreground drop-shadow-background/70 md:drop-shadow-background/20 ltr:first-letter-primary text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-4xl lg:leading-tight xl:text-6xl rtl:leading-snug [&>span:first-child]:block"
             >
-              <span className="text-7xl font-bold md:text-7xl lg:text-7xl xl:text-[7rem]">
+              <span className="from-primary to-foreground bg-linear-to-r from-[1ch] to-[1ch] bg-clip-text text-7xl font-bold md:text-7xl lg:text-7xl xl:text-[7rem] rtl:bg-linear-to-l rtl:text-transparent">
                 {t("jumeirah-hero")}
               </span>{" "}
               {ct("rei")}
@@ -44,12 +44,16 @@ export default function Home() {
                   },
                 },
               }}
-              childrenClassName="backdrop-blur-xl w-fit rounded-3xl lg:rounded-4xl"
+              childrenClassName="backdrop-blur-md w-fit rounded-3xl lg:rounded-4xl"
             >
-              <GlassCard className="max-w-md backdrop-blur-none md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
-                <p className="text-center leading-6 font-medium text-white/80 md:text-start md:text-lg md:leading-7 xl:text-xl xl:leading-8">
-                  {t("hero-description")}
-                  <span className="text-primary">.</span>
+              <GlassCard className="max-w-md text-center leading-6 font-medium text-white/80 backdrop-blur-none md:max-w-xl md:text-start md:text-lg md:leading-7 lg:max-w-2xl xl:max-w-3xl xl:text-xl xl:leading-8">
+                <p className="text-primary mb-2 font-bold">
+                  {t("hero-subtitle")}
+                </p>
+                <p>
+                  {t.rich("hero-description", {
+                    span: (s) => <span className="text-primary">{s}</span>,
+                  })}
                 </p>
               </GlassCard>
             </AnimatedGroup>
@@ -73,13 +77,13 @@ export default function Home() {
               <AppLink href="/contact">{ct("contact-us")}</AppLink>
             </AnimatedGroup>
           </div>
-          <HeroBackground />
         </div>
+        <HeroBackground />
       </header>
       <main className="space-sections">
         <OurServicesSection />
         <AboutUsCard />
-        <ExploreOutProjectsSection />
+        <OurProjectsSection />
       </main>
     </div>
   );
@@ -88,7 +92,7 @@ export default function Home() {
 function HeroBackground() {
   return (
     <>
-      <div className="from-background/0 to-background via-background md:via-background/50 absolute start-0 bottom-0 -z-20 h-2/3 w-full translate-y-2/5 bg-gradient-to-b md:translate-y-2/6 lg:translate-y-2/5 xl:translate-y-3/5" />
+      <div className="to-background via-background md:via-background/50 absolute start-0 bottom-0 -z-20 h-2/3 w-full bg-linear-to-b from-[#00010100]" />
       <GridBackgroundEffect className="absolute start-0 bottom-0 -z-10 -translate-x-1/2 translate-y-1/2 rtl:translate-x-1/2" />
     </>
   );

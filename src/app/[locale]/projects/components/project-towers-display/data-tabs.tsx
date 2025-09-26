@@ -85,7 +85,7 @@ function DataTabButton({
     <button
       data-selected={isSelected}
       onClick={onClick}
-      className="group border-gradient-t border-gradient-to-[#14141400] data-[selected=true]:border-gradient-from-[#7A7A7A99] data-[selected=true]:text-foreground border-gradient-from-[#7A7A7A00] active:text-foreground/50 relative z-30 flex cursor-pointer items-center gap-3 rounded-2xl bg-gradient-to-t from-[#1A1A1A]/0 to-[#1A1A1A]/0 p-3 text-nowrap text-[#DFDFDF]/70 transition-colors before:transition-colors hover:bg-neutral-600/30 active:bg-neutral-600/50 data-[selected=true]:from-[#1A1A1A] 2xl:text-xl"
+      className="group border-gradient-t border-gradient-to-[#14141400] data-[selected=true]:border-gradient-from-[#7A7A7A99] data-[selected=true]:text-foreground border-gradient-from-[#7A7A7A00] active:text-foreground/50 relative z-30 flex cursor-pointer items-center gap-3 rounded-2xl bg-linear-to-t from-[#1A1A1A]/0 to-[#1A1A1A]/0 p-3 text-nowrap text-[#DFDFDF]/70 transition-colors before:transition-colors hover:bg-neutral-600/30 active:bg-neutral-600/50 data-[selected=true]:from-[#1A1A1A] 2xl:text-xl"
     >
       <Icon className="2xl:size-10" />
       {children}

@@ -30,15 +30,16 @@
   },
   "HomePage": {
     "jumeirah-hero": "Jumeirah",
-    "hero-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential",
+    "hero-subtitle": "Experience.. Commitment.. Innovation in the Real Estate World",
+    "hero-description": "At Jumeirah Real Estate Investment, we believe that a home is more than just a living space; it is a human and investment value that reflects a complete lifestyle<span>.</span> We strive to provide innovative and sustainable real estate solutions that meet our clients' aspirations and add real value over the long term<span>.</span>",
     "our-projects": "Our Projects"
   },
   "OurServicesSection": {
     "our-services": "Our Services",
-    "our-services-description": "Real estate solutions tailored to exceed your expectations.",
-    "residential-properties": "Residential Properties",
-    "commercial-properties": "Commercial Properties",
-    "interior-design": "Interior Design",
+    "our-services-description": "Integrated real estate solutions that meet all needs:",
+    "real-estate-project-development": "Real Estate Project Development",
+    "property-managment": "Property Managment",
+    "after-sale-services": "After Sale Services",
     "apartments": "Apartments",
     "luxury-villas": "Luxury Villas",
     "office-spaces": "Office Spaces",
@@ -50,13 +51,13 @@
     "title": "We provide innovative and sustainable real estate services",
     "description": "Discover the advantages that set Jumeirah Real Estate Investment apart from the competition.",
     "our-vision": "Our Vision",
-    "our-vision-subtext": "To be a leader in transforming urban living through innovative designs, sustainable practices, and unmatched luxury.",
-    "our-mission": "Our Mission",
-    "our-mission-subtext": "Craft iconic spaces that blend luxury, innovation, and sustainability, elevating lifestyles and delivering lasting value."
+    "our-vision-subtext": "To be the premier reference in real estate investment, with expertise built on quality and innovation that keeps pace with the future.",
+    "our-message": "Our Message",
+    "our-message-subtext": "Providing real estate products and services that add real value to customers and the community, meeting our clients' desires and needs, through a commitment to transparency, quality, and continuous innovation."
   },
   "ExploreOurProjectsSection": {
-    "explore-our-projects": "Explore Our Projects",
-    "explore-our-projects-description": "Exceptional residential and commercial developments.",
+    "our-projects": "Our Projects",
+    "our-projects-description": "Our projects range from residential to commercial, to meet various aspirations:",
     "more-projects": "More projects<span>?</span>"
   },
   "ProjectTitles": {
@@ -66,7 +67,7 @@
   "SanaaTowers": {
     "meta-description": "The new Sana'a Towers residential project consists of two towers located in the 50 Street district of the capital, Sana'a. Tower A includes five different types of residential apartments with structurally earthquake-resistant designs, modern luxury, spacious interiors, and practical implementation, including satellite networks and individual water and electricity meters for each apartment. Tower B includes five smaller, more economical models with the same high-quality designs and a compatible residential community.",
     "title": "Sana'a Towers",
-    "subtitle": "Jumeirah Real Estate Investment Company offers you the opportunity to enjoy luxury and modernity in its latest residential project, Sanaa Towers!",
+    "subtitle": "A modern residential complex for an integrated lifestyle, representing a qualitative addition to the Sana'a skyline and the Yemeni real estate market.",
     "featuresSection": {
       "title": "Sana'a Towers Features",
       "subtitle": "Real estate solutions tailored to exceed your expectations.",
@@ -549,7 +550,27 @@
     "title": "Al-Hathaa Towers"
   },
   "FAQsSection": {
-    "title": "Frequently Asked Questions"
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "question": "How can I ensure that I'm investing with a reliable company?",
+      "answer": "Since 2013, we at Jumeirah Real Estate Investment have been making a difference in the Yemeni market through our pioneering projects such as Al-Hathaa Towers and Sana'a Towers. Our extensive experience, our clients' trust in us, and our close and ongoing relationship with them based on transparency and clarity make us the optimal choice for anyone looking for a safe and reliable investment."
+    },
+    "q2": {
+      "question": "What distinguishes your properties from others in the market?",
+      "answer": "Our properties combine strategic location, modern design, and high-quality execution through qualified and experienced personnel, and the use of high-quality building materials. We don't just offer apartments, but we provide integrated residential complexes with their facilities and services (gardens, private parking, earthquake-resistant structural system, health clubs, swimming pools, after-sales services... etc.) All of this makes our properties an exceptional choice that stands out from others and gives you a more luxurious life."
+    },
+    "q3": {
+      "question": "Do you offer flexible payment methods that suit the different capabilities of clients?",
+      "answer": "Yes, we provide flexible payment methods and very competitive prices, designed specifically to suit different individuals and facilitate our clients' ownership of their residential units with complete ease."
+    },
+    "q4": {
+      "question": "Can I get a consultation before making a purchase decision?",
+      "answer": "Of course. Our specialized team provides free consultations based on deep experience in the real estate market to help you make the best decision that meets your residential and investment aspirations."
+    },
+    "q5": {
+      "question": "What if I face a problem after purchasing the property? Is there someone to follow up with me?",
+      "answer": "At Jumeirah, our relationship with our clients doesn't end at the sale. We provide after-sales services including maintenance, security, and cleaning to ensure your continued comfort in the long term."
+    }
   },
   "ContactUs": {
     "contact-us": "Contact Us",
@@ -589,7 +610,8 @@
     "meta-description": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential.",
     "title": "About Us",
     "subtitle": "We provide innovative and sustainable real estate services that keep pace with developments in design and construction. The company seeks to enhance the quality of life for residents and investors by developing residential.",
-    "description": "At <strong>Jumeirah</strong>, we believe finding a home is more than a transaction—it’s about creating a space where dreams grow. Founded by a team of dedicated real estate professionals, we set out to make the home buying, selling, and renting process seamless and personal. With a focus on understanding each client's unique needs, we’ve helped countless individuals and families find homes that truly fit their lifestyle and aspirations.",
+    "company-history": "Company History",
+    "company-history-description": "Since 2013, we at Jumeirah Real Estate Investment have been making a difference in the Yemeni market through our pioneering projects such as Al-Hathaa Towers and Sana'a Towers. Our extensive experience, our clients' trust in us, and our close and ongoing relationship with them based on transparency and clarity make us the optimal choice for anyone looking for a safe and reliable investment.",
     "our-vision": "Our Vision",
     "our-vision-title": "Leading with Excellence, Integrity, and Innovation in Real Estate",
     "our-vision-subtitle": "Our vision is to become a trusted leader in the real estate industry by delivering excellence, integrity, and innovation in every transaction.",

@@ -77,16 +77,17 @@ export default function AboutUsPage() {
               />
             </div>
             <div className="lg:col-span-3">
-              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:my-14 lg:text-3xl">
-                {t.rich("description", {
-                  strong: (s) => <strong>{s}</strong>,
-                })}
+              <h2 className="ltr:first-letter-primary text-2xl md:text-3xl lg:mt-14 lg:mb-4 lg:text-5xl">
+                {t("company-history")}
+              </h2>
+              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:mb-14 lg:text-3xl">
+                {t("company-history-description")}
               </p>
             </div>
           </article>
           <article className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-28">
             <div className="space-y-3 lg:col-span-3 lg:my-12 lg:space-y-2">
-              <p className="border-gradient-to-e rtl:border-gradient-to-s border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] inline-flex gap-3 rounded-full bg-gradient-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 text-center font-serif whitespace-nowrap transition before:transition-colors md:text-xs lg:mb-4 lg:px-5 lg:pt-2.5 lg:pb-2 lg:text-lg xl:text-xl rtl:bg-gradient-to-r">
+              <p className="border-gradient-to-e rtl:border-gradient-to-s border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] inline-flex gap-3 rounded-full bg-linear-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 text-center font-serif whitespace-nowrap transition before:transition-colors md:text-xs lg:mb-4 lg:px-5 lg:pt-2.5 lg:pb-2 lg:text-lg xl:text-xl rtl:bg-linear-to-r">
                 <Image src={targetIcon} alt="target-icon" className="size-6" />
                 {t("our-vision")}
               </p>
@@ -114,7 +115,7 @@ export default function AboutUsPage() {
               />
             </div>
             <div className="space-y-3 lg:col-span-3 lg:my-12 lg:space-y-2">
-              <p className="border-gradient-to-e rtl:border-gradient-to-s border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] inline-flex gap-3 rounded-full bg-gradient-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 text-center font-serif whitespace-nowrap transition before:transition-colors md:text-xs lg:mb-4 lg:px-5 lg:pt-2.5 lg:pb-2 lg:text-lg xl:text-xl rtl:bg-gradient-to-r">
+              <p className="border-gradient-to-e rtl:border-gradient-to-s border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] inline-flex gap-3 rounded-full bg-linear-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 text-center font-serif whitespace-nowrap transition before:transition-colors md:text-xs lg:mb-4 lg:px-5 lg:pt-2.5 lg:pb-2 lg:text-lg xl:text-xl rtl:bg-linear-to-r">
                 <Image
                   src={missionIcon}
                   alt="mission-icon"
@@ -164,7 +165,7 @@ function WhatWeStandFor({
   return (
     <li>
       <div className="flex flex-col items-start gap-4 md:gap-7">
-        <div className="border-gradient-t border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] rounded-full bg-gradient-to-t from-[#1A1A1A] to-[#1A1A1A]/0 p-4">
+        <div className="border-gradient-t border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] rounded-full bg-linear-to-t from-[#1A1A1A] to-[#1A1A1A]/0 p-4">
           <Image src={icon} alt="icon" className="size-8 md:size-10" />
         </div>
         <h3 className="first-letter:text-primary text-xl font-semibold md:text-xl lg:text-2xl xl:text-3xl">

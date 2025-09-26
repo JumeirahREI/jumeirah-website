@@ -98,7 +98,7 @@ export default function ContactUsSection() {
         fill
         className="-z-[9999] object-cover object-bottom"
       />
-      <div className="to-background/0 from-background absolute top-0 right-0 left-0 -z-50 h-full bg-gradient-to-b via-90%" />
+      <div className="to-background/0 from-background absolute top-0 right-0 left-0 -z-50 h-full bg-linear-to-b via-90%" />
     </section>
   );
 }

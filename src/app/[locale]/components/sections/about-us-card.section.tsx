@@ -26,7 +26,7 @@ export default function AboutUsCard() {
         <div className="mx-auto grid grid-flow-dense gap-8 md:container md:grid-cols-2 xl:grid-cols-5 xl:gap-12 xl:gap-x-28">
           <div className="xl:col-span-3">
             <TextEffect
-              className="[&>span:nth-child(2)]:first-letter:text-primary text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-4xl xl:text-5xl"
+              className="first-letter-primary text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-4xl xl:text-5xl"
               preset="cascade"
               as="h2"
               inherit
@@ -65,7 +65,7 @@ export default function AboutUsCard() {
                   placeholder="blur"
                   className="w-full object-cover md:h-32 lg:h-fit"
                 />
-                <div className="absolute top-0 right-0 left-0 size-full bg-gradient-to-tr from-[#1A1A1A] to-[#1A1A1A]/0 rtl:bg-gradient-to-tl" />
+                <div className="absolute top-0 right-0 left-0 size-full bg-linear-to-tr from-[#1A1A1A] to-[#1A1A1A]/0 rtl:bg-linear-to-tl" />
               </div>
             </div>
             <AnimatedGroup
@@ -97,7 +97,7 @@ export default function AboutUsCard() {
                 preset="cascade"
                 as="h3"
                 inherit
-                className="[&>span:nth-child(2)]:first-letter:text-primary text-[1.4rem] md:text-[1.6rem] lg:text-4xl xl:text-5xl"
+                className="first-letter-primary text-[1.4rem] md:text-[1.6rem] lg:text-4xl xl:text-5xl"
               >
                 {t("our-vision")}
               </TextEffect>
@@ -127,9 +127,9 @@ export default function AboutUsCard() {
                 preset="cascade"
                 as="h3"
                 inherit
-                className="[&>span:nth-child(2)]:first-letter:text-primary text-[1.4rem] md:text-[1.6rem] lg:text-4xl xl:text-5xl"
+                className="first-letter-primary text-[1.4rem] md:text-[1.6rem] lg:text-4xl xl:text-5xl"
               >
-                {t("our-mission")}
+                {t("our-message")}
               </TextEffect>
             </AnimatedGroup>
             <TextEffect
@@ -139,7 +139,7 @@ export default function AboutUsCard() {
               inherit
               className="mt-2 text-sm font-light text-[#9C9C9C] md:text-lg lg:text-xl xl:text-[1.7rem]"
             >
-              {t("our-mission-subtext")}
+              {t("our-message-subtext")}
             </TextEffect>
           </section>
         </div>

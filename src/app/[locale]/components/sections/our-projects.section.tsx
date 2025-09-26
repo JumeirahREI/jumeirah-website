@@ -40,15 +40,15 @@ const carouselOptions = {
   },
 } as const;
 
-export default function ExploreOutProjectsSection() {
+export default function OurProjectsSection() {
   const t = useTranslations("ExploreOurProjectsSection");
   const ct = useTranslations("Common");
   const projectsT = useTranslations("ProjectTitles");
 
   return (
     <Section
-      title={t("explore-our-projects")}
-      description={t("explore-our-projects-description")}
+      title={t("our-projects")}
+      description={t("our-projects-description")}
       sectionLink={() => (
         <SectionLink href="#">
           {t.rich("more-projects", {
@@ -84,7 +84,7 @@ export default function ExploreOutProjectsSection() {
                     className="md:size-10 md:p-1.5 xl:size-20 xl:p-3"
                     alt={projectsT(p.title)}
                   />
-                  <h3 className="border-gradient-to-e border-gradient-to-neutral-500/60 xl:border-gradient-width-0.5 first-letter:text-primary grow rounded-2xl bg-gradient-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center md:text-lg xl:p-4 xl:text-[2rem] rtl:bg-gradient-to-l">
+                  <h3 className="border-gradient-to-e border-gradient-to-neutral-500/60 xl:border-gradient-width-0.5 first-letter:text-primary grow rounded-2xl bg-linear-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center md:text-lg xl:p-4 xl:text-[2rem] rtl:bg-linear-to-l">
                     {projectsT(p.title)}
                   </h3>
                 </div>

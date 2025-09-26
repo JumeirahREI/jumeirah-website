@@ -87,7 +87,7 @@ function ModelTabButton({
     <button
       data-selected={isSelected}
       onClick={onClick}
-      className="embla__slide group border-gradient-t border-gradient-to-[#14141400] data-[selected=true]:border-gradient-from-[#7A7A7A99] data-[selected=true]:text-foreground border-gradient-from-[#7A7A7A00] active:text-foreground/50 relative z-30 cursor-pointer rounded-xl bg-gradient-to-t from-[#1A1A1A]/0 to-[#1A1A1A]/0 p-2 font-semibold text-nowrap text-[#DFDFDF]/70 transition-colors before:transition-colors hover:bg-neutral-600/30 active:bg-neutral-600/50 data-[selected=true]:from-[#1A1A1A] lg:rounded-2xl lg:p-3 2xl:text-3xl"
+      className="embla__slide group border-gradient-t border-gradient-to-[#14141400] data-[selected=true]:border-gradient-from-[#7A7A7A99] data-[selected=true]:text-foreground border-gradient-from-[#7A7A7A00] active:text-foreground/50 relative z-30 cursor-pointer rounded-xl bg-linear-to-t from-[#1A1A1A]/0 to-[#1A1A1A]/0 p-2 font-semibold text-nowrap text-[#DFDFDF]/70 transition-colors before:transition-colors hover:bg-neutral-600/30 active:bg-neutral-600/50 data-[selected=true]:from-[#1A1A1A] lg:rounded-2xl lg:p-3 2xl:text-3xl"
     >
       {children}
     </button>

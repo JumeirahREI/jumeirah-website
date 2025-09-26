@@ -18,7 +18,7 @@ export const viewport: Viewport = {
   // initialScale: 1.0,
   // maximumScale: 1.0,
   // userScalable: false,
-  themeColor: "#ffcb05",
+  themeColor: "#000101",
 };
 
 export default async function RootLayout({
@@ -46,7 +46,7 @@ export default async function RootLayout({
       dir={locale === "ar" ? "rtl" : "ltr"}
       className={font.className}
     >
-      <body className="bg-background text-foreground relative max-w-svw overflow-x-clip font-sans md:pt-4 lg:pt-10">
+      <body className="bg-background text-foreground relative max-w-svw font-sans not-supports-[overflow:clip]:overflow-x-hidden supports-[overflow:clip]:overflow-x-clip md:pt-4 lg:pt-10">
         <div className="space-sections">
           <LazyMotionProvider>
             <BackgroundImage />
@@ -80,8 +80,8 @@ function BackgroundImage() {
         fetchPriority="high"
         fill
       />
-      <div className="from-background/0 to-background/60 absolute start-0 top-0 -z-40 h-full w-4/6 bg-gradient-to-l rtl:bg-gradient-to-r" />
-      <div className="absolute -end-32 top-0 -z-40 h-full w-[150svw] bg-gradient-to-tr from-black/0 from-50% to-[#2F3A43]/60 md:w-full rtl:bg-gradient-to-tl" />
+      <div className="to-background absolute start-0 top-0 -z-40 h-full w-4/6 bg-linear-to-l from-[#00010100] opacity-60 rtl:bg-linear-to-r" />
+      <div className="absolute -end-32 top-0 -z-40 h-full w-[150svw] bg-linear-to-tr from-black/0 from-50% to-[#2F3A43]/60 md:w-full rtl:bg-linear-to-tl" />
     </div>
   );
 }
