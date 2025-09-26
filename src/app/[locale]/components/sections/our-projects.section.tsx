@@ -62,14 +62,14 @@ export default function OurProjectsSection() {
         <AnimatedGroup
           variants={transitionVariants}
           className="embla__container flex gap-4 md:gap-6 xl:gap-10 2xl:justify-center"
-          childrenClassName="embla__slide md:mx-2 flex-[0_0_90%] sm:flex-[0_0_80%] md:flex-[0_0_47%] 2xl:flex-[0_0_40%]"
+          childrenClassName="embla__slide md:mx-2 flex-[0_0_90%] sm:flex-[0_0_80%] md:flex-[0_0_47%] 2xl:flex-[0_0_40%] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch] not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary"
           inherit
         >
           {projects.map((p) => (
             <ImageContainer
               key={p.title}
               src={p.image}
-              className="group transition-[filter, scale] w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem]"
+              className="group transition-[filter, scale] not-first: w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem]"
               imageClassName="transition-[filter] duration-300 ease-in-out lg:group-hover:brightness-125"
             >
               <Link
@@ -84,9 +84,11 @@ export default function OurProjectsSection() {
                     className="md:size-10 md:p-1.5 xl:size-20 xl:p-3"
                     alt={projectsT(p.title)}
                   />
-                  <h3 className="border-gradient-to-e border-gradient-to-neutral-500/60 xl:border-gradient-width-0.5 first-letter:text-primary grow rounded-2xl bg-linear-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center md:text-lg xl:p-4 xl:text-[2rem] rtl:bg-linear-to-l">
-                    {projectsT(p.title)}
-                  </h3>
+                  <div className="border-gradient-to-e border-gradient-to-neutral-500/60 xl:border-gradient-width-0.5 grow rounded-2xl bg-linear-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center md:text-lg xl:p-4 xl:text-[2rem] rtl:bg-linear-to-l">
+                    <h3 className="first-letter-primary-or-clip mx-auto w-fit">
+                      {projectsT(p.title)}
+                    </h3>
+                  </div>
                 </div>
               </Link>
             </ImageContainer>

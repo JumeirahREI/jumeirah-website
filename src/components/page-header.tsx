@@ -17,12 +17,12 @@ export default function PageHeader({
   return (
     <header
       className={cn(
-        "from-background to-background/0 relative z-20 overflow-x-clip bg-linear-to-t from-40% to-80% text-center",
+        "from-background relative z-20 overflow-x-clip bg-linear-to-t from-40% to-[#00010100] to-80% text-center not-supports-[overflow:clip]:overflow-hidden",
         className,
       )}
     >
       <div className="container pt-28 pb-32 md:pb-40 lg:pt-40 lg:pb-60">
-        <h1 className="first-letter:text-primary mb-2 text-[2.7rem] md:mb-1 md:text-[4rem] lg:text-[5rem]">
+        <h1 className="first-letter-primary-or-clip mx-auto mb-2 w-fit from-[1ch] to-[1ch] text-[2.7rem] md:mb-1 md:text-[4rem] lg:text-[5rem]">
           {title}
         </h1>
         <p className="mx-auto mb-10 font-light opacity-70 max-md:px-2 md:mb-14 md:text-xl lg:text-2xl xl:w-[58rem]">

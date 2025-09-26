@@ -16,6 +16,11 @@ export default function ProjectDetails({ projectData }: ProjectDetailsProps) {
   return (
     <>
       <PageHeader
+        className={
+          projectData.projectKey === "SanaaTowers"
+            ? "[&_h1]:from-[1.5ch] [&_h1]:to-[1.5ch]"
+            : "[&_h1]:first-letter-primary [&_h1]:text-foreground"
+        }
         title={t(projectData.title)}
         subTitle={t(projectData.subtitle)}
       >

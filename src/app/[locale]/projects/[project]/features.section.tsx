@@ -15,7 +15,7 @@ export default function FeaturesSection({
   return (
     <section className="bg-background z-30">
       <div className="container">
-        <h2 className="first-letter:text-primary text-center text-3xl md:text-4xl lg:text-5xl">
+        <h2 className="first-letter-primary-or-clip mx-auto w-fit pb-1 text-center text-3xl md:text-4xl lg:text-5xl">
           {t(fs.title)}
         </h2>
         <p className="mt-2 mb-4 text-center text-sm font-light text-wrap text-[#9C9C9C] md:text-lg lg:mx-32 lg:mt-3 lg:mb-10 lg:text-xl lg:leading-relaxed xl:mx-52 xl:text-2xl 2xl:mx-80">

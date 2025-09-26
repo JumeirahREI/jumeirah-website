@@ -1,51 +1,38 @@
-"use client";
-
-import CategoriesTabBar from "@/app/[locale]/projects/components/categories-tab-bar";
+import alHathaaTowersImage from "@/../public/images/alhathaa-towers.webp";
+import sanaaTowersImage from "@/../public/images/sanaa-towers.webp";
 import CategoryProjectItem from "@/app/[locale]/projects/components/category-project-item";
-import CarouselArrowButton from "@/components/carousel-arrow-button";
-import useEmblaCarousel from "embla-carousel-react";
-import { useLocale, useTranslations } from "next-intl";
-import { useState } from "react";
-import alHathaaTowersImage from "../../../../../public/images/alhathaa-towers.webp";
-import sanaaTowersImage from "../../../../../public/images/sanaa-towers.webp";
+import Carousel from "@/components/carousel";
+import { useTranslations } from "next-intl";
+
+const carouselOptions = {
+  align: "center",
+  containScroll: false,
+  skipSnaps: true,
+  breakpoints: {
+    "(min-width: 768px)": {
+      align: "start",
+      containScroll: "keepSnaps",
+      slidesToScroll: 1,
+      skipSnaps: true,
+    },
+    "(min-width: 1024px)": {
+      align: "center",
+      slidesToScroll: 3,
+      containScroll: "keepSnaps",
+      skipSnaps: false,
+      active: false,
+    },
+    "(min-width: 1280px)": {
+      align: "center",
+      slidesToScroll: 3,
+      containScroll: false,
+      skipSnaps: true,
+    },
+  },
+} as const;
 
 export default function ProjectsSection() {
   const t = useTranslations("ProjectsPage");
-  const [selectedTab, setSelectedTab] = useState("all-projects");
-  const locale = useLocale();
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    align: "center",
-    containScroll: false,
-    direction: locale === "ar" ? "rtl" : "ltr",
-    skipSnaps: true,
-    breakpoints: {
-      "(min-width: 768px)": {
-        align: "start",
-        containScroll: "keepSnaps",
-        slidesToScroll: 1,
-        skipSnaps: true,
-      },
-      "(min-width: 1024px)": {
-        align: "center",
-        slidesToScroll: 3,
-        containScroll: "keepSnaps",
-        skipSnaps: false,
-      },
-      "(min-width: 1280px)": {
-        align: "center",
-        slidesToScroll: 3,
-        containScroll: false,
-        skipSnaps: true,
-      },
-    },
-  });
-
-  const tabs = [
-    { label: t("all-projects"), value: "all-projects" },
-    { label: t("towers"), value: "towers" },
-    { label: t("apartments"), value: "apartments" },
-    { label: t("villas"), value: "villas" },
-  ];
 
   const projects = [
     {
@@ -65,29 +52,15 @@ export default function ProjectsSection() {
   return (
     <section className="bg-background mb-20 md:mb-32 lg:mb-52">
       <div className="relative z-30 space-y-10 md:space-y-12 lg:space-y-16 xl:space-y-24">
-        <CategoriesTabBar
-          tabs={tabs}
-          selectedTab={selectedTab}
-          setSelectedTab={setSelectedTab}
-        />
         <div className="relative md:container md:mx-auto">
-          <CarouselArrowButton
-            className="absolute start-0 top-2/5 z-30 hidden -translate-y-1/2 scale-80 md:block lg:scale-75 xl:scale-100"
-            onClick={() => emblaApi?.scrollPrev()}
-          />
-          <CarouselArrowButton
-            className="absolute end-0 top-2/5 z-30 hidden -translate-y-1/2 scale-80 md:block lg:scale-75 xl:scale-100"
-            onClick={() => emblaApi?.scrollNext()}
-            isEnd
-          />
-          <div
-            className="embla md:fade-x w-full overflow-hidden md:px-24 xl:px-32"
-            ref={emblaRef}
+          <Carousel
+            options={carouselOptions}
+            className="md:fade-x w-full overflow-hidden md:px-24 xl:px-32"
           >
-            <div className="embla__container flex">
+            <div className="embla__container flex gap-4 md:gap-6 xl:gap-10 2xl:justify-center">
               {projects.map((project, index) => (
                 <div
-                  className="embla__slide mx-3 min-w-0 flex-[0_0_80%] md:flex-[0_0_47%] lg:flex-[0_0_30%] xl:mx-5"
+                  className="embla__slide not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary flex-[0_0_90%] sm:flex-[0_0_80%] md:mx-2 md:flex-[0_0_47%] 2xl:flex-[0_0_40%] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch]"
                   key={index}
                 >
                   <CategoryProjectItem
@@ -99,7 +72,7 @@ export default function ProjectsSection() {
                 </div>
               ))}
             </div>
-          </div>
+          </Carousel>
         </div>
       </div>
     </section>
