@@ -8,6 +8,7 @@ type ImageContainerProps = {
   imageClassName?: string;
   src: StaticImageData;
   alt?: string;
+  fetchPriority?: "high" | "low";
 } & PropsWithChildren;
 
 export default function ImageContainer({
@@ -16,6 +17,7 @@ export default function ImageContainer({
   imageClassName,
   src,
   alt = "",
+  fetchPriority,
   children,
 }: ImageContainerProps) {
   return (
@@ -35,7 +37,9 @@ export default function ImageContainer({
             imageClassName,
           )}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          loading="lazy"
+          loading={fetchPriority === "high" ? "eager" : "lazy"}
+          fetchPriority={fetchPriority}
+          priority={fetchPriority === "high"}
           // placeholder="blur"
           fill
         />

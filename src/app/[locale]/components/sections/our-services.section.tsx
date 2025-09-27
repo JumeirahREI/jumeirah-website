@@ -87,6 +87,7 @@ function ServiceGalleryCard({
     <ImageContainer
       src={src}
       containerTag={tag}
+      fetchPriority="high"
       className="h-full w-full flex-1 text-center"
     >
       <div className="flex h-full flex-col items-center justify-center gap-4 p-5 pt-16 lg:pt-30 xl:pt-44">
@@ -94,16 +95,20 @@ function ServiceGalleryCard({
           <div className="bg-glass rounded-full border border-white/30 p-4 md:p-4">
             <Image
               src={icon}
-              loading="lazy"
               placeholder="empty"
               alt={t(title as Parameters<typeof t>[0])}
               className="size-12 md:size-14 lg:size-14 xl:size-20"
+              fetchPriority="high"
+              priority
             />
           </div>
           <h3 className="z-10 text-2xl xl:text-3xl 2xl:text-4xl">
             {t(title as Parameters<typeof t>[0])}
           </h3>
-          {/* <div className="mt-4 mb-4 flex justify-center gap-3 self-stretch text-sm md:mb-10 lg:mt-2 lg:gap-2 lg:text-xs xl:mt-4 xl:mb-10 xl:text-base">
+          <div
+            aria-hidden
+            className="invisible mt-4 mb-4 flex justify-center gap-3 self-stretch text-sm md:mb-10 lg:mt-2 lg:gap-2 lg:text-xs xl:mt-4 xl:mb-10 xl:text-base"
+          >
             {options.map((option) => (
               <span
                 key={option}
@@ -112,7 +117,7 @@ function ServiceGalleryCard({
                 {t(option as Parameters<typeof t>[0])}
               </span>
             ))}
-          </div> */}
+          </div>
         </div>
         <GotoIcon
           className="size-10 justify-self-end lg:size-10 lg:p-1.5 xl:mb-4 xl:size-14 xl:p-2"

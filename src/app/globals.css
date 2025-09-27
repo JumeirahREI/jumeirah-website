@@ -1,9 +1,15 @@
-@import "tailwindcss";
+@import "tailwindcss" source("../../src/");
 
 :root {
   --background: #000101;
   --foreground: #dfdfdf;
   --bg-clip-width: 0.85ch;
+}
+
+@layer base {
+  main {
+    @apply bg-background;
+  }
 }
 
 @theme inline {

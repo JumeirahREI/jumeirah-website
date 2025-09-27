@@ -19,8 +19,8 @@ export default function ParallaxScrollEffect({
   return (
     <m.div
       ref={ref}
-      style={{ y }}
-      transition={{ type: "spring", stiffness: 100 }}
+      style={{ y, willChange: "transform" }}
+      transition={{ ease: "easeInOut" }}
       {...props}
     />
   );

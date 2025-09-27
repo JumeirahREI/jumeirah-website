@@ -19,7 +19,6 @@ export const montserratArabicFont = localFont({
     },
   ],
   display: "swap",
-  preload: true,
   fallback: ["system-ui"],
 });
 
@@ -42,6 +41,5 @@ export const aeonikFont = localFont({
     },
   ],
   display: "swap",
-  preload: true,
   fallback: ["system-ui"],
 });
