@@ -14,9 +14,8 @@ import innovationIcon from "../../../../public/svg/innovation-icon.svg";
 import integrityIcon from "../../../../public/svg/integrity-icon.svg";
 import missionIcon from "../../../../public/svg/mission-icon.svg";
 import sustainabilityIcon from "../../../../public/svg/sustainability-icon.svg";
-import targetIcon from "../../../../public/svg/target-icon.svg";
 
-const whatWeStandForData = [
+const ourValuesData = [
   {
     icon: integrityIcon,
     title: "integrity",
@@ -29,8 +28,8 @@ const whatWeStandForData = [
   },
   {
     icon: customerCentricityIcon,
-    title: "customer-centricity",
-    description: "customer-centricity-description",
+    title: "customer-first",
+    description: "customer-first-description",
   },
   {
     icon: innovationIcon,
@@ -85,7 +84,7 @@ export default function AboutUsPage() {
               </p>
             </div>
           </article>
-          <article className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-28">
+          {/* <article className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-28">
             <div className="space-y-3 lg:col-span-3 lg:my-12 lg:space-y-2">
               <p className="border-gradient-to-e rtl:border-gradient-to-s border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] inline-flex gap-3 rounded-full bg-linear-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 text-center font-serif whitespace-nowrap transition before:transition-colors md:text-xs lg:mb-4 lg:px-5 lg:pt-2.5 lg:pb-2 lg:text-lg xl:text-xl rtl:bg-linear-to-r">
                 <Image src={targetIcon} alt="target-icon" className="size-6" />
@@ -105,7 +104,7 @@ export default function AboutUsPage() {
                 alt={pt("sanaa-towers")}
               />
             </div>
-          </article>
+          </article> */}
           <article className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-28">
             <div className="row-start-2 self-stretch md:row-start-1 lg:col-span-2">
               <ImageContainer
@@ -133,12 +132,12 @@ export default function AboutUsPage() {
           </article>
         </section>
         <Section
-          title={t("what-we-stand-for")}
-          description={t("what-we-stand-for-subtitle")}
+          title={t("our-values")}
+          description={t("our-values-title")}
           imgClassName="opacity-30"
         >
           <ul className="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-20 lg:grid-cols-3">
-            {whatWeStandForData.map((item) => (
+            {ourValuesData.map((item) => (
               <WhatWeStandFor
                 key={item.title}
                 icon={item.icon}

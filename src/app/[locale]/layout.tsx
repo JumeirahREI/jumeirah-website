@@ -3,6 +3,7 @@ import ContactUsSection from "@/components/contact-us-section";
 import FAQsSection from "@/components/faqs-section";
 import LazyMotionProvider from "@/components/lazy-motion-provider";
 import Navbar from "@/components/navbar";
+import ParallaxScrollEffect from "@/components/parallax-scroll-effect";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import { aeonikFont, montserratArabicFont } from "@/fonts";
 import { routing } from "@/i18n/routing";
@@ -66,7 +67,7 @@ export default async function RootLayout({
 
 function BackgroundImage() {
   return (
-    <div
+    <ParallaxScrollEffect
       aria-hidden
       className="absolute top-0 right-0 left-0 -z-[9999] !mb-0 h-full max-h-[40rem] overflow-hidden md:max-h-[50rem] lg:max-h-[60rem]"
     >
@@ -82,7 +83,7 @@ function BackgroundImage() {
       />
       <div className="to-background absolute start-0 top-0 -z-40 h-full w-4/6 bg-linear-to-l from-[#00010100] opacity-60 rtl:bg-linear-to-r" />
       <div className="absolute -end-32 top-0 -z-40 h-full w-[150svw] bg-linear-to-tr from-black/0 from-50% to-[#2F3A43]/60 md:w-full rtl:bg-linear-to-tl" />
-    </div>
+    </ParallaxScrollEffect>
   );
 }
 
