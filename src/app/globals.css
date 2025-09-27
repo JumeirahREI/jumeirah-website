@@ -183,22 +183,27 @@
   --fade-end: 90%;
 }
 
-@layer utilities {
-  /* Chrome, Safari and Opera */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* @layer utilities {
   .no-scrollbar::-webkit-scrollbar {
     display: none;
   }
 
-  /* IE and Edge */
   .no-scrollbar {
     -ms-overflow-style: none;
   }
 
-  /* Firefox */
   .no-scrollbar {
     scrollbar-width: none;
   }
-}
+} */
 
 *.container {
   @apply mx-auto px-4;

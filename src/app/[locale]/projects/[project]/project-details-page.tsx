@@ -24,12 +24,8 @@ export default function ProjectDetails({ projectData }: ProjectDetailsProps) {
         title={t(projectData.title)}
         subTitle={t(projectData.subtitle)}
       >
-        <div className="flex items-center justify-center gap-4">
-          {/* <GotoIcon alt="" className="" /> */}
-          <AppLink
-            href="#"
-            className="font-semibold lg:px-4 lg:py-2 lg:text-xl"
-          >
+        <div className="flex items-center justify-center gap-4 text-xs font-semibold md:gap-6 md:text-sm lg:text-base">
+          <AppLink href="/contact" className="lg:py-2">
             {ct("contact-us")}
           </AppLink>
         </div>

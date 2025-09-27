@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <header className="relative z-10">
-        <div className="container grid grid-rows-2 pt-52 pb-28 md:pt-36 lg:grid-cols-3 lg:pt-20 xl:pt-24">
+        <div className="container grid grid-rows-2 pt-52 pb-32 md:pt-36 lg:grid-cols-3 lg:pt-20 xl:pt-24">
           <div className="z-30 col-span-2 row-span-2 space-y-2 2xl:space-y-5 rtl:space-y-8">
             <TextEffect
               as="h1"
@@ -24,9 +24,9 @@ export default function Home() {
               delay={0.2}
               speedSegment={0.25}
               variants={luxuryPresets.hero}
-              className="text-foreground drop-shadow-background/70 md:drop-shadow-background/20 ltr:first-letter-primary text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-4xl lg:leading-tight xl:text-6xl rtl:leading-snug [&>span:first-child]:block"
+              className="text-foreground drop-shadow-background/70 md:drop-shadow-background/20 ltr:first-letter-primary text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-4xl lg:leading-tight xl:text-6xl rtl:lg:leading-normal [&>span:first-child]:block"
             >
-              <span className="from-primary to-foreground bg-linear-to-r from-[1ch] to-[1ch] bg-clip-text text-7xl font-bold md:text-7xl lg:text-7xl xl:text-[7rem] rtl:bg-linear-to-l rtl:text-transparent">
+              <span className="from-primary to-foreground bg-linear-to-r from-[1ch] to-[1ch] bg-clip-text pb-1 text-7xl font-bold md:text-7xl lg:text-7xl xl:text-[7rem] rtl:bg-linear-to-l rtl:text-transparent">
                 {t("jumeirah-hero")}
               </span>{" "}
               {ct("rei")}

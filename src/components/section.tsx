@@ -39,9 +39,10 @@ export default function Section({
             as="h2"
             // speedSegment={0.01}
             // className="ltr:first-letter-primary from-primary to-foreground bg-linear-to-r from-[0.85ch] to-[0.85ch] pb-1 text-3xl md:text-4xl xl:text-5xl rtl:bg-linear-to-l rtl:text-transparent"
+            className="ltr:first-letter-primary"
             inherit
           >
-            <span className="ltr:first-letter-primary from-primary to-foreground bg-linear-to-r from-[0.85ch] to-[0.85ch] bg-clip-text pb-1 text-3xl md:text-4xl xl:text-5xl rtl:bg-linear-to-l rtl:text-transparent">
+            <span className="first-letter-primary-or-clip pb-1 text-3xl md:text-4xl xl:text-5xl">
               {title}
             </span>
           </TextEffect>

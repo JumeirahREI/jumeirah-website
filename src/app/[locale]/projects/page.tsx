@@ -17,7 +17,7 @@ export default function ProjectsPage() {
           <AppLink variant="outline" href="#" className="lg:py-2">
             {ct("our-services")}
           </AppLink>
-          <AppLink href="#" className="lg:py-2">
+          <AppLink href="/contact" className="lg:py-2">
             {ct("contact-us")}
           </AppLink>
         </div>
