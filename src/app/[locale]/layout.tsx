@@ -67,23 +67,25 @@ export default async function RootLayout({
 
 function BackgroundImage() {
   return (
-    <ParallaxScrollEffect
-      aria-hidden
-      className="absolute top-0 right-0 left-0 -z-[9999] !mb-0 h-full max-h-[40rem] overflow-hidden md:max-h-[50rem] lg:max-h-[60rem]"
-    >
-      <Image
-        src={heroBackgroundImage}
-        className="-z-50 h-full w-full object-cover object-top"
-        alt=""
-        placeholder="blur"
-        sizes="(max-width: 768px) 100vh, (max-width: 1200px) 100vw, 100vw"
-        priority
-        fetchPriority="high"
-        fill
-      />
-      <div className="to-background absolute start-0 top-0 -z-40 h-full w-4/6 bg-linear-to-l from-[#00010100] opacity-60 rtl:bg-linear-to-r" />
-      <div className="absolute -end-32 top-0 -z-40 h-full w-[150svw] bg-linear-to-tr from-black/0 from-50% to-[#2F3A43]/60 md:w-full rtl:bg-linear-to-tl" />
-    </ParallaxScrollEffect>
+    <div className="absolute top-0 right-0 left-0 -z-[9999] !mb-0 h-full max-h-[40rem] overflow-hidden md:max-h-[50rem] lg:max-h-[60rem]">
+      <ParallaxScrollEffect
+        aria-hidden
+        className="pointer-events-none size-full"
+      >
+        <Image
+          src={heroBackgroundImage}
+          className="-z-50 h-full w-full object-cover object-top"
+          alt=""
+          placeholder="blur"
+          sizes="(max-width: 768px) 100vh, (max-width: 1200px) 100vw, 100vw"
+          priority
+          fetchPriority="high"
+          fill
+        />
+        <div className="to-background absolute start-0 top-0 -z-40 h-full w-4/6 bg-linear-to-l from-[#00010100] opacity-60 rtl:bg-linear-to-r" />
+        <div className="absolute -end-32 top-0 -z-40 h-full w-[150svw] bg-linear-to-tr from-black/0 from-50% to-[#2F3A43]/60 md:w-full rtl:bg-linear-to-tl" />
+      </ParallaxScrollEffect>
+    </div>
   );
 }
 
