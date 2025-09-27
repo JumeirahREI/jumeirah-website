@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 const carouselOptions: CarouselOptions = {
   align: "start",
   slidesToScroll: 1,
-  // dragFree: true,
+  dragFree: true,
 };
 
 export default function ModelTabs({

@@ -1,6 +1,5 @@
 import type { Variants } from "motion/react";
 
-// Shared defaults
 const defaultContainerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
