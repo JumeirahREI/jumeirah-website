@@ -1,4 +1,4 @@
-import { TowerData } from "@/../types";
+import { TowerData } from "@/data/types";
 import { towerBModels } from "./models";
 
 export const towerB: TowerData<"SanaaTowers"> = {

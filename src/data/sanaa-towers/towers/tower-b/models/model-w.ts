@@ -2,7 +2,7 @@ import modelW1Image from "@/../public/images/sanaa-towers/sanaa-towers-model-w1.
 import modelW2Image from "@/../public/images/sanaa-towers/sanaa-towers-model-w2.webp";
 import modelW1NumberedImage from "@/../public/images/sanaa-towers/sanaa-towers-numbered-model-w1.webp";
 import modelW2NumberedImage from "@/../public/images/sanaa-towers/sanaa-towers-numbered-model-w2.webp";
-import { ModelData } from "@/../types";
+import { ModelData } from "@/data/types";
 
 export const modelW: ModelData<"SanaaTowers"> = {
   name: "towers.tower-b.model-w.name",
