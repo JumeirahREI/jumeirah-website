@@ -1,6 +1,5 @@
 "use client";
 
-import MediaDisplay from "@/app/[locale]/(main)/projects/components/project-towers-display/media-display";
 import TowerDisplayImage from "@/app/[locale]/(main)/projects/components/project-towers-display/tower-display-image";
 import { useTowersDisplayContext } from "@/app/[locale]/(main)/projects/components/project-towers-display/towers-display-context";
 import {
@@ -39,13 +38,13 @@ export default function DetailsPanel({
 
   if (selectedDataTab === "photos" && Array.isArray(mediaContainerData)) {
     return (
-      <div className="grid grid-flow-col grid-rows-2 gap-4 py-4 md:py-7 lg:py-14 xl:py-12 2xl:py-10">
+      <div className="grid h-full w-fit max-w-full grid-flow-col grid-rows-2 gap-4 py-4 md:py-7 lg:py-14 xl:py-12 2xl:py-10">
         {mediaContainerData.map((image, index) => (
           <div
             key={index}
             onClick={() => setSelectedMediaIndex(index)}
             data-selected={index === selectedMediaIndex}
-            className="data-[selected=true]:border-primary relative h-32 w-52 cursor-pointer rounded-3xl border border-[#7A7A7A]/30 transition-colors"
+            className="data-[selected=true]:border-primary relative w-52 cursor-pointer rounded-3xl border border-[#7A7A7A]/30 transition-colors hover:bg-white/5"
           >
             <TowerDisplayImage
               key={image.image.src}
@@ -89,10 +88,10 @@ function ModelDetailsPanel({
       aria-label="details"
       className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:grid-rows-[1fr_auto] xl:grid-cols-3 2xl:gap-10 2xl:py-4"
     >
-      <MediaDisplay
+      {/* <MediaDisplay
         projectKey={projectKey}
         className="h-52 lg:col-start-2 lg:row-start-1 lg:h-full xl:col-span-2 xl:col-start-2"
-      />
+      /> */}
       <div className="row-span-2 space-y-12 lg:py-5">
         <SectionDetails
           section={modelDetails.sections[0]}

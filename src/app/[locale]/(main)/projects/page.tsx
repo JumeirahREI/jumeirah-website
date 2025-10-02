@@ -1,4 +1,4 @@
-import ProjectsSection from "@/app/[locale]/(main)/projects/_sections/projects.section";
+import ProjectsSection from "@/app/[locale]/(main)/projects/components/sections/projects.section";
 import AppLink from "@/components/app-link";
 import PageHeader from "@/components/page-header";
 import { Metadata } from "next";

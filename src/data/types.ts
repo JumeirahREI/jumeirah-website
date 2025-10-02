@@ -41,6 +41,12 @@ export type FeatureData<T extends Project> = {
   icon: StaticImageData;
 };
 
+export type ServiceData<T extends Project> = {
+  title: BaseTranslation<T>;
+  icon: StaticImageData;
+  backgroundImage: StaticImageData;
+};
+
 export type ProjectData<T extends Project> = {
   projectKey: T;
   title: BaseTranslation<T>;
@@ -55,5 +61,10 @@ export type ProjectData<T extends Project> = {
     title: BaseTranslation<T>;
     subtitle: BaseTranslation<T>;
     features: FeatureData<T>[];
+  };
+  servicesSection?: {
+    title: BaseTranslation<T>;
+    subtitle: BaseTranslation<T>;
+    services: ServiceData<T>[];
   };
 };

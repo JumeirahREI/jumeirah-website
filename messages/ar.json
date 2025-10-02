@@ -1,5 +1,13 @@
 {
   "Common": {
+    "tabs": {
+      "navigation": "تنقل المشروع",
+      "media": "وسائط المشروع",
+      "data": "بيانات المشروع"
+    },
+    "towers": {
+      "title": "أبراج المشروع"
+    },
     "jumeirah": "جميرا",
     "rei": "للإستثمار العقاري",
     "home": "الرئيسية",
@@ -68,16 +76,6 @@
     "meta-description": "مشروع صنعاء تاورز السكني الجديد يتألف من برجين ويقع في منطقة الخمسين بالعاصمة صنعاء. يتضمّن البرج A خمسة نماذج مختلفة من الشقق السكنية ذات تصاميم مقاومة للزلازل انشائياً , عصرية فاخرة وواسعة داخليا وعملية تطبيقياً بشبكة ساتلايت وعدادات ماء وكهرباء لكل شقة. ويتضمن البرج B خمسة نماذج اقتصادية أقل مساحةً و بنفس جودة التصاميم ومجتمع السكان المتوافق.",
     "title": "صنعاء تاورز",
     "subtitle": " مجمع سكني عصري لأسلوب حياة متكامل يمثل إضافة نوعية لأفق مدينة صنعاء والسوق العقاري اليمني.",
-    "featuresSection": {
-      "title": "ميزات صنعاء تاورز",
-      "subtitle": "حلول عقارية مصممة لتتجاوز توقعاتك.",
-      "earthquake-resistance": "مقاوم للزلازل",
-      "private-parking": "مواقف خاصة",
-      "modern-elevators": "مصاعد حديثة",
-      "spacious-layouts": "مساحات واسعة",
-      "trusted-security": "أمن موثوق",
-      "after-sale-support": "خدمات ما بعد البيع"
-    },
     "towers": {
       "tower-a": {
         "title": "البرج <span>A</span>",
@@ -91,7 +89,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "guest-reception-hall": "صالة استقبال الضيوف: 3.75m x 3.10m",
               "majlis-bathroom": "حمام مجلس: 2.00m x 1.50m",
               "majlis-guest-lounge": "مجلس: 7.00m x 3.75m"
@@ -129,7 +127,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "guest-reception-hall": "صالة استقبال الضيوف: 3.75m x 3.10m",
               "majlis-bathroom": "حمام مجلس: 2.05m x 2.05m",
               "majlis-guest-lounge": "مجلس: 7.45m x 3.75m"
@@ -168,7 +166,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "guest-reception-hall": "صالة استقبال الضيوف: 3.90m x 3.75m",
               "majlis-bathroom": "حمام مجلس: 2.20m x 2.15m",
               "majlis-guest-lounge": "مجلس: 7.40m x 3.75m"
@@ -209,7 +207,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "guest-reception-hall": "صالة استقبال الضيوف: 4.50m x 3.70m",
               "majlis-bathroom": "حمام مجلس: 2.25m x 2.15m",
               "majlis-guest-lounge": "مجلس: 7.50m x 3.75m"
@@ -248,7 +246,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "guest-reception-hall": "صالة استقبال الضيوف: 3.80m x 3.70m",
               "majlis-bathroom": "حمام مجلس: 2.40m x 1.50m",
               "majlis-guest-lounge": "مجلس: 8.30m x 3.70m"
@@ -285,7 +283,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "guest-reception-hall": "مدخل الضيوف: 3.60m x 1.45m",
               "majlis-bathroom": "حمام مجلس: 2.00m x 1.50m",
               "majlis-guest-lounge": "مجلس: 6.50m x 3.60m"
@@ -317,7 +315,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "guest-reception-hall": "صالة استقبال الضيوف: 3.60m x 3.60m",
               "majlis-bathroom": "حمام مجلس: 2.00m x 1.50m",
               "majlis-guest-lounge": "مجلس: 6.50m x 3.60m"
@@ -351,7 +349,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "majlis-guest-lounge": "مجلس: 7.50m x 3.55m",
               "majlis-bathroom": "حمام مجلس: 2.25m x 2.10m"
             },
@@ -381,7 +379,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "guest-reception-hall": "صالة استقبال الضيوف: 3.90m x 2.35m",
               "majlis-bathroom": "حمام مجلس: 2.00m x 1.70m",
               "majlis-guest-lounge": "مجلس: 7.00m x 3.75m"
@@ -414,7 +412,7 @@
           },
           "details": {
             "guest-section": {
-              "title": "جناح الصيوف",
+              "title": "جناح الضيوف",
               "majlis-guest-lounge": "مجلس: 7.30m x 3.55m",
               "majlis-bathroom": "حمام مجلس: 2.00m x 2.00m"
             },
@@ -464,7 +462,7 @@
             },
             "second-floor": {
               "guest-section": {
-                "title": "جناح الصيوف",
+                "title": "جناح الضيوف",
                 "majlis-guest-lounge": "مجلس: 7.50m x 3.55m",
                 "majlis-bathroom": "حمام مجلس: 2.25m x 2.10m"
               },
@@ -497,7 +495,7 @@
           "details": {
             "first-floor": {
               "guest-section": {
-                "title": "جناح الصيوف",
+                "title": "جناح الضيوف",
                 "majlis-guest-lounge": "مجلس: 7.30m x 3.55m",
                 "majlis-bathroom": "حمام مجلس: 2.00m x 2.00m"
               },
@@ -543,6 +541,26 @@
           }
         }
       }
+    },
+    "featuresSection": {
+      "title": "ميزات صنعاء تاورز",
+      "subtitle": "حلول عقارية مصممة لتتجاوز توقعاتك.",
+      "earthquake-resistance": "مقاوم للزلازل",
+      "private-parking": "مواقف خاصة",
+      "modern-elevators": "مصاعد حديثة",
+      "spacious-layouts": "مساحات واسعة",
+      "trusted-security": "أمن موثوق",
+      "after-sale-support": "خدمات ما بعد البيع"
+    },
+    "servicesSection": {
+      "title": "خدمات صنعاء تاورز",
+      "subtitle": "خدمات متكاملة صُممت لراحتك وسهولة حياتك اليومية:",
+      "fitness-center": "نادي صحي خاص بالرجال<br></br> وخاص بالنساء",
+      "sauna": "ساونا",
+      "jacuzzi": "جاكوزي",
+      "swimming-pool": "مسبح خاص",
+      "central-park": "حديقة وسطية",
+      "super-market": "سوبر ماركت"
     }
   },
   "Alhathaa-Towers": {
@@ -574,7 +592,7 @@
   },
   "ContactUs": {
     "contact-us": "تواصل بنا",
-    "description": "نحن سعداء بالتحدث معك ومستعدون لمساعدتك في أي استفسارات أو دعم تحتاجه.",
+    "description": "يسعدنا استقبال استفساراتكم، وفريقنا جاهز لتقديم الدعم اللازم:",
     "first-name": "الاسم",
     "last-name": "اللقب",
     "email": "البريد الإلكتروني",

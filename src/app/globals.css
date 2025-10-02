@@ -255,13 +255,13 @@ body {
         "data-tabs media";
     }
 
-    .tower-display-grid:has(div[aria-label="details"]) {
+    /* .tower-display-grid:has(div[aria-label="details"]) {
       grid-template-areas:
         "model-tabs floor-tabs"
         "description description"
         "description description"
         "data-tabs data-tabs";
-    }
+    } */
   }
 }
 

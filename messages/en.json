@@ -1,5 +1,13 @@
 {
   "Common": {
+    "tabs": {
+      "navigation": "Project navigation",
+      "media": "Project media",
+      "data": "Project data"
+    },
+    "towers": {
+      "title": "Project Towers"
+    },
     "jumeirah": "Jumeirah",
     "rei": "Real Estate Investment",
     "home": "Home",
@@ -544,7 +552,16 @@
       "trusted-security": "Trusted Security",
       "after-sale-support": "After-Sale Support"
     },
-    "servicesSection": {}
+    "servicesSection": {
+      "title": "Sana'a Towers Services",
+      "subtitle": "Integrated services designed for your comfort and ease of daily life:",
+      "fitness-center": "Men and Women Fitness Centers",
+      "sauna": "Sauna",
+      "jacuzzi": "Jacuzzi",
+      "swimming-pool": "Private Swimming Pool",
+      "central-park": "Central Park",
+      "super-market": "Super Market"
+    }
   },
   "Alhathaa-Towers": {
     "meta-description": "The Al-Hathaa Towers project is a residential development located in the Al-Hathaa district of Sana'a, Yemen. The project includes two towers, each with 12 floors, and a total of 120 apartments. The towers are designed to be earthquake-resistant and feature modern amenities, including a gym, a swimming pool, and a security system. The project is currently under construction and is expected to be completed in 2025.",
@@ -575,7 +592,7 @@
   },
   "ContactUs": {
     "contact-us": "Contact Us",
-    "description": "We are happy to hear from you and ready to assist with any inquiries or support you may need.",
+    "description": "We are happy to receive your inquiries, and our team is ready to provide the necessary support:",
     "first-name": "First Name",
     "last-name": "Last Name",
     "email": "Email",

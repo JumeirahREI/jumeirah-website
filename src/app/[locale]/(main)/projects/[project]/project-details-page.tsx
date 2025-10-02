@@ -1,5 +1,6 @@
 import FeaturesSection from "@/app/[locale]/(main)/projects/[project]/features.section";
-import ProjectTowersDisplay from "@/app/[locale]/(main)/projects/components/project-towers-display";
+import ServicesSection from "@/app/[locale]/(main)/projects/[project]/services.section";
+import { ProjectTowersDisplay } from "@/app/[locale]/(main)/projects/components/project-towers-display";
 import AppLink from "@/components/app-link";
 import PageHeader from "@/components/page-header";
 import { Project, ProjectData } from "@/data/types";
@@ -39,7 +40,12 @@ export default function ProjectDetails({ projectData }: ProjectDetailsProps) {
           </h2>
           <ProjectTowersDisplay projectData={projectData} />
         </section>
-        <FeaturesSection projectData={projectData} />
+        {projectData.featuresSection && (
+          <FeaturesSection projectData={projectData} />
+        )}
+        {projectData.servicesSection && (
+          <ServicesSection projectData={projectData} />
+        )}
       </main>
     </>
   );
