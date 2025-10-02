@@ -1,8 +1,8 @@
-import ProjectDetails from "@/app/[locale]/projects/[project]/project-details-page";
+import ProjectDetails from "@/app/[locale]/(main)/projects/[project]/project-details-page";
+import { sanaaTowersData } from "@/data/sanaa-towers";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { sanaaTowersData } from "../../../../data/sanaa-towers";
 
 const projects = {
   "sanaa-towers": sanaaTowersData,

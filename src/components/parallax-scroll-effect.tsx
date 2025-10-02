@@ -10,12 +10,12 @@ export default function ParallaxScrollEffect({
   ...props
 }: ParallaxScrollEffectProps) {
   // const ref = useRef<HTMLDivElement | null>(null);
-  const { scrollYProgress } = useScroll({
+  const { scrollY } = useScroll({
     // target: ref,
     // offset: ["start start", "end start"],
   });
 
-  const y = useTransform(scrollYProgress, [0, 0.3], [0, 350]);
+  const y = useTransform(scrollY, [0, 1000], [0, 350]);
 
   return (
     <m.div

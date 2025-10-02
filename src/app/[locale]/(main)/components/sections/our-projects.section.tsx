@@ -50,7 +50,7 @@ export default function OurProjectsSection() {
       title={t("our-projects")}
       description={t("our-projects-description")}
       sectionLink={() => (
-        <SectionLink href="#">
+        <SectionLink href="/projects">
           {t.rich("more-projects", {
             span: (s) => <span className="text-primary">{s}</span>,
           })}

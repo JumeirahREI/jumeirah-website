@@ -49,7 +49,7 @@ export default function OurServicesSection() {
           })}
         </SectionLink>
       )}
-      className="bg-background !px-0 max-lg:!max-w-none lg:!px-4"
+      className="!px-0 max-lg:!max-w-none lg:!px-4"
       enableAnimation
     >
       <div className="container">

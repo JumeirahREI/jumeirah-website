@@ -1,9 +1,9 @@
-import FeaturesSection from "@/app/[locale]/projects/[project]/features.section";
-import ProjectTowersDisplay from "@/app/[locale]/projects/components/project-towers-display";
+import FeaturesSection from "@/app/[locale]/(main)/projects/[project]/features.section";
+import ProjectTowersDisplay from "@/app/[locale]/(main)/projects/components/project-towers-display";
 import AppLink from "@/components/app-link";
 import PageHeader from "@/components/page-header";
+import { Project, ProjectData } from "@/data/types";
 import { useTranslations } from "next-intl";
-import { Project, ProjectData } from "../../../../data/types";
 
 interface ProjectDetailsProps {
   projectData: ProjectData<Project>;

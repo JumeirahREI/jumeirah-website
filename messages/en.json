@@ -68,16 +68,6 @@
     "meta-description": "The new Sana'a Towers residential project consists of two towers located in the 50 Street district of the capital, Sana'a. Tower A includes five different types of residential apartments with structurally earthquake-resistant designs, modern luxury, spacious interiors, and practical implementation, including satellite networks and individual water and electricity meters for each apartment. Tower B includes five smaller, more economical models with the same high-quality designs and a compatible residential community.",
     "title": "Sana'a Towers",
     "subtitle": "A modern residential complex for an integrated lifestyle, representing a qualitative addition to the Sana'a skyline and the Yemeni real estate market.",
-    "featuresSection": {
-      "title": "Sana'a Towers Features",
-      "subtitle": "Real estate solutions tailored to exceed your expectations.",
-      "earthquake-resistance": "Earthquake-Resistant",
-      "private-parking": "Private Parking",
-      "modern-elevators": "Modern Elevators",
-      "spacious-layouts": "Spacious Layouts",
-      "trusted-security": "Trusted Security",
-      "after-sale-support": "After-Sale Support"
-    },
     "towers": {
       "tower-a": {
         "title": "Tower <span>A</span>",
@@ -543,7 +533,18 @@
           }
         }
       }
-    }
+    },
+    "featuresSection": {
+      "title": "Sana'a Towers Features",
+      "subtitle": "Real estate solutions tailored to exceed your expectations.",
+      "earthquake-resistance": "Earthquake-Resistant",
+      "private-parking": "Private Parking",
+      "modern-elevators": "Modern Elevators",
+      "spacious-layouts": "Spacious Layouts",
+      "trusted-security": "Trusted Security",
+      "after-sale-support": "After-Sale Support"
+    },
+    "servicesSection": {}
   },
   "Alhathaa-Towers": {
     "meta-description": "The Al-Hathaa Towers project is a residential development located in the Al-Hathaa district of Sana'a, Yemen. The project includes two towers, each with 12 floors, and a total of 120 apartments. The towers are designed to be earthquake-resistant and feature modern amenities, including a gym, a swimming pool, and a security system. The project is currently under construction and is expected to be completed in 2025.",

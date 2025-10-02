@@ -40,7 +40,7 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <nav className="fixed start-0 end-0 top-0 z-[9999] !mb-0 md:py-4 lg:pointer-events-none lg:sticky">
+    <nav className="fixed start-0 end-0 top-0 z-[999] !mb-0 md:py-4 lg:pointer-events-none lg:sticky">
       <div
         aria-hidden
         className={cn(

@@ -1,6 +1,6 @@
+import gotoIcon from "@/../public/svg/go-to-icon.svg";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import gotoIcon from "../../public/svg/go-to-icon.svg";
 export default function GotoIcon({
   alt,
   className,

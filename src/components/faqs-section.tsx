@@ -1,5 +1,6 @@
 "use client";
 
+import faqImage from "@/../public/images/faqs-image.webp";
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { cn } from "@/lib/utils";
@@ -8,7 +9,6 @@ import { AnimatePresence, LayoutGroup, m, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 import { StaticImageData } from "next/image";
 import { useState } from "react";
-import faqImage from "../../public/images/faqs-image.webp";
 
 export default function FAQsSection() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -47,7 +47,7 @@ export default function FAQsSection() {
     <Section
       title={t("title")}
       sectionLink={() => (
-        <SectionLink className="hidden md:block" href="#">
+        <SectionLink className="hidden md:block" href="/projects">
           {ct.rich("what-we-create", {
             span: (s) => <span className="text-primary">{s}</span>,
           })}

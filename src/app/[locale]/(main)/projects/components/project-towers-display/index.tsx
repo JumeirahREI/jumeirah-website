@@ -1,9 +1,9 @@
-import DataTabs from "@/app/[locale]/projects/components/project-towers-display/data-tabs";
-import DetailsPanel from "@/app/[locale]/projects/components/project-towers-display/details-panel";
-import MediaPanel from "@/app/[locale]/projects/components/project-towers-display/media-panel";
-import ModelTabs from "@/app/[locale]/projects/components/project-towers-display/model-tabs";
-import TowerTabs from "@/app/[locale]/projects/components/project-towers-display/tower-tabs";
-import { TowersDisplayProvider } from "@/app/[locale]/projects/components/project-towers-display/towers-display-context";
+import DataTabs from "@/app/[locale]/(main)/projects/components/project-towers-display/data-tabs";
+import DetailsPanel from "@/app/[locale]/(main)/projects/components/project-towers-display/details-panel";
+import MediaPanel from "@/app/[locale]/(main)/projects/components/project-towers-display/media-panel";
+import ModelTabs from "@/app/[locale]/(main)/projects/components/project-towers-display/model-tabs";
+import TowerTabs from "@/app/[locale]/(main)/projects/components/project-towers-display/tower-tabs";
+import { TowersDisplayProvider } from "@/app/[locale]/(main)/projects/components/project-towers-display/towers-display-context";
 import { Project, ProjectData } from "@/data/types";
 
 interface ProjectTowersDisplayProps {

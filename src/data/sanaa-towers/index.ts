@@ -1,9 +1,9 @@
-import afterSaleSupportIcon from "../../../public/svg/after-sale-support-icon.svg";
-import earthquakeResistanceIcon from "../../../public/svg/earthquake-resistance-icon.svg";
-import modernElevatorsIcon from "../../../public/svg/modern-elevators-icon.svg";
-import privateParkingIcon from "../../../public/svg/private-parking-icon.svg";
-import spaciousLayoutsIcon from "../../../public/svg/spacious-layouts-icon.svg";
-import trustedSecurityIcon from "../../../public/svg/trusted-security-icon.svg";
+import afterSaleSupportIcon from "@/../public/svg/after-sale-support-icon.svg";
+import earthquakeResistanceIcon from "@/../public/svg/earthquake-resistance-icon.svg";
+import modernElevatorsIcon from "@/../public/svg/modern-elevators-icon.svg";
+import privateParkingIcon from "@/../public/svg/private-parking-icon.svg";
+import spaciousLayoutsIcon from "@/../public/svg/spacious-layouts-icon.svg";
+import trustedSecurityIcon from "@/../public/svg/trusted-security-icon.svg";
 import { ProjectData } from "../types";
 import { towers } from "./towers";
 

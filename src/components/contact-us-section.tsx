@@ -1,3 +1,11 @@
+import footerImage from "@/../public/images/footer-image.webp";
+import emailIcon from "@/../public/svg/email-icon.svg";
+import facebookIcon from "@/../public/svg/facebook.svg";
+import instagramIcon from "@/../public/svg/instagram.svg";
+import linkedinIcon from "@/../public/svg/linkedin.svg";
+import locationIcon from "@/../public/svg/location-icon.svg";
+import phoneIcon from "@/../public/svg/phone-icon.svg";
+import twitterIcon from "@/../public/svg/twitter.svg";
 import ContactUsForm from "@/components/contact-us-form";
 import GlassCard from "@/components/ui/glass-card";
 import Logo from "@/components/ui/logo";
@@ -6,16 +14,14 @@ import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
-import footerImage from "../../public/images/footer-image.webp";
-import emailIcon from "../../public/svg/email-icon.svg";
-import facebookIcon from "../../public/svg/facebook.svg";
-import instagramIcon from "../../public/svg/instagram.svg";
-import linkedinIcon from "../../public/svg/linkedin.svg";
-import locationIcon from "../../public/svg/location-icon.svg";
-import phoneIcon from "../../public/svg/phone-icon.svg";
-import twitterIcon from "../../public/svg/twitter.svg";
 
-export default function ContactUsSection() {
+type ContactUsSectionProps = {
+  isFooter?: boolean;
+};
+
+export default function ContactUsSection({
+  isFooter = true,
+}: ContactUsSectionProps) {
   const t = useTranslations("ContactUs");
   const common = useTranslations("Common");
   const projects = useTranslations("ProjectTitles");
@@ -41,64 +47,70 @@ export default function ContactUsSection() {
               <p>{t("location")}</p>
             </div>
           </Card>
-          <Card className="flex-grow space-y-8 [&_h5]:font-semibold [&_h5]:2xl:text-xl [&_li]:text-sm">
-            <div className="inline-flex flex-col items-center text-center">
-              <Logo className="w-16 2xl:w-24" />
-              <div>
-                <p className="text-lg font-black 2xl:text-2xl">
-                  {common("jumeirah")}
-                </p>
-                <p className="text-[0.6rem]">{common("rei")}</p>
-              </div>
-            </div>
-            <nav className="grid grid-cols-2 gap-y-8 lg:grid-cols-4">
-              <div className="flex-1 space-y-4">
-                <h5>{common("company")}</h5>
-                <ul className="space-y-2 text-[#D2D2D2]">
-                  <FooterLink href="/about">{common("about")}</FooterLink>
-                  <FooterLink href="/contact">
-                    {common("contact-us")}
-                  </FooterLink>
-                  <FooterLink href="/blog">{common("blog")}</FooterLink>
-                </ul>
-              </div>
-              <div className="flex-1 space-y-4">
-                <h5>{common("projects")}</h5>
-                <ul className="space-y-2 text-[#D2D2D2]">
-                  <FooterLink href="/projects">
-                    {common("all-projects")}
-                  </FooterLink>
-                  <FooterLink href="/projects/sanaa-towers">
-                    {projects("sanaa-towers")}
-                  </FooterLink>
-                  <FooterLink href="/projects/alhathaa-towers">
-                    {projects("alhathaa-towers")}
-                  </FooterLink>
-                </ul>
-              </div>
-              <div className="col-span-2 space-y-4">
-                <h5>{common("subscribe")}</h5>
-                <p className="text-sm text-[#9C9C9C]">
-                  {common("subscribe-description")}
-                </p>
-                <div className="flex items-center justify-center gap-3 pt-2 lg:justify-start">
-                  <SocialLink href="#" icon={linkedinIcon} alt="LinkedIn" />
-                  <SocialLink href="#" icon={instagramIcon} alt="Instagram" />
-                  <SocialLink href="#" icon={twitterIcon} alt="Twitter" />
-                  <SocialLink href="#" icon={facebookIcon} alt="Facebook" />
+          {isFooter && (
+            <Card className="flex-grow space-y-8 [&_h5]:font-semibold [&_h5]:2xl:text-xl [&_li]:text-sm">
+              <footer className="inline-flex flex-col items-center text-center">
+                <Logo className="w-16 2xl:w-24" />
+                <div>
+                  <p className="text-lg font-black 2xl:text-2xl">
+                    {common("jumeirah")}
+                  </p>
+                  <p className="text-[0.6rem]">{common("rei")}</p>
                 </div>
-              </div>
-            </nav>
-          </Card>
+              </footer>
+              <nav className="grid grid-cols-2 gap-y-8 lg:grid-cols-4">
+                <div className="flex-1 space-y-4">
+                  <h5>{common("company")}</h5>
+                  <ul className="space-y-2 text-[#D2D2D2]">
+                    <FooterLink href="/about">{common("about")}</FooterLink>
+                    <FooterLink href="/contact">
+                      {common("contact-us")}
+                    </FooterLink>
+                    <FooterLink href="/blog">{common("blog")}</FooterLink>
+                  </ul>
+                </div>
+                <div className="flex-1 space-y-4">
+                  <h5>{common("projects")}</h5>
+                  <ul className="space-y-2 text-[#D2D2D2]">
+                    <FooterLink href="/projects">
+                      {common("all-projects")}
+                    </FooterLink>
+                    <FooterLink href="/projects/sanaa-towers">
+                      {projects("sanaa-towers")}
+                    </FooterLink>
+                    <FooterLink href="/projects/alhathaa-towers">
+                      {projects("alhathaa-towers")}
+                    </FooterLink>
+                  </ul>
+                </div>
+                <div className="col-span-2 space-y-4">
+                  <h5>{common("subscribe")}</h5>
+                  <p className="text-sm text-[#9C9C9C]">
+                    {common("subscribe-description")}
+                  </p>
+                  <div className="flex items-center justify-center gap-3 pt-2 lg:justify-start">
+                    <SocialLink href="#" icon={linkedinIcon} alt="LinkedIn" />
+                    <SocialLink href="#" icon={instagramIcon} alt="Instagram" />
+                    <SocialLink href="#" icon={twitterIcon} alt="Twitter" />
+                    <SocialLink href="#" icon={facebookIcon} alt="Facebook" />
+                  </div>
+                </div>
+              </nav>
+            </Card>
+          )}
         </div>
       </div>
-      <Image
-        src={footerImage}
-        alt="Footer Image"
-        fill
-        className="-z-[9999] object-cover object-bottom"
-      />
-      <div className="from-background absolute top-0 right-0 left-0 -z-50 h-full bg-linear-to-b via-90% to-[#00010100]" />
+      {isFooter && (
+        <>
+          <Image
+            src={footerImage}
+            alt=""
+            fill
+            className="-z-[9999] object-cover object-bottom"
+          />
+          <div className="from-background absolute top-0 right-0 left-0 -z-50 h-full bg-linear-to-b via-90% to-[#00010100]" />
+        </>
+      )}
     </section>
   );
 }

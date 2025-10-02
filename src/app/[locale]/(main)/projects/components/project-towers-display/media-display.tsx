@@ -1,8 +1,8 @@
 "use client";
 
-import MediaContainer from "@/app/[locale]/projects/components/project-towers-display/media-container";
-import TowerDisplayImage from "@/app/[locale]/projects/components/project-towers-display/tower-display-image";
-import { useTowersDisplayContext } from "@/app/[locale]/projects/components/project-towers-display/towers-display-context";
+import MediaContainer from "@/app/[locale]/(main)/projects/components/project-towers-display/media-container";
+import TowerDisplayImage from "@/app/[locale]/(main)/projects/components/project-towers-display/tower-display-image";
+import { useTowersDisplayContext } from "@/app/[locale]/(main)/projects/components/project-towers-display/towers-display-context";
 import { Project } from "@/data/types";
 import { m } from "motion/react";
 import { useTranslations } from "next-intl";

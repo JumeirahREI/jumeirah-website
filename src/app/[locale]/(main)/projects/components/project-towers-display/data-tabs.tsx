@@ -1,6 +1,6 @@
 "use client";
 
-import { useTowersDisplayContext } from "@/app/[locale]/projects/components/project-towers-display/towers-display-context";
+import { useTowersDisplayContext } from "@/app/[locale]/(main)/projects/components/project-towers-display/towers-display-context";
 import DetailsIcon from "@/components/icons/details-icon";
 import LayoutIcon from "@/components/icons/layout-icon";
 import PhotosIcon from "@/components/icons/photos-icon";

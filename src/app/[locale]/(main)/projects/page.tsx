@@ -1,5 +1,4 @@
-import OurPartnersSection from "@/app/[locale]/projects/_sections/our-partners.section";
-import ProjectsSection from "@/app/[locale]/projects/_sections/projects.section";
+import ProjectsSection from "@/app/[locale]/(main)/projects/_sections/projects.section";
 import AppLink from "@/components/app-link";
 import PageHeader from "@/components/page-header";
 import { Metadata } from "next";
@@ -24,7 +23,7 @@ export default function ProjectsPage() {
       </PageHeader>
       <main>
         <ProjectsSection />
-        <OurPartnersSection />
+        {/* <OurPartnersSection /> */}
       </main>
     </>
   );

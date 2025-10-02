@@ -1,8 +1,8 @@
 "use client";
 
-import MediaDisplay from "@/app/[locale]/projects/components/project-towers-display/media-display";
-import TowerDisplayImage from "@/app/[locale]/projects/components/project-towers-display/tower-display-image";
-import { useTowersDisplayContext } from "@/app/[locale]/projects/components/project-towers-display/towers-display-context";
+import MediaDisplay from "@/app/[locale]/(main)/projects/components/project-towers-display/media-display";
+import TowerDisplayImage from "@/app/[locale]/(main)/projects/components/project-towers-display/tower-display-image";
+import { useTowersDisplayContext } from "@/app/[locale]/(main)/projects/components/project-towers-display/towers-display-context";
 import {
   ModelDetails,
   ModelDetailsSection,

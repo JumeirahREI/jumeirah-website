@@ -1,11 +1,11 @@
+import facebookLogo from "@/../public/svg/facebook.svg";
+import instagramLogo from "@/../public/svg/instagram.svg";
+import linkedInLogo from "@/../public/svg/linkedin.svg";
+import twitterLogo from "@/../public/svg/twitter.svg";
 import { luxuryPresets } from "@/lib/luxury-presets";
 import { cn } from "@/lib/utils";
 import { m, Variants } from "motion/react";
 import Image from "next/image";
-import facebookLogo from "../../../public/svg/facebook.svg";
-import instagramLogo from "../../../public/svg/instagram.svg";
-import linkedInLogo from "../../../public/svg/linkedin.svg";
-import twitterLogo from "../../../public/svg/twitter.svg";
 
 interface SocialLinksProps {
   className?: string;

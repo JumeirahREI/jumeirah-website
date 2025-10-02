@@ -1,6 +1,6 @@
 "use client";
 
-import { useTowersDisplayContext } from "@/app/[locale]/projects/components/project-towers-display/towers-display-context";
+import { useTowersDisplayContext } from "@/app/[locale]/(main)/projects/components/project-towers-display/towers-display-context";
 import Carousel, { CarouselApi, CarouselOptions } from "@/components/carousel";
 import { Project, ProjectData } from "@/data/types";
 import { useCarouselPrevNext } from "@/hooks/use-carousel-prev-next";

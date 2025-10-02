@@ -29,8 +29,8 @@ export default function ContactUsFrom() {
         />
         <Input
           name="phone"
-          dir="rtl"
-          className="col-span-full"
+          dir="ltr"
+          className="col-span-full rtl:text-right"
           placeholder={t("phone")}
           type="tel"
         />

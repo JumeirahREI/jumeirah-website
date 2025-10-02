@@ -1,17 +1,9 @@
-import PageHeader from "@/components/page-header";
-import { useTranslations } from "next-intl";
+import ContactUsSection from "@/components/contact-us-section";
 
 export default function ContactPage() {
-  const t = useTranslations("Common");
-
   return (
-    <>
-      <PageHeader title={t("contact-us")} subTitle="test">
-        <h1></h1>
-      </PageHeader>
-      <main className="bg-background">
-        <div className="container"></div>
-      </main>
-    </>
+    <main className="from-background bg-transparent bg-linear-to-t from-50% to-[#00010100] pt-13">
+      <ContactUsSection isFooter={false} />
+    </main>
   );
 }

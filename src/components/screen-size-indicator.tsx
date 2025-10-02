@@ -30,7 +30,7 @@ export default function ScreenSizeIndicator() {
   }
 
   return (
-    <div className="fixed start-0 left-0 z-[9999] w-fit text-3xl opacity-20 hover:opacity-100">
+    <div className="fixed start-0 left-0 z-[9999] w-fit text-3xl hover:opacity-100 lg:opacity-20">
       <p className="inline-flex items-center gap-2 bg-white p-4">
         <span className="sm:hidden">DEFAULT</span>
         <span className="hidden sm:block md:hidden">SM</span>

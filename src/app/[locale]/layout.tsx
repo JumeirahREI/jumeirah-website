@@ -1,6 +1,4 @@
 import heroBackgroundImage from "@/../public/images/hero-background-image.webp";
-import ContactUsSection from "@/components/contact-us-section";
-import FAQsSection from "@/components/faqs-section";
 import LazyMotionProvider from "@/components/lazy-motion-provider";
 import Navbar from "@/components/navbar";
 import ParallaxScrollEffect from "@/components/parallax-scroll-effect";
@@ -47,16 +45,14 @@ export default async function RootLayout({
       dir={locale === "ar" ? "rtl" : "ltr"}
       className={font.className}
     >
-      <body className="bg-background text-foreground relative max-w-svw font-sans not-supports-[overflow:clip]:overflow-x-hidden supports-[overflow:clip]:overflow-x-clip md:pt-4 lg:pt-10">
+      <body className="bg-background text-foreground relative min-h-svh max-w-svw font-sans not-supports-[overflow:clip]:overflow-x-hidden supports-[overflow:clip]:overflow-x-clip md:pt-4 lg:pt-10">
         <div className="space-sections">
           <LazyMotionProvider>
             <BackgroundImage />
             {process.env.NODE_ENV === "development" && <ScreenSizeIndicator />}
             <NextIntlClientProvider locale={locale}>
               <Navbar />
-              <div>{children}</div>
-              <FAQsSection />
-              <ContactUsSection />
+              {children}
             </NextIntlClientProvider>
           </LazyMotionProvider>
         </div>

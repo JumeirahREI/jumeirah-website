@@ -1,6 +1,6 @@
+import redditLogo from "@/../public/svg/reddit-logo.svg";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
-import redditLogo from "../../../../../public/svg/reddit-logo.svg";
 
 const partners = [
   {

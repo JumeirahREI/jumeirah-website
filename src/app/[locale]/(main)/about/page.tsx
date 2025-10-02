@@ -1,3 +1,11 @@
+import sanaaTowersImage from "@/../public/images/sanaa-towers.webp";
+import collaborationIcon from "@/../public/svg/collaboration-icon.svg";
+import customerCentricityIcon from "@/../public/svg/customer-centricity-icon.svg";
+import excellenceIcon from "@/../public/svg/excellence-icon.svg";
+import innovationIcon from "@/../public/svg/innovation-icon.svg";
+import integrityIcon from "@/../public/svg/integrity-icon.svg";
+import missionIcon from "@/../public/svg/mission-icon.svg";
+import sustainabilityIcon from "@/../public/svg/sustainability-icon.svg";
 import AppLink from "@/components/app-link";
 import ImageContainer from "@/components/image-container";
 import PageHeader from "@/components/page-header";
@@ -6,14 +14,6 @@ import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Image, { StaticImageData } from "next/image";
-import sanaaTowersImage from "../../../../public/images/sanaa-towers.webp";
-import collaborationIcon from "../../../../public/svg/collaboration-icon.svg";
-import customerCentricityIcon from "../../../../public/svg/customer-centricity-icon.svg";
-import excellenceIcon from "../../../../public/svg/excellence-icon.svg";
-import innovationIcon from "../../../../public/svg/innovation-icon.svg";
-import integrityIcon from "../../../../public/svg/integrity-icon.svg";
-import missionIcon from "../../../../public/svg/mission-icon.svg";
-import sustainabilityIcon from "../../../../public/svg/sustainability-icon.svg";
 
 const ourValuesData = [
   {
@@ -58,7 +58,7 @@ export default function AboutUsPage() {
       <PageHeader title={t("title")} subTitle={t("subtitle")}>
         <div className="flex items-center justify-center gap-4">
           <AppLink
-            href="#"
+            href="/contact"
             className="font-semibold lg:px-4 lg:py-2 lg:text-xl"
           >
             {ct("contact-us")}
@@ -84,17 +84,17 @@ export default function AboutUsPage() {
               </p>
             </div>
           </article>
-          {/* <article className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-28">
+          <article className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-28">
             <div className="space-y-3 lg:col-span-3 lg:my-12 lg:space-y-2">
               <p className="border-gradient-to-e rtl:border-gradient-to-s border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] inline-flex gap-3 rounded-full bg-linear-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 text-center font-serif whitespace-nowrap transition before:transition-colors md:text-xs lg:mb-4 lg:px-5 lg:pt-2.5 lg:pb-2 lg:text-lg xl:text-xl rtl:bg-linear-to-r">
-                <Image src={targetIcon} alt="target-icon" className="size-6" />
-                {t("our-vision")}
+                <Image src={missionIcon} alt="target-icon" className="size-6" />
+                {t("our-mission")}
               </p>
               <h2 className="text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-5xl xl:text-[3.5rem]">
-                {t("our-vision-title")}
+                {t("our-mission-title")}
               </h2>
               <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:text-3xl">
-                {t("our-vision-subtitle")}
+                {t("our-mission-subtitle")}
               </p>
             </div>
             <div className="self-stretch lg:col-span-2">
@@ -104,8 +104,8 @@ export default function AboutUsPage() {
                 alt={pt("sanaa-towers")}
               />
             </div>
-          </article> */}
-          <article className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-28">
+          </article>
+          {/* <article className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-28">
             <div className="row-start-2 self-stretch md:row-start-1 lg:col-span-2">
               <ImageContainer
                 className="z-30 h-full min-h-72"
@@ -129,7 +129,7 @@ export default function AboutUsPage() {
                 {t("our-mission-subtitle")}
               </p>
             </div>
-          </article>
+          </article> */}
         </section>
         <Section
           title={t("our-values")}

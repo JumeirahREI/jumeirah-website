@@ -1,6 +1,6 @@
-import modelNImage from "../../../../../../public/images/sanaa-towers/sanaa-towers-model-n.webp";
-import modelNNumberedImage from "../../../../../../public/images/sanaa-towers/sanaa-towers-numbered-model-n.webp";
-import { ModelData } from "../../../../types";
+import modelNImage from "@/../public/images/sanaa-towers/sanaa-towers-model-n.webp";
+import modelNNumberedImage from "@/../public/images/sanaa-towers/sanaa-towers-numbered-model-n.webp";
+import { ModelData } from "@/../types";
 
 export const modelN: ModelData<"SanaaTowers"> = {
   name: "towers.tower-b.model-n.name",

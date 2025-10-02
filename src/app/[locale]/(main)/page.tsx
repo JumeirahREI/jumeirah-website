@@ -1,6 +1,6 @@
-import AboutUsCard from "@/app/[locale]/components/sections/about-us-card.section";
-import OurProjectsSection from "@/app/[locale]/components/sections/our-projects.section";
-import OurServicesSection from "@/app/[locale]/components/sections/our-services.section";
+import AboutUsCard from "@/app/[locale]/(main)/components/sections/about-us-card.section";
+import OurProjectsSection from "@/app/[locale]/(main)/components/sections/our-projects.section";
+import OurServicesSection from "@/app/[locale]/(main)/components/sections/our-services.section";
 import { AnimatedGroup } from "@/components/animated-group";
 import AppLink from "@/components/app-link";
 import { TextEffect } from "@/components/text-effect";

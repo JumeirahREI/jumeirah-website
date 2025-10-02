@@ -1,6 +1,6 @@
+import gridBackgroundEffect from "@/../public/svg/grid-background-effect.svg";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import gridBackgroundEffect from "../../../public/svg/grid-background-effect.svg";
 
 export default function GridBackgroundEffect({
   className,

@@ -1,6 +1,6 @@
 import alHathaaTowersImage from "@/../public/images/alhathaa-towers.webp";
 import sanaaTowersImage from "@/../public/images/sanaa-towers.webp";
-import CategoryProjectItem from "@/app/[locale]/projects/components/category-project-item";
+import CategoryProjectItem from "@/app/[locale]/(main)/projects/components/category-project-item";
 import Carousel from "@/components/carousel";
 import { useTranslations } from "next-intl";
 
