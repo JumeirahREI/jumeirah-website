@@ -1,142 +1,159 @@
 "use client";
 
-import React from 'react';
-import { Project } from "@/data/types";
-import { createContext, useCallback, useContext, useEffect } from "react";
-import { useTowerNavigation } from "./hooks/useTowerNavigation";
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+} from "react";
 import { useMediaState } from "./hooks/useMediaState";
+import { useTowerNavigation } from "./hooks/useTowerNavigation";
 import {
+  DataTab,
   TowersDisplayContextValue,
   TowersDisplayProviderProps,
-  DataTab,
-  MediaContainerData
 } from "./types";
 
 // Create context with default values
-export const TowersDisplayContext = createContext<TowersDisplayContextValue | undefined>(undefined);
+export const TowersDisplayContext = createContext<
+  TowersDisplayContextValue | undefined
+>(undefined);
 
 /**
  * Provider component for the towers display context
  * Manages the state for tower selection, model selection, and media display
  */
 // Memoize the provider to prevent unnecessary re-renders
-export const TowersDisplayProvider = React.memo(({
-  children,
-  projectData,
-}: TowersDisplayProviderProps) => {
-  // Use custom hooks for better separation of concerns
-  const {
-    selectedTower,
-    selectedModel,
-    selectedDataTab,
-    setSelectedTower: setTower,
-    setSelectedModel: setModel,
-    setSelectedDataTab: setDataTab,
-  } = useTowerNavigation();
+export const TowersDisplayProvider = React.memo(
+  ({ children, projectData }: TowersDisplayProviderProps) => {
+    // Use custom hooks for better separation of concerns
+    const {
+      selectedTower,
+      selectedModel,
+      selectedDataTab,
+      setSelectedTower: setTower,
+      setSelectedModel: setModel,
+      setSelectedDataTab: setDataTab,
+    } = useTowerNavigation();
 
-  // Media state management
-  const {
-    mediaContainerData,
-    selectedMediaIndex,
-    setMediaContainerData,
-    setSelectedMediaIndex,
-  } = useMediaState(projectData.towersSection[0]?.models[0]?.layout?.images || []);
+    // Media state management
+    const {
+      mediaContainerData,
+      selectedMediaIndex,
+      setMediaContainerData,
+      setSelectedMediaIndex,
+    } = useMediaState(
+      projectData.towersSection[0]?.models[0]?.layout?.images || [],
+    );
 
-  // Wrapped callbacks with useCallback to prevent unnecessary re-renders
-  const handleTowerSelection = useCallback((tower: number) => {
-    if (selectedTower !== tower) {
-      setTower(tower);
-    }
-  }, [selectedTower, setTower]);
+    // Wrapped callbacks with useCallback to prevent unnecessary re-renders
+    const handleTowerSelection = useCallback(
+      (tower: number) => {
+        if (selectedTower !== tower) {
+          setTower(tower);
+        }
+      },
+      [selectedTower, setTower],
+    );
 
-  const handleModelSelection = useCallback((model: number) => {
-    if (selectedModel !== model) {
-      setModel(model);
-    }
-  }, [selectedModel, setModel]);
+    const handleModelSelection = useCallback(
+      (model: number) => {
+        if (selectedModel !== model) {
+          setModel(model);
+        }
+      },
+      [selectedModel, setModel],
+    );
 
-  const handleDataTabSelection = useCallback((tab: DataTab) => {
-    if (selectedDataTab !== tab) {
-      setDataTab(tab);
-    }
-  }, [selectedDataTab, setDataTab]);
+    const handleDataTabSelection = useCallback(
+      (tab: DataTab) => {
+        if (selectedDataTab !== tab) {
+          setDataTab(tab);
+        }
+      },
+      [selectedDataTab, setDataTab],
+    );
 
-  // Effect to handle media data updates based on selections
-  useEffect(() => {
-    try {
-      const currentTower = projectData.towersSection[selectedTower];
-      const currentModel = currentTower?.models[selectedModel];
-      
-      if (!currentModel) return;
+    // Effect to handle media data updates based on selections
+    useEffect(() => {
+      try {
+        const currentTower = projectData.towersSection[selectedTower];
+        const currentModel = currentTower?.models[selectedModel];
 
-      switch (selectedDataTab) {
-        case 'layout':
-          setMediaContainerData(currentModel.layout?.images || []);
-          break;
-        case 'videos':
-          if (currentModel.videos?.length) {
-            setMediaContainerData(currentModel.videos[0]);
-          }
-          break;
-        case 'photos':
-          if (currentModel.photos?.length) {
-            setMediaContainerData(currentModel.photos);
-          }
-          break;
-        case 'details':
-          if (currentModel.details?.length) {
-            setMediaContainerData(currentModel.details[0]?.images || []);
-          }
-          break;
+        if (!currentModel) return;
+
+        switch (selectedDataTab) {
+          case "layout":
+            setMediaContainerData(currentModel.layout?.images || []);
+            break;
+          case "videos":
+            if (currentModel.videos?.length) {
+              setMediaContainerData(currentModel.videos[0]);
+            }
+            break;
+          case "photos":
+            if (currentModel.photos?.length) {
+              setMediaContainerData(currentModel.photos);
+            }
+            break;
+          case "details":
+            if (currentModel.details?.length) {
+              setMediaContainerData(currentModel.details[0]?.images || []);
+            }
+            break;
+        }
+      } catch (error) {
+        console.error("Error updating media data:", error);
+        // Optionally handle the error state here
       }
-    } catch (error) {
-      console.error('Error updating media data:', error);
-      // Optionally handle the error state here
-    }
-  }, [
-    selectedDataTab,
-    selectedTower,
-    selectedModel,
-    projectData.towersSection,
-    setMediaContainerData,
-  ]);
+    }, [
+      selectedDataTab,
+      selectedTower,
+      selectedModel,
+      projectData.towersSection,
+      setMediaContainerData,
+    ]);
 
-  // Memoize the context value to prevent unnecessary re-renders
-  const contextValue = React.useMemo<TowersDisplayContextValue>(() => ({
-    selectedTower,
-    setSelectedTower: handleTowerSelection,
-    selectedModel,
-    setSelectedModel: handleModelSelection,
-    selectedDataTab,
-    setSelectedDataTab: handleDataTabSelection,
-    mediaContainerData,
-    setMediaContainerData,
-    selectedMediaIndex,
-    setSelectedMediaIndex,
-  }), [
-    selectedTower,
-    selectedModel,
-    selectedDataTab,
-    mediaContainerData,
-    selectedMediaIndex,
-    handleTowerSelection,
-    handleModelSelection,
-    handleDataTabSelection,
-    setMediaContainerData,
-    setSelectedMediaIndex,
-  ]);
+    // Memoize the context value to prevent unnecessary re-renders
+    const contextValue = React.useMemo<TowersDisplayContextValue>(
+      () => ({
+        selectedTower,
+        setSelectedTower: handleTowerSelection,
+        selectedModel,
+        setSelectedModel: handleModelSelection,
+        selectedDataTab,
+        setSelectedDataTab: handleDataTabSelection,
+        mediaContainerData,
+        setMediaContainerData,
+        selectedMediaIndex,
+        setSelectedMediaIndex,
+      }),
+      [
+        selectedTower,
+        selectedModel,
+        selectedDataTab,
+        mediaContainerData,
+        selectedMediaIndex,
+        handleTowerSelection,
+        handleModelSelection,
+        handleDataTabSelection,
+        setMediaContainerData,
+        setSelectedMediaIndex,
+      ],
+    );
 
-  return (
-    <TowersDisplayContext.Provider value={contextValue}>
-      {children}
-    </TowersDisplayContext.Provider>
-  );
-}, 
-// Custom comparison function for React.memo
-(prevProps, nextProps) => {
-  // Only re-render if projectData reference changes
-  return prevProps.projectData === nextProps.projectData;
-});
+    return (
+      <TowersDisplayContext.Provider value={contextValue}>
+        {children}
+      </TowersDisplayContext.Provider>
+    );
+  },
+  // Custom comparison function for React.memo
+  (prevProps, nextProps) => {
+    // Only re-render if projectData reference changes
+    return prevProps.projectData === nextProps.projectData;
+  },
+);
 
 /**
  * Custom hook to access the towers display context
@@ -147,7 +164,7 @@ export const useTowersDisplayContext = (): TowersDisplayContextValue => {
   const context = useContext(TowersDisplayContext);
   if (context === undefined) {
     throw new Error(
-      'useTowersDisplayContext must be used within a TowersDisplayProvider'
+      "useTowersDisplayContext must be used within a TowersDisplayProvider",
     );
   }
   return context;

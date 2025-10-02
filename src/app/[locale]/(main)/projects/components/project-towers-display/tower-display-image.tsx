@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export default function TowerDisplayImage({
   fill = true,
+  alt,
   ...props
 }: React.ComponentProps<typeof Image>) {
   const [isLoading, setIsLoading] = useState(true);
@@ -16,6 +17,7 @@ export default function TowerDisplayImage({
       <Image
         onLoad={() => setIsLoading(false)}
         onLoadStart={() => setIsLoading(true)}
+        alt={alt || ""}
         fill={fill}
         {...props}
         className={cn("w-full scale-110 object-contain", props.className)}

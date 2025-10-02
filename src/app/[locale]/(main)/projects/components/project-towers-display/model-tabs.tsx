@@ -4,7 +4,6 @@ import { useTowersDisplayContext } from "@/app/[locale]/(main)/projects/componen
 import Carousel, { CarouselApi, CarouselOptions } from "@/components/carousel";
 import { Project, ProjectData } from "@/data/types";
 import { useCarouselPrevNext } from "@/hooks/use-carousel-prev-next";
-import { useSelectedSnapDisplay } from "@/hooks/use-selected-snap";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
@@ -25,7 +24,6 @@ export default function ModelTabs({
     useTowersDisplayContext();
   const [emblaApi, setEmblaApi] = useState<CarouselApi>();
   const { prevBtnDisabled, nextBtnDisabled } = useCarouselPrevNext(emblaApi);
-  const { selectedSnap, snapCount } = useSelectedSnapDisplay(emblaApi);
 
   const { towersSection } = projectData;
   const models = towersSection[selectedTower].models;
@@ -33,7 +31,7 @@ export default function ModelTabs({
   useEffect(() => {
     if (!emblaApi) return;
     emblaApi.reInit();
-  }, [models.length]);
+  }, [models.length, emblaApi]);
 
   return (
     <div
