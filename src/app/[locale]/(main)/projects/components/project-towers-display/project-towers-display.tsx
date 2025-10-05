@@ -70,16 +70,14 @@ const ProjectTowersDisplay = React.memo(
               aria-label={ct("tabs.media")}
             />
             <div
-              className="description text-foreground/90 scrollbar overflow-y-auto lg:mr-4 rtl:lg:ml-4"
+              className="description text-foreground/90 scrollbar fade-y overflow-y-auto py-8 pe-10 lg:mr-4 rtl:lg:ml-4"
               aria-live="polite"
               aria-atomic="true"
             >
-              <div className="py-8 pe-10">
-                <MemoizedDetailsPanel projectData={projectData} />
-              </div>
+              <MemoizedDetailsPanel projectData={projectData} />
             </div>
             <div
-              className="fade-end data-tabs no-scrollbar overflow-x-scroll pl-4"
+              className="data-tabs max-w-full"
               role="tablist"
               aria-label={ct("tabs.data")}
             >
