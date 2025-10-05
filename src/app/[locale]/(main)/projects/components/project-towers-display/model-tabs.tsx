@@ -36,7 +36,7 @@ export default function ModelTabs({
   return (
     <div
       className={cn(
-        "model-tabs fade no-scrollbar overflow-x-hidden p-0.5 md:row-start-1",
+        "model-tabs fade no-scrollbar overflow-x-hidden p-0.5 md:row-start-1 lg:ml-6",
         !nextBtnDisabled && "fade-end",
         !prevBtnDisabled && "fade-start",
       )}

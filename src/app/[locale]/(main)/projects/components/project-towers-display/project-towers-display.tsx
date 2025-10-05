@@ -19,7 +19,7 @@ const MemoizedDetailsPanel = React.memo(DetailsPanel);
 const MemoizedDataTabs = React.memo(DataTabs);
 
 const containerClasses =
-  "border-gradient-to-s border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] z-10 space-y-6 rounded-4xl bg-linear-[268deg] from-[#1A1A1AE5] to-[#1A1A1A12] px-4 py-4 md:rounded-[3.5rem] md:px-7 md:py-7 lg:px-14 lg:py-14 xl:rounded-[4rem] xl:px-12 xl:py-12 2xl:space-y-12 2xl:rounded-[3.5rem] 2xl:px-10 2xl:py-10 rtl:bg-linear-[100deg]";
+  "border-gradient-to-s lg:border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] z-10 space-y-6 rounded-4xl bg-linear-[268deg] from-[#1A1A1AE5] to-[#1A1A1A12] px-4 py-4 md:rounded-[3.5rem] md:px-7 md:py-7 lg:px-14 lg:py-14 xl:rounded-[4rem] xl:px-12 xl:py-12 2xl:space-y-6 2xl:rounded-[3.5rem] 2xl:px-10 2xl:py-10 rtl:bg-linear-[100deg]";
 
 const ProjectTowersDisplay = React.memo(
   ({ projectData }: ProjectTowersDisplayProps) => {
@@ -56,7 +56,7 @@ const ProjectTowersDisplay = React.memo(
             id={tabPanelId}
             role="tabpanel"
             aria-labelledby={`${componentId}-tab`}
-            className="tower-display-grid h-[calc(100vh-22rem)] max-h-[31rem] min-h-[25rem] rounded-lg"
+            className="tower-display-grid h-[calc(100vh-18rem)] min-h-[28rem] rounded-lg lg:max-h-[31rem]"
             tabIndex={0}
             aria-live="polite"
             aria-atomic="true"
@@ -70,11 +70,13 @@ const ProjectTowersDisplay = React.memo(
               aria-label={ct("tabs.media")}
             />
             <div
-              className="description text-foreground/90 overflow-y-scroll"
+              className="description text-foreground/90 scrollbar overflow-y-auto lg:mr-4 rtl:lg:ml-4"
               aria-live="polite"
               aria-atomic="true"
             >
-              <MemoizedDetailsPanel projectData={projectData} />
+              <div className="py-8 pe-10">
+                <MemoizedDetailsPanel projectData={projectData} />
+              </div>
             </div>
             <div
               className="fade-end data-tabs no-scrollbar overflow-x-scroll pl-4"

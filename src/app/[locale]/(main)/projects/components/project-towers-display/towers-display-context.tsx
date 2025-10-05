@@ -60,6 +60,7 @@ export const TowersDisplayProvider = React.memo(
       (model: number) => {
         if (selectedModel !== model) {
           setModel(model);
+          setSelectedMediaIndex(0);
         }
       },
       [selectedModel, setModel],

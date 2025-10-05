@@ -135,8 +135,8 @@
 .fade,
 .fade-start,
 .fade-end,
+.fade-y,
 .fade-x {
-  @apply [--fade-direction:right] rtl:[--fade-direction:left];
   position: relative;
   display: inline-block;
   -webkit-mask-image: linear-gradient(
@@ -176,15 +176,28 @@
   --fade-end: 90%;
 }
 
+.fade-y {
+  --fade-direction: top;
+}
+
 @utility fade-start {
+  @apply [--fade-direction:right] rtl:[--fade-direction:left];
   --fade-end: 100%;
 }
 
 @utility fade-end {
+  @apply [--fade-direction:right] rtl:[--fade-direction:left];
   --fade-start: 0%;
 }
 
 @utility fade-x {
+  @apply [--fade-direction:right] rtl:[--fade-direction:left];
+  --fade-start: 10%;
+  --fade-end: 90%;
+}
+
+@utility fade-y {
+  @apply [--fade-direction:top];
   --fade-start: 10%;
   --fade-end: 90%;
 }
@@ -222,8 +235,8 @@ body {
 @layer components {
   .tower-display-grid {
     display: grid;
-    gap: 1rem;
-    grid-template-rows: auto;
+    /* gap: 1rem; */
+    grid-template-rows: auto auto 1fr auto;
     grid-template-columns: auto;
     grid-template-areas: "model-tabs" "media" "description" "data-tabs";
   }
@@ -297,4 +310,37 @@ img {
 
 @utility first-letter-primary-or-clip {
   @apply ltr:first-letter-primary from-primary to-foreground bg-linear-to-r from-[0.85ch] to-[0.85ch] bg-clip-text rtl:bg-linear-to-l rtl:text-transparent;
+}
+
+@utility scrollbar {
+  /* Firefox */
+  scrollbar-width: thin;
+  scrollbar-color: theme("colors.gray.400") transparent;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: theme("colors.gray.400");
+    border-radius: 9999px;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background-color: theme("colors.gray.500");
+  }
+
+  /* Optional dark mode
+  .dark & {
+    scrollbar-color: theme("colors.gray.600") transparent;
+  }
+
+  .dark &::-webkit-scrollbar-thumb {
+    background-color: theme("colors.gray.600");
+  } */
 }

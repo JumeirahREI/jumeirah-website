@@ -116,7 +116,7 @@ function TabButton({
       data-selected={isSelected}
       onClick={onClick}
       onKeyDown={(e) => onKeyDown(e, parseInt(id?.split("-").pop() || "0", 10))}
-      className="border-gradient-b border-gradient-to-[#14141400] data-[selected=true]:border-gradient-from-[#7A7A7A99] border-gradient-from-[#7A7A7A00] data-[selected=true]:text-primary active:text-foreground/50 relative z-30 cursor-pointer rounded-2xl bg-linear-to-b from-[#1A1A1A]/0 to-[#1A1A1A]/0 p-0.5 px-6 py-2 text-lg transition-colors before:transition-colors hover:bg-neutral-600/30 active:bg-neutral-600/50 data-[selected=true]:from-[#1A1A1A] 2xl:px-10 2xl:py-3 2xl:text-4xl"
+      className="border-gradient-b border-gradient-width-0.5 border-gradient-to-[#14141400] data-[selected=true]:border-gradient-from-[#7A7A7A99] border-gradient-from-[#7A7A7A00] data-[selected=true]:text-primary active:text-foreground/50 relative z-30 cursor-pointer rounded-2xl bg-linear-to-b from-[#1A1A1A]/0 to-[#1A1A1A]/0 p-0.5 px-6 py-2 text-lg transition-colors before:transition-colors hover:bg-neutral-600/30 active:bg-neutral-600/50 data-[selected=true]:from-[#1A1A1A] 2xl:px-10 2xl:py-3 2xl:text-4xl"
       {...props}
     >
       <span className="sr-only">{isSelected ? "Selected: " : ""}</span>

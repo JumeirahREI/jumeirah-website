@@ -30,7 +30,7 @@ export default function DetailsPanel({
 
   if (selectedDataTab === "layout") {
     return (
-      <p className="py-4 leading-normal md:py-7 lg:py-14 xl:py-12 2xl:w-9/12 2xl:py-10 2xl:text-2xl">
+      <p className="leading-normal md:py-7 lg:py-14 xl:py-12 2xl:w-9/12 2xl:py-10 2xl:text-2xl">
         {t(selectedModelData.layout.description)}
       </p>
     );
@@ -78,82 +78,28 @@ function ModelDetailsPanel({
   projectKey: Project;
   modelDetails: ModelDetails<Project>;
 }) {
-  const totalRooms = modelDetails.sections.reduce(
-    (total, section) => total + section.rooms.length,
-    0,
-  );
+  let start = 1;
 
   return (
     <div
       aria-label="details"
-      className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:grid-rows-[1fr_auto] xl:grid-cols-3 2xl:gap-10 2xl:py-4"
+      // className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:grid-rows-[1fr_auto] xl:grid-cols-3 2xl:gap-10 2xl:py-4"
+      className="grid grid-cols-1 gap-8 lg:grid-cols-3"
     >
-      {/* <MediaDisplay
-        projectKey={projectKey}
-        className="h-52 lg:col-start-2 lg:row-start-1 lg:h-full xl:col-span-2 xl:col-start-2"
-      /> */}
-      <div className="row-span-2 space-y-12 lg:py-5">
-        <SectionDetails
-          section={modelDetails.sections[0]}
-          projectKey={projectKey}
-          start={1}
-        />
-        <SectionDetails
-          section={modelDetails.sections[1]}
-          projectKey={projectKey}
-          start={modelDetails.sections[0].rooms.length + 1}
-        />
-        {totalRooms <= 10 && modelDetails.sections.length > 2 && (
-          <SectionDetails
-            section={modelDetails.sections[2]}
-            projectKey={projectKey}
-            start={
-              modelDetails.sections[0].rooms.length +
-              modelDetails.sections[1].rooms.length +
-              1
-            }
-          />
-        )}
-      </div>
-      {totalRooms > 10 && modelDetails.sections.length > 2 && (
-        <div className="flex justify-around xl:col-span-2 xl:col-start-2 2xl:gap-10">
-          <SectionDetails
-            section={modelDetails.sections[2]}
-            projectKey={projectKey}
-            start={
-              modelDetails.sections[0].rooms.length +
-              modelDetails.sections[1].rooms.length +
-              1
-            }
-          />
-          {modelDetails.sections.length > 3 && (
-            <SectionDetails
-              section={modelDetails.sections[3]}
-              projectKey={projectKey}
-              start={
-                modelDetails.sections[0].rooms.length +
-                modelDetails.sections[1].rooms.length +
-                modelDetails.sections[2].rooms.length +
-                1
-              }
-            />
-          )}
-        </div>
-      )}
-      {/* {modelDetails.sections.map((section, index) => {
+      {modelDetails.sections.map((section, index) => {
         const details = (
           <SectionDetails
             key={index}
             section={section}
             projectKey={projectKey}
-            start={count}
+            start={start}
           />
         );
 
-        count += section.rooms.length;
+        start += section.rooms.length;
 
         return details;
-      })} */}
+      })}
     </div>
   );
 }
@@ -170,14 +116,17 @@ function SectionDetails({
   const t = useTranslations(projectKey);
 
   return (
-    <div>
-      <h3 className="mb-3 text-3xl font-bold">{t(section.title)}</h3>
+    <div className="lg:has-[ol>li:nth-child(n+6)]:col-span-2">
+      <h3 className="mb-3 font-bold 2xl:text-2xl">{t(section.title)}</h3>
       <ol
         start={start}
-        className="list-inside space-y-0.5 ps-2 text-lg text-[#a5a5a5]"
+        className="flex w-fit list-inside flex-col flex-wrap space-y-0.5 gap-x-8 ps-2 text-[#a5a5a5] lg:max-h-32"
       >
         {section.rooms.map((room, index) => (
-          <li key={index} className="list-decimal">
+          <li
+            key={index}
+            className="list-decimal break-words whitespace-normal"
+          >
             {t(room)}
           </li>
         ))}
