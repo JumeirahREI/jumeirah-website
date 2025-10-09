@@ -19,7 +19,7 @@ const MemoizedDetailsPanel = React.memo(DetailsPanel);
 const MemoizedDataTabs = React.memo(DataTabs);
 
 const containerClasses =
-  "border-gradient-to-s [--padding-x:1rem] md:[--padding-x:1.75rem] lg:[--padding-x:2.5rem] lg:border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] z-10 space-y-6 rounded-4xl bg-linear-[268deg] from-[#1A1A1AE5] to-[#1A1A1A12] ltr:lg:pr-[var(--padding-x)] rtl:lg:pl-[var(--padding-x)] py-4 md:rounded-[3.5rem] md:py-7 lg:py-10 xl:rounded-[4rem] 2xl:space-y-6 2xl:rounded-[3.5rem] rtl:bg-linear-[100deg]";
+  "border-gradient-to-s [--padding-x:1rem] md:[--padding-x:1.75rem] lg:[--padding-x:2.5rem] lg:border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] z-10 space-y-6 rounded-4xl bg-linear-[268deg] from-[#1A1A1AE5] to-[#1A1A1A12]  py-4 md:rounded-[3.5rem] md:py-7 lg:py-10 xl:rounded-[4rem] 2xl:space-y-6 2xl:rounded-[3.5rem] rtl:bg-linear-[100deg]";
 
 const ProjectTowersDisplay = React.memo(
   ({ projectData }: ProjectTowersDisplayProps) => {
@@ -56,33 +56,41 @@ const ProjectTowersDisplay = React.memo(
             id={tabPanelId}
             role="tabpanel"
             aria-labelledby={`${componentId}-tab`}
-            className="tower-display-grid h-[calc(100vh-18rem)] min-h-[28rem] rounded-lg lg:max-h-[31rem]"
+            className="flex h-[calc(100vh-8rem)] max-h-[calc(100vh-8rem)] max-w-full rounded-lg lg:h-[calc(100vh-18rem)] lg:max-h-[31rem] lg:min-h-[28rem] ltr:lg:pr-[var(--padding-x)] rtl:lg:pl-[var(--padding-x)]"
             tabIndex={0}
             aria-live="polite"
             aria-atomic="true"
           >
-            <MemoizedModelTabs
-              projectData={projectData}
-              aria-controls={tabPanelId}
-            />
+            <div className="flex h-full w-0 flex-1 flex-col">
+              <MemoizedModelTabs
+                projectData={projectData}
+                aria-controls={tabPanelId}
+              />
+              <MemoizedMediaPanel
+                projectKey={projectData.projectKey}
+                className="mt-4 aspect-[10/7] lg:hidden"
+                aria-label={ct("tabs.media")}
+              />
+              <div
+                className="description text-foreground/90 scrollbar fade-y grow overflow-y-auto py-8 ltr:lg:mr-4 rtl:lg:ml-4 [&>*]:px-[var(--padding-x)]"
+                aria-live="polite"
+                aria-atomic="true"
+              >
+                <MemoizedDetailsPanel projectData={projectData} />
+              </div>
+              <div
+                className="data-tabs max-w-full"
+                role="tablist"
+                aria-label={ct("tabs.data")}
+              >
+                <MemoizedDataTabs projectData={projectData} />
+              </div>
+            </div>
             <MemoizedMediaPanel
               projectKey={projectData.projectKey}
+              className="hidden lg:block"
               aria-label={ct("tabs.media")}
             />
-            <div
-              className="description text-foreground/90 scrollbar fade-y overflow-y-auto py-8 ltr:lg:mr-4 rtl:lg:ml-4 [&>*]:px-[var(--padding-x)]"
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              <MemoizedDetailsPanel projectData={projectData} />
-            </div>
-            <div
-              className="data-tabs max-w-full"
-              role="tablist"
-              aria-label={ct("tabs.data")}
-            >
-              <MemoizedDataTabs projectData={projectData} />
-            </div>
           </div>
         </section>
       </TowersDisplayProvider>

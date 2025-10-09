@@ -30,7 +30,7 @@ export default function DetailsPanel({
 
   if (selectedDataTab === "layout") {
     return (
-      <p className="leading-normal md:py-7 lg:py-14 xl:py-12 xl:text-xl 2xl:w-9/12 2xl:py-10 2xl:text-2xl">
+      <p className="leading-normal md:py-7 lg:w-10/12 lg:py-14 lg:text-lg xl:py-12 xl:text-xl 2xl:w-9/12 2xl:py-10 2xl:text-2xl">
         {t(selectedModelData.layout.description)}
       </p>
     );
