@@ -28,7 +28,7 @@ export default function Carousel({
     {
       direction: locale === "ar" ? "rtl" : "ltr",
       watchDrag: (_, event) => {
-        if (event.type === "mousedown") {
+        if (event.type === "mousedown" && event.isTrusted) {
           return false;
         }
         return true;
