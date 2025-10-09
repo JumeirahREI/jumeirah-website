@@ -183,6 +183,7 @@ function DesktopLocaleDropdown({
                   <Link
                     href={pathname}
                     locale={loc.code}
+                    scroll={false}
                     className={cn(
                       "flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-white/90",
                       "hover:bg-white/5",

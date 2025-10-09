@@ -19,7 +19,7 @@ const MemoizedDetailsPanel = React.memo(DetailsPanel);
 const MemoizedDataTabs = React.memo(DataTabs);
 
 const containerClasses =
-  "border-gradient-to-s lg:border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] z-10 space-y-6 rounded-4xl bg-linear-[268deg] from-[#1A1A1AE5] to-[#1A1A1A12] px-4 py-4 md:rounded-[3.5rem] md:px-7 md:py-7 lg:px-14 lg:py-14 xl:rounded-[4rem] xl:px-12 xl:py-12 2xl:space-y-6 2xl:rounded-[3.5rem] 2xl:px-10 2xl:py-10 rtl:bg-linear-[100deg]";
+  "border-gradient-to-s [--padding-x:1rem] md:[--padding-x:1.75rem] lg:[--padding-x:2.5rem] lg:border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] z-10 space-y-6 rounded-4xl bg-linear-[268deg] from-[#1A1A1AE5] to-[#1A1A1A12] ltr:lg:pr-[var(--padding-x)] rtl:lg:pl-[var(--padding-x)] py-4 md:rounded-[3.5rem] md:py-7 lg:py-10 xl:rounded-[4rem] 2xl:space-y-6 2xl:rounded-[3.5rem] rtl:bg-linear-[100deg]";
 
 const ProjectTowersDisplay = React.memo(
   ({ projectData }: ProjectTowersDisplayProps) => {
@@ -70,7 +70,7 @@ const ProjectTowersDisplay = React.memo(
               aria-label={ct("tabs.media")}
             />
             <div
-              className="description text-foreground/90 scrollbar fade-y overflow-y-auto py-8 pe-10 lg:mr-4 rtl:lg:ml-4"
+              className="description text-foreground/90 scrollbar fade-y overflow-y-auto py-8 ltr:lg:mr-4 rtl:lg:ml-4 [&>*]:px-[var(--padding-x)]"
               aria-live="polite"
               aria-atomic="true"
             >

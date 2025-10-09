@@ -19,17 +19,6 @@ export const modelW: ModelData<"SanaaTowers"> = {
       },
     ],
   },
-  videos: ["https://www.youtube.com/watch?v=wueQKy86aSY&pp=ugUEEgJlbg%3D%3D"],
-  photos: [
-    {
-      image: modelW1Image,
-      alt: "towers.tower-b.model-w.layout.images.image-1",
-    },
-    {
-      image: modelW2Image,
-      alt: "towers.tower-b.model-w.layout.images.image-2",
-    },
-  ],
   details: [
     {
       images: [

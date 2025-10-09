@@ -13,13 +13,6 @@ export const modelH: ModelData<"SanaaTowers"> = {
       },
     ],
   },
-  videos: ["https://www.youtube.com/watch?v=wueQKy86aSY&pp=ugUEEgJlbg%3D%3D"],
-  photos: [
-    {
-      image: modelHImage,
-      alt: "towers.tower-a.model-h.layout.images.image-1",
-    },
-  ],
   details: [
     {
       images: [

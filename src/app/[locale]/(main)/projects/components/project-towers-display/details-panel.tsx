@@ -30,7 +30,7 @@ export default function DetailsPanel({
 
   if (selectedDataTab === "layout") {
     return (
-      <p className="leading-normal md:py-7 lg:py-14 xl:py-12 2xl:w-9/12 2xl:py-10 2xl:text-2xl">
+      <p className="leading-normal md:py-7 lg:py-14 xl:py-12 xl:text-xl 2xl:w-9/12 2xl:py-10 2xl:text-2xl">
         {t(selectedModelData.layout.description)}
       </p>
     );
@@ -84,7 +84,7 @@ function ModelDetailsPanel({
     <div
       aria-label="details"
       // className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:grid-rows-[1fr_auto] xl:grid-cols-3 2xl:gap-10 2xl:py-4"
-      className="grid grid-cols-1 gap-8 lg:grid-cols-3"
+      className="grid grid-cols-1 gap-6 overflow-x-hidden lg:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
     >
       {modelDetails.sections.map((section, index) => {
         const details = (

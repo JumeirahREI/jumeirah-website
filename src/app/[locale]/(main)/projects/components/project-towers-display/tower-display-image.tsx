@@ -20,7 +20,7 @@ export default function TowerDisplayImage({
         alt={alt || ""}
         fill={fill}
         {...props}
-        className={cn("w-full scale-110 object-contain", props.className)}
+        className={cn("w-full scale-105 object-contain", props.className)}
       />
       {isLoading && (
         <div className="absolute top-0 right-0 bottom-0 left-0 z-20 flex items-center justify-center">
