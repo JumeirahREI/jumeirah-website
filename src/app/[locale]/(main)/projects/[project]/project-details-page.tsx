@@ -33,7 +33,7 @@ export default function ProjectDetails({ projectData }: ProjectDetailsProps) {
       </PageHeader>
       <main className="bg-background mb-32 space-y-32 lg:mb-52 lg:space-y-52">
         <section className="relative z-30 container">
-          <h2 className="mb-5 text-center text-3xl md:text-4xl lg:text-5xl 2xl:mb-12">
+          <h2 className="mb-5 text-center text-3xl md:mb-6 md:text-4xl lg:mb-8 lg:text-5xl 2xl:mb-12">
             {ct.rich("include-two-towers", {
               span: (s) => <span className="text-primary">{s}</span>,
             })}

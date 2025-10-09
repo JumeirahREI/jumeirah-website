@@ -36,7 +36,6 @@ export const TowersDisplayProvider = React.memo(
       setSelectedDataTab: setDataTab,
     } = useTowerNavigation();
 
-    // Media state management
     const {
       mediaContainerData,
       selectedMediaIndex,
@@ -46,11 +45,21 @@ export const TowersDisplayProvider = React.memo(
       projectData.towersSection[0]?.models[0]?.layout?.images || [],
     );
 
-    // Wrapped callbacks with useCallback to prevent unnecessary re-renders
     const handleTowerSelection = useCallback(
       (tower: number) => {
         if (selectedTower !== tower) {
           setTower(tower);
+          setSelectedMediaIndex(0);
+          if (
+            (selectedDataTab === "photos" &&
+              !projectData.towersSection[tower].models[selectedModel].photos
+                ?.length) ||
+            (selectedDataTab === "videos" &&
+              !projectData.towersSection[tower].models[selectedModel].videos
+                ?.length)
+          ) {
+            setDataTab("layout");
+          }
         }
       },
       [selectedTower, setTower],
@@ -75,7 +84,6 @@ export const TowersDisplayProvider = React.memo(
       [selectedDataTab, setDataTab],
     );
 
-    // Effect to handle media data updates based on selections
     useEffect(() => {
       try {
         const currentTower = projectData.towersSection[selectedTower];
@@ -105,7 +113,6 @@ export const TowersDisplayProvider = React.memo(
         }
       } catch (error) {
         console.error("Error updating media data:", error);
-        // Optionally handle the error state here
       }
     }, [
       selectedDataTab,

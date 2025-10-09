@@ -80,7 +80,7 @@ function ServiceItem({ title, icon, backgroundImage }: ServiceItemProps) {
         </div>
         <div className="flex flex-1 items-end">
           <GotoIcon
-            className="size-10 bg-[#A5A5A5]/25 lg:p-1.5 xl:size-12"
+            className="size-10 bg-[#A5A5A5]/25 lg:size-10 lg:p-1.5 xl:size-10"
             alt=""
           />
         </div>

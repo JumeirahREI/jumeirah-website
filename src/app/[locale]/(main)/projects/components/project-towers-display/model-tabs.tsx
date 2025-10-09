@@ -33,7 +33,7 @@ export default function ModelTabs({
   }, [models.length, emblaApi]);
 
   return (
-    <div className="model-tabs no-scrollbar fade-x w-full shrink-0 overflow-x-hidden px-[var(--padding-x)] py-0.5 md:row-start-1 lg:[--fade-start:6%] ltr:mr-6 rtl:lg:ml-6">
+    <div className="model-tabs no-scrollbar fade-x w-full shrink-0 overflow-x-hidden px-[var(--padding-x)] py-0.5 [--fade-end:94%] [--fade-start:6%] md:row-start-1 ltr:mr-6 rtl:lg:ml-6">
       <Carousel options={carouselOptions} onReady={setEmblaApi}>
         <div className="embla__container flex items-center space-x-3 2xl:space-x-6">
           {models.map((model, index) => (
