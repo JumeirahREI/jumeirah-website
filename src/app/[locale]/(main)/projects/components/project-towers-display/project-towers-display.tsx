@@ -68,7 +68,7 @@ const ProjectTowersDisplay = React.memo(
               />
               <MemoizedMediaPanel
                 projectKey={projectData.projectKey}
-                className="mt-4 aspect-[10/7] lg:hidden"
+                className="mt-4 aspect-[10/8] lg:hidden [&_img]:scale-[1.2]"
                 aria-label={ct("tabs.media")}
               />
               <div
