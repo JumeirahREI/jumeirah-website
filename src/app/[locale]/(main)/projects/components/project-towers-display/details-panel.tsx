@@ -83,7 +83,6 @@ function ModelDetailsPanel({
   return (
     <div
       aria-label="details"
-      // className="grid grid-cols-1 gap-4 lg:grid-cols-2 lg:grid-rows-[1fr_auto] xl:grid-cols-3 2xl:gap-10 2xl:py-4"
       className="grid grid-cols-1 gap-6 overflow-x-hidden lg:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
     >
       {modelDetails.sections.map((section, index) => {
@@ -120,12 +119,12 @@ function SectionDetails({
       <h3 className="mb-3 font-bold 2xl:text-2xl">{t(section.title)}</h3>
       <ol
         start={start}
-        className="flex w-fit list-inside flex-col flex-wrap space-y-0.5 gap-x-8 ps-2 text-[#a5a5a5] lg:max-h-32"
+        className="flex w-fit list-inside flex-col flex-wrap space-y-0.5 gap-x-7 ps-2 text-[#a5a5a5] lg:max-h-32"
       >
         {section.rooms.map((room, index) => (
           <li
             key={index}
-            className="list-decimal break-words whitespace-normal"
+            className="list-decimal break-words whitespace-normal max-md:text-sm"
           >
             {t(room)}
           </li>

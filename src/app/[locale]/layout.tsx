@@ -66,7 +66,7 @@ function BackgroundImage() {
     <div className="absolute top-0 right-0 left-0 -z-[9999] !mb-0 h-full max-h-[40rem] overflow-hidden md:max-h-[50rem] lg:max-h-[60rem]">
       <ParallaxScrollEffect
         aria-hidden
-        className="pointer-events-none size-full"
+        className="pointer-events-none relative size-full"
       >
         <Image
           src={heroBackgroundImage}

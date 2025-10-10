@@ -1,3 +1,5 @@
+"use client";
+
 import DataTabs from "@/app/[locale]/(main)/projects/components/project-towers-display/data-tabs";
 import DetailsPanel from "@/app/[locale]/(main)/projects/components/project-towers-display/details-panel";
 import MediaPanel from "@/app/[locale]/(main)/projects/components/project-towers-display/media-panel";
@@ -7,6 +9,7 @@ import { TowersDisplayProvider } from "@/app/[locale]/(main)/projects/components
 import { Project, ProjectData } from "@/data/types";
 import { useTranslations } from "next-intl";
 import React, { useId } from "react";
+import { useBreakpoint } from "../../../../../../hooks/use-breakpoint";
 
 interface ProjectTowersDisplayProps {
   projectData: ProjectData<Project>;
@@ -25,6 +28,7 @@ const ProjectTowersDisplay = React.memo(
   ({ projectData }: ProjectTowersDisplayProps) => {
     const t = useTranslations(projectData.projectKey);
     const ct = useTranslations("Common");
+    const breakpoint = useBreakpoint();
     const componentId = useId();
     const tabPanelId = `${componentId}-tabpanel`;
     const tabListId = `${componentId}-tablist`;
@@ -56,7 +60,7 @@ const ProjectTowersDisplay = React.memo(
             id={tabPanelId}
             role="tabpanel"
             aria-labelledby={`${componentId}-tab`}
-            className="flex h-[calc(100vh-8rem)] max-h-[calc(100vh-8rem)] max-w-full rounded-lg lg:h-[calc(100vh-18rem)] lg:max-h-[31rem] lg:min-h-[28rem] ltr:lg:pr-[var(--padding-x)] rtl:lg:pl-[var(--padding-x)]"
+            className="flex h-[calc(100vh-15rem)] max-w-full rounded-lg lg:h-[calc(100vh-18rem)] lg:max-h-[31rem] lg:min-h-[28rem] ltr:lg:pr-[var(--padding-x)] rtl:lg:pl-[var(--padding-x)]"
             tabIndex={0}
             aria-live="polite"
             aria-atomic="true"
@@ -66,11 +70,13 @@ const ProjectTowersDisplay = React.memo(
                 projectData={projectData}
                 aria-controls={tabPanelId}
               />
-              <MemoizedMediaPanel
-                projectKey={projectData.projectKey}
-                className="mt-4 aspect-[10/8] md:aspect-[16/9] lg:hidden [&_img]:scale-[1.2]"
-                aria-label={ct("tabs.media")}
-              />
+              {(!breakpoint.lg || breakpoint.ssr) && (
+                <MemoizedMediaPanel
+                  projectKey={projectData.projectKey}
+                  className="mt-4 aspect-[10/7] md:aspect-[16/9] lg:hidden [&_img]:scale-[1.2]"
+                  aria-label={ct("tabs.media")}
+                />
+              )}
               <div
                 className="description text-foreground/90 scrollbar fade-y grow overflow-y-auto py-8 ltr:lg:mr-4 rtl:lg:ml-4 [&>*]:px-[var(--padding-x)]"
                 aria-live="polite"
@@ -86,11 +92,13 @@ const ProjectTowersDisplay = React.memo(
                 <MemoizedDataTabs projectData={projectData} />
               </div>
             </div>
-            <MemoizedMediaPanel
-              projectKey={projectData.projectKey}
-              className="hidden lg:block"
-              aria-label={ct("tabs.media")}
-            />
+            {breakpoint.lg && (
+              <MemoizedMediaPanel
+                projectKey={projectData.projectKey}
+                className="lg:block"
+                aria-label={ct("tabs.media")}
+              />
+            )}
           </div>
         </section>
       </TowersDisplayProvider>
