@@ -18,7 +18,7 @@ export default function ModelTabs({
 }: {
   projectData: ProjectData<Project>;
 }) {
-  const t = useTranslations(projectData.projectKey);
+  const t = useTranslations<Project>(projectData.projectKey);
   const { selectedTower, selectedModel, setSelectedModel } =
     useTowersDisplayContext();
   const [emblaApi, setEmblaApi] = useState<CarouselApi>();

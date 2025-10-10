@@ -1,5 +1,5 @@
 {
-  "cSpell.words": ["aeonik", "qurova"],
+  "cSpell.words": ["aeonik", "alhathaa", "qurova"],
   "i18n-ally.localesPaths": ["messages", "src/i18n"],
   "typescript.tsdk": "node_modules\\typescript\\lib"
 }

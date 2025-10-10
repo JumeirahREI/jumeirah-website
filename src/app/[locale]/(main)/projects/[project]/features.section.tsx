@@ -7,7 +7,7 @@ export default function FeaturesSection({
 }: {
   projectData: ProjectData<Project>;
 }) {
-  const t = useTranslations(projectData.projectKey);
+  const t = useTranslations<Project>(projectData.projectKey);
   const { featuresSection: fs } = projectData;
 
   if (!fs) return null;

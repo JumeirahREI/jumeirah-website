@@ -1,11 +1,14 @@
 import ProjectDetails from "@/app/[locale]/(main)/projects/[project]/project-details-page";
+import { alhathaaTowersData } from "@/data/alhathaa-towers";
 import { sanaaTowersData } from "@/data/sanaa-towers";
+import { Project, ProjectData } from "@/data/types";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 const projects = {
   "sanaa-towers": sanaaTowersData,
+  "alhathaa-towers": alhathaaTowersData,
   // "alhathaa-towers": {key: "Alhathaa-Towers", data: alhathaaTowersData},
 } as const;
 
@@ -20,7 +23,9 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
     notFound();
   }
 
-  return <ProjectDetails projectData={projects[project]} />;
+  return (
+    <ProjectDetails projectData={projects[project] as ProjectData<Project>} />
+  );
 }
 
 export async function generateStaticParams() {

@@ -6,12 +6,14 @@ import PageHeader from "@/components/page-header";
 import { Project, ProjectData } from "@/data/types";
 import { useTranslations } from "next-intl";
 
-interface ProjectDetailsProps {
-  projectData: ProjectData<Project>;
+interface ProjectDetailsProps<T extends Project> {
+  projectData: ProjectData<T>;
 }
 
-export default function ProjectDetails({ projectData }: ProjectDetailsProps) {
-  const t = useTranslations(projectData.projectKey);
+export default function ProjectDetails({
+  projectData,
+}: ProjectDetailsProps<Project>) {
+  const t = useTranslations<Project>(projectData.projectKey);
   const ct = useTranslations("Common");
 
   return (

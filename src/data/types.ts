@@ -1,9 +1,18 @@
-import type { Messages, NestedKeyOf } from "next-intl";
+import type { Messages } from "next-intl";
 import { StaticImageData } from "next/image";
 
 export type Project = "SanaaTowers" | "Alhathaa-Towers";
 
-type BaseTranslation<T extends Project> = NestedKeyOf<Messages[T]>;
+// Utility type to get only leaf dot-path keys of a nested object
+type LeafPaths<T> = T extends object
+  ? {
+      [K in keyof T & string]: T[K] extends object
+        ? `${K}.${LeafPaths<T[K]>}`
+        : K;
+    }[keyof T & string]
+  : never;
+
+type BaseTranslation<T extends Project> = LeafPaths<Messages[T]>;
 
 export type ModelDetailsSection<T extends Project> = {
   title: BaseTranslation<T>;

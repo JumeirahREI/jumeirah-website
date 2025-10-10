@@ -564,8 +564,199 @@
     }
   },
   "Alhathaa-Towers": {
-    "meta-description": "The Al-Hathaa Towers project is a residential development located in the Al-Hathaa district of Sana'a, Yemen. The project includes two towers, each with 12 floors, and a total of 120 apartments. The towers are designed to be earthquake-resistant and feature modern amenities, including a gym, a swimming pool, and a security system. The project is currently under construction and is expected to be completed in 2025.",
-    "title": "Al-Hathaa Towers"
+    "title": "Al-Hathaa Residential Towers",
+    "meta-description": "Jumeirah Real Estate Investment Company has introduced a unique project that embodies its vision of developing modern residential communities that enhance the quality of life. The project features a sophisticated architectural design that provides an integrated environment that combines comfort, privacy, and security, offering residents a lifestyle filled with tranquility and peace of mind.",
+    "subtitle": "Jumeirah Real Estate Investment Company has introduced a unique project that embodies its vision of developing modern residential communities that enhance the quality of life. The project features a sophisticated architectural design that provides an integrated environment that combines comfort, privacy, and security, offering residents a lifestyle filled with tranquility and peace of mind.",
+    "towers": {
+      "tower-a": {
+        "title": "Tower <span>A</span>",
+        "model-a": {
+          "name": "Model <span>A</span>",
+          "layout": {
+            "images": {
+              "image-1": "Model A layout"
+            },
+            "description": "With a total area of 326 square meters, Model A features a private guest wing and a spacious family wing with a living room, balcony, and kitchen, in addition to comfortable bedrooms and a luxurious master suite."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Wing",
+              "guest-reception-hall": "Guest Reception Hall: 4.65m x 4.00m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 7.30m x 4.00m",
+              "majlis-bathroom": "Majlis Bathroom: 2.00m x 1.95m"
+            },
+            "family-wing-section": {
+              "title": "Family Wing",
+              "living-room": "Living Room: 8.20m x 5.30m",
+              "balcony": "Balcony: 5.20m x 1.10m",
+              "maid-room": "Maid's Room: 2.45m x 1.90m",
+              "kitchen": "Kitchen: 4.00m x 4.00m",
+              "bedroom-1": "Bedroom 1: 5.00m x 4.00m",
+              "bedroom-2": "Bedroom 2: 5.30m x 4.00m",
+              "bedroom-3": "Bedroom 3: 4.00m x 4.00m",
+              "main-bathroom": "Main Bathroom: 2.90m x 2.40m",
+              "storage-room": "Storage Room: 2.40m x 1.60m"
+            },
+            "master-bedroom-suite": {
+              "title": "Master Bedroom Suite",
+              "bedroom": "Master Bedroom: 5.30m x 4.00m",
+              "dressing-room": "Dressing Room: 4.00m x 1.90m",
+              "bathroom": "Bathroom: 2.20m x 1.90m"
+            }
+          }
+        },
+        "model-b": {
+          "name": "Model <span>B</span>",
+          "layout": {
+            "images": {
+              "image-1": "Model B layout"
+            },
+            "description": "With a total area of 210 square meters, Model B features a private guest wing and a practical family wing with a living room, balcony, and kitchen, in addition to comfortable bedrooms and a well-appointed master suite."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Wing",
+              "guest-reception-hall": "Guest Reception Hall: 3.10m x 2.60m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 6.10m x 3.60m",
+              "majlis-bathroom": "Majlis Bathroom: 1.90m x 1.90m"
+            },
+            "family-wing-section": {
+              "title": "Family Wing",
+              "living-room": "Living Room: 8.20m x 4.00m",
+              "storage-room": "Storage and Maid's Room: 3.90m x 1.90m",
+              "balcony": "Balcony: 2.45m x 1.40m",
+              "kitchen": "Kitchen: 4.00m x 3.50m",
+              "bedroom-1": "Bedroom 1: 4.00m x 4.00m",
+              "main-bathroom": "Main Bathroom: 2.00m x 1.90m"
+            },
+            "master-bedroom-suite": {
+              "title": "Master Bedroom Suite",
+              "bedroom": "Master Bedroom: 4.00m x 4.00m",
+              "bathroom": "Bathroom: 1.90m x 1.80m"
+            }
+          }
+        },
+        "model-c": {
+          "name": "Model <span>C</span>",
+          "layout": {
+            "images": {
+              "image-1": "Model C layout"
+            },
+            "description": "With a total area of 274 square meters, Model C features a private guest wing and a spacious family wing with a living room, balcony, and kitchen, in addition to comfortable bedrooms and a luxurious master suite."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Wing",
+              "guest-reception-hall": "Guest Reception Hall: 4.20m x 4.00m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 6.70m x 4.00m",
+              "majlis-bathroom": "Majlis Bathroom: 2.20m x 1.80m"
+            },
+            "family-wing-section": {
+              "title": "Family Wing",
+              "living-room": "Living Room: 8.20m x 4.00m",
+              "balcony": "Balcony: 4.00m x 1.20m",
+              "maid-room": "Maid's Room / Storage: 1.90m x 1.90m",
+              "kitchen": "Kitchen: 4.00m x 4.00m",
+              "bedroom-1": "Bedroom 1: 5.30m x 4.00m",
+              "bedroom-2": "Bedroom 2: 4.00m x 4.00m",
+              "main-bathroom": "Main Bathroom + Wash Basin: 3.40m x 1.90m"
+            },
+            "master-bedroom-suite": {
+              "title": "Master Bedroom Suite",
+              "bedroom": "Master Bedroom: 5.30m x 4.00m",
+              "dressing-room": "Dressing Room: 1.95m x 1.90m",
+              "bathroom": "Bathroom: 2.65m x 1.90m"
+            }
+          }
+        },
+        "model-d": {
+          "name": "Model <span>D</span> <i>(Duplex)</i>",
+          "layout": {
+            "images": {
+              "image-1": "Model D first floor layout",
+              "image-2": "Model D second floor layout"
+            },
+            "description": "Model D is a duplex totaling 740 square meters, combining an independent guest wing with a spacious family wing featuring a living room, balcony, and kitchen, in addition to comfortable bedrooms and a luxurious master suite."
+          },
+          "details": {
+            "first-floor": {
+              "guest-section": {
+                "title": "Guest Wing",
+                "guest-reception-hall": "Guest Reception Hall: 3.10m x 2.60m",
+                "majlis-guest-lounge": "Majlis (Guest Lounge): 6.10m x 3.60m",
+                "majlis-bathroom": "Majlis Bathroom: 1.90m x 1.90m"
+              },
+              "family-wing-section": {
+                "title": "Family Wing",
+                "living-room": "Living Room: 8.20m x 4.00m",
+                "storage-room": "Storage and Maid's Room: 3.90m x 1.90m",
+                "balcony": "Balcony: 2.45m x 1.40m",
+                "kitchen": "Kitchen: 4.00m x 3.50m",
+                "bedroom-1": "Bedroom 1: 4.00m x 4.00m",
+                "main-bathroom": "Main Bathroom: 2.00m x 1.90m"
+              },
+              "master-bedroom-suite": {
+                "title": "Master Bedroom Suite",
+                "bedroom": "Master Bedroom: 4.00m x 4.00m",
+                "bathroom": "Bathroom: 1.90m x 1.80m"
+              }
+            },
+            "second-floor": {
+              "family-wing-section": {
+                "title": "Family Wing",
+                "family-entrance": "Family Entrance: 4.00m x 1.90m",
+                "living-room": "Living Room: 8.20m x 4.60m",
+                "bedroom-1": "Bedroom 1: 4.00m x 4.00m",
+                "bedroom-2": "Bedroom 2: 4.00m x 4.00m",
+                "main-bathroom": "Main Bathroom: 1.90m x 1.80m"
+              },
+              "master-bedroom-suite": {
+                "title": "Master Bedroom Suite",
+                "bedroom": "Master Bedroom: 5.20m x 5.10m",
+                "balcony": "Balcony: 5.20m x 1.40m",
+                "dressing-room": "Dressing Room: 5.20m x 1.90m",
+                "bathroom": "Bathroom: 3.10m x 1.90m"
+              }
+            }
+          }
+        }
+      },
+      "tower-b": {
+        "title": "Tower <span>B</span>",
+        "model-z": {
+          "name": "Model <span>Z</span>",
+          "layout": {
+            "images": {
+              "image-1": "Model Z layout"
+            },
+            "description": "With a total area of 245 square meters, Model Z features a private guest wing and a spacious family wing with a living room, balcony, and kitchen, in addition to comfortable bedrooms and a luxurious master suite."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Wing",
+              "guest-reception-hall": "Guest Reception Hall: 3.60m x 1.90m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 6.00m x 3.60m",
+              "majlis-bathroom": "Majlis Bathroom: 2.10m x 1.70m"
+            },
+            "family-wing-section": {
+              "title": "Family Wing",
+              "living-room": "Living Room: 9.10m x 4.85m",
+              "balcony": "Balcony: 4.60m x 1.80m",
+              "maid-room": "Maid's Room / Storage: 1.90m x 1.30m",
+              "kitchen": "Kitchen: 4.00m x 3.10m",
+              "bedroom-1": "Bedroom 1: 4.15m x 4.15m",
+              "bedroom-2": "Bedroom 2: 4.15m x 4.00m",
+              "main-bathroom": "Main Bathroom: 2.90m x 2.70m"
+            },
+            "master-bedroom-suite": {
+              "title": "Master Bedroom Suite",
+              "bedroom": "Master Bedroom: 5.55m x 4.00m",
+              "bathroom": "Bathroom: 2.10m x 1.90m"
+            }
+          }
+        }
+      }
+    }
   },
   "FAQsSection": {
     "title": "Frequently Asked Questions",
