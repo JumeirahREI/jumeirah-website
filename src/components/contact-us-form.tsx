@@ -51,7 +51,7 @@ function Input({ className, ...props }: React.ComponentProps<"input">) {
   return (
     <input
       className={cn(
-        "rounded-full border border-white/30 bg-white/5 px-5 py-3 placeholder-white/30",
+        "rounded-full border border-white/30 bg-white/5 px-5 py-3 placeholder-[#757575]",
         className,
       )}
       maxLength={255}
@@ -65,7 +65,7 @@ function TextArea({ className, ...props }: React.ComponentProps<"textarea">) {
     <textarea
       rows={5}
       className={cn(
-        "resize-none rounded-3xl border border-white/30 bg-white/5 px-5 py-3 placeholder-white/30",
+        "resize-none rounded-3xl border border-white/30 bg-white/5 px-5 py-3 placeholder-[#757575]",
         className,
       )}
       {...props}

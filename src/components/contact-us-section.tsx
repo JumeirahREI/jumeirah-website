@@ -4,6 +4,8 @@ import facebookIcon from "@/../public/svg/facebook.svg";
 import instagramIcon from "@/../public/svg/instagram.svg";
 import linkedinIcon from "@/../public/svg/linkedin.svg";
 import locationIcon from "@/../public/svg/location-icon.svg";
+import mapImageAr from "@/../public/svg/map-ar.svg";
+import mapImageEn from "@/../public/svg/map-en.svg";
 import phoneIcon from "@/../public/svg/phone-icon.svg";
 import twitterIcon from "@/../public/svg/twitter.svg";
 import ContactUsForm from "@/components/contact-us-form";
@@ -11,7 +13,7 @@ import GlassCard from "@/components/ui/glass-card";
 import Logo from "@/components/ui/logo";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
 
@@ -25,19 +27,22 @@ export default function ContactUsSection({
   const t = useTranslations("ContactUs");
   const common = useTranslations("Common");
   const projects = useTranslations("ProjectTitles");
+  const locale = useLocale();
 
   return (
     <section className="relative pb-16">
       <div className="container grid grid-cols-1 gap-5 lg:grid-cols-2">
         <ContactUsForm />
         <div className="flex flex-col gap-5">
-          <Card className="space-y-5 text-lg xl:text-xl 2xl:space-y-7 2xl:text-2xl [&_p]:text-[#9C9C9C]">
+          <Card className="flex flex-col items-start justify-between gap-5 text-lg only:flex-grow xl:gap-8 xl:text-xl 2xl:text-2xl [&_p]:text-[#9C9C9C]">
             <div className="flex flex-col gap-5 lg:flex-row lg:gap-5 xl:gap-10">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 <Icon src={phoneIcon} alt="Phone Icon" />
-                <p dir="ltr">+(967) 778265522</p>
+                <p dir="ltr" className="text-nowrap">
+                  +(967) 778265522
+                </p>
               </div>
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-3">
                 <Icon src={emailIcon} alt="Email Icon" />
                 <p>info@jumeirahye.com</p>
               </div>
@@ -46,17 +51,18 @@ export default function ContactUsSection({
               <Icon src={locationIcon} alt="Location Icon" />
               <p>{t("location")}</p>
             </div>
+            {!isFooter && (
+              <Image
+                src={locale === "ar" ? mapImageAr : mapImageEn}
+                alt={common("jumeirah-map-location")}
+                className="relative z-20 flex-grow rounded-4xl border border-[#4a4a4a] object-cover lg:rounded-[3rem]"
+              />
+            )}
           </Card>
           {isFooter && (
-            <Card className="flex-grow space-y-8 [&_h5]:font-semibold [&_h5]:2xl:text-xl [&_li]:text-sm">
-              <footer className="inline-flex flex-col items-center text-center">
-                <Logo className="w-16 2xl:w-24" />
-                <div>
-                  <p className="text-lg font-black 2xl:text-2xl">
-                    {common("jumeirah")}
-                  </p>
-                  <p className="text-[0.6rem]">{common("rei")}</p>
-                </div>
+            <Card className="flex flex-grow flex-col justify-between gap-8 [&_h5]:font-semibold [&_h5]:2xl:text-xl [&_li]:text-sm">
+              <footer className="inline-flex flex-col items-center self-start text-center">
+                <Logo wideLogo className="w-40 md:w-60 lg:w-52 2xl:w-24" />
               </footer>
               <nav className="grid grid-cols-2 gap-y-8 lg:grid-cols-4">
                 <div className="flex-1 space-y-4">
@@ -88,7 +94,7 @@ export default function ContactUsSection({
                   <p className="text-sm text-[#9C9C9C]">
                     {common("subscribe-description")}
                   </p>
-                  <div className="flex items-center justify-center gap-3 pt-2 lg:justify-start">
+                  <div className="flex items-center justify-center gap-3 pt-2 lg:justify-start lg:pt-12">
                     <SocialLink href="#" icon={linkedinIcon} alt="LinkedIn" />
                     <SocialLink href="#" icon={instagramIcon} alt="Instagram" />
                     <SocialLink href="#" icon={twitterIcon} alt="Twitter" />
