@@ -70,12 +70,13 @@ export default function OurProjectsSection() {
               key={p.title}
               src={p.image}
               className="w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem] [&_figure>div]:opacity-80 [&_figure>div]:transition-opacity hover:[&_figure>div]:opacity-50"
+              sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, (max-width: 1024px) 47vw, (max-width: 1536px) 40vw, 28vw"
             >
               <Link
                 href={p.href}
                 className="flex flex-col justify-between gap-80 px-5 py-4 md:px-6 md:py-6 lg:px-5 lg:py-4 xl:gap-[30rem] xl:px-12 xl:pt-10 xl:pb-14"
               >
-                <p className="bg-glass self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1.5 text-xs text-white/70 lg:border-2 xl:text-lg">
+                <p className="bg-glass self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1.5 text-xs text-[#d3d5d7] lg:border-2 xl:text-lg">
                   {ct(p.status)}
                 </p>
                 <div className="flex items-center justify-center gap-2 xl:gap-4">

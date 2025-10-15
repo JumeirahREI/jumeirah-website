@@ -70,7 +70,7 @@ function BackgroundImage() {
       >
         <Image
           src={heroBackgroundImage}
-          className="-z-50 h-full w-full object-cover object-top"
+          className="-z-50 h-full w-full object-cover object-top-right md:object-top ltr:rotate-y-180 rtl:max-md:object-top-left"
           alt=""
           placeholder="blur"
           sizes="(max-width: 768px) 100vh, (max-width: 1200px) 100vw, 100vw"

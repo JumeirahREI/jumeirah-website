@@ -1,4 +1,5 @@
-import sanaaTowersImage from "@/../public/images/sanaa-towers.webp";
+import companyHistoryImage from "@/../public/images/company-history-image.webp";
+import ourMissionImage from "@/../public/images/our-mission-image.webp";
 import collaborationIcon from "@/../public/svg/collaboration-icon.svg";
 import customerCentricityIcon from "@/../public/svg/customer-centricity-icon.svg";
 import excellenceIcon from "@/../public/svg/excellence-icon.svg";
@@ -71,15 +72,14 @@ export default function AboutUsPage() {
             <div className="self-stretch lg:col-span-2">
               <ImageContainer
                 className="z-30 h-full min-h-72"
-                src={sanaaTowersImage}
-                alt={pt("sanaa-towers")}
+                src={companyHistoryImage}
               />
             </div>
             <div className="lg:col-span-3">
-              <h2 className="ltr:first-letter-primary text-2xl md:text-3xl lg:mt-14 lg:mb-4 lg:text-5xl">
+              <h2 className="ltr:first-letter-primary text-2xl md:text-3xl lg:mt-14 lg:mb-4 lg:text-4xl xl:text-5xl">
                 {t("company-history")}
               </h2>
-              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:mb-14 lg:text-3xl">
+              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:mb-14 lg:text-2xl xl:text-3xl">
                 {t("company-history-description")}
               </p>
             </div>
@@ -90,18 +90,17 @@ export default function AboutUsPage() {
                 <Image src={missionIcon} alt="target-icon" className="size-6" />
                 {t("our-mission")}
               </p>
-              <h2 className="text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-5xl xl:text-[3.5rem]">
+              <h2 className="text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-4xl xl:text-5xl">
                 {t("our-mission-title")}
               </h2>
-              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:text-3xl">
+              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:text-2xl xl:text-3xl">
                 {t("our-mission-subtitle")}
               </p>
             </div>
             <div className="self-stretch lg:col-span-2">
               <ImageContainer
                 className="z-30 h-full min-h-72"
-                src={sanaaTowersImage}
-                alt={pt("sanaa-towers")}
+                src={ourMissionImage}
               />
             </div>
           </article>

@@ -89,6 +89,7 @@ function ServiceGalleryCard({
       containerTag={tag}
       fetchPriority="high"
       className="h-full w-full flex-1 text-center"
+      sizes="(max-width: 1024px) 100vw, 33vw"
     >
       <div className="flex h-full flex-col items-center justify-center gap-4 p-5 pt-16 lg:pt-30 xl:pt-44">
         <div className="flex w-full grow flex-col items-center gap-2">

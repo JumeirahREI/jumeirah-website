@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import Image, { StaticImageData } from "next/image";
 
 type CategoryProjectItemProps = {
-  title: string | React.ReactNode;
+  title: string;
   status: string;
   img: StaticImageData;
   href: string;
@@ -23,7 +23,7 @@ export default function CategoryProjectItem({
           <Image
             src={img}
             className="-z-10 object-cover"
-            alt=""
+            alt={title}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             fill
           />

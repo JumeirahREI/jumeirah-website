@@ -46,7 +46,7 @@ export default function Home() {
               }}
               childrenClassName="backdrop-blur-md w-fit rounded-3xl lg:rounded-4xl"
             >
-              <GlassCard className="max-w-md text-center leading-6 font-medium text-white/80 backdrop-blur-none md:max-w-xl md:text-start md:text-lg md:leading-7 lg:max-w-2xl xl:max-w-3xl xl:text-xl xl:leading-8">
+              <GlassCard className="max-w-md text-center leading-6 font-medium text-[#d3d5d7] backdrop-blur-none md:max-w-xl md:text-start md:text-lg md:leading-7 lg:max-w-2xl xl:max-w-3xl xl:text-xl xl:leading-8">
                 <p className="text-primary mb-2 font-bold">
                   {t("hero-subtitle")}
                 </p>
