@@ -1,4 +1,4 @@
-import villaImage from "@/../public/images/villa-image.webp";
+import ourMissionContainerImage from "@/../public/images/our-mission.webp";
 import missionIcon from "@/../public/svg/mission-icon.svg";
 import targetIcon from "@/../public/svg/target-icon.svg";
 import { AnimatedGroup } from "@/components/animated-group";
@@ -60,12 +60,12 @@ export default function AboutUsCard() {
             <div className="relative overflow-hidden rounded-full">
               <div>
                 <Image
-                  alt="villa-image"
-                  src={villaImage}
+                  alt=""
+                  src={ourMissionContainerImage}
                   placeholder="blur"
                   className="w-full object-cover md:h-32 lg:h-fit"
                 />
-                <div className="absolute top-0 right-0 left-0 size-full bg-linear-to-tr from-[#1A1A1A] to-[#1A1A1A]/0 rtl:bg-linear-to-tl" />
+                <div className="absolute top-0 right-0 left-0 size-full bg-linear-to-tr from-[#1A1A1A] to-[#1A1A1A]/0 opacity-50 rtl:bg-linear-to-tl" />
               </div>
             </div>
             <AnimatedGroup
