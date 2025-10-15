@@ -58,13 +58,13 @@ export default function Navbar() {
         >
           <Link
             href="/"
-            className="pointer-events-auto z-[100] flex items-baseline gap-2 md:items-center md:gap-3"
+            className="pointer-events-auto z-[100] flex items-center gap-2 md:gap-3"
           >
-            <Logo className="w-[3.5rem] md:w-20 md:-translate-y-1 lg:w-20 xl:w-24" />
+            <Logo className="w-12 md:w-16 md:-translate-y-1 xl:w-24" />
             <LogoType />
           </Link>
           <div className="static hidden lg:block">
-            <div className="pointer-events-auto top-0 left-1/2 col-span-3 flex items-center justify-center max-lg:mt-28 max-lg:text-center lg:absolute lg:-translate-x-1/2">
+            <div className="pointer-events-auto top-1/2 left-1/2 col-span-3 flex -translate-y-1/2 items-center justify-center max-lg:mt-28 max-lg:text-center lg:absolute lg:-translate-x-1/2">
               <NavigationLinks
                 className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s flex flex-col gap-10 px-6 py-1.5 text-base leading-loose font-medium text-white lg:flex-row lg:rounded-full xl:px-8 xl:py-2 xl:text-lg"
                 liClassName="relative"
