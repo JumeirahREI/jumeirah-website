@@ -1,6 +1,6 @@
-import commercialPropertiesImage from "@/../public/images/commercial-properties.webp";
-import interiorDesignImage from "@/../public/images/interior-design.webp";
-import residentialPropertiesImage from "@/../public/images/residential-properties.webp";
+import interiorDesignImage from "@/../public/images/after-sale-services.webp";
+import commercialPropertiesImage from "@/../public/images/property-management.webp";
+import residentialPropertiesImage from "@/../public/images/real-estate-project-development.webp";
 import commercialIcon from "@/../public/svg/commercial-properties-icon.svg";
 import homeIcon from "@/../public/svg/home-icon.svg";
 import interiorDesignIcon from "@/../public/svg/interior-design-icon.svg";
@@ -22,7 +22,7 @@ const galleryImages = [
   },
   {
     src: commercialPropertiesImage,
-    title: "property-managment",
+    title: "property-management",
     icon: commercialIcon,
     options: ["office-spaces", "business-centers"],
   },
@@ -105,7 +105,8 @@ function ServiceGalleryCard({
           <h3 className="z-10 text-2xl xl:text-3xl 2xl:text-4xl">
             {t(title as Parameters<typeof t>[0])}
           </h3>
-          <div
+          <div className="h-4 md:h-10 xl:h-16" />
+          {/* <div
             aria-hidden
             className="invisible mt-4 mb-4 flex justify-center gap-3 self-stretch text-sm md:mb-10 lg:mt-2 lg:gap-2 lg:text-xs xl:mt-4 xl:mb-10 xl:text-base"
           >
@@ -117,7 +118,7 @@ function ServiceGalleryCard({
                 {t(option as Parameters<typeof t>[0])}
               </span>
             ))}
-          </div>
+          </div> */}
         </div>
         <GotoIcon
           className="size-10 justify-self-end lg:size-10 lg:p-1.5 xl:mb-4 xl:size-14 xl:p-2"
