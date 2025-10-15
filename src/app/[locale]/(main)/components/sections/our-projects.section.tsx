@@ -69,8 +69,7 @@ export default function OurProjectsSection() {
             <ImageContainer
               key={p.title}
               src={p.image}
-              className="group transition-[filter, scale] not-first: w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem]"
-              imageClassName="transition-[filter] duration-300 ease-in-out lg:group-hover:brightness-125"
+              className="w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem] [&_figure>div]:opacity-80 [&_figure>div]:transition-opacity hover:[&_figure>div]:opacity-50"
             >
               <Link
                 href={p.href}

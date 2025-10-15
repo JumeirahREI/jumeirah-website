@@ -31,7 +31,7 @@ export default function ImageContainer({
         <Image
           src={src}
           alt={alt}
-          aria-hidden="true"
+          aria-hidden
           className={cn(
             "top-0 right-0 bottom-0 left-0 -z-10 object-cover",
             imageClassName,
