@@ -76,7 +76,7 @@ export default function OurProjectsSection() {
                 href={p.href}
                 className="flex flex-col justify-between gap-80 px-5 py-4 md:px-6 md:py-6 lg:px-5 lg:py-4 xl:gap-[30rem] xl:px-12 xl:pt-10 xl:pb-14"
               >
-                <p className="bg-glass self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1.5 text-xs text-[#d3d5d7] lg:border-2 xl:text-lg">
+                <p className="bg-glass self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1.5 text-xs text-[#dadada] lg:border-2 xl:text-lg">
                   {ct(p.status)}
                 </p>
                 <div className="flex items-center justify-center gap-2 xl:gap-4">

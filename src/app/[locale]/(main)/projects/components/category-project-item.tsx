@@ -40,7 +40,7 @@ export default function CategoryProjectItem({
               </h3>
             </div>
           </div>
-          <p className="bg-glass absolute start-7 top-5 z-20 self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1 text-xs text-white/70 xl:start-32 xl:top-7 xl:text-sm">
+          <p className="bg-glass absolute start-7 top-5 z-20 self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1 text-xs text-[#dadada] xl:start-32 xl:top-7 xl:text-sm">
             {status}
           </p>
         </figcaption>
