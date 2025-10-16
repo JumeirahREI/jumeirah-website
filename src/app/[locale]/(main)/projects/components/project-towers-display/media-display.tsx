@@ -5,7 +5,7 @@ import TowerDisplayImage from "@/app/[locale]/(main)/projects/components/project
 import { useTowersDisplayContext } from "@/app/[locale]/(main)/projects/components/project-towers-display/towers-display-context";
 import { Project } from "@/data/types";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { useEffect, useState } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
@@ -121,7 +121,7 @@ function FullscreenModal({
   alt,
   onClose,
 }: {
-  src: any;
+  src: StaticImageData;
   alt: string;
   onClose: () => void;
 }) {
