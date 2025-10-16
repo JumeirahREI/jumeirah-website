@@ -49,7 +49,7 @@ export default function MediaDisplay({
               </div>
             )}
           <TowerDisplayImage
-            // key={mediaContainerData[selectedMediaIndex].image.src}
+            key={mediaContainerData[selectedMediaIndex].image.src}
             src={mediaContainerData[selectedMediaIndex].image}
             alt={t(mediaContainerData[selectedMediaIndex].alt)}
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"

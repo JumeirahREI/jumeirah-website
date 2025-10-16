@@ -17,7 +17,6 @@ export default function TowerDisplayImage({
     <>
       <Image
         onLoad={() => setIsLoading(false)}
-        onLoadStart={() => setIsLoading(true)}
         onError={() => setIsLoading(true)}
         alt={alt || ""}
         fill={fill}
