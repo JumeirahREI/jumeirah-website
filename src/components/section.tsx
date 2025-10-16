@@ -32,7 +32,7 @@ export default function Section({
           imgClassName,
         )}
       />
-      <div className="relative z-30 container px-2 py-5 lg:mb-5">
+      <div className="relative z-20 container px-2 py-5 lg:mb-5">
         <div className="flex items-center justify-between">
           <TextEffect
             preset="slide"
@@ -64,7 +64,7 @@ export default function Section({
           </TextEffect>
         )}
       </div>
-      <div className={cn("relative z-30 container pt-3", className)}>
+      <div className={cn("relative z-20 container pt-3", className)}>
         {children}
       </div>
     </SectionWrapper>

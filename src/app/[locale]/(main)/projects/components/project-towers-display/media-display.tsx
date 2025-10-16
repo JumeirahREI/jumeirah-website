@@ -7,6 +7,7 @@ import { Project } from "@/data/types";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
 export default function MediaDisplay({
   className,
@@ -130,6 +131,7 @@ function FullscreenModal({
         onClose();
       }
     };
+
     document.addEventListener("keydown", onEscapeKey);
     return () => {
       document.removeEventListener("keydown", onEscapeKey);
@@ -137,40 +139,118 @@ function FullscreenModal({
   }, [onClose]);
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95 backdrop-blur-sm">
-      <div
-        className="absolute top-20 z-[10000] container"
-        aria-label="Close fullscreen"
+    <div className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm">
+      <TransformWrapper
+        initialScale={1}
+        minScale={0.5}
+        maxScale={4}
+        centerOnInit
+        wheel={{ step: 0.1 }}
+        doubleClick={{ mode: "toggle" }}
       >
-        <button
-          onClick={onClose}
-          className="ms-auto block cursor-pointer rounded-full p-2 text-white transition-colors hover:bg-white/20"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        </button>
-      </div>
-      <div className="relative max-h-[90vh] max-w-[90vw]">
-        <Image
-          src={src}
-          alt={alt}
-          width={1920}
-          height={1080}
-          className="h-auto max-h-[90vh] w-auto max-w-[90vw] object-contain"
-          sizes="90vw"
-        />
-      </div>
+        {({ zoomIn, zoomOut, resetTransform }) => (
+          <>
+            <div className="absolute top-20 left-1/2 z-[10000] container -translate-x-1/2">
+              <div className="flex items-center justify-end gap-2">
+                <button
+                  onClick={() => zoomOut()}
+                  className="hidden cursor-pointer rounded-full bg-white/10 p-2 text-white backdrop-blur-md transition-colors hover:bg-white/20 lg:block"
+                  aria-label="Zoom out"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="8" y1="11" x2="14" y2="11" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => zoomIn()}
+                  className="hidden cursor-pointer rounded-full bg-white/10 p-2 text-white backdrop-blur-md transition-colors hover:bg-white/20 lg:block"
+                  aria-label="Zoom in"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="11" y1="8" x2="11" y2="14" />
+                    <line x1="8" y1="11" x2="14" y2="11" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  </svg>
+                </button>
+                <button
+                  onClick={() => resetTransform()}
+                  className="hidden cursor-pointer rounded-full bg-white/10 p-2 text-white backdrop-blur-md transition-colors hover:bg-white/20 lg:block"
+                  aria-label="Reset zoom"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                    <path d="M21 3v5h-5" />
+                    <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                    <path d="M3 21v-5h5" />
+                  </svg>
+                </button>
+                <button
+                  onClick={onClose}
+                  className="cursor-pointer rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+                  aria-label="Close fullscreen"
+                >
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <TransformComponent
+              wrapperClass="!absolute !h-screen !w-screen  !inset-0 !flex !items-center !justify-center"
+              contentClass="flex !h-screen !w-screen items-center justify-center"
+            >
+              <Image
+                src={src}
+                alt={alt}
+                width={1920}
+                height={1080}
+                className="h-auto max-h-[90vh] w-auto max-w-[90vw] object-contain"
+                draggable={false}
+              />
+            </TransformComponent>
+          </>
+        )}
+      </TransformWrapper>
     </div>
   );
 }
