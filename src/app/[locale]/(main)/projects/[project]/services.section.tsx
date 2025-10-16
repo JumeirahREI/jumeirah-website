@@ -1,10 +1,14 @@
-import Carousel, { CarouselOptions } from "@/components/carousel";
+"use client";
+
+import Carousel, { CarouselApi, CarouselOptions } from "@/components/carousel";
+import CarouselNavigation from "@/components/carousel-navigation";
 import GotoIcon from "@/components/goto-icon";
 import ImageContainer from "@/components/image-container";
 import Section from "@/components/section";
 import { Project, ProjectData } from "@/data/types";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
+import { useState } from "react";
 
 const carouselOptions: CarouselOptions = {
   slidesToScroll: 1,
@@ -33,13 +37,18 @@ type ServicesSectionProps = {
 
 export default function ServicesSection({ projectData }: ServicesSectionProps) {
   const t = useTranslations(projectData.projectKey);
+  const [emblaApi, setEmblaApi] = useState<CarouselApi>();
 
   return (
     <Section
       title={t("servicesSection.title")}
       description={t("servicesSection.subtitle")}
     >
-      <Carousel options={carouselOptions} className="lg:container">
+      <Carousel
+        options={carouselOptions}
+        className="lg:container"
+        onReady={setEmblaApi}
+      >
         <div className="flex md:space-x-6 xl:space-x-8">
           {projectData.servicesSection?.services.map((item) => (
             <ServiceItem
@@ -53,6 +62,10 @@ export default function ServicesSection({ projectData }: ServicesSectionProps) {
           ))}
         </div>
       </Carousel>
+      <CarouselNavigation
+        emblaApi={emblaApi}
+        className="mt-14 hidden lg:flex"
+      />
     </Section>
   );
 }
