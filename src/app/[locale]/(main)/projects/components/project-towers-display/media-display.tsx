@@ -3,10 +3,12 @@
 import MediaContainer from "@/app/[locale]/(main)/projects/components/project-towers-display/media-container";
 import TowerDisplayImage from "@/app/[locale]/(main)/projects/components/project-towers-display/tower-display-image";
 import { useTowersDisplayContext } from "@/app/[locale]/(main)/projects/components/project-towers-display/towers-display-context";
+import Carousel, { CarouselApi } from "@/components/carousel";
 import { Project } from "@/data/types";
+import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
 export default function MediaDisplay({
@@ -76,9 +78,10 @@ export default function MediaDisplay({
         </MediaContainer>
         {isFullscreen && (
           <FullscreenModal
-            src={mediaContainerData[selectedMediaIndex].image}
-            alt={t(mediaContainerData[selectedMediaIndex].alt)}
+            mediaData={mediaContainerData}
+            initialIndex={selectedMediaIndex}
             onClose={() => setIsFullscreen(false)}
+            getAlt={(index) => t(mediaContainerData[index].alt)}
           />
         )}
       </>
@@ -117,31 +120,67 @@ function FloorButton({
 }
 
 function FullscreenModal({
-  src,
-  alt,
+  mediaData,
+  initialIndex,
   onClose,
+  getAlt,
 }: {
-  src: StaticImageData;
-  alt: string;
+  mediaData: Array<{ image: StaticImageData; alt: string }>;
+  initialIndex: number;
   onClose: () => void;
+  getAlt: (index: number) => string;
 }) {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [emblaApi, setEmblaApi] = useState<CarouselApi>();
+  const hasMultipleImages = mediaData.length > 1;
+
+  const goToNext = () => {
+    if (currentIndex < mediaData.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+      emblaApi?.scrollTo(currentIndex + 1);
+    }
+  };
+
+  const goToPrevious = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex(currentIndex - 1);
+      emblaApi?.scrollTo(currentIndex - 1);
+    }
+  };
+
+  const onCarouselReady = useCallback(
+    (api: CarouselApi) => {
+      setEmblaApi(api);
+      api.scrollTo(initialIndex, true);
+    },
+    [initialIndex],
+  );
+
+  const handleThumbnailClick = (index: number) => {
+    setCurrentIndex(index);
+    emblaApi?.scrollTo(index);
+  };
   useEffect(() => {
-    const onEscapeKey = (e: KeyboardEvent) => {
+    const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         onClose();
+      } else if (e.key === "ArrowRight" && hasMultipleImages) {
+        goToNext();
+      } else if (e.key === "ArrowLeft" && hasMultipleImages) {
+        goToPrevious();
       }
     };
 
-    document.addEventListener("keydown", onEscapeKey);
+    document.addEventListener("keydown", onKeyDown);
     return () => {
-      document.removeEventListener("keydown", onEscapeKey);
+      document.removeEventListener("keydown", onKeyDown);
     };
-  }, [onClose]);
+  }, [onClose, currentIndex, hasMultipleImages]);
 
   return (
     <div className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm">
       <TransformWrapper
-        initialScale={1}
+        initialScale={0.8}
         minScale={0.5}
         maxScale={4}
         centerOnInit
@@ -240,14 +279,97 @@ function FullscreenModal({
               contentClass="flex !h-screen !w-screen items-center justify-center"
             >
               <Image
-                src={src}
-                alt={alt}
+                key={mediaData[currentIndex].image.src}
+                src={mediaData[currentIndex].image}
+                alt={getAlt(currentIndex)}
                 width={1920}
                 height={1080}
                 className="h-auto max-h-[90vh] w-auto max-w-[90vw] object-contain"
                 draggable={false}
               />
             </TransformComponent>
+            {hasMultipleImages && (
+              <>
+                {currentIndex > 0 && (
+                  <button
+                    onClick={goToPrevious}
+                    className="absolute start-4 top-1/2 z-[10000] hidden -translate-y-1/2 cursor-pointer rounded-full bg-white/10 p-3 text-white backdrop-blur-md transition-colors hover:bg-white/20 lg:block rtl:rotate-180"
+                    aria-label="Previous image"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="15 18 9 12 15 6" />
+                    </svg>
+                  </button>
+                )}
+                {currentIndex < mediaData.length - 1 && (
+                  <button
+                    onClick={goToNext}
+                    className="absolute end-4 top-1/2 z-[10000] hidden -translate-y-1/2 cursor-pointer rounded-full bg-white/10 p-3 text-white backdrop-blur-md transition-colors hover:bg-white/20 lg:block rtl:-rotate-180"
+                    aria-label="Next image"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </button>
+                )}
+                <div className="absolute bottom-8 left-1/2 z-[10000] w-full max-w-md -translate-x-1/2 px-4">
+                  <Carousel
+                    options={{
+                      align: "center",
+                      containScroll: "trimSnaps",
+                      dragFree: false,
+                    }}
+                    onReady={onCarouselReady}
+                  >
+                    <div className="embla__container flex gap-3">
+                      {mediaData.map((item, index) => (
+                        <div
+                          key={index}
+                          className="embla__slide min-w-0 flex-[0_0_20%]"
+                        >
+                          <button
+                            onClick={() => handleThumbnailClick(index)}
+                            className={cn(
+                              "relative aspect-square w-full overflow-hidden rounded-lg border-2 transition-all",
+                              index === currentIndex
+                                ? "scale-105 border-white"
+                                : "border-white/30 hover:border-white/60",
+                            )}
+                            aria-label={`Go to image ${index + 1}`}
+                          >
+                            <Image
+                              src={item.image}
+                              alt={getAlt(index)}
+                              fill
+                              className="object-cover"
+                              sizes="100px"
+                            />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </Carousel>
+                </div>
+              </>
+            )}
           </>
         )}
       </TransformWrapper>
