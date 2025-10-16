@@ -16,7 +16,7 @@ const carouselOptions: CarouselOptions = {
   breakpoints: {
     "(min-width: 1024px)": {
       dragFree: false,
-      slidesToScroll: 3,
+      slidesToScroll: 4,
     },
   },
 };
