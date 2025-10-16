@@ -757,6 +757,16 @@
           }
         }
       }
+    },
+    "featuresSection": {
+      "title": "Features of Al-Hathaa Towers",
+      "subtitle": "Solutions designed to exceed your expectations.",
+      "earthquake-resistance": "Earthquake-Resistant",
+      "private-parking": "Private Parking",
+      "green-space": "Green Space",
+      "water-project": "Water Project",
+      "sanitary-system": "Sanitary System",
+      "after-sale-support": "After-Sale Support"
     }
   },
   "FAQsSection": {

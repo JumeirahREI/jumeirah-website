@@ -18,7 +18,7 @@ export default function AboutUsCard() {
 
   return (
     <SectionWrapper
-      className="relative mx-auto mb-6 max-md:container max-md:px-4 lg:mb-36"
+      className=" relative mx-auto mb-6 max-md:container max-md:px-4 lg:mb-36"
       enableAnimation
     >
       <GridBackgroundEffect className="!h-ull absolute start-1/2 top-0 container -translate-x-1/2 rotate-180 object-contain object-top opacity-90 rtl:translate-x-1/2" />
