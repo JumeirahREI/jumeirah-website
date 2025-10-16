@@ -145,7 +145,7 @@ export default function FullscreenModal({
                 </button>
                 <button
                   onClick={onClose}
-                  className="cursor-pointer rounded-full bg-white/10 p-2 text-white transition-colors hover:bg-white/20"
+                  className="cursor-pointer rounded-full bg-white/10 p-2 text-white backdrop-blur-md transition-colors hover:bg-white/20"
                   aria-label="Close fullscreen"
                 >
                   <svg
