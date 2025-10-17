@@ -546,12 +546,15 @@
     "featuresSection": {
       "title": "Sana'a Towers Features",
       "subtitle": "Real estate solutions tailored to exceed your expectations.",
+      "closed-compound": "Closed Compound",
+      "entertainment-and-services": "Service and Entertainment Facilities",
+      "after-sale-support": "After-Sale Support",
       "earthquake-resistance": "Earthquake-Resistant",
       "private-parking": "Private Parking",
+      "privacy": "Privacy (Two entrances for each apartment)",
       "modern-elevators": "Modern Elevators",
       "spacious-layouts": "Spacious Layouts",
-      "trusted-security": "Trusted Security",
-      "after-sale-support": "After-Sale Support"
+      "trusted-security": "Trusted Security"
     },
     "servicesSection": {
       "title": "Sana'a Towers Services",
@@ -561,7 +564,9 @@
       "jacuzzi": "Jacuzzi",
       "swimming-pool": "Private Swimming Pool",
       "central-park": "Central Park",
-      "super-market": "Super Market"
+      "super-market": "Super Market",
+      "nursery": "Nursery",
+      "shops": "Shops"
     }
   },
   "Alhathaa-Towers": {

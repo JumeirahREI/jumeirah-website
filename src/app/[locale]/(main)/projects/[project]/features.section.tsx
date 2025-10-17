@@ -43,13 +43,11 @@ function FeatureCard({
   title: string;
 }) {
   return (
-    <li>
-      <div className="border-gradient-t border-gradient-to-[#14141400] lg:border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] flex flex-col items-center justify-center gap-4 rounded-4xl bg-linear-[5deg] from-[#1A1A1A] to-[#1A1A1A]/0 py-4 xl:rounded-[5rem] xl:py-10 rtl:bg-linear-[355deg]">
-        <div className="rounded-full border border-white/30 bg-white/5 p-3 backdrop-blur-xl xl:p-6">
-          <Image src={icon} alt={title} className="size-8 xl:size-12" />
-        </div>
-        <h3 className="text-center font-semibold xl:text-2xl">{title}</h3>
+    <li className="border-gradient-t border-gradient-to-[#14141400] lg:border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] flex flex-col items-center justify-center gap-4 rounded-4xl bg-linear-[5deg] from-[#1A1A1A] to-[#1A1A1A]/0 px-2 py-4 xl:rounded-[5rem] xl:py-10 rtl:bg-linear-[355deg]">
+      <div className="rounded-full border border-white/30 bg-white/5 p-3 backdrop-blur-xl xl:p-6">
+        <Image src={icon} alt={title} className="size-8 xl:size-12" />
       </div>
+      <h3 className="text-center font-semibold xl:text-2xl">{title}</h3>
     </li>
   );
 }

@@ -1,10 +1,8 @@
 import companyHistoryImage from "@/../public/images/company-history-image.webp";
 import ourMissionImage from "@/../public/images/our-mission-image.webp";
-import collaborationIcon from "@/../public/svg/collaboration-icon.svg";
 import customerCentricityIcon from "@/../public/svg/customer-centricity-icon.svg";
 import excellenceIcon from "@/../public/svg/excellence-icon.svg";
 import innovationIcon from "@/../public/svg/innovation-icon.svg";
-import integrityIcon from "@/../public/svg/integrity-icon.svg";
 import missionIcon from "@/../public/svg/mission-icon.svg";
 import sustainabilityIcon from "@/../public/svg/sustainability-icon.svg";
 import AppLink from "@/components/app-link";
@@ -18,9 +16,9 @@ import Image, { StaticImageData } from "next/image";
 
 const ourValuesData = [
   {
-    icon: integrityIcon,
-    title: "integrity",
-    description: "integrity-description",
+    icon: customerCentricityIcon,
+    title: "customer-first",
+    description: "customer-first-description",
   },
   {
     icon: excellenceIcon,
@@ -28,25 +26,25 @@ const ourValuesData = [
     description: "excellence-description",
   },
   {
-    icon: customerCentricityIcon,
-    title: "customer-first",
-    description: "customer-first-description",
-  },
-  {
     icon: innovationIcon,
     title: "innovation",
     description: "innovation-description",
-  },
-  {
-    icon: collaborationIcon,
-    title: "collaboration",
-    description: "collaboration-description",
   },
   {
     icon: sustainabilityIcon,
     title: "sustainability",
     description: "sustainability-description",
   },
+  // {
+  //   icon: collaborationIcon,
+  //   title: "collaboration",
+  //   description: "collaboration-description",
+  // },
+  // {
+  //   icon: integrityIcon,
+  //   title: "integrity",
+  //   description: "integrity-description",
+  // },
 ] as const;
 
 export default function AboutUsPage() {
@@ -112,7 +110,7 @@ export default function AboutUsPage() {
           description={t("our-values-title")}
           imgClassName="opacity-30"
         >
-          <ul className="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-20 lg:grid-cols-3">
+          <ul className="container mx-auto grid grid-cols-1 gap-10 md:grid-cols-2 md:gap-20">
             {ourValuesData.map((item) => (
               <WhatWeStandFor
                 key={item.title}

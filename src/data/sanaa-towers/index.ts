@@ -25,28 +25,28 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
     subtitle: "featuresSection.subtitle",
     features: [
       {
-        title: "featuresSection.earthquake-resistance",
-        icon: earthquakeResistanceIcon,
-      },
-      {
-        title: "featuresSection.private-parking",
-        icon: privateParkingIcon,
-      },
-      {
-        title: "featuresSection.modern-elevators",
+        title: "featuresSection.closed-compound",
         icon: modernElevatorsIcon,
       },
       {
-        title: "featuresSection.spacious-layouts",
+        title: "featuresSection.entertainment-and-services",
         icon: spaciousLayoutsIcon,
-      },
-      {
-        title: "featuresSection.trusted-security",
-        icon: trustedSecurityIcon,
       },
       {
         title: "featuresSection.after-sale-support",
         icon: afterSaleSupportIcon,
+      },
+      {
+        title: "featuresSection.earthquake-resistance",
+        icon: earthquakeResistanceIcon,
+      },
+      {
+        title: "featuresSection.privacy",
+        icon: trustedSecurityIcon,
+      },
+      {
+        title: "featuresSection.private-parking",
+        icon: privateParkingIcon,
       },
     ],
   },
@@ -81,6 +81,16 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
       },
       {
         title: "servicesSection.super-market",
+        icon: centralParkIcon,
+        backgroundImage: centralParkImage,
+      },
+      {
+        title: "servicesSection.nursery",
+        icon: centralParkIcon,
+        backgroundImage: centralParkImage,
+      },
+      {
+        title: "servicesSection.shops",
         icon: centralParkIcon,
         backgroundImage: centralParkImage,
       },
