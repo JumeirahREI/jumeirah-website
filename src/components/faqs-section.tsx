@@ -48,7 +48,7 @@ export default function FAQsSection() {
       title={t("title")}
       sectionLink={() => (
         <SectionLink className="hidden md:block" href="/projects">
-          {ct.rich("what-we-create", {
+          {ct.rich("what-we-offer", {
             span: (s) => <span className="text-primary">{s}</span>,
           })}
         </SectionLink>

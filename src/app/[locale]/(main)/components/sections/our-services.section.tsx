@@ -1,9 +1,9 @@
-import interiorDesignImage from "@/../public/images/after-sale-services.webp";
-import commercialPropertiesImage from "@/../public/images/property-management.webp";
-import residentialPropertiesImage from "@/../public/images/real-estate-project-development.webp";
+import afterSaleServicesImage from "@/../public/images/after-sale-services.webp";
+import propertyManagementImage from "@/../public/images/property-management.webp";
+import realEstateProjectDevelopmentImage from "@/../public/images/real-estate-project-development.webp";
+import afterSaleServicesIcon from "@/../public/svg/after-sale.svg";
 import commercialIcon from "@/../public/svg/commercial-properties-icon.svg";
-import homeIcon from "@/../public/svg/home-icon.svg";
-import interiorDesignIcon from "@/../public/svg/interior-design-icon.svg";
+import developmentIcon from "@/../public/svg/development.svg";
 import { AnimatedGroup } from "@/components/animated-group";
 import GotoIcon from "@/components/goto-icon";
 import ImageContainer from "@/components/image-container";
@@ -15,21 +15,21 @@ import Image, { StaticImageData } from "next/image";
 
 const galleryImages = [
   {
-    src: residentialPropertiesImage,
+    src: realEstateProjectDevelopmentImage,
     title: "real-estate-project-development",
-    icon: homeIcon,
+    icon: developmentIcon,
     options: ["apartments", "luxury-villas"],
   },
   {
-    src: commercialPropertiesImage,
+    src: propertyManagementImage,
     title: "property-management",
     icon: commercialIcon,
     options: ["office-spaces", "business-centers"],
   },
   {
-    src: interiorDesignImage,
+    src: afterSaleServicesImage,
     title: "after-sale-services",
-    icon: interiorDesignIcon,
+    icon: afterSaleServicesIcon,
     options: ["space-planning", "material-design"],
   },
 ];
@@ -44,7 +44,7 @@ export default function OurServicesSection() {
       description={t("our-services-description")}
       sectionLink={() => (
         <SectionLink href="/projects">
-          {ct.rich("what-we-create", {
+          {ct.rich("what-we-offer", {
             span: (s) => <span className="text-primary">{s}</span>,
           })}
         </SectionLink>

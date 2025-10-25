@@ -1,13 +1,16 @@
-import centralParkIcon from "@/../public/images/central-park-icon.png";
 import fitnessCenterIcon from "@/../public/images/fitness-center-icon.png";
 import centralParkImage from "@/../public/images/sanaa-towers/photos/central-park.webp";
 import fitnessCenterImage from "@/../public/images/sanaa-towers/photos/fitness-center.webp";
 import jacuzziImage from "@/../public/images/sanaa-towers/photos/jacuzzi.webp";
+import nurseryImage from "@/../public/images/sanaa-towers/photos/nursery.webp";
 import saunaImage from "@/../public/images/sanaa-towers/photos/sauna.webp";
+import storesImage from "@/../public/images/sanaa-towers/photos/stores.webp";
+import supermarketImage from "@/../public/images/sanaa-towers/photos/supermarket.webp";
 import swimmingPoolImage from "@/../public/images/sanaa-towers/photos/swimming-pool.webp";
 import swimmingPoolIcon from "@/../public/images/swimming-pool-icon.png";
 import afterSaleSupportIcon from "@/../public/svg/after-sale-support-icon.svg";
 import earthquakeResistanceIcon from "@/../public/svg/earthquake-resistance-icon.svg";
+import centralParkIcon from "@/../public/svg/garden.svg";
 import modernElevatorsIcon from "@/../public/svg/modern-elevators-icon.svg";
 import privateParkingIcon from "@/../public/svg/private-parking-icon.svg";
 import spaciousLayoutsIcon from "@/../public/svg/spacious-layouts-icon.svg";
@@ -82,17 +85,17 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
       {
         title: "servicesSection.super-market",
         icon: centralParkIcon,
-        backgroundImage: centralParkImage,
+        backgroundImage: supermarketImage,
       },
       {
         title: "servicesSection.nursery",
         icon: centralParkIcon,
-        backgroundImage: centralParkImage,
+        backgroundImage: nurseryImage,
       },
       {
         title: "servicesSection.shops",
         icon: centralParkIcon,
-        backgroundImage: centralParkImage,
+        backgroundImage: storesImage,
       },
     ],
   },
