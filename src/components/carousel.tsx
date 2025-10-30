@@ -27,12 +27,12 @@ export default function Carousel({
   const [emplaRef, emblaApi] = useEmblaCarousel(
     {
       direction: locale === "ar" ? "rtl" : "ltr",
-      watchDrag: (_, event) => {
-        if (event.type === "mousedown" && event.isTrusted) {
-          return false;
-        }
-        return true;
-      },
+      // watchDrag: (_, event) => {
+      //   if (event.type === "mousedown" && event.isTrusted) {
+      //     return false;
+      //   }
+      //   return true;
+      // },
       ...options,
     },
     [WheelGesturesPlugin()],

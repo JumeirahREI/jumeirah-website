@@ -60,7 +60,7 @@ export default function AboutUsCard() {
             <div className="relative overflow-hidden rounded-full">
               <div>
                 <Image
-                  alt=""
+                  alt="Jumeirah Real Estate Investment vision and mission"
                   src={ourMissionContainerImage}
                   placeholder="blur"
                   className="w-full object-cover md:h-32 lg:h-fit"

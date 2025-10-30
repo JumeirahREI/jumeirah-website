@@ -31,11 +31,17 @@
     "subscribe": "Subscribe to our newsletter",
     "subscribe-description": "Be the first to receive exciting news, insider tips, and special promotions.",
     "all-projects": "All Projects",
-    "jumeirah-map-location": "Jumeirah Map Location"
+    "jumeirah-map-location": "Jumeirah Map Location",
+    "x": "X",
+    "facebook": "Facebook",
+    "instagram": "Instagram",
+    "linkedin": "LinkedIn"
   },
   "Metadata": {
     "title": "Jumeirah Real Estate Investments | Premier Properties in Yemen",
-    "description": "Jumeirah REI is a leading real estate investment firm in Yemen, offering a portfolio of luxury properties and expert investment advice to help you achieve your financial goals."
+    "description": "Jumeirah REI is a leading real estate investment firm in Yemen, offering a portfolio of luxury properties and expert investment advice to help you achieve your financial goals.",
+    "keywords": "real estate Yemen, property investment Yemen, luxury apartments Yemen, Sana'a real estate, residential towers Yemen, Jumeirah REI, real estate development, property management Yemen",
+    "og-image-alt": "Jumeirah Real Estate Investment - Premier Properties in Yemen"
   },
   "HomePage": {
     "jumeirah-hero": "Jumeirah",
@@ -624,7 +630,7 @@
       "title": "Sana'a Towers Features",
       "subtitle": "Real estate solutions tailored to exceed your expectations.",
       "closed-compound": "Closed Compound",
-      "entertainment-and-services": "Service and Entertainment Facilities",
+      "sanitary-system": "Sanitary System",
       "after-sale-support": "After-Sale Support",
       "earthquake-resistance": "Earthquake-Resistant",
       "private-parking": "Private Parking",
@@ -929,7 +935,7 @@
     "innovation-description": "We adopt the latest engineering and architectural solutions and technologies to transform ambitious ideas into a reality that touches people’s lives.",
     "collaboration": "Collaboration",
     "collaboration-description": "We work with a one-team spirit and view our clients as partners in success.",
-    "sustainability": "Sustainability",
+    "sustainability": "High-Quality Materials",
     "sustainability-description": "We create and build integrated communities, developing projects that respect the environment and preserve resources for future generations."
   }
 }

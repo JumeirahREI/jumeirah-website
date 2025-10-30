@@ -9,12 +9,17 @@ import supermarketImage from "@/../public/images/sanaa-towers/photos/supermarket
 import swimmingPoolImage from "@/../public/images/sanaa-towers/photos/swimming-pool.webp";
 import swimmingPoolIcon from "@/../public/images/swimming-pool-icon.png";
 import afterSaleSupportIcon from "@/../public/svg/after-sale-support-icon.svg";
+import closedCompoundIcon from "@/../public/svg/closed-compound-icon.svg";
 import earthquakeResistanceIcon from "@/../public/svg/earthquake-resistance-icon.svg";
 import centralParkIcon from "@/../public/svg/garden.svg";
-import modernElevatorsIcon from "@/../public/svg/modern-elevators-icon.svg";
+import jacuzziIcon from "@/../public/svg/jacuzzi-icon.svg";
+import nurseryIcon from "@/../public/svg/nursery-icon.svg";
 import privateParkingIcon from "@/../public/svg/private-parking-icon.svg";
-import spaciousLayoutsIcon from "@/../public/svg/spacious-layouts-icon.svg";
-import trustedSecurityIcon from "@/../public/svg/trusted-security-icon.svg";
+import saunaIcon from "@/../public/svg/sauna-icon.svg";
+import sewageIcon from "@/../public/svg/sewage-icon.svg";
+import shopsIcon from "@/../public/svg/shops-icon.svg";
+import supermarketIcon from "@/../public/svg/supermarket-icon.svg";
+import twoEntrancesIcon from "@/../public/svg/two-entrances-icon.svg";
 import { towers } from "@/data/sanaa-towers/towers";
 import { ProjectData } from "@/data/types";
 
@@ -29,11 +34,11 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
     features: [
       {
         title: "featuresSection.closed-compound",
-        icon: modernElevatorsIcon,
+        icon: closedCompoundIcon,
       },
       {
-        title: "featuresSection.entertainment-and-services",
-        icon: spaciousLayoutsIcon,
+        title: "featuresSection.sanitary-system",
+        icon: sewageIcon,
       },
       {
         title: "featuresSection.after-sale-support",
@@ -45,7 +50,7 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
       },
       {
         title: "featuresSection.privacy",
-        icon: trustedSecurityIcon,
+        icon: twoEntrancesIcon,
       },
       {
         title: "featuresSection.private-parking",
@@ -64,12 +69,12 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
       },
       {
         title: "servicesSection.sauna",
-        icon: swimmingPoolIcon,
+        icon: saunaIcon,
         backgroundImage: saunaImage,
       },
       {
         title: "servicesSection.jacuzzi",
-        icon: centralParkIcon,
+        icon: jacuzziIcon,
         backgroundImage: jacuzziImage,
       },
       {
@@ -84,17 +89,17 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
       },
       {
         title: "servicesSection.super-market",
-        icon: centralParkIcon,
+        icon: supermarketIcon,
         backgroundImage: supermarketImage,
       },
       {
         title: "servicesSection.nursery",
-        icon: centralParkIcon,
+        icon: nurseryIcon,
         backgroundImage: nurseryImage,
       },
       {
         title: "servicesSection.shops",
-        icon: centralParkIcon,
+        icon: shopsIcon,
         backgroundImage: storesImage,
       },
     ],

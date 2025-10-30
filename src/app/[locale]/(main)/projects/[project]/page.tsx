@@ -1,4 +1,6 @@
 import ProjectDetails from "@/app/[locale]/(main)/projects/[project]/project-details-page";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
+import ProjectStructuredData from "@/components/project-structured-data";
 import { alhathaaTowersData } from "@/data/alhathaa-towers";
 import { sanaaTowersData } from "@/data/sanaa-towers";
 import { Project, ProjectData } from "@/data/types";
@@ -17,14 +19,31 @@ interface PageProps {
 }
 
 export default async function ProjectDetailsPage({ params }: PageProps) {
-  const { project } = await params;
+  const { project, locale } = await params;
 
   if (!projects[project]) {
     notFound();
   }
 
+  const t = await getTranslations("Common");
+  const projectT = await getTranslations(projects[project].projectKey);
+
   return (
-    <ProjectDetails projectData={projects[project] as ProjectData<Project>} />
+    <>
+      <ProjectStructuredData
+        projectData={projects[project] as ProjectData<Project>}
+        locale={locale}
+        projectSlug={project}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: t("home"), url: `/${locale}` },
+          { name: t("projects"), url: `/${locale}/projects` },
+          { name: projectT("title"), url: `/${locale}/projects/${project}` },
+        ]}
+      />
+      <ProjectDetails projectData={projects[project] as ProjectData<Project>} />
+    </>
   );
 }
 
@@ -37,16 +56,47 @@ export async function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
-  const { project } = await params;
+  const { project, locale } = await params;
 
   if (!projects[project]) {
     notFound();
   }
 
   const t = await getTranslations(projects[project].projectKey);
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
+  const currentUrl = `${baseUrl}/${locale}/projects/${project}`;
 
   return {
     title: t("title"),
     description: t("meta-description"),
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        en: `${baseUrl}/en/projects/${project}`,
+        ar: `${baseUrl}/ar/projects/${project}`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "ar" ? "ar_YE" : "en_US",
+      url: currentUrl,
+      title: t("title"),
+      description: t("meta-description"),
+      siteName: "Jumeirah Real Estate Investment",
+      images: [
+        {
+          url: `${baseUrl}/images/${project}.webp`,
+          width: 1200,
+          height: 630,
+          alt: t("title"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("meta-description"),
+      images: [`${baseUrl}/images/${project}-twitter.jpg`],
+    },
   };
 }
