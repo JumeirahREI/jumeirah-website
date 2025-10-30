@@ -174,6 +174,7 @@ export default function FullscreenModal({
                 alt={getAlt(currentIndex)}
                 width={1920}
                 height={1080}
+                placeholder="blur"
                 className="h-auto max-h-[90vh] w-auto max-w-[90vw] object-contain"
                 draggable={false}
               />
