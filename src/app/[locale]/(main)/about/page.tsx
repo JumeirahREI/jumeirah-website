@@ -6,11 +6,12 @@ import innovationIcon from "@/../public/svg/innovation-icon.svg";
 import missionIcon from "@/../public/svg/mission-icon.svg";
 import sustainabilityIcon from "@/../public/svg/sustainability-icon.svg";
 import AppLink from "@/components/app-link";
+import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import ImageContainer from "@/components/image-container";
 import PageHeader from "@/components/page-header";
 import Section from "@/components/section";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import Image, { StaticImageData } from "next/image";
 
@@ -48,12 +49,19 @@ const ourValuesData = [
 ] as const;
 
 export default function AboutUsPage() {
+  const locale = useLocale();
   const t = useTranslations("AboutUs");
   const ct = useTranslations("Common");
-  const pt = useTranslations("ProjectTitles");
+  const homeT = useTranslations("Common");
 
   return (
     <>
+      <BreadcrumbSchema
+        items={[
+          { name: homeT("home"), url: `/${locale}` },
+          { name: homeT("about"), url: `/${locale}/about` },
+        ]}
+      />
       <PageHeader title={t("title")} subTitle={t("subtitle")}>
         <div className="flex items-center justify-center gap-4">
           <AppLink
@@ -150,11 +158,42 @@ function WhatWeStandFor({
   );
 }
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
   const t = await getTranslations("AboutUs");
+  const { locale } = await params;
+
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
+  const currentUrl = `${baseUrl}/${locale}/about`;
 
   return {
     title: t("meta-title"),
     description: t("meta-description"),
+    alternates: {
+      canonical: currentUrl,
+      languages: {
+        en: `${baseUrl}/en/about`,
+        ar: `${baseUrl}/ar/about`,
+      },
+    },
+    openGraph: {
+      type: "website",
+      locale: locale === "ar" ? "ar_YE" : "en_US",
+      url: currentUrl,
+      title: t("meta-title"),
+      description: t("meta-description"),
+      siteName: "Jumeirah Real Estate Investment",
+      images: [
+        {
+          url: `${baseUrl}/images/company-history-image.webp`,
+          width: 1080,
+          height: 1350,
+          alt: t("meta-title"),
+        },
+      ],
+    },
   };
 }

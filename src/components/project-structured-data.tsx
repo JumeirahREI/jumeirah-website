@@ -24,6 +24,7 @@ export default async function ProjectStructuredData({
     name: t("title"),
     description: t("meta-description"),
     url: projectUrl,
+    telephone: "+967778265522",
     address: {
       "@type": "PostalAddress",
       addressCountry: "YE",
@@ -34,6 +35,19 @@ export default async function ProjectStructuredData({
       "@type": "GeoCoordinates",
       latitude: "15.3694",
       longitude: "44.1910",
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Saturday",
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+      ],
+      opens: "08:00",
+      closes: "17:00",
     },
     image: `${baseUrl}/images/${projectSlug}.webp`,
     provider: {
@@ -61,17 +75,14 @@ export default async function ProjectStructuredData({
           addressCountry: "YE",
           addressLocality: "Sana'a",
         },
-        numberOfBedrooms: "1-4",
-        numberOfBathroomsTotal: "1-4",
-        floorSize: {
-          "@type": "QuantitativeValue",
-          value: "171-740",
-          unitCode: "MTK",
-        },
-        amenityFeature: projectData.featuresSection?.features.map((feature) => ({
-          "@type": "LocationFeatureSpecification",
-          name: t(feature.title),
-        })),
+        numberOfBedrooms: "2-4",
+        numberOfBathroomsTotal: "2-3",
+        amenityFeature: projectData.featuresSection?.features.map(
+          (feature) => ({
+            "@type": "LocationFeatureSpecification",
+            name: t(feature.title),
+          }),
+        ),
       }
     : null;
 

@@ -3,18 +3,14 @@ import AppLink from "@/components/app-link";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import PageHeader from "@/components/page-header";
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
 
-export default async function ProjectsPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
-  const { locale } = await params;
+export default function ProjectsPage() {
+  const locale = useLocale();
   const t = useTranslations("ProjectsPage");
   const ct = useTranslations("Common");
-  const homeT = await getTranslations("Common");
+  const homeT = useTranslations("Common");
 
   return (
     <>
@@ -72,18 +68,18 @@ export async function generateMetadata({
       siteName: "Jumeirah Real Estate Investment",
       images: [
         {
-          url: `${baseUrl}/images/projects-og.jpg`,
-          width: 1200,
-          height: 630,
-          alt: t("meta-title"),
+          url: `${baseUrl}/images/sanaa-towers.webp`,
+          width: 1080,
+          height: 1350,
+          alt: t("sanaa-towers.title"),
+        },
+        {
+          url: `${baseUrl}/images/alhathaa-towers.webp`,
+          width: 1080,
+          height: 1350,
+          alt: t("alhathaa-towers.title"),
         },
       ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t("meta-title"),
-      description: t("meta-description"),
-      images: [`${baseUrl}/images/projects-twitter.jpg`],
     },
   };
 }
