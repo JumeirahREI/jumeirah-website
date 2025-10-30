@@ -1,7 +1,5 @@
 import modelW1Image from "@/../public/images/sanaa-towers/sanaa-towers-model-w1.webp";
 import modelW2Image from "@/../public/images/sanaa-towers/sanaa-towers-model-w2.webp";
-import modelW1NumberedImage from "@/../public/images/sanaa-towers/sanaa-towers-numbered-model-w1.webp";
-import modelW2NumberedImage from "@/../public/images/sanaa-towers/sanaa-towers-numbered-model-w2.webp";
 import { ModelData } from "@/data/types";
 
 export const modelW: ModelData<"SanaaTowers"> = {
@@ -23,11 +21,11 @@ export const modelW: ModelData<"SanaaTowers"> = {
     {
       images: [
         {
-          image: modelW1NumberedImage,
+          image: modelW1Image,
           alt: "towers.tower-b.model-w.layout.images.image-1",
         },
         {
-          image: modelW2NumberedImage,
+          image: modelW2Image,
           alt: "towers.tower-b.model-w.layout.images.image-2",
         },
       ],
@@ -64,11 +62,11 @@ export const modelW: ModelData<"SanaaTowers"> = {
     {
       images: [
         {
-          image: modelW1NumberedImage,
+          image: modelW1Image,
           alt: "towers.tower-b.model-w.layout.images.image-1",
         },
         {
-          image: modelW2NumberedImage,
+          image: modelW2Image,
           alt: "towers.tower-b.model-w.layout.images.image-2",
         },
       ],

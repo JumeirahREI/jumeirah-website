@@ -1,15 +1,10 @@
-import modelBImage from "@/../public/images/sanaa-towers/sanaa-towers-model-b.webp";
-import modelBNumberedImage from "@/../public/images/sanaa-towers/sanaa-towers-numbered-model-b.webp";
-import { ModelData } from "@/data/types";
+import img10InteractiveLightMix from "@/../public/images/sanaa-towers/apartment-b/10_Interactive LightMix.webp";
 import img1InteractiveLightMix from "@/../public/images/sanaa-towers/apartment-b/1_Interactive LightMix.webp";
 import img2RestUnassigned from "@/../public/images/sanaa-towers/apartment-b/2_Rest (unassigned).webp";
 import img4InteractiveLightMix from "@/../public/images/sanaa-towers/apartment-b/4_Interactive LightMix.webp";
 import img5InteractiveLightMixCopy from "@/../public/images/sanaa-towers/apartment-b/5_Interactive LightMix - Copy.webp";
 import img6InteractiveLightMixCopy from "@/../public/images/sanaa-towers/apartment-b/6_Interactive LightMix - Copy.webp";
 import img8InteractiveLightMixCopy from "@/../public/images/sanaa-towers/apartment-b/8_Interactive LightMix - Copy.webp";
-import img10InteractiveLightMix from "@/../public/images/sanaa-towers/apartment-b/10_Interactive LightMix.webp";
-import balconeTest1 from "@/../public/images/sanaa-towers/apartment-b/Balcone Test 1.webp";
-import balconeTest2 from "@/../public/images/sanaa-towers/apartment-b/Balcone Test 2.webp";
 import img20250226_082121_414 from "@/../public/images/sanaa-towers/apartment-b/IMG_20250226_082121_414.webp";
 import img20250226_082132_517 from "@/../public/images/sanaa-towers/apartment-b/IMG_20250226_082132_517.webp";
 import img20250226_082149_129 from "@/../public/images/sanaa-towers/apartment-b/IMG_20250226_082149_129.webp";
@@ -29,9 +24,13 @@ import sanaaTowersDiwan2 from "@/../public/images/sanaa-towers/apartment-b/Sana_
 import sanaaTowersKitchen1_2 from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers Kitchen 1 (2).webp";
 import sanaaTowersEntrance2 from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers entrance 2.webp";
 import sanaaTowersEntrance from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers entrance.webp";
+import balconyTest1 from "@/../public/images/sanaa-towers/apartment-b/balcony Test 1.webp";
+import balconyTest2 from "@/../public/images/sanaa-towers/apartment-b/balcony Test 2.webp";
 import diningArea from "@/../public/images/sanaa-towers/apartment-b/dining area.webp";
 import living from "@/../public/images/sanaa-towers/apartment-b/living.webp";
 import tvUnit from "@/../public/images/sanaa-towers/apartment-b/tv unit.webp";
+import modelBImage from "@/../public/images/sanaa-towers/sanaa-towers-model-b.webp";
+import { ModelData } from "@/data/types";
 
 export const modelB: ModelData<"SanaaTowers"> = {
   name: "towers.tower-a.model-b.name",
@@ -45,34 +44,91 @@ export const modelB: ModelData<"SanaaTowers"> = {
     ],
   },
   photos: [
-    { image: img1InteractiveLightMix, alt: "towers.tower-a.model-b.photos.image-1" },
+    {
+      image: img1InteractiveLightMix,
+      alt: "towers.tower-a.model-b.photos.image-1",
+    },
     { image: img2RestUnassigned, alt: "towers.tower-a.model-b.photos.image-2" },
-    { image: img4InteractiveLightMix, alt: "towers.tower-a.model-b.photos.image-3" },
-    { image: img5InteractiveLightMixCopy, alt: "towers.tower-a.model-b.photos.image-4" },
-    { image: img6InteractiveLightMixCopy, alt: "towers.tower-a.model-b.photos.image-5" },
-    { image: img8InteractiveLightMixCopy, alt: "towers.tower-a.model-b.photos.image-6" },
-    { image: img10InteractiveLightMix, alt: "towers.tower-a.model-b.photos.image-7" },
-    { image: balconeTest1, alt: "towers.tower-a.model-b.photos.image-8" },
-    { image: balconeTest2, alt: "towers.tower-a.model-b.photos.image-9" },
-    { image: img20250226_082121_414, alt: "towers.tower-a.model-b.photos.image-10" },
-    { image: img20250226_082132_517, alt: "towers.tower-a.model-b.photos.image-11" },
-    { image: img20250226_082149_129, alt: "towers.tower-a.model-b.photos.image-12" },
-    { image: img20250226_082153_539, alt: "towers.tower-a.model-b.photos.image-13" },
-    { image: img20250226_082200_390, alt: "towers.tower-a.model-b.photos.image-14" },
-    { image: img20250226_144130_792, alt: "towers.tower-a.model-b.photos.image-15" },
-    { image: img20250226_144152_260, alt: "towers.tower-a.model-b.photos.image-16" },
+    {
+      image: img4InteractiveLightMix,
+      alt: "towers.tower-a.model-b.photos.image-3",
+    },
+    {
+      image: img5InteractiveLightMixCopy,
+      alt: "towers.tower-a.model-b.photos.image-4",
+    },
+    {
+      image: img6InteractiveLightMixCopy,
+      alt: "towers.tower-a.model-b.photos.image-5",
+    },
+    {
+      image: img8InteractiveLightMixCopy,
+      alt: "towers.tower-a.model-b.photos.image-6",
+    },
+    {
+      image: img10InteractiveLightMix,
+      alt: "towers.tower-a.model-b.photos.image-7",
+    },
+    { image: balconyTest1, alt: "towers.tower-a.model-b.photos.image-8" },
+    { image: balconyTest2, alt: "towers.tower-a.model-b.photos.image-9" },
+    {
+      image: img20250226_082121_414,
+      alt: "towers.tower-a.model-b.photos.image-10",
+    },
+    {
+      image: img20250226_082132_517,
+      alt: "towers.tower-a.model-b.photos.image-11",
+    },
+    {
+      image: img20250226_082149_129,
+      alt: "towers.tower-a.model-b.photos.image-12",
+    },
+    {
+      image: img20250226_082153_539,
+      alt: "towers.tower-a.model-b.photos.image-13",
+    },
+    {
+      image: img20250226_082200_390,
+      alt: "towers.tower-a.model-b.photos.image-14",
+    },
+    {
+      image: img20250226_144130_792,
+      alt: "towers.tower-a.model-b.photos.image-15",
+    },
+    {
+      image: img20250226_144152_260,
+      alt: "towers.tower-a.model-b.photos.image-16",
+    },
     { image: img9047, alt: "towers.tower-a.model-b.photos.image-17" },
     { image: img9048, alt: "towers.tower-a.model-b.photos.image-18" },
     { image: master, alt: "towers.tower-a.model-b.photos.image-19" },
     { image: master2, alt: "towers.tower-a.model-b.photos.image-20" },
     { image: master3, alt: "towers.tower-a.model-b.photos.image-21" },
-    { image: sanaaTowersApartmentPath, alt: "towers.tower-a.model-b.photos.image-22" },
-    { image: sanaaTowersBedroom1_2_2, alt: "towers.tower-a.model-b.photos.image-23" },
-    { image: sanaaTowersBedroom2_2_2, alt: "towers.tower-a.model-b.photos.image-24" },
+    {
+      image: sanaaTowersApartmentPath,
+      alt: "towers.tower-a.model-b.photos.image-22",
+    },
+    {
+      image: sanaaTowersBedroom1_2_2,
+      alt: "towers.tower-a.model-b.photos.image-23",
+    },
+    {
+      image: sanaaTowersBedroom2_2_2,
+      alt: "towers.tower-a.model-b.photos.image-24",
+    },
     { image: sanaaTowersDiwan2, alt: "towers.tower-a.model-b.photos.image-25" },
-    { image: sanaaTowersKitchen1_2, alt: "towers.tower-a.model-b.photos.image-26" },
-    { image: sanaaTowersEntrance2, alt: "towers.tower-a.model-b.photos.image-27" },
-    { image: sanaaTowersEntrance, alt: "towers.tower-a.model-b.photos.image-28" },
+    {
+      image: sanaaTowersKitchen1_2,
+      alt: "towers.tower-a.model-b.photos.image-26",
+    },
+    {
+      image: sanaaTowersEntrance2,
+      alt: "towers.tower-a.model-b.photos.image-27",
+    },
+    {
+      image: sanaaTowersEntrance,
+      alt: "towers.tower-a.model-b.photos.image-28",
+    },
     { image: diningArea, alt: "towers.tower-a.model-b.photos.image-29" },
     { image: living, alt: "towers.tower-a.model-b.photos.image-30" },
     { image: tvUnit, alt: "towers.tower-a.model-b.photos.image-31" },
@@ -81,7 +137,7 @@ export const modelB: ModelData<"SanaaTowers"> = {
     {
       images: [
         {
-          image: modelBNumberedImage,
+          image: modelBImage,
           alt: "towers.tower-a.model-b.layout.images.image-1",
         },
       ],

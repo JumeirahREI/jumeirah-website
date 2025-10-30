@@ -1,17 +1,16 @@
-import modelLImage from "@/../public/images/sanaa-towers/sanaa-towers-model-l.webp";
-import modelLNumberedImage from "@/../public/images/sanaa-towers/sanaa-towers-numbered-model-l.webp";
-import { ModelData } from "@/data/types";
 import balcony from "@/../public/images/sanaa-towers/apartment-l/balcony.webp";
-import bedroom from "@/../public/images/sanaa-towers/apartment-l/bedroom.webp";
 import bedroom2 from "@/../public/images/sanaa-towers/apartment-l/bedroom-2.webp";
 import bedroom3 from "@/../public/images/sanaa-towers/apartment-l/bedroom-3.webp";
 import bedroom4 from "@/../public/images/sanaa-towers/apartment-l/bedroom-4.webp";
 import bedroom5 from "@/../public/images/sanaa-towers/apartment-l/bedroom-5.webp";
-import kitchen from "@/../public/images/sanaa-towers/apartment-l/kitchen.webp";
+import bedroom from "@/../public/images/sanaa-towers/apartment-l/bedroom.webp";
 import kitchen2 from "@/../public/images/sanaa-towers/apartment-l/kitchen-2.webp";
 import kitchen3 from "@/../public/images/sanaa-towers/apartment-l/kitchen-3.webp";
 import kitchen4 from "@/../public/images/sanaa-towers/apartment-l/kitchen-4.webp";
-import livingRoom from "@/../public/images/sanaa-towers/apartment-l/living-room.webp";
+import kitchen from "@/../public/images/sanaa-towers/apartment-l/kitchen.webp";
+import livingRoom10 from "@/../public/images/sanaa-towers/apartment-l/living-room-10.webp";
+import livingRoom11 from "@/../public/images/sanaa-towers/apartment-l/living-room-11.webp";
+import livingRoom12 from "@/../public/images/sanaa-towers/apartment-l/living-room-12.webp";
 import livingRoom2 from "@/../public/images/sanaa-towers/apartment-l/living-room-2.webp";
 import livingRoom3 from "@/../public/images/sanaa-towers/apartment-l/living-room-3.webp";
 import livingRoom4 from "@/../public/images/sanaa-towers/apartment-l/living-room-4.webp";
@@ -20,29 +19,29 @@ import livingRoom6 from "@/../public/images/sanaa-towers/apartment-l/living-room
 import livingRoom7 from "@/../public/images/sanaa-towers/apartment-l/living-room-7.webp";
 import livingRoom8 from "@/../public/images/sanaa-towers/apartment-l/living-room-8.webp";
 import livingRoom9 from "@/../public/images/sanaa-towers/apartment-l/living-room-9.webp";
-import livingRoom10 from "@/../public/images/sanaa-towers/apartment-l/living-room-10.webp";
-import livingRoom11 from "@/../public/images/sanaa-towers/apartment-l/living-room-11.webp";
-import livingRoom12 from "@/../public/images/sanaa-towers/apartment-l/living-room-12.webp";
-import mainBathroom from "@/../public/images/sanaa-towers/apartment-l/main-bathroom.webp";
+import livingRoom from "@/../public/images/sanaa-towers/apartment-l/living-room.webp";
 import mainBathroom2 from "@/../public/images/sanaa-towers/apartment-l/main-bathroom-2.webp";
-import majlis from "@/../public/images/sanaa-towers/apartment-l/majlis.webp";
+import mainBathroom from "@/../public/images/sanaa-towers/apartment-l/main-bathroom.webp";
 import majlis2 from "@/../public/images/sanaa-towers/apartment-l/majlis-2.webp";
 import majlis3 from "@/../public/images/sanaa-towers/apartment-l/majlis-3.webp";
 import majlis4 from "@/../public/images/sanaa-towers/apartment-l/majlis-4.webp";
 import majlis5 from "@/../public/images/sanaa-towers/apartment-l/majlis-5.webp";
 import majlis6 from "@/../public/images/sanaa-towers/apartment-l/majlis-6.webp";
 import majlis7 from "@/../public/images/sanaa-towers/apartment-l/majlis-7.webp";
-import majlisBathroom from "@/../public/images/sanaa-towers/apartment-l/majlis-bathroom.webp";
 import majlisBathroom2 from "@/../public/images/sanaa-towers/apartment-l/majlis-bathroom-2.webp";
-import masterBathroom from "@/../public/images/sanaa-towers/apartment-l/master-bathroom.webp";
+import majlisBathroom from "@/../public/images/sanaa-towers/apartment-l/majlis-bathroom.webp";
+import majlis from "@/../public/images/sanaa-towers/apartment-l/majlis.webp";
 import masterBathroom2 from "@/../public/images/sanaa-towers/apartment-l/master-bathroom-2.webp";
-import masterBedroom from "@/../public/images/sanaa-towers/apartment-l/master-bedroom.webp";
+import masterBathroom from "@/../public/images/sanaa-towers/apartment-l/master-bathroom.webp";
 import masterBedroom2 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-2.webp";
 import masterBedroom3 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-3.webp";
 import masterBedroom4 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-4.webp";
 import masterBedroom5 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-5.webp";
 import masterBedroom6 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-6.webp";
 import masterBedroom7 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-7.webp";
+import masterBedroom from "@/../public/images/sanaa-towers/apartment-l/master-bedroom.webp";
+import modelLImage from "@/../public/images/sanaa-towers/sanaa-towers-model-l.webp";
+import { ModelData } from "@/data/types";
 
 export const modelL: ModelData<"SanaaTowers"> = {
   name: "towers.tower-b.model-l.name",
@@ -103,7 +102,7 @@ export const modelL: ModelData<"SanaaTowers"> = {
     {
       images: [
         {
-          image: modelLNumberedImage,
+          image: modelLImage,
           alt: "towers.tower-b.model-l.layout.images.image-1",
         },
       ],

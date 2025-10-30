@@ -69,7 +69,7 @@ export default function OurProjectsSection() {
             <ImageContainer
               key={p.title}
               src={p.image}
-              className="w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem] [&_figure>div]:opacity-80 [&_figure>div]:transition-opacity hover:[&_figure>div]:opacity-50"
+              className="w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem] [&_figure>div]:opacity-20 [&_figure>div]:transition-opacity hover:[&_figure>div]:opacity-20 lg:[&_figure>div]:opacity-60"
               sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, (max-width: 1024px) 47vw, (max-width: 1536px) 40vw, 28vw"
             >
               <Link

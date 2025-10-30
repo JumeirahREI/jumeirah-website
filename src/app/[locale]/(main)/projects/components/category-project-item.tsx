@@ -18,8 +18,8 @@ export default function CategoryProjectItem({
   return (
     <Link href={href}>
       <figure className="relative">
-        <div className="relative h-96 overflow-hidden rounded-[3rem] md:rounded-[3.5rem] xl:h-[35rem] xl:rounded-[4.3rem]">
-          <div className="absolute inset-0 top-0 right-0 bottom-0 left-0 z-10 size-full bg-linear-[17deg] from-[#000101] to-[#000101]/0 opacity-75 rtl:bg-linear-[343deg]" />
+        <div className="relative h-[28rem] overflow-hidden rounded-[3rem] md:rounded-[3.5rem] xl:h-[35rem] xl:rounded-[4.3rem]">
+          <div className="absolute inset-0 top-0 right-0 bottom-0 left-0 z-10 size-full bg-linear-[17deg] from-[#000101] to-[#000101]/0 opacity-20 transition-opacity hover:opacity-20 lg:opacity-60 rtl:bg-linear-[343deg]" />
           <Image
             src={img}
             className="-z-10 object-cover"

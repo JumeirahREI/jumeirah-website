@@ -1,5 +1,4 @@
 import modelCImage from "@/../public/images/sanaa-towers/sanaa-towers-model-c.webp";
-import modelCNumberedImage from "@/../public/images/sanaa-towers/sanaa-towers-numbered-model-c.webp";
 import { ModelData } from "@/data/types";
 
 export const modelC: ModelData<"SanaaTowers"> = {
@@ -17,7 +16,7 @@ export const modelC: ModelData<"SanaaTowers"> = {
     {
       images: [
         {
-          image: modelCNumberedImage,
+          image: modelCImage,
           alt: "towers.tower-a.model-c.layout.images.image-1",
         },
       ],
