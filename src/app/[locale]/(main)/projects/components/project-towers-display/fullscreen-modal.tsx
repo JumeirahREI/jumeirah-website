@@ -225,7 +225,7 @@ export default function FullscreenModal({
                     options={{
                       align: "center",
                       containScroll: "trimSnaps",
-                      dragFree: false,
+                      dragFree: true,
                     }}
                     onReady={onCarouselReady}
                   >
