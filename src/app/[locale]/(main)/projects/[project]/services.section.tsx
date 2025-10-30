@@ -77,7 +77,7 @@ function ServiceItem({ title, icon, backgroundImage }: ServiceItemProps) {
       className="aspect-[7/8] flex-[0_0_90%] max-md:mx-3 md:flex-[0_0_45%] lg:flex-[0_0_30%] 2xl:flex-[0_0_28%]"
     >
       <div className="flex size-full flex-col items-center gap-6 px-8 pt-20 pb-4 lg:pt-12 xl:pt-24 2xl:pt-28">
-        <div className="rounded-full border border-white/30 bg-[#A5A5A5]/25 p-5 backdrop-blur-md xl:size-36 2xl:size-40">
+        <div className="size-32 rounded-full border border-white/30 bg-[#A5A5A5]/25 p-5 backdrop-blur-md xl:size-36 2xl:size-40">
           <Image
             aria-hidden
             loading="lazy"

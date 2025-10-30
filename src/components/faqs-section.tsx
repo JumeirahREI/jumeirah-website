@@ -54,7 +54,7 @@ export default function FAQsSection() {
         </SectionLink>
       )}
     >
-      <ul className="relative space-y-8">
+      <ul className="relative space-y-4 lg:space-y-8">
         {questions.map((q, i) => (
           <FAQCard
             key={i}
@@ -111,10 +111,7 @@ function FAQCard({
           variants={faqCardVariants}
           initial="inactive"
           animate={isActive ? "active" : "inactive"}
-          className={cn(
-            "flex w-full cursor-pointer gap-6 rounded-2xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl duration-300 ease-in-out [--max-width-active:100%] [--max-width-inactive:100%] md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:[--max-width-active:90%] lg:[--max-width-inactive:66%] 2xl:[--max-width-inactive:50%]",
-            // isActive && "lg:flex-grow-40",
-          )}
+          className="flex w-full cursor-pointer gap-6 rounded-2xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl duration-300 ease-in-out [--max-width-active:100%] [--max-width-inactive:100%] md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:[--max-width-active:90%] lg:[--max-width-inactive:66%] 2xl:[--max-width-inactive:50%]"
           onClick={onClick}
         >
           <span className="text-primary text-xl font-semibold md:text-lg lg:text-xl">
@@ -141,7 +138,7 @@ function FAQCard({
                   }}
                   className="max-w-[40rem] overflow-hidden"
                 >
-                  <p className="pt-8 pb-4 text-[#9C9C9C] lg:text-xl">
+                  <p className="pt-4 pb-4 text-[#9C9C9C] lg:pt-8 lg:text-xl">
                     {answer}
                   </p>
                 </m.div>
