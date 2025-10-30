@@ -4,7 +4,7 @@ import React, {
   createContext,
   useCallback,
   useContext,
-  useEffect,
+  useLayoutEffect,
 } from "react";
 import { useMediaState } from "./hooks/useMediaState";
 import { useTowerNavigation } from "./hooks/useTowerNavigation";
@@ -87,7 +87,7 @@ export const TowersDisplayProvider = React.memo(
       [selectedDataTab, setDataTab],
     );
 
-    useEffect(() => {
+    useLayoutEffect(() => {
       try {
         const currentTower = projectData.towersSection[selectedTower];
         const currentModel = currentTower?.models[selectedModel];
