@@ -46,10 +46,8 @@ export default async function RootLayout({
       dir={locale === "ar" ? "rtl" : "ltr"}
       className={font.className}
     >
-      <head>
-        <StructuredData locale={locale} />
-      </head>
       <body className="bg-background text-foreground relative min-h-svh max-w-svw font-sans not-supports-[overflow:clip]:overflow-x-hidden supports-[overflow:clip]:overflow-x-clip md:pt-4 lg:pt-10">
+        <StructuredData locale={locale} />
         <div className="space-sections">
           <LazyMotionProvider>
             <BackgroundImage />

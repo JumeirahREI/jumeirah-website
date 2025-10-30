@@ -21,9 +21,9 @@ export default function TowerDisplayImage({
         alt={alt || ""}
         fill={fill}
         {...props}
-        className={cn("w-full scale-100 object-contain", className)}
+        className={cn("w-full object-contain", className)}
       />
-      {isLoading && (
+      {isLoading && fill && (
         <div className="absolute top-0 right-0 bottom-0 left-0 z-20 flex items-center justify-center">
           <Loader2 className="size-1/12 animate-spin" />
         </div>

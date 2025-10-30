@@ -79,6 +79,9 @@ export const TowersDisplayProvider = React.memo(
       (tab: DataTab) => {
         if (selectedDataTab !== tab) {
           setDataTab(tab);
+          if (selectedDataTab === "photos" || tab === "photos") {
+            setSelectedMediaIndex(0);
+          }
         }
       },
       [selectedDataTab, setDataTab],
@@ -122,7 +125,6 @@ export const TowersDisplayProvider = React.memo(
       setMediaContainerData,
     ]);
 
-    // Memoize the context value to prevent unnecessary re-renders
     const contextValue = React.useMemo<TowersDisplayContextValue>(
       () => ({
         selectedTower,
@@ -156,18 +158,11 @@ export const TowersDisplayProvider = React.memo(
       </TowersDisplayContext.Provider>
     );
   },
-  // Custom comparison function for React.memo
   (prevProps, nextProps) => {
-    // Only re-render if projectData reference changes
     return prevProps.projectData === nextProps.projectData;
   },
 );
 
-/**
- * Custom hook to access the towers display context
- * @returns The towers display context value
- * @throws Error if used outside of TowersDisplayProvider
- */
 export const useTowersDisplayContext = (): TowersDisplayContextValue => {
   const context = useContext(TowersDisplayContext);
   if (context === undefined) {

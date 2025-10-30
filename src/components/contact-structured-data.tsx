@@ -1,11 +1,7 @@
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 
-export default async function ContactStructuredData({
-  locale,
-}: {
-  locale: string;
-}) {
-  const t = await getTranslations("ContactUs");
+export default function ContactStructuredData({ locale }: { locale: string }) {
+  const t = useTranslations("ContactUs");
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
 

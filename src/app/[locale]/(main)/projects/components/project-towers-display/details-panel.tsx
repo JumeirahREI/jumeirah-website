@@ -38,22 +38,26 @@ export default function DetailsPanel({
 
   if (selectedDataTab === "photos" && Array.isArray(mediaContainerData)) {
     return (
-      <div className="grid h-full w-fit max-w-full grid-flow-col grid-rows-2 gap-4 py-4 md:py-7 lg:py-14 xl:py-12 2xl:py-10">
+      <div className="w-full max-w-full columns-2 space-y-4 overflow-x-hidden lg:columns-3 xl:columns-4">
         {mediaContainerData.map((image, index) => (
-          <div
+          // <div
+          //   key={index}
+          //   onClick={() => setSelectedMediaIndex(index)}
+          //   data-selected={index === selectedMediaIndex}
+          //   className="data-[selected=true]:border-primary relative cursor-pointer rounded-3xl border border-[#7A7A7A]/30 transition-colors hover:bg-white/5"
+          // >
+          <TowerDisplayImage
             key={index}
             onClick={() => setSelectedMediaIndex(index)}
+            src={image.image}
+            alt={t(image.alt)}
+            className="data-[selected=true]:border-primary block cursor-pointer rounded-3xl border border-[#7A7A7A]/30 transition-colors hover:bg-white/5 data-[selected=true]:bg-white/5"
+            fill={false}
             data-selected={index === selectedMediaIndex}
-            className="data-[selected=true]:border-primary relative w-52 cursor-pointer rounded-3xl border border-[#7A7A7A]/30 transition-colors hover:bg-white/5"
-          >
-            <TowerDisplayImage
-              key={image.image.src}
-              src={image.image}
-              alt={t(image.alt)}
-              fill
-              sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 50vw"
-            />
-          </div>
+            placeholder="blur"
+            sizes="(max-width: 768px) 33vw, (max-width: 1200px) 50vw, 50vw"
+          />
+          // </div>
         ))}
       </div>
     );
