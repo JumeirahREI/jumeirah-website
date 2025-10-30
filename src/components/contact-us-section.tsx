@@ -7,7 +7,7 @@ import locationIcon from "@/../public/svg/location-icon.svg";
 import mapImageAr from "@/../public/svg/map-ar.svg";
 import mapImageEn from "@/../public/svg/map-en.svg";
 import phoneIcon from "@/../public/svg/phone-icon.svg";
-import twitterIcon from "@/../public/svg/twitter.svg";
+import xIcon from "@/../public/svg/x-icon.svg";
 import ContactUsForm from "@/components/contact-us-form";
 import GlassCard from "@/components/ui/glass-card";
 import Logo from "@/components/ui/logo";
@@ -95,10 +95,26 @@ export default function ContactUsSection({
                     {common("subscribe-description")}
                   </p>
                   <div className="flex items-center justify-center gap-3 pt-2 lg:justify-start lg:pt-12">
-                    <SocialLink href="#" icon={linkedinIcon} alt="LinkedIn" />
-                    <SocialLink href="#" icon={instagramIcon} alt="Instagram" />
-                    <SocialLink href="#" icon={twitterIcon} alt="Twitter" />
-                    <SocialLink href="#" icon={facebookIcon} alt="Facebook" />
+                    <SocialLink
+                      href="https://www.linkedin.com/company/jumeirahye"
+                      icon={linkedinIcon}
+                      alt="LinkedIn"
+                    />
+                    <SocialLink
+                      href="https://www.instagram.com/JumeirahYemen"
+                      icon={instagramIcon}
+                      alt="Instagram"
+                    />
+                    <SocialLink
+                      href="https://www.x.com/JumeirahYemen"
+                      icon={xIcon}
+                      alt="X"
+                    />
+                    <SocialLink
+                      href="https://www.facebook.com/JumeirahYemen"
+                      icon={facebookIcon}
+                      alt="Facebook"
+                    />
                   </div>
                 </div>
               </nav>
