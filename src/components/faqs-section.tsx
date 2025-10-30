@@ -16,11 +16,11 @@ export default function FAQsSection() {
   const ct = useTranslations("Common");
 
   const questions = [
-    {
-      question: t("q1.question"),
-      answer: t("q1.answer"),
-      image: faqImage,
-    },
+    // {
+    //   question: t("q1.question"),
+    //   answer: t("q1.answer"),
+    //   image: faqImage,
+    // },
     {
       question: t("q2.question"),
       answer: t("q2.answer"),

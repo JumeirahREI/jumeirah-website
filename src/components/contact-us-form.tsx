@@ -8,7 +8,7 @@ export default function ContactUsFrom() {
   return (
     <GlassCard
       disableGlow
-      className="space-y-4 rounded-4xl backdrop-blur-lg md:space-y-6 lg:rounded-[3rem] lg:px-8 lg:py-7"
+      className="flex flex-col space-y-4 rounded-4xl backdrop-blur-lg md:space-y-6 lg:rounded-[3rem] lg:px-8 lg:py-7"
     >
       <div>
         <h3 className="first-letter-primary-or-clip from-[0.5ch] to-[0.5ch] pb-1 font-serif text-3xl md:text-4xl lg:text-5xl">
@@ -18,7 +18,7 @@ export default function ContactUsFrom() {
           {t("description")}
         </h4>
       </div>
-      <form className="grid gap-4 lg:grid-cols-2">
+      <form className="grid grow items-center gap-4 lg:grid-cols-2">
         <Input name="firstname" placeholder={t("first-name")} />
         <Input name="lastname" placeholder={t("last-name")} />
         <Input
