@@ -19,7 +19,6 @@ const links = [
   { key: "home", href: "/" },
   { key: "projects", href: "/projects" },
   { key: "about-us", href: "/about" },
-  { key: "blog", href: "/blog" },
 ] as const;
 
 export function NavigationLinks({

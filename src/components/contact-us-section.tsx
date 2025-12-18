@@ -72,7 +72,6 @@ export default function ContactUsSection({
                     <FooterLink href="/contact">
                       {common("contact-us")}
                     </FooterLink>
-                    <FooterLink href="/blog">{common("blog")}</FooterLink>
                   </ul>
                 </div>
                 <div className="flex-1 space-y-4">
