@@ -15,9 +15,7 @@ import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 import { PropsWithChildren } from "react";
 
-type FooterProps = {};
-
-export default function Footer({}: FooterProps) {
+export default function Footer() {
   const t = useTranslations("ContactUs");
   const common = useTranslations("Common");
   const projects = useTranslations("ProjectTitles");
@@ -43,7 +41,7 @@ export default function Footer({}: FooterProps) {
               <div className="flex items-center gap-3">
                 <Icon src={phoneIcon} alt="Phone Icon" />
                 <p dir="ltr" className="text-nowrap">
-                  +(967) 778265522
+                  +967778265522
                 </p>
               </div>
             </div>
