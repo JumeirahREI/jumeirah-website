@@ -24,86 +24,89 @@ export default function Footer({}: FooterProps) {
 
   return (
     <section className="relative pb-16">
-      <div className="container grid grid-cols-1 gap-5 lg:grid-cols-2">
-        <ContactUsForm />
-        <div className="flex flex-col gap-5">
-          <Card className="flex flex-col items-start justify-between gap-5 text-lg only:flex-grow [&_p]:text-[#9C9C9C]">
-            <div className="flex flex-col gap-5 lg:flex-row lg:gap-5">
+      <div className="container">
+        <Card className="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-8">
+          {/* Column 1: Logo & Contact Info */}
+          <div className="flex flex-col gap-8">
+            <footer className="inline-flex flex-col items-start">
+              <Logo wideLogo className="w-40 md:w-60 lg:w-52" />
+            </footer>
+            <div className="flex flex-col gap-5 text-lg text-[#9C9C9C]">
+              <div className="flex items-center gap-3">
+                <Icon src={locationIcon} alt="Location Icon" />
+                <p>{t("location")}</p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Icon src={emailIcon} alt="Email Icon" />
+                <p>info@jumeirahye.com</p>
+              </div>
               <div className="flex items-center gap-3">
                 <Icon src={phoneIcon} alt="Phone Icon" />
                 <p dir="ltr" className="text-nowrap">
                   +(967) 778265522
                 </p>
               </div>
-              <div className="flex items-center gap-3">
-                <Icon src={emailIcon} alt="Email Icon" />
-                <p>info@jumeirahye.com</p>
+            </div>
+          </div>
+
+          {/* Column 2: Navigation */}
+          <nav className="grid grid-cols-2 gap-y-14 self-center">
+            <div className="flex-1 space-y-4">
+              <h5 className="font-semibold">{common("company")}</h5>
+              <ul className="space-y-2 text-[#D2D2D2]">
+                <FooterLink href="/about">{common("about")}</FooterLink>
+                <FooterLink href="/contact">{common("contact-us")}</FooterLink>
+              </ul>
+            </div>
+            <div className="flex-1 space-y-4">
+              <h5 className="font-semibold">{common("projects")}</h5>
+              <ul className="space-y-2 text-[#D2D2D2]">
+                <FooterLink href="/projects">
+                  {common("all-projects")}
+                </FooterLink>
+                <FooterLink href="/projects/sanaa-towers">
+                  {projects("sanaa-towers")}
+                </FooterLink>
+                <FooterLink href="/projects/alhathaa-towers">
+                  {projects("alhathaa-towers")}
+                </FooterLink>
+              </ul>
+            </div>
+            <div className="col-span-2 space-y-4">
+              <h5 className="font-semibold">{common("subscribe")}</h5>
+              <p className="text-sm text-[#9C9C9C]">
+                {common("subscribe-description")}
+              </p>
+              <div className="flex items-center gap-3 pt-2">
+                <SocialLink
+                  href="https://www.linkedin.com/company/jumeirahye"
+                  icon={linkedinIcon}
+                  alt="LinkedIn"
+                />
+                <SocialLink
+                  href="https://www.instagram.com/JumeirahYemen"
+                  icon={instagramIcon}
+                  alt="Instagram"
+                />
+                <SocialLink
+                  href="https://www.x.com/JumeirahYemen"
+                  icon={xIcon}
+                  alt="X"
+                />
+                <SocialLink
+                  href="https://www.facebook.com/JumeirahYemen"
+                  icon={facebookIcon}
+                  alt="Facebook"
+                />
               </div>
             </div>
-            <div className="flex items-start gap-4">
-              <Icon src={locationIcon} alt="Location Icon" />
-              <p>{t("location")}</p>
-            </div>
-          </Card>
-          <Card className="flex flex-grow flex-col justify-between gap-8 [&_h5]:font-semibold [&_li]:text-sm">
-            <footer className="inline-flex flex-col items-center self-start text-center">
-              <Logo wideLogo className="w-40 md:w-60 lg:w-52" />
-            </footer>
-            <nav className="grid grid-cols-2 gap-y-8 lg:grid-cols-4">
-              <div className="flex-1 space-y-4">
-                <h5>{common("company")}</h5>
-                <ul className="space-y-2 text-[#D2D2D2]">
-                  <FooterLink href="/about">{common("about")}</FooterLink>
-                  <FooterLink href="/contact">
-                    {common("contact-us")}
-                  </FooterLink>
-                </ul>
-              </div>
-              <div className="flex-1 space-y-4">
-                <h5>{common("projects")}</h5>
-                <ul className="space-y-2 text-[#D2D2D2]">
-                  <FooterLink href="/projects">
-                    {common("all-projects")}
-                  </FooterLink>
-                  <FooterLink href="/projects/sanaa-towers">
-                    {projects("sanaa-towers")}
-                  </FooterLink>
-                  <FooterLink href="/projects/alhathaa-towers">
-                    {projects("alhathaa-towers")}
-                  </FooterLink>
-                </ul>
-              </div>
-              <div className="col-span-2 space-y-4">
-                <h5>{common("subscribe")}</h5>
-                <p className="text-sm text-[#9C9C9C]">
-                  {common("subscribe-description")}
-                </p>
-                <div className="flex items-center justify-center gap-3 pt-2 lg:justify-start lg:pt-12">
-                  <SocialLink
-                    href="https://www.linkedin.com/company/jumeirahye"
-                    icon={linkedinIcon}
-                    alt="LinkedIn"
-                  />
-                  <SocialLink
-                    href="https://www.instagram.com/JumeirahYemen"
-                    icon={instagramIcon}
-                    alt="Instagram"
-                  />
-                  <SocialLink
-                    href="https://www.x.com/JumeirahYemen"
-                    icon={xIcon}
-                    alt="X"
-                  />
-                  <SocialLink
-                    href="https://www.facebook.com/JumeirahYemen"
-                    icon={facebookIcon}
-                    alt="Facebook"
-                  />
-                </div>
-              </div>
-            </nav>
-          </Card>
-        </div>
+          </nav>
+
+          {/* Column 3: Contact Form */}
+          <div className="flex flex-col">
+            <ContactUsForm className="p-0 lg:p-0" />
+          </div>
+        </Card>
       </div>
       <Image
         src={footerImage}

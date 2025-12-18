@@ -1,11 +1,16 @@
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 
-export default function ContactUsFrom() {
+export default function ContactUsFrom({ className }: { className?: string }) {
   const t = useTranslations("ContactUs");
 
   return (
-    <div className="flex flex-col space-y-4 rounded-4xl md:space-y-6 lg:rounded-[3rem] lg:px-8 lg:py-7">
+    <div
+      className={cn(
+        "flex flex-col space-y-4 rounded-4xl md:space-y-6 lg:rounded-[3rem] lg:px-8 lg:py-7",
+        className,
+      )}
+    >
       <div>
         <h3 className="first-letter-primary-or-clip from-[0.5ch] to-[0.5ch] pb-1 font-serif text-3xl md:text-4xl">
           {t("contact-us")}
