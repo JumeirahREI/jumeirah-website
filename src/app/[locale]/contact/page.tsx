@@ -21,9 +21,10 @@ export default async function ContactPage({
           { name: t("contact-us"), url: `/${locale}/contact` },
         ]}
       />
-      <main className="from-background bg-transparent bg-linear-to-t from-50% to-[#00010100] pt-13">
+      <main className="bg-transparent pt-13">
         <ContactUsSection isFooter={false} />
       </main>
+      <div className="from-background absolute top-0 left-0 -z-10 size-full bg-linear-to-t from-50% to-[#00010100]" />
     </>
   );
 }

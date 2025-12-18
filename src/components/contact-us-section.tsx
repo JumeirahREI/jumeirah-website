@@ -32,7 +32,12 @@ export default function ContactUsSection({
   return (
     <section className="relative pb-16">
       <div className="container grid grid-cols-1 gap-5 lg:grid-cols-2">
-        <ContactUsForm />
+        <GlassCard
+          disableGlow
+          className="rounded-4xl p-0! backdrop-blur-lg lg:rounded-[3rem]"
+        >
+          <ContactUsForm />
+        </GlassCard>
         <div className="flex flex-col gap-5">
           <Card className="flex flex-col items-start justify-between gap-5 text-lg only:flex-grow [&_p]:text-[#9C9C9C]">
             <div className="flex flex-col gap-5 lg:flex-row lg:gap-5">
