@@ -51,16 +51,16 @@ export default function ProjectsSection() {
 
   return (
     <section className="bg-background mb-20 md:mb-32 lg:mb-52">
-      <div className="relative z-30 space-y-10 md:space-y-12 lg:space-y-16 xl:space-y-24">
+      <div className="relative z-30 space-y-10 md:space-y-12 lg:space-y-16">
         <div className="relative md:container md:mx-auto">
           <Carousel
             options={carouselOptions}
-            className="md:fade-x w-full overflow-hidden md:px-24 xl:px-32"
+            className="md:fade-x w-full overflow-hidden md:px-24"
           >
-            <div className="embla__container flex gap-4 md:gap-6 xl:gap-10 2xl:justify-center">
+            <div className="embla__container flex gap-4 md:gap-6">
               {projects.map((project, index) => (
                 <div
-                  className="embla__slide not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary flex-[0_0_90%] sm:flex-[0_0_80%] md:mx-2 md:flex-[0_0_47%] 2xl:flex-[0_0_40%] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch]"
+                  className="embla__slide not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary flex-[0_0_90%] sm:flex-[0_0_80%] md:mx-2 md:flex-[0_0_47%] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch]"
                   key={index}
                 >
                   <CategoryProjectItem

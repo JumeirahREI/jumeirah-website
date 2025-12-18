@@ -38,11 +38,11 @@ export default function Section({
             preset="slide"
             as="h2"
             // speedSegment={0.01}
-            // className="ltr:first-letter-primary from-primary to-foreground bg-linear-to-r from-[0.85ch] to-[0.85ch] pb-1 text-3xl md:text-4xl xl:text-5xl rtl:bg-linear-to-l rtl:text-transparent"
+            // className="ltr:first-letter-primary from-primary to-foreground bg-linear-to-r from-[0.85ch] to-[0.85ch] pb-1 text-3xl md:text-4xl rtl:bg-linear-to-l rtl:text-transparent"
             className="ltr:first-letter-primary"
             inherit
           >
-            <span className="first-letter-primary-or-clip pb-1 text-3xl md:text-4xl xl:text-5xl">
+            <span className="first-letter-primary-or-clip pb-1 text-3xl md:text-4xl">
               {title}
             </span>
           </TextEffect>
@@ -57,7 +57,7 @@ export default function Section({
             preset="skew-fade"
             as="p"
             speedReveal={2}
-            className="mt-2 text-sm font-light text-[#9C9C9C] md:text-lg lg:text-xl xl:mt-6 xl:text-[1.7rem]"
+            className="mt-2 text-sm font-light text-[#9C9C9C] md:text-lg lg:text-xl"
             inherit
           >
             {description}

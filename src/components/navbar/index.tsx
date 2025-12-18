@@ -51,27 +51,27 @@ export default function Navbar() {
         >
           <Link
             href="/"
-            className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s pointer-events-auto z-[100] flex items-center gap-2 rounded-full md:gap-3 lg:px-7"
+            className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s pointer-events-auto z-[100] flex items-center gap-2 rounded-full md:gap-3 lg:px-7 lg:py-2"
           >
-            <Logo className="w-12 md:w-16 md:-translate-y-1 xl:w-24" />
+            <Logo className="w-12 md:w-16 md:-translate-y-1" />
             <LogoType />
           </Link>
           <div className="static hidden lg:block">
             <div className="pointer-events-auto top-1/2 left-1/2 col-span-3 flex -translate-y-1/2 items-center justify-center max-lg:mt-28 max-lg:text-center lg:absolute lg:-translate-x-1/2">
               <NavigationLinks
-                className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s flex flex-col gap-10 px-6 py-1.5 text-base leading-loose font-medium text-white lg:flex-row lg:rounded-full xl:px-8 xl:py-2 xl:text-lg"
+                className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s flex flex-col gap-10 px-6 py-1.5 text-base leading-loose font-medium text-white lg:flex-row lg:rounded-full"
                 liClassName="relative"
                 linkClassName="max-lg:w-full max-lg:p-2"
-                activeLinkClassName="text-primary font-serif text-lg font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-1.5 after:rounded-full after:bg-white xl:text-xl"
+                activeLinkClassName="text-primary font-serif text-lg font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-1.5 after:rounded-full after:bg-white"
               />
             </div>
             <div className="flex items-center gap-3">
               <LocaleSwitcher />
-              <div className="h-8 w-px bg-white/50 xl:h-10" />
+              <div className="h-8 w-px bg-white/50" />
               <SocialLinks
                 className="pointer-events-auto flex items-center justify-around gap-3 max-lg:container max-lg:mx-auto max-lg:mt-28 max-lg:w-xs lg:justify-end"
-                anchorClassName="lg:bg-glass rounded-full p-3 transition-colors lg:hover:bg-white/20 xl:p-4"
-                iconClassName="size-5 xl:size-5"
+                anchorClassName="lg:bg-glass rounded-full p-3 transition-colors lg:hover:bg-white/20"
+                iconClassName="size-5"
               />
             </div>
           </div>

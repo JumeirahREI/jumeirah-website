@@ -18,7 +18,7 @@ export default function AboutUsCard() {
 
   return (
     <SectionWrapper
-      className=" relative mx-auto mb-6 max-md:container max-md:px-4 lg:mb-36"
+      className="relative mx-auto mb-6 max-md:container max-md:px-4 lg:mb-36"
       enableAnimation
     >
       <GridBackgroundEffect className="!h-ull absolute start-1/2 top-0 container -translate-x-1/2 rotate-180 object-contain object-top opacity-90 rtl:translate-x-1/2" />
@@ -26,7 +26,7 @@ export default function AboutUsCard() {
         <div className="mx-auto grid grid-flow-dense gap-8 md:container md:grid-cols-2 xl:grid-cols-5 xl:gap-12 xl:gap-x-28">
           <div className="xl:col-span-3">
             <TextEffect
-              className="first-letter-primary text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-4xl xl:text-5xl"
+              className="first-letter-primary text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-4xl"
               preset="cascade"
               as="h2"
               inherit
@@ -34,7 +34,7 @@ export default function AboutUsCard() {
               {t("title")}
             </TextEffect>
             <TextEffect
-              className="mt-2 text-sm font-light text-[#DFDFDF] md:mt-5 md:text-lg lg:text-xl xl:text-[1.7rem]"
+              className="mt-2 text-sm font-light text-[#DFDFDF] md:mt-5 md:text-lg lg:text-xl"
               preset="cascade"
               as="p"
               inherit
@@ -75,7 +75,7 @@ export default function AboutUsCard() {
             >
               <GotoIcon alt="about-us" className="lg:max-xl:size-12" />
               <AppLink
-                className="z-10 py-1.5 text-xs font-bold lg:px-5 lg:py-2 lg:text-base xl:text-xl"
+                className="z-10 py-1.5 text-xs font-bold lg:px-5 lg:py-2 lg:text-base"
                 href="/about"
               >
                 {ct("about-us")}
@@ -97,7 +97,7 @@ export default function AboutUsCard() {
                 preset="cascade"
                 as="h3"
                 inherit
-                className="first-letter-primary text-[1.4rem] md:text-[1.6rem] lg:text-4xl xl:text-5xl"
+                className="first-letter-primary text-[1.4rem] md:text-[1.6rem] lg:text-4xl"
               >
                 {t("our-vision")}
               </TextEffect>
@@ -107,7 +107,7 @@ export default function AboutUsCard() {
               as="p"
               delay={0.4}
               inherit
-              className="mt-2 text-sm font-light text-[#9C9C9C] md:text-lg lg:text-xl xl:text-[1.7rem]"
+              className="mt-2 text-sm font-light text-[#9C9C9C] md:text-lg lg:text-xl"
             >
               {t("our-vision-subtext")}
             </TextEffect>
@@ -127,7 +127,7 @@ export default function AboutUsCard() {
                 preset="cascade"
                 as="h3"
                 inherit
-                className="first-letter-primary text-[1.4rem] md:text-[1.6rem] lg:text-4xl xl:text-5xl"
+                className="first-letter-primary text-[1.4rem] md:text-[1.6rem] lg:text-4xl"
               >
                 {t("our-message")}
               </TextEffect>
@@ -137,7 +137,7 @@ export default function AboutUsCard() {
               as="p"
               delay={0.4}
               inherit
-              className="mt-2 text-sm font-light text-[#9C9C9C] md:text-lg lg:text-xl xl:text-[1.7rem]"
+              className="mt-2 text-sm font-light text-[#9C9C9C] md:text-lg lg:text-xl"
             >
               {t("our-message-subtext")}
             </TextEffect>

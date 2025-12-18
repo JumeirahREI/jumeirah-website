@@ -30,7 +30,7 @@ export default function DetailsPanel({
 
   if (selectedDataTab === "layout") {
     return (
-      <p className="leading-normal md:py-7 lg:w-10/12 lg:py-14 lg:text-lg xl:py-12 xl:text-xl 2xl:w-9/12 2xl:py-10 2xl:text-2xl">
+      <p className="leading-normal md:py-7 lg:w-10/12 lg:py-14 lg:text-lg">
         {t(selectedModelData.layout.description)}
       </p>
     );
@@ -38,7 +38,7 @@ export default function DetailsPanel({
 
   if (selectedDataTab === "photos" && Array.isArray(mediaContainerData)) {
     return (
-      <div className="w-full max-w-full columns-2 space-y-4 overflow-x-hidden lg:columns-3 xl:columns-4">
+      <div className="w-full max-w-full columns-2 space-y-4 overflow-x-hidden lg:columns-3">
         {mediaContainerData.map((image, index) => (
           // <div
           //   key={index}
@@ -120,7 +120,7 @@ function SectionDetails({
 
   return (
     <div className="lg:has-[ol>li:nth-child(n+6)]:col-span-2">
-      <h3 className="mb-3 font-bold 2xl:text-2xl">{t(section.title)}</h3>
+      <h3 className="mb-3 font-bold">{t(section.title)}</h3>
       <ol
         start={start}
         className="flex w-fit list-inside flex-col flex-wrap space-y-0.5 gap-x-7 ps-2 text-[#a5a5a5] lg:max-h-32"

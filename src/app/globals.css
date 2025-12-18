@@ -291,7 +291,7 @@ img {
 }
 
 @utility space-sections {
-  @apply space-y-28 xl:space-y-48;
+  @apply space-y-28;
 }
 
 @utility bg-clip-text {

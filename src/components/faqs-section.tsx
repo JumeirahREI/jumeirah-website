@@ -104,17 +104,17 @@ function FAQCard({
   isActive: boolean;
 }) {
   return (
-    <li className="flex gap-5 text-sm md:text-lg lg:text-xl">
+    <li className="flex gap-5 text-sm md:text-lg">
       <LayoutGroup>
         <m.div
           layout="position"
           variants={faqCardVariants}
           initial="inactive"
           animate={isActive ? "active" : "inactive"}
-          className="flex w-full cursor-pointer gap-6 rounded-2xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl duration-300 ease-in-out [--max-width-active:100%] [--max-width-inactive:100%] md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:[--max-width-active:90%] lg:[--max-width-inactive:66%] 2xl:[--max-width-inactive:50%]"
+          className="flex w-full cursor-pointer gap-6 rounded-2xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl duration-300 ease-in-out [--max-width-active:100%] [--max-width-inactive:100%] md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:[--max-width-active:90%] lg:[--max-width-inactive:66%]"
           onClick={onClick}
         >
-          <span className="text-primary text-xl font-semibold md:text-lg lg:text-xl">
+          <span className="text-primary font-semibold md:text-lg">
             {String(index + 1).padStart(2, "0")}
           </span>
           <div>
@@ -138,9 +138,7 @@ function FAQCard({
                   }}
                   className="max-w-[40rem] overflow-hidden"
                 >
-                  <p className="pt-4 pb-4 text-[#9C9C9C] lg:pt-8 lg:text-xl">
-                    {answer}
-                  </p>
+                  <p className="pt-4 pb-4 text-[#9C9C9C] lg:pt-8">{answer}</p>
                 </m.div>
               )}
             </AnimatePresence>

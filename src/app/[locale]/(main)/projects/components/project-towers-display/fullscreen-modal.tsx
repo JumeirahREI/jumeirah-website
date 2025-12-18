@@ -79,7 +79,7 @@ export default function FullscreenModal({
       >
         {({ zoomIn, zoomOut, resetTransform }) => (
           <>
-            <div className="absolute top-20 left-1/2 z-[10000] container -translate-x-1/2 xl:top-28">
+            <div className="absolute top-20 left-1/2 z-[10000] container -translate-x-1/2">
               <div className="flex items-center justify-end gap-2">
                 <button
                   onClick={() => zoomOut()}

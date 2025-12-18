@@ -64,10 +64,7 @@ export default function AboutUsPage() {
       />
       <PageHeader title={t("title")} subTitle={t("subtitle")}>
         <div className="flex items-center justify-center gap-4">
-          <AppLink
-            href="/contact"
-            className="font-semibold lg:px-4 lg:py-2 lg:text-xl"
-          >
+          <AppLink href="/contact" className="font-semibold lg:px-4 lg:py-2">
             {ct("contact-us")}
           </AppLink>
         </div>
@@ -83,24 +80,24 @@ export default function AboutUsPage() {
               />
             </div>
             <div className="lg:col-span-3">
-              <h2 className="ltr:first-letter-primary text-2xl md:text-3xl lg:mt-14 lg:mb-4 lg:text-4xl xl:text-5xl">
+              <h2 className="ltr:first-letter-primary text-2xl md:text-3xl lg:mt-14 lg:mb-4 lg:text-4xl">
                 {t("company-history")}
               </h2>
-              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:mb-14 lg:text-2xl xl:text-3xl">
+              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:mb-14 lg:text-2xl">
                 {t("company-history-description")}
               </p>
             </div>
           </article>
           <article className="grid grid-cols-1 items-center gap-4 md:grid-cols-2 lg:grid-cols-5 lg:gap-28">
             <div className="space-y-3 lg:col-span-3 lg:my-12 lg:space-y-2">
-              <p className="border-gradient-to-e rtl:border-gradient-to-s border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] inline-flex gap-3 rounded-full bg-linear-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 text-center font-serif whitespace-nowrap transition before:transition-colors md:text-xs lg:mb-4 lg:px-5 lg:pt-2.5 lg:pb-2 lg:text-lg xl:text-xl rtl:bg-linear-to-r">
+              <p className="border-gradient-to-e rtl:border-gradient-to-s border-gradient-width-0.5 border-gradient-from-[#7A7A7A99] border-gradient-to-[#14141400] inline-flex gap-3 rounded-full bg-linear-to-l from-zinc-900/0 to-zinc-900 px-4 pt-2 pb-1.5 text-center font-serif whitespace-nowrap transition before:transition-colors md:text-xs lg:mb-4 lg:px-5 lg:pt-2.5 lg:pb-2 lg:text-lg rtl:bg-linear-to-r">
                 <Image src={missionIcon} alt="target-icon" className="size-6" />
                 {t("our-mission")}
               </p>
-              <h2 className="text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-4xl xl:text-5xl">
+              <h2 className="text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-4xl">
                 {t("our-mission-title")}
               </h2>
-              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:text-2xl xl:text-3xl">
+              <p className="text-lg leading-snug font-light text-wrap opacity-70 md:text-xl lg:text-2xl">
                 {t("our-mission-subtitle")}
               </p>
             </div>
@@ -149,10 +146,10 @@ function WhatWeStandFor({
         <div className="border-gradient-t border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] rounded-full bg-linear-to-t from-[#1A1A1A] to-[#1A1A1A]/0 p-4">
           <Image src={icon} alt="icon" className="size-8 md:size-10" />
         </div>
-        <h3 className="first-letter:text-primary text-xl font-semibold md:text-xl lg:text-2xl xl:text-3xl">
+        <h3 className="first-letter:text-primary text-xl font-semibold md:text-xl lg:text-2xl">
           {title}
         </h3>
-        <p className="opacity-70 xl:text-xl">{description}</p>
+        <p className="opacity-70">{description}</p>
       </div>
     </li>
   );

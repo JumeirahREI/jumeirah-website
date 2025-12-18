@@ -22,7 +22,7 @@ const MemoizedDetailsPanel = React.memo(DetailsPanel);
 const MemoizedDataTabs = React.memo(DataTabs);
 
 const containerClasses =
-  "border-gradient-to-s [--padding-x:1rem] md:[--padding-x:1.75rem] lg:[--padding-x:2.5rem] lg:border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] z-10 space-y-6 rounded-4xl bg-linear-[268deg] from-[#1A1A1AE5] to-[#1A1A1A12]  py-4 md:rounded-[3.5rem] md:py-7 lg:py-10 xl:rounded-[4rem] 2xl:space-y-6 2xl:rounded-[3.5rem] rtl:bg-linear-[100deg]";
+  "border-gradient-to-s [--padding-x:1rem] md:[--padding-x:1.75rem] lg:[--padding-x:2.5rem] lg:border-gradient-width-0.5 border-gradient-to-[#14141400] border-gradient-from-[#7A7A7A99] z-10 space-y-6 rounded-4xl bg-linear-[268deg] from-[#1A1A1AE5] to-[#1A1A1A12]  py-4 md:rounded-[3.5rem] md:py-7 lg:py-10 rtl:bg-linear-[100deg]";
 
 const ProjectTowersDisplay = React.memo(
   ({ projectData }: ProjectTowersDisplayProps) => {

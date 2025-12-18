@@ -22,10 +22,10 @@ export default function PageHeader({
       )}
     >
       <div className="container pt-28 pb-32 md:pb-40 lg:pt-40 lg:pb-60">
-        <h1 className="first-letter-primary-or-clip mx-auto mb-2 w-fit from-[1ch] to-[1ch] text-[2.7rem] md:mb-1 md:text-[4rem] lg:text-[5rem]">
+        <h1 className="first-letter-primary-or-clip mx-auto mb-2 w-fit from-[1ch] to-[1ch] text-[2.7rem] md:mb-1 md:text-[4rem]">
           {title}
         </h1>
-        <p className="mx-auto mb-10 font-light opacity-70 max-md:px-2 md:mb-14 md:text-xl lg:text-2xl xl:w-[58rem]">
+        <p className="mx-auto mb-10 font-light opacity-70 max-md:px-2 md:mb-14 md:text-xl lg:max-w-[72ch]">
           {subTitle}
         </p>
         {children}

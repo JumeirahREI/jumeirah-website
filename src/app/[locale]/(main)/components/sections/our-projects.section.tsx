@@ -61,31 +61,31 @@ export default function OurProjectsSection() {
       <Carousel options={carouselOptions} className="w-full md:px-4">
         <AnimatedGroup
           variants={transitionVariants}
-          className="embla__container flex gap-4 md:gap-6 xl:gap-10 2xl:justify-center"
-          childrenClassName="embla__slide md:mx-2 flex-[0_0_90%] sm:flex-[0_0_80%] md:flex-[0_0_47%] 2xl:flex-[0_0_40%] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch] not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary"
+          className="embla__container flex gap-4 md:gap-6"
+          childrenClassName="embla__slide md:mx-2 flex-[0_0_90%] sm:flex-[0_0_80%] md:flex-[0_0_47%] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch] not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary"
           inherit
         >
           {projects.map((p) => (
             <ImageContainer
               key={p.title}
               src={p.image}
-              className="w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl xl:rounded-[4rem] [&_figure>div]:opacity-20 [&_figure>div]:transition-opacity hover:[&_figure>div]:opacity-20 lg:[&_figure>div]:opacity-60"
+              className="w-full cursor-pointer overflow-hidden rounded-[3rem] duration-300 ease-in-out active:scale-95 active:brightness-80 lg:rounded-4xl [&_figure>div]:opacity-20 [&_figure>div]:transition-opacity hover:[&_figure>div]:opacity-20 lg:[&_figure>div]:opacity-60"
               sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, (max-width: 1024px) 47vw, (max-width: 1536px) 40vw, 28vw"
             >
               <Link
                 href={p.href}
-                className="flex flex-col justify-between gap-80 px-5 py-4 md:px-6 md:py-6 lg:px-5 lg:py-4 xl:gap-[30rem] xl:px-12 xl:pt-10 xl:pb-14"
+                className="flex flex-col justify-between gap-80 px-5 py-4 md:px-6 md:py-6 lg:px-5 lg:py-4"
               >
-                <p className="bg-glass self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1.5 text-xs text-[#dadada] lg:border-2 xl:text-lg">
+                <p className="bg-glass self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1.5 text-xs text-[#dadada] lg:border-2">
                   {ct(p.status)}
                 </p>
-                <div className="flex items-center justify-center gap-2 xl:gap-4">
+                <div className="flex items-center justify-center gap-2">
                   <GotoIcon
-                    className="md:size-10 md:p-1.5 xl:size-20 xl:p-3"
+                    className="md:size-10 md:p-1.5"
                     alt={projectsT(p.title)}
                   />
-                  <div className="border-gradient-to-e border-gradient-to-neutral-500/60 xl:border-gradient-width-0.5 grow rounded-2xl bg-linear-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center md:text-lg xl:p-4 xl:text-[2rem] rtl:bg-linear-to-l">
-                    <h3 className="first-letter-primary-or-clip mx-auto w-fit">
+                  <div className="border-gradient-to-e border-gradient-to-neutral-500/60 grow rounded-2xl bg-linear-to-r from-[#1A1A1A] to-[#1A1A1A]/0 p-2 text-center md:text-lg rtl:bg-linear-to-l">
+                    <h3 className="first-letter-primary-or-clip mx-auto w-fit lg:py-1.5">
                       {projectsT(p.title)}
                     </h3>
                   </div>

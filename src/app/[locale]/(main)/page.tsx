@@ -17,17 +17,17 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <header className="relative z-10">
-        <div className="container grid grid-rows-2 pt-52 pb-32 md:pt-36 lg:grid-cols-3 lg:pt-20 xl:pt-24">
-          <div className="z-30 col-span-2 row-span-2 space-y-2 2xl:space-y-5 rtl:space-y-8">
+        <div className="container grid grid-rows-2 pt-52 pb-32 md:pt-36 lg:grid-cols-3 lg:pt-20">
+          <div className="z-30 col-span-2 row-span-2 space-y-2 rtl:space-y-8">
             <TextEffect
               as="h1"
               per="word"
               delay={0.2}
               speedSegment={0.25}
               variants={luxuryPresets.hero}
-              className="text-foreground drop-shadow-background/70 md:drop-shadow-background/20 ltr:first-letter-primary text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-4xl lg:leading-tight xl:text-6xl rtl:lg:leading-normal [&>span:first-child]:block"
+              className="text-foreground drop-shadow-background/70 md:drop-shadow-background/20 ltr:first-letter-primary text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-4xl lg:leading-tight rtl:lg:leading-normal [&>span:first-child]:block"
             >
-              <span className="from-primary to-foreground bg-linear-to-r from-[1ch] to-[1ch] bg-clip-text pb-1 text-7xl font-bold md:text-7xl lg:text-7xl xl:text-[7rem] rtl:bg-linear-to-l rtl:text-transparent">
+              <span className="from-primary to-foreground bg-linear-to-r from-[1ch] to-[1ch] bg-clip-text pb-1 text-7xl font-bold md:text-7xl lg:text-7xl rtl:bg-linear-to-l rtl:text-transparent">
                 {t("jumeirah-hero")}
               </span>{" "}
               {ct("rei")}
@@ -47,7 +47,7 @@ export default function Home() {
               }}
               childrenClassName="backdrop-blur-md w-fit rounded-3xl lg:rounded-4xl"
             >
-              <GlassCard className="max-w-md text-center leading-6 font-medium text-[#d3d5d7] backdrop-blur-none md:max-w-xl md:text-start md:text-lg md:leading-7 lg:max-w-2xl xl:max-w-3xl xl:text-xl xl:leading-8">
+              <GlassCard className="max-w-md text-center leading-6 font-medium text-[#d3d5d7] backdrop-blur-none md:max-w-xl md:text-start md:text-lg md:leading-7 lg:max-w-2xl">
                 <p className="text-primary mb-2 font-bold">
                   {t("hero-subtitle")}
                 </p>
@@ -69,7 +69,7 @@ export default function Home() {
                   },
                 },
               }}
-              className="z-20 mt-4 flex items-center justify-center gap-4 text-xs font-semibold md:mt-6 md:justify-start md:text-sm lg:ms-2.5 lg:text-sm xl:text-base"
+              className="z-20 mt-4 flex items-center justify-center gap-4 text-xs font-semibold md:mt-6 md:justify-start md:text-sm lg:ms-2.5 lg:text-sm"
               childrenClassName="rounded-full backdrop-blur-lg"
             >
               <AppLink href="/projects" variant="outline">

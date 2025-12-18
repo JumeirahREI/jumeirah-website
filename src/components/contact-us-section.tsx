@@ -34,8 +34,8 @@ export default function ContactUsSection({
       <div className="container grid grid-cols-1 gap-5 lg:grid-cols-2">
         <ContactUsForm />
         <div className="flex flex-col gap-5">
-          <Card className="flex flex-col items-start justify-between gap-5 text-lg only:flex-grow xl:gap-8 xl:text-xl 2xl:text-2xl [&_p]:text-[#9C9C9C]">
-            <div className="flex flex-col gap-5 lg:flex-row lg:gap-5 xl:gap-10">
+          <Card className="flex flex-col items-start justify-between gap-5 text-lg only:flex-grow [&_p]:text-[#9C9C9C]">
+            <div className="flex flex-col gap-5 lg:flex-row lg:gap-5">
               <div className="flex items-center gap-3">
                 <Icon src={phoneIcon} alt="Phone Icon" />
                 <p dir="ltr" className="text-nowrap">
@@ -60,9 +60,9 @@ export default function ContactUsSection({
             )}
           </Card>
           {isFooter && (
-            <Card className="flex flex-grow flex-col justify-between gap-8 [&_h5]:font-semibold [&_h5]:2xl:text-xl [&_li]:text-sm">
+            <Card className="flex flex-grow flex-col justify-between gap-8 [&_h5]:font-semibold [&_li]:text-sm">
               <footer className="inline-flex flex-col items-center self-start text-center">
-                <Logo wideLogo className="w-40 md:w-60 lg:w-52 2xl:w-24" />
+                <Logo wideLogo className="w-40 md:w-60 lg:w-52" />
               </footer>
               <nav className="grid grid-cols-2 gap-y-8 lg:grid-cols-4">
                 <div className="flex-1 space-y-4">
@@ -143,7 +143,7 @@ function Card({
   return (
     <GlassCard
       className={cn(
-        "rounded-4xl p-6 backdrop-blur lg:rounded-[3rem] lg:p-8 2xl:p-10",
+        "rounded-4xl p-6 backdrop-blur lg:rounded-[3rem] lg:p-8",
         className,
       )}
     >
@@ -154,13 +154,7 @@ function Card({
 
 function Icon({ src, alt }: { src: StaticImageData; alt: string }) {
   return (
-    <Image
-      src={src}
-      width={32}
-      height={32}
-      className="size-6 2xl:size-9"
-      alt={alt}
-    />
+    <Image src={src} width={32} height={32} className="size-6" alt={alt} />
   );
 }
 
