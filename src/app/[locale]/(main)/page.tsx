@@ -3,6 +3,7 @@ import OurProjectsSection from "@/app/[locale]/(main)/components/sections/our-pr
 import OurServicesSection from "@/app/[locale]/(main)/components/sections/our-services.section";
 import { AnimatedGroup } from "@/components/animated-group";
 import AppLink from "@/components/app-link";
+import FAQsSection from "@/components/faqs-section";
 import { TextEffect } from "@/components/text-effect";
 import GlassCard from "@/components/ui/glass-card";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
@@ -84,6 +85,7 @@ export default function Home() {
         <OurServicesSection />
         <AboutUsCard />
         <OurProjectsSection />
+        <FAQsSection />
       </main>
     </div>
   );
