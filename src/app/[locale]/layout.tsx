@@ -51,7 +51,7 @@ export default async function RootLayout({
         <div className="space-sections">
           <LazyMotionProvider>
             <BackgroundImage />
-            {process.env.NODE_ENV === "development" && <ScreenSizeIndicator />}
+            {process.env.NODE_ENV === "test" && <ScreenSizeIndicator />}
             <NextIntlClientProvider locale={locale}>
               <Navbar />
               {children}

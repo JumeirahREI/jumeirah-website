@@ -41,13 +41,6 @@ export default function Navbar() {
 
   return (
     <nav className="fixed start-0 end-0 top-0 z-[999] !mb-0 md:py-4 lg:pointer-events-none lg:sticky">
-      <div
-        aria-hidden
-        className={cn(
-          "from-background to-background/0 pointer-events-none fixed inset-0 start-0 -top-4 hidden h-64 w-8/12 -translate-x-1/2 -translate-y-1/2 bg-radial opacity-0 blur-2xl transition-opacity duration-500 ease-in-out lg:block rtl:translate-x-1/2",
-          showNavBackground && "opacity-80",
-        )}
-      />
       <div className="container max-lg:pt-2 max-md:!px-3">
         <div
           className={cn(
@@ -58,7 +51,7 @@ export default function Navbar() {
         >
           <Link
             href="/"
-            className="pointer-events-auto z-[100] flex items-center gap-2 md:gap-3"
+            className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s pointer-events-auto z-[100] flex items-center gap-2 rounded-full md:gap-3 lg:px-7"
           >
             <Logo className="w-12 md:w-16 md:-translate-y-1 xl:w-24" />
             <LogoType />
