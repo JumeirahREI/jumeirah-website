@@ -7,4 +7,4 @@ Allow: /
 # Disallow: /api/
 
 # Sitemap location
-Sitemap: https://jumeirah-rei.com/sitemap.xml
+Sitemap: https://jumeirahye.com/sitemap.xml

@@ -99,8 +99,7 @@ export async function generateMetadata({
   const t = await getTranslations("Metadata");
   const { locale } = await params;
 
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirah-rei.com";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
   const currentUrl = `${baseUrl}/${locale}`;
 
   return {
