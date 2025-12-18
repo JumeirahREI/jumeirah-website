@@ -5,7 +5,6 @@ import afterSaleServicesIcon from "@/../public/svg/after-sale.svg";
 import commercialIcon from "@/../public/svg/commercial-properties-icon.svg";
 import developmentIcon from "@/../public/svg/development.svg";
 import { AnimatedGroup } from "@/components/animated-group";
-import GotoIcon from "@/components/goto-icon";
 import ImageContainer from "@/components/image-container";
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
@@ -91,8 +90,8 @@ function ServiceGalleryCard({
       className="h-full w-full flex-1 text-center"
       sizes="(max-width: 1024px) 100vw, 33vw"
     >
-      <div className="flex h-full flex-col items-center justify-center gap-4 p-5 pt-16 lg:pt-30 xl:pt-44">
-        <div className="flex w-full grow flex-col items-center gap-2">
+      <div className="flex h-full flex-col items-center justify-center gap-4 p-5 py-16 lg:py-30 xl:py-44">
+        <div className="flex w-full flex-col items-center gap-2">
           <div className="bg-glass rounded-full border border-white/30 p-4 md:p-4">
             <Image
               src={icon}
@@ -106,25 +105,7 @@ function ServiceGalleryCard({
           <h3 className="z-10 text-2xl xl:text-3xl 2xl:text-4xl">
             {t(title as Parameters<typeof t>[0])}
           </h3>
-          <div className="h-4 md:h-10 xl:h-16" />
-          {/* <div
-            aria-hidden
-            className="invisible mt-4 mb-4 flex justify-center gap-3 self-stretch text-sm md:mb-10 lg:mt-2 lg:gap-2 lg:text-xs xl:mt-4 xl:mb-10 xl:text-base"
-          >
-            {options.map((option) => (
-              <span
-                key={option}
-                className="bg-glass flex items-center justify-center rounded-full border border-white/30 px-5 py-2 xl:px-6 xl:py-2"
-              >
-                {t(option as Parameters<typeof t>[0])}
-              </span>
-            ))}
-          </div> */}
         </div>
-        <GotoIcon
-          className="size-10 justify-self-end lg:size-10 lg:p-1.5 xl:mb-4 xl:size-14 xl:p-2"
-          alt={t(title as Parameters<typeof t>[0])}
-        />
       </div>
     </ImageContainer>
   );
