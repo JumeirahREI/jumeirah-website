@@ -5,7 +5,6 @@ import { AnimatedGroup } from "@/components/animated-group";
 import AppLink from "@/components/app-link";
 import FAQsSection from "@/components/faqs-section";
 import { TextEffect } from "@/components/text-effect";
-import GlassCard from "@/components/ui/glass-card";
 import GridBackgroundEffect from "@/components/ui/grid-background-effect";
 import { luxuryPresets } from "@/lib/luxury-presets";
 import { useTranslations } from "next-intl";
@@ -25,13 +24,12 @@ export default function Home() {
               delay={0.2}
               speedSegment={0.25}
               variants={luxuryPresets.hero}
-              className="text-foreground drop-shadow-background/70 md:drop-shadow-background/20 ltr:first-letter-primary text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:text-4xl lg:leading-tight rtl:lg:leading-normal [&>span:first-child]:block"
+              className="text-foreground drop-shadow-background/70 md:drop-shadow-background/20 ltr:first-letter-primary text-center font-serif text-3xl leading-relaxed drop-shadow-xl max-md:mb-6 md:text-start md:text-4xl lg:mb-3 lg:text-5xl lg:leading-tight rtl:lg:leading-normal [&>span:first-child]:block"
             >
-              <span className="from-primary to-foreground bg-linear-to-r from-[1ch] to-[1ch] bg-clip-text pb-1 text-7xl font-bold md:text-7xl lg:text-7xl rtl:bg-linear-to-l rtl:text-transparent">
+              <span className="from-primary to-foreground bg-linear-to-r from-[1ch] to-[1ch] bg-clip-text pb-1 text-7xl font-bold md:text-7xl lg:text-8xl rtl:bg-linear-to-l rtl:text-transparent">
                 {t("jumeirah-hero")}
               </span>{" "}
               {ct("rei")}
-              <span className="text-primary">.</span>
             </TextEffect>
             <AnimatedGroup
               preset="slide"
@@ -45,18 +43,15 @@ export default function Home() {
                   },
                 },
               }}
-              childrenClassName="backdrop-blur-md w-fit rounded-3xl lg:rounded-4xl"
+              childrenClassName="w-fit rounded-3xl lg:rounded-4xl"
             >
-              <GlassCard className="max-w-md text-center leading-6 font-medium text-[#d3d5d7] backdrop-blur-none md:max-w-xl md:text-start md:text-lg md:leading-7 lg:max-w-2xl">
-                <p className="text-primary mb-2 font-bold">
-                  {t("hero-subtitle")}
-                </p>
+              <div className="max-w-md text-center leading-6 font-medium text-[#d3d5d7] backdrop-blur-none md:max-w-xl md:text-start md:text-lg md:leading-7 lg:max-w-2xl lg:leading-8">
                 <p>
                   {t.rich("hero-description", {
                     span: (s) => <span className="text-primary">{s}</span>,
                   })}
                 </p>
-              </GlassCard>
+              </div>
             </AnimatedGroup>
             <AnimatedGroup
               preset="slide"
@@ -72,11 +67,16 @@ export default function Home() {
               className="z-20 mt-4 flex items-center justify-center gap-4 text-xs font-semibold md:mt-6 md:justify-start md:text-sm lg:ms-2.5 lg:text-sm"
               childrenClassName="rounded-full backdrop-blur-lg"
             >
-              <AppLink href="/projects" variant="outline">
+              {/* <AppLink href="/projects" variant="outline">
                 {t("our-projects")}
-              </AppLink>
+              </AppLink> */}
               <AppLink href="/contact">{ct("contact-us")}</AppLink>
             </AnimatedGroup>
+          </div>
+          <div>
+            {/* <GlassCard className="mx-auto aspect-video w-80 opacity-0" />
+            <GlassCard className="mx-auto aspect-video w-80 bg-black/20 backdrop-blur-none" />
+            <GlassCard className="mx-auto aspect-video w-80 bg-black/20 backdrop-blur-none" /> */}
           </div>
         </div>
         <HeroBackground />

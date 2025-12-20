@@ -157,7 +157,7 @@ function DesktopLocaleDropdown({
         onClick={() => setOpen((o) => !o)}
         className="lg:bg-glass aspect-square h-full cursor-pointer rounded-full border border-white/10 p-2 font-medium text-white/90 backdrop-blur transition-colors hover:bg-white/20"
       >
-        <GlobeIcon className="size-6" />
+        <GlobeIcon className="size-5" />
       </button>
 
       {open && (

@@ -5,7 +5,6 @@ import { MobileMenu } from "@/components/navbar/mobile-menu";
 import { NavigationLinks } from "@/components/navbar/navigation-links";
 import { SocialLinks } from "@/components/navbar/social-links";
 import Logo from "@/components/ui/logo";
-import LogoType from "@/components/ui/logo-type";
 import { Link, usePathname } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { Squeeze } from "hamburger-react";
@@ -51,15 +50,14 @@ export default function Navbar() {
         >
           <Link
             href="/"
-            className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s pointer-events-auto z-[100] flex items-center gap-2 rounded-full md:gap-3 lg:px-7 lg:py-2"
+            className="pointer-events-auto z-[100] flex items-center gap-2 rounded-full md:gap-3 lg:py-2"
           >
-            <Logo className="w-12 md:w-16 md:-translate-y-1" />
-            <LogoType />
+            <Logo className="w-28 md:w-52 md:-translate-y-1" />
           </Link>
           <div className="static hidden lg:block">
             <div className="pointer-events-auto top-1/2 left-1/2 col-span-3 flex -translate-y-1/2 items-center justify-center max-lg:mt-28 max-lg:text-center lg:absolute lg:-translate-x-1/2">
               <NavigationLinks
-                className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s flex flex-col gap-10 px-6 py-1.5 text-base leading-loose font-medium text-white lg:flex-row lg:rounded-full"
+                className="rtl:lg:bg-glass-gradient-to-e lg:bg-glass-gradient-to-s lg:border-gradient-to-s flex flex-col gap-10 px-6 py-1.5 text-base leading-loose font-medium text-white lg:flex-row lg:rounded-full lg:px-8 lg:py-3"
                 liClassName="relative"
                 linkClassName="max-lg:w-full max-lg:p-2"
                 activeLinkClassName="text-primary font-serif text-lg font-medium after:absolute after:inset-0 after:start-1/2 after:top-full after:aspect-square after:size-[0.35rem] after:-translate-x-1/2 after:-translate-y-1.5 after:rounded-full after:bg-white"
@@ -71,7 +69,7 @@ export default function Navbar() {
               <SocialLinks
                 className="pointer-events-auto flex items-center justify-around gap-3 max-lg:container max-lg:mx-auto max-lg:mt-28 max-lg:w-xs lg:justify-end"
                 anchorClassName="lg:bg-glass rounded-full p-3 transition-colors lg:hover:bg-white/20"
-                iconClassName="size-5"
+                iconClassName="size-4"
               />
             </div>
           </div>

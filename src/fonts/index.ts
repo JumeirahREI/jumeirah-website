@@ -3,17 +3,17 @@ import localFont from "next/font/local";
 export const montserratArabicFont = localFont({
   src: [
     {
-      path: "./montserrat_arabic/Montserrat-Arabic Regular 400.otf",
+      path: "./Hacen Tunisia.ttf",
       weight: "400",
       style: "normal",
     },
     {
-      path: "./montserrat_arabic/Montserrat-Arabic Bold 700.otf",
+      path: "./Hacen Tunisia.ttf",
       weight: "700",
       style: "bold",
     },
     {
-      path: "./montserrat_arabic/Montserrat-Arabic Light 300.otf",
+      path: "./Hacen Tunisia.ttf",
       weight: "300",
       style: "light",
     },

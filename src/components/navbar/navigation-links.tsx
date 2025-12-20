@@ -19,6 +19,7 @@ const links = [
   { key: "home", href: "/" },
   { key: "projects", href: "/projects" },
   { key: "about-us", href: "/about" },
+  { key: "contact-us", href: "/contact" },
 ] as const;
 
 export function NavigationLinks({

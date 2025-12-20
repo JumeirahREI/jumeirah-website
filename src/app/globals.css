@@ -226,6 +226,18 @@
 
 *.container {
   @apply mx-auto px-4;
+
+  /* @media (min-width: theme(--breakpoint-lg)) {
+    max-width: 9px;
+  } */
+
+  @media (min-width: theme(--breakpoint-xl)) {
+    max-width: 1190px;
+  }
+
+  @media (min-width: theme(--breakpoint-2xl)) {
+    max-width: 1480px;
+  }
 }
 
 body {

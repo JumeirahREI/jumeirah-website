@@ -18,12 +18,12 @@ export default function AboutUsCard() {
 
   return (
     <SectionWrapper
-      className="relative mx-auto mb-6 max-md:container max-md:px-4 lg:mb-36"
+      className="relative container mx-auto mb-6 max-md:px-4 lg:mb-36"
       enableAnimation
     >
-      <GridBackgroundEffect className="!h-ull absolute start-1/2 top-0 container -translate-x-1/2 rotate-180 object-contain object-top opacity-90 rtl:translate-x-1/2" />
-      <Card className="border-2 border-[#7A7A7A]/60">
-        <div className="mx-auto grid grid-flow-dense gap-8 md:container md:grid-cols-2 xl:grid-cols-5 xl:gap-12 xl:gap-x-28">
+      <GridBackgroundEffect className="absolute start-1/2 top-0 container -translate-x-1/2 rotate-180 object-contain object-top opacity-90 rtl:translate-x-1/2" />
+      <Card className="container border-2 border-[#7A7A7A]/60">
+        <div className="mx-auto grid grid-flow-dense gap-8 px-10 md:grid-cols-2 xl:grid-cols-5 xl:gap-12 xl:gap-x-28">
           <div className="xl:col-span-3">
             <TextEffect
               className="first-letter-primary text-[1.4rem] leading-tight md:text-[1.6rem] lg:mb-5 lg:text-4xl"
