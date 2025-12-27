@@ -78,7 +78,7 @@ function SubmitButton({ className, ...props }: React.ComponentProps<"button">) {
   return (
     <button
       className={cn(
-        "bg-primary rounded-xl py-3 text-center text-black",
+        "bg-primary cursor-pointer rounded-xl py-3 text-center text-black transition-colors transition-discrete hover:text-black/70 hover:brightness-110 focus:text-black/70 focus:brightness-110 focus:drop-shadow-[0_0_5px_#ffcb05]",
         className,
       )}
       type="submit"

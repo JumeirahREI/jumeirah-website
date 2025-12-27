@@ -24,7 +24,7 @@ export default function AppLink({
   className,
 }: React.ComponentProps<typeof Link> & VariantProps<typeof appLinkVariants>) {
   return (
-    <Link href={href}>
+    <Link href={href} scroll>
       <div className={cn(appLinkVariants({ variant }), className)}>
         {children}
       </div>

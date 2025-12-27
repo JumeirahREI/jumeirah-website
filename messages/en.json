@@ -19,6 +19,7 @@
     "our-services": "Our Services",
     "what-we-offer": "What we offer<span>?</span>",
     "under-construction": "Under Construction",
+    "watch-trailer": "Watch Trailer",
     "complete": "Complete",
     "include-two-towers": "<span>The</span> project includes two modern residential towers",
     "layout": "Layout",
@@ -625,6 +626,10 @@
           }
         }
       }
+    },
+    "videoSection": {
+      "title": "Integrated Services in One Home",
+      "description": "Sana'a Towers provides all the requirements of modern living, located in the Hadeed area south of 50 Street, offering a unique view of Sana'a city and the green trees of Hadeed mountains. This complex is designed using the latest engineering methods and techniques, making it a unique opportunity for an integrated lifestyle and a secure investment."
     },
     "featuresSection": {
       "title": "Sana'a Towers Features",

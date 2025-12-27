@@ -3,8 +3,6 @@
 import { useTowersDisplayContext } from "@/app/[locale]/(main)/projects/components/project-towers-display/towers-display-context";
 import DetailsIcon from "@/components/icons/details-icon";
 import LayoutIcon from "@/components/icons/layout-icon";
-import PhotosIcon from "@/components/icons/photos-icon";
-import VideosIcon from "@/components/icons/videos-icon";
 import { Project, ProjectData } from "@/data/types";
 import { useTranslations } from "next-intl";
 import { useEffect } from "react";
@@ -14,14 +12,14 @@ const tabs = [
     name: "layout",
     icon: LayoutIcon,
   },
-  {
-    name: "videos",
-    icon: VideosIcon,
-  },
-  {
-    name: "photos",
-    icon: PhotosIcon,
-  },
+  // {
+  //   name: "videos",
+  //   icon: VideosIcon,
+  // },
+  // {
+  //   name: "photos",
+  //   icon: PhotosIcon,
+  // },
   {
     name: "details",
     icon: DetailsIcon,

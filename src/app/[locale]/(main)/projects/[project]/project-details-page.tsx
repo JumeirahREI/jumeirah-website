@@ -5,6 +5,7 @@ import AppLink from "@/components/app-link";
 import PageHeader from "@/components/page-header";
 import { Project, ProjectData } from "@/data/types";
 import { useTranslations } from "next-intl";
+import VideoSection from "./video.section";
 
 interface ProjectDetailsProps<T extends Project> {
   projectData: ProjectData<T>;
@@ -34,6 +35,7 @@ export default function ProjectDetails({
         </div>
       </PageHeader>
       <main className="bg-background mb-32 space-y-32 lg:mb-52 lg:space-y-52">
+        {projectData.videoSection && <VideoSection projectData={projectData} />}
         <section className="relative z-30 container">
           <h2 className="mb-5 text-center text-3xl md:mb-6 md:text-4xl lg:mb-8">
             {ct.rich("include-two-towers", {

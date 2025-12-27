@@ -1,4 +1,5 @@
 import fitnessCenterIcon from "@/../public/images/fitness-center-icon.png";
+import sanaaTowersImage from "@/../public/images/sanaa-towers.webp";
 import centralParkImage from "@/../public/images/sanaa-towers/photos/central-park.webp";
 import fitnessCenterImage from "@/../public/images/sanaa-towers/photos/fitness-center.webp";
 import jacuzziImage from "@/../public/images/sanaa-towers/photos/jacuzzi.webp";
@@ -28,6 +29,12 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
   title: "title",
   subtitle: "subtitle",
   towersSection: towers,
+  videoSection: {
+    title: "videoSection.title",
+    description: "videoSection.description",
+    videoUrl: "https://youtu.be/gcCwNqkCMGk",
+    videoThumbnail: sanaaTowersImage,
+  },
   featuresSection: {
     title: "featuresSection.title",
     subtitle: "featuresSection.subtitle",
