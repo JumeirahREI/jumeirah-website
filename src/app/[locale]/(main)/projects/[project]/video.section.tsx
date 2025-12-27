@@ -1,6 +1,7 @@
 "use client";
 
 import AppLink from "@/components/app-link";
+import PlayButtonIcon from "@/components/icons/play-button-icon";
 import { Project, ProjectData } from "@/data/types";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
@@ -41,20 +42,18 @@ export default function VideoSection({
             <div className="relative aspect-square w-full overflow-hidden rounded-4xl bg-gradient-to-br from-blue-400/30 to-blue-600/30 backdrop-blur">
               {/* Placeholder for video thumbnail - you can replace with actual thumbnail */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="flex h-20 w-20 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm transition-all group-hover:bg-white/30">
-                  <svg
-                    className="ml-1 h-10 w-10 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
+                <div className="flex size-36 items-center justify-center rounded-full bg-white/5 backdrop-blur-xs transition-all duration-500 group-hover:size-28 group-hover:bg-white/20">
+                  <div className="flex size-28 items-center justify-center rounded-full bg-white/10 transition-all duration-500 group-hover:size-28">
+                    <div className="flex size-20 items-center justify-center rounded-full bg-white/10 transition-all duration-500 group-hover:size-28">
+                      <PlayButtonIcon className="ml-1 size-9 transition-all duration-500 group-hover:size-10" />
+                    </div>
+                  </div>
                 </div>
               </div>
               <Image
                 src={projectData.videoSection.videoThumbnail}
                 alt={t(projectData.videoSection.title)}
-                className="-z-10 object-cover"
+                className="-z-10 object-cover brightness-75 transition group-hover:brightness-90"
                 fill
                 sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, (max-width: 1024px) 47vw, (max-width: 1536px) 40vw, 28vw"
               />
@@ -77,7 +76,7 @@ export default function VideoSection({
                   </span>
                 ))}
             </h2>
-            <p className="text-lg leading-relaxed text-gray-400">
+            <p className="max-w-[72ch] text-lg leading-relaxed text-gray-400">
               {t(description)}
             </p>
             <div className="flex gap-4 pt-4">
