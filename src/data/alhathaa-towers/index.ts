@@ -1,3 +1,4 @@
+import alhathaaTowersImage from "@/../public/images/alhathaa-towers.webp";
 import afterSaleSupportIcon from "@/../public/svg/after-sale-support-icon.svg";
 import earthquakeResistanceIcon from "@/../public/svg/earthquake-resistance-icon.svg";
 import modernElevatorsIcon from "@/../public/svg/modern-elevators-icon.svg";
@@ -12,6 +13,12 @@ export const alhathaaTowersData: ProjectData<"Alhathaa-Towers"> = {
   title: "title",
   subtitle: "subtitle",
   towersSection: towers,
+  videoSection: {
+    title: "videoSection.title",
+    description: "videoSection.description",
+    videoUrl: "https://youtu.be/6nRVVZ8nmEY?si=7v3Y5SBQpn-M4Bdr",
+    videoThumbnail: alhathaaTowersImage,
+  },
   featuresSection: {
     title: "featuresSection.title",
     subtitle: "featuresSection.subtitle",
