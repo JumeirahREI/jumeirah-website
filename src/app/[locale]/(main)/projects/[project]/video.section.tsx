@@ -103,28 +103,28 @@ export default function VideoSection({
           className="fixed inset-0 z-50 flex size-full items-center justify-center bg-black/90 p-4"
           onClick={() => setIsModalOpen(false)}
         >
+          <button
+            onClick={() => setIsModalOpen(false)}
+            className="absolute top-24 left-5 text-white transition-colors hover:text-gray-300 lg:left-52"
+          >
+            <svg
+              className="h-8 w-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
           <div
             className="relative aspect-video w-full max-w-5xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <button
-              onClick={() => setIsModalOpen(false)}
-              className="absolute -top-12 right-0 text-white transition-colors hover:text-gray-300"
-            >
-              <svg
-                className="h-8 w-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
             <iframe
               src={getYouTubeEmbedUrl(videoUrl)}
               className="h-full w-full rounded-lg"

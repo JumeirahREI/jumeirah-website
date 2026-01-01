@@ -13,7 +13,7 @@ export default function MediaPanel({
   return (
     <div className={className}>
       <MediaDisplay
-        className="relative h-full min-h-52 lg:aspect-[3/4]"
+        className="relative h-full min-h-52 lg:aspect-[3/4] xl:aspect-[4/5] 2xl:aspect-square"
         projectKey={projectKey}
       />
     </div>
