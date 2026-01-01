@@ -16,19 +16,19 @@ const galleryImages = [
     src: realEstateProjectDevelopmentImage,
     title: "real-estate-project-development",
     icon: developmentIcon,
-    options: ["apartments", "luxury-villas"],
+    options: ["s1", "s2", "s3"],
   },
   {
     src: propertyManagementImage,
     title: "property-management",
     icon: commercialIcon,
-    options: ["office-spaces", "business-centers"],
+    options: ["s4", "s5", "s6"],
   },
   {
     src: afterSaleServicesImage,
     title: "after-sale-services",
     icon: afterSaleServicesIcon,
-    options: ["space-planning", "material-design"],
+    options: ["s7", "s8"],
   },
 ];
 
