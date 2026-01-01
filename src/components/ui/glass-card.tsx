@@ -15,7 +15,7 @@ export default function GlassCard({
   return disableGlow ? (
     <div
       className={cn(
-        "rounded-3xl border border-white/40 bg-black/50 px-5 py-4 backdrop-blur-xl lg:rounded-4xl lg:px-6 lg:py-5",
+        "rounded-3xl border border-white/40 bg-black/50 px-5 py-4 backdrop-blur-xl lg:rounded-4xl lg:px-0! lg:py-0!",
         className,
       )}
     >

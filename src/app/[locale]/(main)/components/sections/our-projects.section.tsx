@@ -61,8 +61,8 @@ export default function OurProjectsSection() {
       <Carousel options={carouselOptions} className="w-full md:px-4">
         <AnimatedGroup
           variants={transitionVariants}
-          className="embla__container flex gap-4 md:gap-6"
-          childrenClassName="embla__slide md:mx-2 flex-[0_0_90%] sm:flex-[0_0_80%] md:flex-[0_0_47%] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch] not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary"
+          className="flex gap-4 md:justify-center md:gap-6 lg:gap-12"
+          childrenClassName="embla__slide md:mx-2 flex-[0_0_90%] sm:flex-[0_0_80%] md:flex-[0_0_47%] lg:flex-[0_0_40%] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch] not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary"
           inherit
         >
           {projects.map((p) => (
@@ -74,9 +74,9 @@ export default function OurProjectsSection() {
             >
               <Link
                 href={p.href}
-                className="flex flex-col justify-between gap-80 px-5 py-4 md:px-6 md:py-6 lg:px-5 lg:py-4"
+                className="flex h-full flex-col justify-between gap-80 px-5 py-4 md:px-6 md:py-6 lg:gap-96 lg:px-5 lg:py-4 xl:gap-[30rem]"
               >
-                <p className="bg-glass self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1.5 text-xs text-[#dadada] lg:border-2">
+                <p className="bg-glass self-start rounded-2xl border border-white/30 bg-black/20 px-3 py-1.5 text-xs text-[#dadada] md:px-4 md:text-base lg:border-2">
                   {ct(p.status)}
                 </p>
                 <div className="flex items-center justify-center gap-2">

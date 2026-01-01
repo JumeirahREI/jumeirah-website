@@ -87,7 +87,7 @@ function ServiceGalleryCard({
       src={src}
       containerTag={tag}
       fetchPriority="high"
-      className="aspect-[4/5] h-full w-full flex-1 text-center"
+      className="aspect-[4/5] h-full w-full flex-1 text-center md:max-lg:aspect-auto"
       sizes="(max-width: 1024px) 100vw, 33vw"
     >
       <div className="flex h-full flex-col items-center justify-center gap-4 p-5 py-16 lg:py-30">

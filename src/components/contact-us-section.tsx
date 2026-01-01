@@ -30,11 +30,11 @@ export default function ContactUsSection({
   const locale = useLocale();
 
   return (
-    <section className="relative pb-16">
+    <section className="relative pb-4">
       <div className="container grid grid-cols-1 gap-5 lg:grid-cols-2">
         <GlassCard
           disableGlow
-          className="rounded-4xl p-0! backdrop-blur-lg lg:rounded-[3rem]"
+          className="rounded-4xl backdrop-blur-lg lg:rounded-[3rem] lg:px-6 lg:py-5"
         >
           <ContactUsForm />
         </GlassCard>
