@@ -112,7 +112,7 @@ export default function AboutUsCard() {
               {t("our-vision-subtext")}
             </TextEffect>
           </section>
-          <section className="xl:col-span-2">
+          <section className="justify-center lg:flex lg:flex-col xl:col-span-2">
             <AnimatedGroup
               variants={transitionVariants}
               inherit

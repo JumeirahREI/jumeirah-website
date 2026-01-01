@@ -40,6 +40,13 @@ export default function Navbar() {
 
   return (
     <nav className="fixed start-0 end-0 top-0 z-[999] !mb-0 md:py-4 lg:pointer-events-none lg:sticky">
+      <div
+        aria-hidden
+        className={cn(
+          "from-background to-background/0 pointer-events-none fixed inset-0 start-0 -top-4 hidden h-64 w-8/12 -translate-x-1/2 -translate-y-1/2 bg-radial opacity-0 blur-2xl transition-opacity duration-500 ease-in-out lg:block rtl:translate-x-1/2",
+          showNavBackground && "opacity-80",
+        )}
+      />
       <div className="container max-lg:pt-2 max-md:!px-3">
         <div
           className={cn(
@@ -69,7 +76,7 @@ export default function Navbar() {
               <SocialLinks
                 className="pointer-events-auto flex items-center justify-around gap-3 max-lg:container max-lg:mx-auto max-lg:mt-28 max-lg:w-xs lg:justify-end"
                 anchorClassName="lg:bg-glass rounded-full p-3 transition-colors lg:hover:bg-white/20"
-                iconClassName="size-4"
+                iconClassName="size-5"
               />
             </div>
           </div>
