@@ -5,12 +5,11 @@ import afterSaleServicesIcon from "@/../public/svg/after-sale.svg";
 import commercialIcon from "@/../public/svg/commercial-properties-icon.svg";
 import developmentIcon from "@/../public/svg/development.svg";
 import { AnimatedGroup } from "@/components/animated-group";
-import ImageContainer from "@/components/image-container";
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { transitionVariants } from "@/lib/transitions";
 import { useTranslations } from "next-intl";
-import Image, { StaticImageData } from "next/image";
+import { ServiceGalleryCard } from "../service-gallery-card";
 
 const galleryImages = [
   {
@@ -64,49 +63,5 @@ export default function OurServicesSection() {
         </AnimatedGroup>
       </div>
     </Section>
-  );
-}
-
-function ServiceGalleryCard({
-  src,
-  title,
-  tag = "div",
-  icon,
-  options,
-}: {
-  src: StaticImageData;
-  title: string;
-  tag?: React.ElementType;
-  icon: StaticImageData;
-  options: string[];
-}) {
-  const t = useTranslations("OurServicesSection");
-
-  return (
-    <ImageContainer
-      src={src}
-      containerTag={tag}
-      fetchPriority="high"
-      className="aspect-[4/5] h-full w-full flex-1 text-center md:max-lg:aspect-auto"
-      sizes="(max-width: 1024px) 100vw, 33vw"
-    >
-      <div className="flex h-full flex-col items-center justify-center gap-4 p-5 py-16 lg:py-30">
-        <div className="flex w-full flex-col items-center gap-2">
-          <div className="bg-glass rounded-full border border-white/30 p-4 md:p-4">
-            <Image
-              src={icon}
-              placeholder="empty"
-              alt={t(title as Parameters<typeof t>[0])}
-              className="size-12 md:size-14 lg:size-14"
-              fetchPriority="high"
-              priority
-            />
-          </div>
-          <h3 className="z-10 text-2xl">
-            {t(title as Parameters<typeof t>[0])}
-          </h3>
-        </div>
-      </div>
-    </ImageContainer>
   );
 }

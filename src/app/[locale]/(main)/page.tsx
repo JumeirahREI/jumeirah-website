@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div className="overflow-hidden">
       <header className="relative z-10">
-        <div className="container grid grid-rows-2 pt-52 pb-32 md:pt-36 lg:grid-cols-3 lg:pt-20">
+        <div className="container grid grid-rows-2 pt-52 pb-32 md:pt-36 lg:grid-cols-3 lg:pt-20 lg:pb-40">
           <div className="z-30 col-span-2 row-span-2 space-y-2 rtl:space-y-8">
             <TextEffect
               as="h1"
