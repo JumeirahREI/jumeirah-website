@@ -149,7 +149,7 @@ function WhatWeStandFor({
         <h3 className="first-letter:text-primary text-xl font-semibold md:text-xl lg:text-2xl">
           {title}
         </h3>
-        <p className="opacity-70">{description}</p>
+        <p className="max-w-[60ch] opacity-70">{description}</p>
       </div>
     </li>
   );

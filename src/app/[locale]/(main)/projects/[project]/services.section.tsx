@@ -75,7 +75,7 @@ function ServiceItem({ title, icon, backgroundImage }: ServiceItemProps) {
       src={backgroundImage}
       className="aspect-[7/8] flex-[0_0_90%] max-md:mx-3 md:flex-[0_0_45%] lg:flex-[0_0_30%]"
     >
-      <div className="flex size-full flex-col items-center justify-center gap-6 px-8">
+      <div className="flex size-full flex-col items-center justify-center gap-6 px-2">
         <div className="size-32 rounded-full border border-white/30 bg-[#A5A5A5]/25 p-5 backdrop-blur-md">
           <Image
             aria-hidden
@@ -86,8 +86,8 @@ function ServiceItem({ title, icon, backgroundImage }: ServiceItemProps) {
             height={120}
           />
         </div>
-        <div className="rounded-4xl border border-white/30 bg-[#A5A5A5]/25 px-6 py-2 backdrop-blur-md">
-          <h3 className="first-letter-primary-or-clip w-fit !from-[1ch] !to-[1ch] text-center rtl:pb-0.5">
+        <div className="rounded-full border border-white/30 bg-[#A5A5A5]/25 px-6 py-2 backdrop-blur-md">
+          <h3 className="first-letter-primary-or-clip w-fit !from-[1ch] !to-[1ch] text-center text-lg rtl:pb-0.5">
             {title}
           </h3>
         </div>
