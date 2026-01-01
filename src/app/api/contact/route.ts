@@ -127,21 +127,52 @@ export const POST = async (request: Request) => {
       ip,
     };
 
-    // Log sanitized data (in production, send to email service or database)
-    console.log("Contact form submission:", sanitizedData);
+    // Send to sales management system
+    try {
+      const apiUrl = process.env.SALES_API_URL || "http://localhost:8000/api";
+      const response = await fetch(`${apiUrl}/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          firstname: sanitizedData.firstname,
+          lastname: sanitizedData.lastname,
+          email: sanitizedData.email,
+          phone: sanitizedData.phone,
+          message: sanitizedData.message,
+        }),
+      });
 
-    // TODO: Integrate with email service (e.g., SendGrid, AWS SES, Resend)
-    // TODO: Store in database for record keeping
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error("Sales API error:", errorData);
+        throw new Error("Failed to send to sales system");
+      }
 
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: {
-        "Content-Type": "application/json",
-        "X-Content-Type-Options": "nosniff",
-        "X-Frame-Options": "DENY",
-        "X-XSS-Protection": "1; mode=block",
-      },
-    });
+      const result = await response.json();
+      console.log("Contact form submitted to sales system:", result);
+
+      return new Response(JSON.stringify({ success: true }), {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "DENY",
+          "X-XSS-Protection": "1; mode=block",
+        },
+      });
+    } catch (apiError) {
+      console.error("Failed to send to sales system:", apiError);
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "Failed to process contact request",
+        }),
+        { status: 500, headers: { "Content-Type": "application/json" } },
+      );
+    }
   } catch (error) {
     console.error("Contact form error:", error);
     return new Response(

@@ -45,8 +45,8 @@ export function ServiceGalleryCard({
     >
       <m.div
         initial="initial"
-        whileHover="active"
-        whileInView={!breakpoint.md ? "active" : ""}
+        whileHover="actives"
+        whileInView={!breakpoint.md ? "actives" : ""}
         viewport={{ amount: 1 }}
         className="flex h-full flex-col items-center justify-center p-5 py-16 lg:py-30"
       >
