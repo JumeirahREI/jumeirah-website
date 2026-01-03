@@ -73,7 +73,7 @@ export function ServiceGalleryCard({
             delay: !breakpoint.md ? 0.3 : 0,
           }}
         >
-          <ul className="list-inside list-disc space-y-2 pt-10 pb-24 text-2xl font-thin text-white/80">
+          <ul className="list-inside list-disc space-y-2 pt-10 text-lg font-thin text-white/80">
             {options.map((option, index) => (
               <li key={index} className="">
                 {t(option as Parameters<typeof t>[0])}
