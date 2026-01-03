@@ -3,6 +3,7 @@ import GoogleAnalytics from "@/components/google-analytics";
 import LazyMotionProvider from "@/components/lazy-motion-provider";
 import Navbar from "@/components/navbar";
 import ParallaxScrollEffect from "@/components/parallax-scroll-effect";
+import { PostHogProvider } from "@/components/providers";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import StructuredData from "@/components/structured-data";
 import { aeonikFont, montserratArabicFont } from "@/fonts";
@@ -47,22 +48,24 @@ export default async function RootLayout({
       dir={locale === "ar" ? "rtl" : "ltr"}
       className={font.className}
     >
-      <body className="bg-background text-foreground relative min-h-svh max-w-svw font-sans not-supports-[overflow:clip]:overflow-x-hidden supports-[overflow:clip]:overflow-x-clip md:pt-4 lg:pt-10">
-        {process.env.NEXT_PUBLIC_GA_ID && (
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
-        )}
-        <StructuredData locale={locale} />
-        <div className="space-sections">
-          <LazyMotionProvider>
-            <BackgroundImage />
-            {process.env.NODE_ENV === "test" && <ScreenSizeIndicator />}
-            <NextIntlClientProvider locale={locale}>
-              <Navbar />
-              {children}
-            </NextIntlClientProvider>
-          </LazyMotionProvider>
-        </div>
-      </body>
+      <PostHogProvider>
+        <body className="bg-background text-foreground relative min-h-svh max-w-svw font-sans not-supports-[overflow:clip]:overflow-x-hidden supports-[overflow:clip]:overflow-x-clip md:pt-4 lg:pt-10">
+          {process.env.NEXT_PUBLIC_GA_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+          )}
+          <StructuredData locale={locale} />
+          <div className="space-sections">
+            <LazyMotionProvider>
+              <BackgroundImage />
+              {process.env.NODE_ENV === "test" && <ScreenSizeIndicator />}
+              <NextIntlClientProvider locale={locale}>
+                <Navbar />
+                {children}
+              </NextIntlClientProvider>
+            </LazyMotionProvider>
+          </div>
+        </body>
+      </PostHogProvider>
     </html>
   );
 }
