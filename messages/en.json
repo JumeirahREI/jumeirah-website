@@ -655,6 +655,23 @@
       "super-market": "Super Market",
       "nursery": "Nursery",
       "shops": "Shops"
+    },
+    "imageGallerySection": {
+      "interior": "interior",
+      "apartment-b": {
+        "apartment-path": "Apartment hallway",
+        "bedroom-1": "Master bedroom",
+        "bedroom-2": "Second bedroom",
+        "diwan": "Guest reception (Diwan)",
+        "kitchen": "Modern kitchen",
+        "entrance-2": "Side entrance",
+        "entrance-1": "Main entrance",
+        "balcony-1": "First balcony view",
+        "balcony-2": "Second balcony view",
+        "dining-area": "Dining area",
+        "living-room": "Living room area",
+        "tv-unit": "TV unit and entertainment center"
+      }
     }
   },
   "Alhathaa-Towers": {

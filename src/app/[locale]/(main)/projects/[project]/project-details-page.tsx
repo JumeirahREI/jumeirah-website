@@ -5,6 +5,7 @@ import AppLink from "@/components/app-link";
 import PageHeader from "@/components/page-header";
 import { Project, ProjectData } from "@/data/types";
 import { useTranslations } from "next-intl";
+import ImageGallerySection from "./image-gallery.section";
 import VideoSection from "./video.section";
 
 interface ProjectDetailsProps<T extends Project> {
@@ -44,6 +45,9 @@ export default function ProjectDetails({
           </h2>
           <ProjectTowersDisplay projectData={projectData} />
         </section>
+        {projectData.imageGallerySection && (
+          <ImageGallerySection projectData={projectData} />
+        )}
         {projectData.featuresSection && (
           <FeaturesSection projectData={projectData} />
         )}

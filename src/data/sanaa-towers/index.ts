@@ -1,5 +1,17 @@
 import fitnessCenterIcon from "@/../public/images/fitness-center-icon.png";
 import sanaaTowersImage from "@/../public/images/sanaa-towers.webp";
+import sanaaTowersApartmentPath from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers Apartment Path.webp";
+import sanaaTowersBedroom1_2_2 from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers Bedroom1 2 (2).webp";
+import sanaaTowersBedroom2_2_2 from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers Bedroom2 2 (2).webp";
+import sanaaTowersDiwan2 from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers Diwan 2.webp";
+import sanaaTowersKitchen1_2 from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers Kitchen 1 (2).webp";
+import sanaaTowersEntrance2 from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers entrance 2.webp";
+import sanaaTowersEntrance from "@/../public/images/sanaa-towers/apartment-b/Sana_a Towers entrance.webp";
+import balconyTest1 from "@/../public/images/sanaa-towers/apartment-b/balcony Test 1.webp";
+import balconyTest2 from "@/../public/images/sanaa-towers/apartment-b/balcony Test 2.webp";
+import diningArea from "@/../public/images/sanaa-towers/apartment-b/dining area.webp";
+import living from "@/../public/images/sanaa-towers/apartment-b/living.webp";
+import tvUnit from "@/../public/images/sanaa-towers/apartment-b/tv unit.webp";
 import centralParkImage from "@/../public/images/sanaa-towers/photos/central-park.webp";
 import fitnessCenterImage from "@/../public/images/sanaa-towers/photos/fitness-center.webp";
 import jacuzziImage from "@/../public/images/sanaa-towers/photos/jacuzzi.webp";
@@ -111,4 +123,44 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
       },
     ],
   },
+  imageGallerySection: [
+    {
+      title: "imageGallerySection.interior",
+      images: [
+        {
+          src: sanaaTowersApartmentPath,
+          alt: "imageGallerySection.apartment-b.apartment-path",
+        },
+        {
+          src: sanaaTowersBedroom1_2_2,
+          alt: "imageGallerySection.apartment-b.bedroom-1",
+        },
+        {
+          src: sanaaTowersBedroom2_2_2,
+          alt: "imageGallerySection.apartment-b.bedroom-2",
+        },
+        {
+          src: sanaaTowersDiwan2,
+          alt: "imageGallerySection.apartment-b.diwan",
+        },
+        {
+          src: sanaaTowersKitchen1_2,
+          alt: "imageGallerySection.apartment-b.kitchen",
+        },
+        {
+          src: sanaaTowersEntrance2,
+          alt: "imageGallerySection.apartment-b.entrance-2",
+        },
+        {
+          src: sanaaTowersEntrance,
+          alt: "imageGallerySection.apartment-b.entrance-1",
+        },
+        { src: balconyTest1, alt: "imageGallerySection.apartment-b.balcony-1" },
+        { src: balconyTest2, alt: "imageGallerySection.apartment-b.balcony-2" },
+        { src: diningArea, alt: "imageGallerySection.apartment-b.dining-area" },
+        { src: living, alt: "imageGallerySection.apartment-b.living-room" },
+        { src: tvUnit, alt: "imageGallerySection.apartment-b.tv-unit" },
+      ],
+    },
+  ],
 };

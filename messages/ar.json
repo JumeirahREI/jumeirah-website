@@ -655,6 +655,23 @@
       "super-market": "سوبر ماركت",
       "nursery": "حضانة",
       "shops": "محلات تجارية"
+    },
+    "imageGallerySection": {
+      "interior": "تصميم داخلي",
+      "apartment-b": {
+        "apartment-path": "ممر الشقة",
+        "bedroom-1": "غرفة النوم الرئيسية",
+        "bedroom-2": "غرفة النوم الثانية",
+        "diwan": "ديوان استقبال الضيوف",
+        "kitchen": "مطبخ عصري",
+        "entrance-2": "مدخل جانبي",
+        "entrance-1": "المدخل الرئيسي",
+        "balcony-1": "إطلالة البلكونة الأولى",
+        "balcony-2": "إطلالة البلكونة الثانية",
+        "dining-area": "ركن الطعام",
+        "living-room": "صالة المعيشة",
+        "tv-unit": "وحدة التلفاز"
+      }
     }
   },
   "Alhathaa-Towers": {
