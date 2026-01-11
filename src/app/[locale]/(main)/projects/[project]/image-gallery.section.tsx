@@ -172,15 +172,16 @@ export default function ImageGallerySection({
           {currentGallery.images.map((img, index) => (
             <div
               key={img.alt}
-              className="embla__slide min-w-0 flex-[0_0_auto] shrink-0 justify-center"
+              className="embla__slide relative min-w-0 flex-[0_0_auto] shrink-0 justify-center"
             >
-              <div className="embla__slide__number relative flex items-center justify-center will-change-transform">
+              <div className="embla__slide__number flex items-center justify-center will-change-transform">
                 <Image
                   className="aspect-9/16 w-60 overflow-hidden rounded-4xl border-2 border-white/10 object-cover shadow-2xl"
                   src={img.src}
                   alt={t(img.alt)}
-                  width={240}
-                  height={427}
+                  // width={240}
+                  // height={427}
+                  placeholder="blur"
                   priority={index < 3}
                 />
               </div>
