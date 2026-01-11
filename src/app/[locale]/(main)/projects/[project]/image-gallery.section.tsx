@@ -7,13 +7,7 @@ import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
-const carouselOptions = (locale: string) => ({
-  align: "center" as const,
-  loop: true,
-  direction: (locale === "ar" ? "rtl" : "ltr") as "rtl" | "ltr",
-});
-
-const TWEEN_FACTOR_BASE = 0.4;
+const TWEEN_FACTOR_BASE = 0.2341;
 
 const numberWithinRange = (number: number, min: number, max: number): number =>
   Math.min(Math.max(number, min), max);
@@ -31,9 +25,11 @@ export default function ImageGallerySection({
   const [currentGallery, setCurrentGallery] = useState(initialGallery);
   const [activeImage, setActiveImage] = useState(initialGallery?.images[0]);
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    ...carouselOptions(locale),
-    duration: 20,
+    duration: 30,
     dragFree: true,
+    align: "center" as const,
+    loop: true,
+    direction: (locale === "ar" ? "rtl" : "ltr") as "rtl" | "ltr",
   });
 
   useEffect(() => {
@@ -45,11 +41,6 @@ export default function ImageGallerySection({
 
   const tweenFactor = useRef(0);
   const tweenNodes = useRef<HTMLElement[]>([]);
-
-  const handleGalleryChange = (gallery: NonNullable<typeof imgs>[number]) => {
-    setCurrentGallery(gallery);
-    setActiveImage(gallery.images[0]);
-  };
 
   const onSelect = useCallback(
     (emblaApi: EmblaCarouselType) => {
@@ -165,14 +156,14 @@ export default function ImageGallerySection({
 
       {/* Image Thumbnails Carousel */}
       <div
-        className="embla__viewport relative z-10 min-h-[450px] w-full overflow-hidden"
+        className="embla__viewport relative z-10 min-h-[450px] w-full"
         ref={emblaRef}
       >
         <div className="embla__container flex">
           {currentGallery.images.map((img, index) => (
             <div
               key={img.alt}
-              className="embla__slide relative min-w-0 flex-[0_0_auto] shrink-0 justify-center"
+              className="embla__slide relative -m-2 min-w-0 flex-[0_0_auto] shrink-0 justify-center"
             >
               <div className="embla__slide__number flex items-center justify-center will-change-transform">
                 <Image
