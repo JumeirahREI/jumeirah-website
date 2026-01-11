@@ -56,6 +56,11 @@ export type ServiceData<T extends Project> = {
   backgroundImage: StaticImageData;
 };
 
+export type ImageGallery<T extends Project> = {
+  src: StaticImageData;
+  alt: BaseTranslation<T>;
+};
+
 export type ProjectData<T extends Project> = {
   projectKey: T;
   title: BaseTranslation<T>;
@@ -77,4 +82,8 @@ export type ProjectData<T extends Project> = {
     subtitle: BaseTranslation<T>;
     services: ServiceData<T>[];
   };
+  imageGallerySection?: {
+    title: BaseTranslation<T>;
+    images: ImageGallery<T>[];
+  }[];
 };
