@@ -45,6 +45,17 @@ export default function ImageGallerySection({
     },
   });
 
+  // Reset carousel position and active image when switching galleries
+  useEffect(() => {
+    if (!currentGallery) return;
+    setActiveImage(currentGallery.images[0]);
+
+    if (emblaApi) {
+      emblaApi.reInit();
+      emblaApi.scrollTo(0, true);
+    }
+  }, [currentGallery, emblaApi]);
+
   const handleGalleryChange = (index: number) => {
     setActiveGalleryIndex(index);
   };
