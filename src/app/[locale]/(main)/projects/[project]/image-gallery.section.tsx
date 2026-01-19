@@ -7,6 +7,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import GalleryFullscreenModal from "../components/gallery-fullscreen-modal";
 
 const TWEEN_FACTOR_BASE = 0.2341;
 
@@ -28,6 +29,7 @@ export default function ImageGallerySection({
   const [activeImage, setActiveImage] = useState(
     () => initialGallery?.images[0],
   );
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [emblaRef, emblaApi] = useEmblaCarousel({
     duration: 30,
     dragFree: true,
@@ -199,7 +201,10 @@ export default function ImageGallerySection({
             <p className="text-[#a0a0a0] lg:max-w-sm lg:text-lg">
               {t(currentGallery.headingSubtitle)}
             </p>
-            <button className="bg-primary pointer-events-auto mt-6 cursor-pointer rounded-full px-6 py-2 text-lg font-bold text-black transition-all hover:brightness-75 active:scale-95 active:brightness-75 lg:mt-8">
+            <button
+              onClick={() => setIsModalOpen(true)}
+              className="bg-primary pointer-events-auto mt-6 cursor-pointer rounded-full px-6 py-2 text-lg font-bold text-black transition-all hover:brightness-75 active:scale-95 active:brightness-75 lg:mt-8"
+            >
               View Gallery
             </button>
           </div>
@@ -231,6 +236,22 @@ export default function ImageGallerySection({
           </div>
         </div>
       </div>
+
+      {/* Gallery Modal */}
+      {isModalOpen && (
+        <GalleryFullscreenModal
+          sections={imgs.map((gallery) => ({
+            title: t(gallery.title),
+            images: gallery.images.map((img) => ({
+              image: img.src,
+              alt: t(img.alt),
+            })),
+          }))}
+          initialSectionIndex={activeGalleryIndex}
+          initialImageIndex={0}
+          onClose={() => setIsModalOpen(false)}
+        />
+      )}
     </section>
   );
 }
