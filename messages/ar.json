@@ -666,6 +666,14 @@
     },
     "imageGallerySection": {
       "interior-designs": "تصاميم داخلية",
+      "interior-work": {
+        "title": "أعمال داخلية",
+        "image-1": "صورة تشطيب داخلي 1",
+        "image-2": "صورة تشطيب داخلي 2",
+        "image-3": "صورة تشطيب داخلي 3",
+        "image-4": "صورة تشطيب داخلي 4",
+        "image-5": "صورة تشطيب داخلي 5"
+      },
       "construction-work": "أعمال إنشائية",
       "apartment-b": {
         "apartment-path": "ممر الشقة",

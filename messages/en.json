@@ -666,6 +666,14 @@
     },
     "imageGallerySection": {
       "interior-designs": "Interior Design",
+      "interior-work": {
+        "title": "Interior Work",
+        "image-1": "Interior work photo 1",
+        "image-2": "Interior work photo 2",
+        "image-3": "Interior work photo 3",
+        "image-4": "Interior work photo 4",
+        "image-5": "Interior work photo 5"
+      },
       "construction-work": "Construction",
       "apartment-b": {
         "apartment-path": "Apartment hallway",
