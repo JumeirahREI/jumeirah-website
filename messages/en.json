@@ -666,6 +666,20 @@
     },
     "imageGallerySection": {
       "interior-designs": "Interior Design",
+      "headings": {
+        "interior-designs": {
+          "title": "<span>Modern</span> Living Room Design",
+          "subtitle": "An elegant living room blending comfort and luxury with a contemporary touch."
+        },
+        "construction-work": {
+          "title": "<span>Construction</span> Progress",
+          "subtitle": "A closer look at the milestones shaping the project on site."
+        },
+        "interior-work": {
+          "title": "<span>Interior</span> Finishing",
+          "subtitle": "Crafted interiors showcasing the details of our design vision."
+        }
+      },
       "interior-work": {
         "title": "Interior Work",
         "image-1": "Interior work photo 1",

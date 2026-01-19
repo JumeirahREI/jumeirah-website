@@ -12,6 +12,48 @@ import balconyTest2 from "@/../public/images/sanaa-towers/apartment-b/balcony Te
 import diningArea from "@/../public/images/sanaa-towers/apartment-b/dining area.webp";
 import living from "@/../public/images/sanaa-towers/apartment-b/living.webp";
 import tvUnit from "@/../public/images/sanaa-towers/apartment-b/tv unit.webp";
+import apartmentLBalcony from "@/../public/images/sanaa-towers/apartment-l/balcony.webp";
+import apartmentLBedroom2 from "@/../public/images/sanaa-towers/apartment-l/bedroom-2.webp";
+import apartmentLBedroom3 from "@/../public/images/sanaa-towers/apartment-l/bedroom-3.webp";
+import apartmentLBedroom4 from "@/../public/images/sanaa-towers/apartment-l/bedroom-4.webp";
+import apartmentLBedroom5 from "@/../public/images/sanaa-towers/apartment-l/bedroom-5.webp";
+import apartmentLBedroom from "@/../public/images/sanaa-towers/apartment-l/bedroom.webp";
+import apartmentLKitchen2 from "@/../public/images/sanaa-towers/apartment-l/kitchen-2.webp";
+import apartmentLKitchen3 from "@/../public/images/sanaa-towers/apartment-l/kitchen-3.webp";
+import apartmentLKitchen4 from "@/../public/images/sanaa-towers/apartment-l/kitchen-4.webp";
+import apartmentLKitchen from "@/../public/images/sanaa-towers/apartment-l/kitchen.webp";
+import apartmentLLivingRoom10 from "@/../public/images/sanaa-towers/apartment-l/living-room-10.webp";
+import apartmentLLivingRoom11 from "@/../public/images/sanaa-towers/apartment-l/living-room-11.webp";
+import apartmentLLivingRoom12 from "@/../public/images/sanaa-towers/apartment-l/living-room-12.webp";
+import apartmentLLivingRoom2 from "@/../public/images/sanaa-towers/apartment-l/living-room-2.webp";
+import apartmentLLivingRoom3 from "@/../public/images/sanaa-towers/apartment-l/living-room-3.webp";
+import apartmentLLivingRoom4 from "@/../public/images/sanaa-towers/apartment-l/living-room-4.webp";
+import apartmentLLivingRoom5 from "@/../public/images/sanaa-towers/apartment-l/living-room-5.webp";
+import apartmentLLivingRoom6 from "@/../public/images/sanaa-towers/apartment-l/living-room-6.webp";
+import apartmentLLivingRoom7 from "@/../public/images/sanaa-towers/apartment-l/living-room-7.webp";
+import apartmentLLivingRoom8 from "@/../public/images/sanaa-towers/apartment-l/living-room-8.webp";
+import apartmentLLivingRoom9 from "@/../public/images/sanaa-towers/apartment-l/living-room-9.webp";
+import apartmentLLivingRoom from "@/../public/images/sanaa-towers/apartment-l/living-room.webp";
+import apartmentLMainBathroom2 from "@/../public/images/sanaa-towers/apartment-l/main-bathroom-2.webp";
+import apartmentLMainBathroom from "@/../public/images/sanaa-towers/apartment-l/main-bathroom.webp";
+import apartmentLMajlis2 from "@/../public/images/sanaa-towers/apartment-l/majlis-2.webp";
+import apartmentLMajlis3 from "@/../public/images/sanaa-towers/apartment-l/majlis-3.webp";
+import apartmentLMajlis4 from "@/../public/images/sanaa-towers/apartment-l/majlis-4.webp";
+import apartmentLMajlis5 from "@/../public/images/sanaa-towers/apartment-l/majlis-5.webp";
+import apartmentLMajlis6 from "@/../public/images/sanaa-towers/apartment-l/majlis-6.webp";
+import apartmentLMajlis7 from "@/../public/images/sanaa-towers/apartment-l/majlis-7.webp";
+import apartmentLMajlisBathroom2 from "@/../public/images/sanaa-towers/apartment-l/majlis-bathroom-2.webp";
+import apartmentLMajlisBathroom from "@/../public/images/sanaa-towers/apartment-l/majlis-bathroom.webp";
+import apartmentLMajlis from "@/../public/images/sanaa-towers/apartment-l/majlis.webp";
+import apartmentLMasterBathroom2 from "@/../public/images/sanaa-towers/apartment-l/master-bathroom-2.webp";
+import apartmentLMasterBathroom from "@/../public/images/sanaa-towers/apartment-l/master-bathroom.webp";
+import apartmentLMasterBedroom2 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-2.webp";
+import apartmentLMasterBedroom3 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-3.webp";
+import apartmentLMasterBedroom4 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-4.webp";
+import apartmentLMasterBedroom5 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-5.webp";
+import apartmentLMasterBedroom6 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-6.webp";
+import apartmentLMasterBedroom7 from "@/../public/images/sanaa-towers/apartment-l/master-bedroom-7.webp";
+import apartmentLMasterBedroom from "@/../public/images/sanaa-towers/apartment-l/master-bedroom.webp";
 import construction1 from "@/../public/images/sanaa-towers/construction/construction-1.webp";
 import construction10 from "@/../public/images/sanaa-towers/construction/construction-10.webp";
 import construction11 from "@/../public/images/sanaa-towers/construction/construction-11.webp";
@@ -192,6 +234,8 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
   imageGallerySection: [
     {
       title: "imageGallerySection.interior-designs",
+      headingTitle: "imageGallerySection.headings.interior-designs.title",
+      headingSubtitle: "imageGallerySection.headings.interior-designs.subtitle",
       images: [
         {
           src: sanaaTowersApartmentPath,
@@ -226,11 +270,181 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
         { src: diningArea, alt: "imageGallerySection.apartment-b.dining-area" },
         { src: living, alt: "imageGallerySection.apartment-b.living-room" },
         { src: tvUnit, alt: "imageGallerySection.apartment-b.tv-unit" },
+        {
+          src: apartmentLBalcony,
+          alt: "towers.tower-b.model-l.photos.image-1",
+        },
+        {
+          src: apartmentLBedroom2,
+          alt: "towers.tower-b.model-l.photos.image-2",
+        },
+        {
+          src: apartmentLBedroom3,
+          alt: "towers.tower-b.model-l.photos.image-3",
+        },
+        {
+          src: apartmentLBedroom4,
+          alt: "towers.tower-b.model-l.photos.image-4",
+        },
+        {
+          src: apartmentLBedroom5,
+          alt: "towers.tower-b.model-l.photos.image-5",
+        },
+        {
+          src: apartmentLBedroom,
+          alt: "towers.tower-b.model-l.photos.image-6",
+        },
+        {
+          src: apartmentLKitchen2,
+          alt: "towers.tower-b.model-l.photos.image-7",
+        },
+        {
+          src: apartmentLKitchen3,
+          alt: "towers.tower-b.model-l.photos.image-8",
+        },
+        {
+          src: apartmentLKitchen4,
+          alt: "towers.tower-b.model-l.photos.image-9",
+        },
+        {
+          src: apartmentLKitchen,
+          alt: "towers.tower-b.model-l.photos.image-10",
+        },
+        {
+          src: apartmentLLivingRoom10,
+          alt: "towers.tower-b.model-l.photos.image-11",
+        },
+        {
+          src: apartmentLLivingRoom11,
+          alt: "towers.tower-b.model-l.photos.image-12",
+        },
+        {
+          src: apartmentLLivingRoom12,
+          alt: "towers.tower-b.model-l.photos.image-13",
+        },
+        {
+          src: apartmentLLivingRoom2,
+          alt: "towers.tower-b.model-l.photos.image-14",
+        },
+        {
+          src: apartmentLLivingRoom3,
+          alt: "towers.tower-b.model-l.photos.image-15",
+        },
+        {
+          src: apartmentLLivingRoom4,
+          alt: "towers.tower-b.model-l.photos.image-16",
+        },
+        {
+          src: apartmentLLivingRoom5,
+          alt: "towers.tower-b.model-l.photos.image-17",
+        },
+        {
+          src: apartmentLLivingRoom6,
+          alt: "towers.tower-b.model-l.photos.image-18",
+        },
+        {
+          src: apartmentLLivingRoom7,
+          alt: "towers.tower-b.model-l.photos.image-19",
+        },
+        {
+          src: apartmentLLivingRoom8,
+          alt: "towers.tower-b.model-l.photos.image-20",
+        },
+        {
+          src: apartmentLLivingRoom9,
+          alt: "towers.tower-b.model-l.photos.image-21",
+        },
+        {
+          src: apartmentLLivingRoom,
+          alt: "towers.tower-b.model-l.photos.image-22",
+        },
+        {
+          src: apartmentLMainBathroom2,
+          alt: "towers.tower-b.model-l.photos.image-23",
+        },
+        {
+          src: apartmentLMainBathroom,
+          alt: "towers.tower-b.model-l.photos.image-24",
+        },
+        {
+          src: apartmentLMajlis2,
+          alt: "towers.tower-b.model-l.photos.image-25",
+        },
+        {
+          src: apartmentLMajlis3,
+          alt: "towers.tower-b.model-l.photos.image-26",
+        },
+        {
+          src: apartmentLMajlis4,
+          alt: "towers.tower-b.model-l.photos.image-27",
+        },
+        {
+          src: apartmentLMajlis5,
+          alt: "towers.tower-b.model-l.photos.image-28",
+        },
+        {
+          src: apartmentLMajlis6,
+          alt: "towers.tower-b.model-l.photos.image-29",
+        },
+        {
+          src: apartmentLMajlis7,
+          alt: "towers.tower-b.model-l.photos.image-30",
+        },
+        {
+          src: apartmentLMajlisBathroom2,
+          alt: "towers.tower-b.model-l.photos.image-31",
+        },
+        {
+          src: apartmentLMajlisBathroom,
+          alt: "towers.tower-b.model-l.photos.image-32",
+        },
+        {
+          src: apartmentLMajlis,
+          alt: "towers.tower-b.model-l.photos.image-33",
+        },
+        {
+          src: apartmentLMasterBathroom2,
+          alt: "towers.tower-b.model-l.photos.image-34",
+        },
+        {
+          src: apartmentLMasterBathroom,
+          alt: "towers.tower-b.model-l.photos.image-35",
+        },
+        {
+          src: apartmentLMasterBedroom2,
+          alt: "towers.tower-b.model-l.photos.image-36",
+        },
+        {
+          src: apartmentLMasterBedroom3,
+          alt: "towers.tower-b.model-l.photos.image-37",
+        },
+        {
+          src: apartmentLMasterBedroom4,
+          alt: "towers.tower-b.model-l.photos.image-38",
+        },
+        {
+          src: apartmentLMasterBedroom5,
+          alt: "towers.tower-b.model-l.photos.image-39",
+        },
+        {
+          src: apartmentLMasterBedroom6,
+          alt: "towers.tower-b.model-l.photos.image-40",
+        },
+        {
+          src: apartmentLMasterBedroom7,
+          alt: "towers.tower-b.model-l.photos.image-41",
+        },
+        {
+          src: apartmentLMasterBedroom,
+          alt: "towers.tower-b.model-l.photos.image-42",
+        },
       ],
     },
-
     {
       title: "imageGallerySection.construction-work",
+      headingTitle: "imageGallerySection.headings.construction-work.title",
+      headingSubtitle:
+        "imageGallerySection.headings.construction-work.subtitle",
       images: [
         {
           src: construction1,
@@ -465,6 +679,8 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
     },
     {
       title: "imageGallerySection.interior-work.title",
+      headingTitle: "imageGallerySection.headings.interior-work.title",
+      headingSubtitle: "imageGallerySection.headings.interior-work.subtitle",
       images: [
         {
           src: interiorWork1,
