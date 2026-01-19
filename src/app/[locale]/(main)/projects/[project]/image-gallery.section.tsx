@@ -148,6 +148,7 @@ export default function ImageGallerySection({
         src={activeImage.src}
         alt={t(activeImage.alt)}
         fill
+        sizes="100vw"
         className="object-cover opacity-40 transition-all duration-700"
         priority
       />
@@ -206,9 +207,11 @@ export default function ImageGallerySection({
                     className="aspect-9/16 w-60 overflow-hidden rounded-4xl border-2 border-white/10 object-cover shadow-2xl"
                     src={img.src}
                     alt={t(img.alt)}
+                    sizes="(min-width: 1280px) 270px, (min-width: 1024px) 240px, (min-width: 768px) 200px, 70vw"
                     // width={240}
                     // height={427}
                     placeholder="blur"
+                    loading={index < 3 ? "eager" : "lazy"}
                     priority={index < 3}
                   />
                 </div>
