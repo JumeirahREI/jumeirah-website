@@ -658,6 +658,20 @@
     },
     "imageGallerySection": {
       "interior-designs": "تصاميم داخلية",
+      "headings": {
+        "interior-designs": {
+          "title": "تصميم <span>غرفة معيشة</span> عصرية",
+          "subtitle": "غرفة أنيقة تجمع بين الراحة والفخامة بلمسة عصرية."
+        },
+        "construction-work": {
+          "title": "تقدّم <span>الأعمال الإنشائية</span>",
+          "subtitle": "نظرة أقرب على المراحل التي تشكّل المشروع على أرض الواقع."
+        },
+        "interior-work": {
+          "title": "تقدّم <span>الأعمال التشطيبية</span>",
+          "subtitle": "تشطيبات تعكس تفاصيل رؤيتنا في التصميم."
+        }
+      },
       "interior-work": {
         "title": "أعمال داخلية",
         "image-1": "صورة تشطيب داخلي 1",

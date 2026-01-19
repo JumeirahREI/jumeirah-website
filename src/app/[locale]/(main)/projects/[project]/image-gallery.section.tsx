@@ -154,46 +154,67 @@ export default function ImageGallerySection({
       <div className="from-background to-background/20 via-background/80 absolute inset-0 bg-linear-to-t" />
 
       {/* Gallery Tabs */}
-      <div className="relative z-30 mx-6 mb-8 rounded-2xl bg-black/60 p-2 backdrop-blur-lg">
-        <div className="flex w-full gap-4">
-          {imgs!.map((gallery, index) => (
-            <button
-              key={gallery.title}
-              onClick={() => handleGalleryChange(index)}
-              className={cn(
-                "z-10 flex-1 shrink-0 cursor-pointer rounded-xl p-2 font-bold transition-all",
-                activeGalleryIndex === index
-                  ? "bg-[#616161] text-white"
-                  : "text-[#D9D9D9] hover:text-white",
-              )}
-            >
-              {t(gallery.title)}
-            </button>
-          ))}
+      <div className="container">
+        <div className="relative z-40 mx-auto mb-8 rounded-2xl bg-black/60 p-2 backdrop-blur-lg lg:mb-12 lg:inline-block">
+          <div className="flex gap-4">
+            {imgs!.map((gallery, index) => (
+              <button
+                key={gallery.title}
+                onClick={() => handleGalleryChange(index)}
+                className={cn(
+                  "z-10 flex-1 shrink-0 cursor-pointer rounded-xl p-2 font-bold transition-all lg:whitespace-nowrap",
+                  activeGalleryIndex === index
+                    ? "bg-[#616161] text-white"
+                    : "text-[#D9D9D9] hover:bg-white/10 hover:text-white",
+                )}
+              >
+                {t(gallery.title)}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
-      {/* Image Thumbnails Carousel */}
-      <div className="embla__viewport relative z-10 w-full" ref={emblaRef}>
-        <div className="embla__container flex">
-          {currentGallery.images.map((img, index) => (
-            <div
-              key={img.alt}
-              className="embla__slide relative -m-2 min-w-0 shrink-0 justify-center"
-            >
-              <div className="embla__slide__number flex items-center justify-center will-change-transform">
-                <Image
-                  className="aspect-9/16 w-60 overflow-hidden rounded-4xl border-2 border-white/10 object-cover shadow-2xl"
-                  src={img.src}
-                  alt={t(img.alt)}
-                  // width={240}
-                  // height={427}
-                  placeholder="blur"
-                  priority={index < 3}
-                />
+      <div className="flex flex-col-reverse gap-12">
+        {/* Gallery Header */}
+        <div className="lg:start from-background to-background/0 via-background/5 z-30 lg:pointer-events-none lg:absolute lg:flex lg:size-full lg:items-center lg:bg-linear-to-r lg:pt-28 lg:rtl:bg-linear-to-l">
+          <div className="container mx-3 space-y-2 text-center lg:text-start">
+            <h3 className="text-3xl font-bold lg:max-w-xs lg:text-4xl lg:leading-tight">
+              {t.rich(currentGallery.headingTitle, {
+                span: (s) => <span className="text-primary">{s}</span>,
+              })}
+            </h3>
+            <p className="text-[#a0a0a0] lg:max-w-sm lg:text-lg">
+              {t(currentGallery.headingSubtitle)}
+            </p>
+            <button className="bg-primary pointer-events-auto mt-6 cursor-pointer rounded-full px-6 py-2 text-lg font-bold text-black transition-all hover:brightness-75 active:scale-95 active:brightness-75 lg:mt-8">
+              View Gallery
+            </button>
+          </div>
+        </div>
+
+        {/* Image Thumbnails Carousel */}
+        <div className="embla__viewport relative z-10 w-full" ref={emblaRef}>
+          <div className="embla__container flex">
+            {currentGallery.images.map((img, index) => (
+              <div
+                key={img.alt}
+                className="embla__slide relative -m-2 min-w-0 shrink-0 justify-center"
+              >
+                <div className="embla__slide__number flex items-center justify-center will-change-transform">
+                  <Image
+                    className="aspect-9/16 w-60 overflow-hidden rounded-4xl border-2 border-white/10 object-cover shadow-2xl"
+                    src={img.src}
+                    alt={t(img.alt)}
+                    // width={240}
+                    // height={427}
+                    placeholder="blur"
+                    priority={index < 3}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

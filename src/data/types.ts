@@ -84,6 +84,8 @@ export type ProjectData<T extends Project> = {
   };
   imageGallerySection?: {
     title: BaseTranslation<T>;
+    headingTitle: BaseTranslation<T>;
+    headingSubtitle: BaseTranslation<T>;
     images: ImageGallery<T>[];
   }[];
 };
