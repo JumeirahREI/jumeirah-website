@@ -27,9 +27,18 @@ export default function ImageGallerySection({
   const [emblaRef, emblaApi] = useEmblaCarousel({
     duration: 30,
     dragFree: true,
-    align: "center" as const,
+    align: "center",
     loop: true,
-    direction: (locale === "ar" ? "rtl" : "ltr") as "rtl" | "ltr",
+    direction: locale === "ar" ? "rtl" : "ltr",
+    breakpoints: {
+      "(min-width: 1024px)": {
+        dragFree: false,
+        loop: false,
+        slidesToScroll: 1,
+        align: "center",
+        containScroll: false,
+      },
+    },
   });
 
   useEffect(() => {
@@ -93,7 +102,7 @@ export default function ImageGallerySection({
           }
 
           const tweenValue = 1 - Math.abs(diffToTarget * tweenFactor.current);
-          const scale = numberWithinRange(tweenValue, 0.4, 1).toString();
+          const scale = numberWithinRange(tweenValue, 0.8, 1).toString();
           const tweenNode = tweenNodes.current[slideIndex];
           if (tweenNode) {
             tweenNode.style.transform = `scale(${scale})`;
@@ -163,7 +172,7 @@ export default function ImageGallerySection({
           {currentGallery.images.map((img, index) => (
             <div
               key={img.alt}
-              className="embla__slide relative -m-2 min-w-0 flex-[0_0_auto] shrink-0 justify-center"
+              className="embla__slide relative -m-2 min-w-0 shrink-0 justify-center"
             >
               <div className="embla__slide__number flex items-center justify-center will-change-transform">
                 <Image
