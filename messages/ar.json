@@ -657,7 +657,8 @@
       "shops": "محلات تجارية"
     },
     "imageGallerySection": {
-      "interior": "تصاميم داخلية",
+      "interior-designs": "تصاميم داخلية",
+      "construction-work": "أعمال إنشائية",
       "apartment-b": {
         "apartment-path": "ممر الشقة",
         "bedroom-1": "غرفة النوم الرئيسية",
@@ -673,7 +674,6 @@
         "tv-unit": "وحدة التلفاز"
       },
       "construction": {
-        "title": "مرحلة الإنشاء",
         "image-1": "صورة الإنشاء 1",
         "image-2": "صورة الإنشاء 2",
         "image-3": "صورة الإنشاء 3",

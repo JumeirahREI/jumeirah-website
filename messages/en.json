@@ -657,7 +657,8 @@
       "shops": "Shops"
     },
     "imageGallerySection": {
-      "interior": "Interior Design",
+      "interior-designs": "Interior Design",
+      "construction-work": "Construction",
       "apartment-b": {
         "apartment-path": "Apartment hallway",
         "bedroom-1": "Master bedroom",
@@ -673,7 +674,6 @@
         "tv-unit": "TV unit and entertainment center"
       },
       "construction": {
-        "title": "Construction",
         "image-1": "Construction photo 1",
         "image-2": "Construction photo 2",
         "image-3": "Construction photo 3",

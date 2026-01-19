@@ -186,7 +186,7 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
   },
   imageGallerySection: [
     {
-      title: "imageGallerySection.interior",
+      title: "imageGallerySection.interior-designs",
       images: [
         {
           src: sanaaTowersApartmentPath,
@@ -224,12 +224,24 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
       ],
     },
     {
-      title: "imageGallerySection.construction.title",
+      title: "imageGallerySection.construction-work",
       images: [
-        { src: construction1, alt: "imageGallerySection.construction.image-1" },
-        { src: construction2, alt: "imageGallerySection.construction.image-2" },
-        { src: construction3, alt: "imageGallerySection.construction.image-3" },
-        { src: construction4, alt: "imageGallerySection.construction.image-4" },
+        {
+          src: construction1,
+          alt: "imageGallerySection.construction.image-1",
+        },
+        {
+          src: construction2,
+          alt: "imageGallerySection.construction.image-2",
+        },
+        {
+          src: construction3,
+          alt: "imageGallerySection.construction.image-3",
+        },
+        {
+          src: construction4,
+          alt: "imageGallerySection.construction.image-4",
+        },
         { src: construction5, alt: "imageGallerySection.construction.image-5" },
         { src: construction6, alt: "imageGallerySection.construction.image-6" },
         { src: construction7, alt: "imageGallerySection.construction.image-7" },
