@@ -1,6 +1,7 @@
 "use client";
 
 import { Project, ProjectData } from "@/data/types";
+import { cn } from "@/lib/utils";
 import { EmblaCarouselType, EmblaEventType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { useLocale, useTranslations } from "next-intl";
@@ -22,8 +23,11 @@ export default function ImageGallerySection({
   const { imageGallerySection: imgs } = projectData;
 
   const initialGallery = useMemo(() => imgs?.[0], [imgs]);
-  const [currentGallery, setCurrentGallery] = useState(initialGallery);
-  const [activeImage, setActiveImage] = useState(initialGallery?.images[0]);
+  const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const currentGallery = imgs?.[activeGalleryIndex];
+  const [activeImage, setActiveImage] = useState(
+    () => initialGallery?.images[0],
+  );
   const [emblaRef, emblaApi] = useEmblaCarousel({
     duration: 30,
     dragFree: true,
@@ -41,9 +45,12 @@ export default function ImageGallerySection({
     },
   });
 
+  const handleGalleryChange = (index: number) => {
+    setActiveGalleryIndex(index);
+  };
+
   useEffect(() => {
     if (initialGallery) {
-      setCurrentGallery(initialGallery);
       setActiveImage(initialGallery.images[0]);
     }
   }, [initialGallery]);
@@ -147,27 +154,27 @@ export default function ImageGallerySection({
       <div className="from-background to-background/20 via-background/80 absolute inset-0 bg-linear-to-t" />
 
       {/* Gallery Tabs */}
-      {/* <div className="mb-8 flex space-x-8 border-b border-white/10 pb-4">
-            {imgs!.map((gallery) => (
-              <button
-                key={gallery.title}
-                onClick={() => handleGalleryChange(gallery)}
-                className={`cursor-pointer text-xl font-bold transition-all ${
-                  currentGallery.title === gallery.title
-                    ? "text-primary scale-105"
-                    : "text-white/60 hover:text-white"
-                }`}
-              >
-                {t(gallery.title)}
-              </button>
-            ))}
-          </div> */}
+      <div className="bg-background/60 relative z-30 mx-6 mb-8 rounded-2xl p-2 backdrop-blur-lg">
+        <div className="flex w-full gap-4">
+          {imgs!.map((gallery, index) => (
+            <button
+              key={gallery.title}
+              onClick={() => handleGalleryChange(index)}
+              className={cn(
+                "z-10 flex-1 shrink-0 cursor-pointer rounded-xl p-3 font-bold transition-all",
+                activeGalleryIndex === index
+                  ? "bg-[#616161] text-white"
+                  : "text-[#D9D9D9] hover:text-white",
+              )}
+            >
+              {t(gallery.title)}
+            </button>
+          ))}
+        </div>
+      </div>
 
       {/* Image Thumbnails Carousel */}
-      <div
-        className="embla__viewport relative z-10 min-h-[450px] w-full"
-        ref={emblaRef}
-      >
+      <div className="embla__viewport relative z-10 w-full" ref={emblaRef}>
         <div className="embla__container flex">
           {currentGallery.images.map((img, index) => (
             <div
