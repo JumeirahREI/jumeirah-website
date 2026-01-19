@@ -154,14 +154,14 @@ export default function ImageGallerySection({
       <div className="from-background to-background/20 via-background/80 absolute inset-0 bg-linear-to-t" />
 
       {/* Gallery Tabs */}
-      <div className="bg-background/60 relative z-30 mx-6 mb-8 rounded-2xl p-2 backdrop-blur-lg">
+      <div className="relative z-30 mx-6 mb-8 rounded-2xl bg-black/60 p-2 backdrop-blur-lg">
         <div className="flex w-full gap-4">
           {imgs!.map((gallery, index) => (
             <button
               key={gallery.title}
               onClick={() => handleGalleryChange(index)}
               className={cn(
-                "z-10 flex-1 shrink-0 cursor-pointer rounded-xl p-3 font-bold transition-all",
+                "z-10 flex-1 shrink-0 cursor-pointer rounded-xl p-2 font-bold transition-all",
                 activeGalleryIndex === index
                   ? "bg-[#616161] text-white"
                   : "text-[#D9D9D9] hover:text-white",
