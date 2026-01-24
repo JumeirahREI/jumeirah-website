@@ -1,4 +1,5 @@
 import heroBackgroundImage from "@/../public/images/hero-background-image.webp";
+import FacebookPixel from "@/components/facebook-pixel";
 import GoogleAnalytics from "@/components/google-analytics";
 import LazyMotionProvider from "@/components/lazy-motion-provider";
 import Navbar from "@/components/navbar";
@@ -52,6 +53,9 @@ export default async function RootLayout({
         <body className="bg-background text-foreground relative min-h-svh max-w-svw font-sans not-supports-[overflow:clip]:overflow-x-hidden supports-[overflow:clip]:overflow-x-clip md:pt-4 lg:pt-10">
           {process.env.NEXT_PUBLIC_GA_ID && (
             <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+          )}
+          {process.env.NEXT_PUBLIC_FB_PIXEL_ID && (
+            <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FB_PIXEL_ID} />
           )}
           <StructuredData locale={locale} />
           <div className="space-sections">
