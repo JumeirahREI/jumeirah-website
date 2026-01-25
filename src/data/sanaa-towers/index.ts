@@ -95,7 +95,6 @@ import construction2_6 from "@/../public/images/sanaa-towers/construction/constr
 import construction2_7 from "@/../public/images/sanaa-towers/construction/construction-2-7.webp";
 import construction2_8 from "@/../public/images/sanaa-towers/construction/construction-2-8.webp";
 import construction2_9 from "@/../public/images/sanaa-towers/construction/construction-2-9.webp";
-import construction2 from "@/../public/images/sanaa-towers/construction/construction-2.webp";
 import construction20 from "@/../public/images/sanaa-towers/construction/construction-20.webp";
 import construction21 from "@/../public/images/sanaa-towers/construction/construction-21.webp";
 import construction22 from "@/../public/images/sanaa-towers/construction/construction-22.webp";
@@ -115,11 +114,6 @@ import construction6 from "@/../public/images/sanaa-towers/construction/construc
 import construction7 from "@/../public/images/sanaa-towers/construction/construction-7.webp";
 import construction8 from "@/../public/images/sanaa-towers/construction/construction-8.webp";
 import construction9 from "@/../public/images/sanaa-towers/construction/construction-9.webp";
-import interiorWork1 from "@/../public/images/sanaa-towers/interior-work/interior-work-1.webp";
-import interiorWork2 from "@/../public/images/sanaa-towers/interior-work/interior-work-2.webp";
-import interiorWork3 from "@/../public/images/sanaa-towers/interior-work/interior-work-3.webp";
-import interiorWork4 from "@/../public/images/sanaa-towers/interior-work/interior-work-4.webp";
-import interiorWork5 from "@/../public/images/sanaa-towers/interior-work/interior-work-5.webp";
 import centralParkImage from "@/../public/images/sanaa-towers/photos/central-park.webp";
 import fitnessCenterImage from "@/../public/images/sanaa-towers/photos/fitness-center.webp";
 import jacuzziImage from "@/../public/images/sanaa-towers/photos/jacuzzi.webp";
@@ -451,10 +445,6 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
           alt: "imageGallerySection.construction.image-1",
         },
         {
-          src: construction2,
-          alt: "imageGallerySection.construction.image-2",
-        },
-        {
           src: construction3,
           alt: "imageGallerySection.construction.image-3",
         },
@@ -677,32 +667,32 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
         },
       ],
     },
-    {
-      title: "imageGallerySection.interior-work.title",
-      headingTitle: "imageGallerySection.headings.interior-work.title",
-      headingSubtitle: "imageGallerySection.headings.interior-work.subtitle",
-      images: [
-        {
-          src: interiorWork1,
-          alt: "imageGallerySection.interior-work.image-1",
-        },
-        {
-          src: interiorWork2,
-          alt: "imageGallerySection.interior-work.image-2",
-        },
-        {
-          src: interiorWork3,
-          alt: "imageGallerySection.interior-work.image-3",
-        },
-        {
-          src: interiorWork4,
-          alt: "imageGallerySection.interior-work.image-4",
-        },
-        {
-          src: interiorWork5,
-          alt: "imageGallerySection.interior-work.image-5",
-        },
-      ],
-    },
+    // {
+    //   title: "imageGallerySection.interior-work.title",
+    //   headingTitle: "imageGallerySection.headings.interior-work.title",
+    //   headingSubtitle: "imageGallerySection.headings.interior-work.subtitle",
+    //   images: [
+    //     {
+    //       src: interiorWork1,
+    //       alt: "imageGallerySection.interior-work.image-1",
+    //     },
+    //     {
+    //       src: interiorWork2,
+    //       alt: "imageGallerySection.interior-work.image-2",
+    //     },
+    //     {
+    //       src: interiorWork3,
+    //       alt: "imageGallerySection.interior-work.image-3",
+    //     },
+    //     {
+    //       src: interiorWork4,
+    //       alt: "imageGallerySection.interior-work.image-4",
+    //     },
+    //     {
+    //       src: interiorWork5,
+    //       alt: "imageGallerySection.interior-work.image-5",
+    //     },
+    //   ],
+    // },
   ],
 };
