@@ -10,23 +10,34 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routeConfig = [
     { path: "", priority: 1.0, changeFrequency: "daily" as const },
     { path: "/projects", priority: 0.9, changeFrequency: "weekly" as const },
-    { path: "/projects/sanaa-towers", priority: 0.85, changeFrequency: "weekly" as const },
-    { path: "/projects/alhathaa-towers", priority: 0.85, changeFrequency: "weekly" as const },
+    {
+      path: "/projects/sanaa-towers",
+      priority: 0.85,
+      changeFrequency: "weekly" as const,
+    },
+    {
+      path: "/projects/alhathaa-towers",
+      priority: 0.85,
+      changeFrequency: "weekly" as const,
+    },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
   routeConfig.forEach(({ path, priority, changeFrequency }) => {
     locales.forEach((locale) => {
+      const url =
+        locale === "ar" ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
+
       sitemapEntries.push({
-        url: `${baseUrl}/${locale}${path}`,
+        url,
         lastModified: new Date(),
         changeFrequency,
         priority,
         alternates: {
           languages: {
             en: `${baseUrl}/en${path}`,
-            ar: `${baseUrl}/ar${path}`,
+            ar: `${baseUrl}${path}`,
           },
         },
       });

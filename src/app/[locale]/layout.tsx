@@ -76,7 +76,7 @@ export default async function RootLayout({
 
 function BackgroundImage() {
   return (
-    <div className="absolute top-0 right-0 left-0 -z-[9999] !mb-0 h-full max-h-[40rem] overflow-hidden md:max-h-[50rem] lg:max-h-[60rem]">
+    <div className="absolute top-0 right-0 left-0 -z-9999 mb-0! h-full max-h-160 overflow-hidden md:max-h-200 lg:max-h-240">
       <ParallaxScrollEffect
         aria-hidden
         className="pointer-events-none relative size-full"
@@ -111,7 +111,7 @@ export async function generateMetadata({
   const { locale } = await params;
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
-  const currentUrl = `${baseUrl}/${locale}`;
+  const currentUrl = locale === "ar" ? baseUrl : `${baseUrl}/${locale}`;
 
   return {
     title: t("title"),
@@ -135,7 +135,7 @@ export async function generateMetadata({
       canonical: currentUrl,
       languages: {
         en: `${baseUrl}/en`,
-        ar: `${baseUrl}/ar`,
+        ar: baseUrl,
       },
     },
     openGraph: {
