@@ -346,13 +346,4 @@ img {
   &:hover::-webkit-scrollbar-thumb {
     background-color: theme("colors.gray.500");
   }
-
-  /* Optional dark mode
-  .dark & {
-    scrollbar-color: theme("colors.gray.600") transparent;
-  }
-
-  .dark &::-webkit-scrollbar-thumb {
-    background-color: theme("colors.gray.600");
-  } */
 }
