@@ -1,5 +1,5 @@
-import modelZImage from "@/../public/images/alhathaa-towers/alhathaa-towers-model-z2.webp";
-import modelZNumberedImage from "@/../public/images/alhathaa-towers/alhathaa-towers-numbered-model-z2.webp";
+import modelZImage from "@/../public/images/alhathaa-towers/alhathaa-towers-model-3d-z2.webp";
+import modelZNumberedImage from "@/../public/images/alhathaa-towers/alhathaa-towers-numbered-model-3d-z2.webp";
 import { ModelData } from "@/data/types";
 
 export const modelZ: ModelData<"Alhathaa-Towers"> = {
