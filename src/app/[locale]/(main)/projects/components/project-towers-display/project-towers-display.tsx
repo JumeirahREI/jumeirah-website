@@ -60,7 +60,7 @@ const ProjectTowersDisplay = React.memo(
             id={tabPanelId}
             role="tabpanel"
             aria-labelledby={`${componentId}-tab`}
-            className="flex h-[calc(100vh-10rem)] max-w-full rounded-lg lg:h-[calc(100vh-18rem)] lg:max-h-[31rem] lg:min-h-[28rem] ltr:lg:pr-[var(--padding-x)] rtl:lg:pl-[var(--padding-x)]"
+            className="flex h-[calc(100vh-10rem)] max-w-full rounded-lg lg:h-[calc(100vh-18rem)] lg:max-h-124 lg:min-h-112 ltr:lg:pr-(--padding-x) rtl:lg:pl-(--padding-x)"
             tabIndex={0}
             aria-live="polite"
             aria-atomic="true"
@@ -73,12 +73,12 @@ const ProjectTowersDisplay = React.memo(
               {(!breakpoint.lg || breakpoint.ssr) && (
                 <MemoizedMediaPanel
                   projectKey={projectData.projectKey}
-                  className="mt-4 aspect-[10/7] md:aspect-[16/9] lg:hidden [&_img]:lg:scale-[1.2]"
+                  className="mt-4 aspect-10/7 md:aspect-video lg:hidden [&_img]:lg:scale-[1.2]"
                   aria-label={ct("tabs.media")}
                 />
               )}
               <div
-                className="description text-foreground/90 scrollbar fade-y grow overflow-y-auto py-8 max-lg:my-2 ltr:lg:mr-4 rtl:lg:ml-4 [&>*]:px-[var(--padding-x)]"
+                className="description text-foreground/90 scrollbar fade-y grow overflow-y-auto py-8 *:px-(--padding-x) max-lg:my-2 ltr:lg:mr-4 rtl:lg:ml-4"
                 aria-live="polite"
                 aria-atomic="true"
               >

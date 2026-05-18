@@ -130,7 +130,7 @@ function SectionDetails({
         {section.rooms.map((room, index) => (
           <li
             key={index}
-            className="list-decimal break-words whitespace-normal max-md:text-sm"
+            className="list-decimal wrap-break-word whitespace-normal max-md:text-sm"
           >
             {t(tk(`rooms.${room.key}`), { dimensions: room.dimensions })}
           </li>
