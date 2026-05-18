@@ -2,94 +2,67 @@ import modelT1Image from "@/../public/images/sanaa-towers/sanaa-towers-model-t1.
 import modelT2Image from "@/../public/images/sanaa-towers/sanaa-towers-model-t2.webp";
 import { ModelData } from "@/data/types";
 
+const layoutImages = [
+  { image: modelT1Image, alt: "towers.tower-b.model-t.layout.images.image-1" },
+  { image: modelT2Image, alt: "towers.tower-b.model-t.layout.images.image-2" },
+];
+
 export const modelT: ModelData<"SanaaTowers"> = {
   name: "towers.tower-b.model-t.name",
   layout: {
     description: "towers.tower-b.model-t.layout.description",
-    images: [
-      {
-        image: modelT1Image,
-        alt: "towers.tower-b.model-t.layout.images.image-1",
-      },
-      {
-        image: modelT2Image,
-        alt: "towers.tower-b.model-t.layout.images.image-2",
-      },
-    ],
+    images: layoutImages,
   },
   details: [
     {
-      images: [
-        {
-          image: modelT1Image,
-          alt: "towers.tower-b.model-t.layout.images.image-1",
-        },
-        {
-          image: modelT2Image,
-          alt: "towers.tower-b.model-t.layout.images.image-2",
-        },
-      ],
+      images: layoutImages,
       sections: [
         {
-          title:
-            "towers.tower-b.model-t.details.first-floor.family-wing-section.title",
+          title: "section-titles.family-wing-section",
           rooms: [
-            "towers.tower-b.model-t.details.first-floor.family-wing-section.living-room",
-            "towers.tower-b.model-t.details.first-floor.family-wing-section.balcony",
-            "towers.tower-b.model-t.details.first-floor.family-wing-section.kitchen",
-            "towers.tower-b.model-t.details.first-floor.family-wing-section.storage-room",
-            "towers.tower-b.model-t.details.first-floor.family-wing-section.main-bathroom",
+            { key: "living-room", dimensions: "6.50m x 3.90m" },
+            { key: "balcony", dimensions: "3.15m x 1.50m" },
+            { key: "kitchen", dimensions: "4.00m x 3.90m" },
+            { key: "storage-room", dimensions: "3.15m x 1.55m" },
+            { key: "main-bathroom", dimensions: "3.10m x 1.95m" },
           ],
         },
         {
-          title:
-            "towers.tower-b.model-t.details.first-floor.master-bedroom-suite.title",
+          title: "section-titles.master-bedroom-suite",
           rooms: [
-            "towers.tower-b.model-t.details.first-floor.master-bedroom-suite.bedroom",
-            "towers.tower-b.model-t.details.first-floor.master-bedroom-suite.dressing-room",
-            "towers.tower-b.model-t.details.first-floor.master-bedroom-suite.bathroom",
+            { key: "master-bedroom", dimensions: "6.00m x 4.20m" },
+            { key: "dressing-room", dimensions: "3.75m x 2.35m" },
+            { key: "bathroom", dimensions: "2.55m x 2.35m" },
           ],
         },
       ],
     },
     {
-      images: [
-        {
-          image: modelT1Image,
-          alt: "towers.tower-b.model-t.layout.images.image-1",
-        },
-        {
-          image: modelT2Image,
-          alt: "towers.tower-b.model-t.layout.images.image-2",
-        },
-      ],
+      images: layoutImages,
       sections: [
         {
-          title:
-            "towers.tower-b.model-t.details.second-floor.guest-section.title",
+          title: "section-titles.guest-section",
           rooms: [
-            "towers.tower-b.model-t.details.second-floor.guest-section.majlis-guest-lounge",
-            "towers.tower-b.model-t.details.second-floor.guest-section.majlis-bathroom",
+            { key: "majlis-guest-lounge", dimensions: "6.70m x 3.90m" },
+            { key: "majlis-bathroom", dimensions: "2.00m x 1.50m" },
           ],
         },
         {
-          title:
-            "towers.tower-b.model-t.details.second-floor.family-wing-section.title",
+          title: "section-titles.family-wing-section",
           rooms: [
-            "towers.tower-b.model-t.details.second-floor.family-wing-section.storage-room",
-            "towers.tower-b.model-t.details.second-floor.family-wing-section.balcony",
-            "towers.tower-b.model-t.details.second-floor.family-wing-section.bedroom-1",
-            "towers.tower-b.model-t.details.second-floor.family-wing-section.bedroom-2",
-            "towers.tower-b.model-t.details.second-floor.family-wing-section.main-bathroom",
+            { key: "storage-room", dimensions: "3.15m x 1.55m" },
+            { key: "balcony", dimensions: "3.15m x 1.50m" },
+            { key: "bedroom-1", dimensions: "5.15m x 3.90m" },
+            { key: "bedroom-2", dimensions: "4.60m x 3.50m" },
+            { key: "main-bathroom", dimensions: "3.10m x 1.95m" },
           ],
         },
         {
-          title:
-            "towers.tower-b.model-t.details.second-floor.master-bedroom-suite.title",
+          title: "section-titles.master-bedroom-suite",
           rooms: [
-            "towers.tower-b.model-t.details.second-floor.master-bedroom-suite.bedroom",
-            "towers.tower-b.model-t.details.second-floor.master-bedroom-suite.dressing-room",
-            "towers.tower-b.model-t.details.second-floor.master-bedroom-suite.bathroom",
+            { key: "master-bedroom", dimensions: "5.80m x 3.90m" },
+            { key: "dressing-room", dimensions: "2.35m x 1.90m" },
+            { key: "bathroom", dimensions: "2.35m x 2.20m" },
           ],
         },
       ],

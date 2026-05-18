@@ -33,32 +33,29 @@ export const modelD: ModelData<"Alhathaa-Towers"> = {
       ],
       sections: [
         {
-          title:
-            "towers.tower-a.model-d.details.first-floor.guest-section.title",
+          title: "section-titles.guest-section",
           rooms: [
-            "towers.tower-a.model-d.details.first-floor.guest-section.guest-reception-hall",
-            "towers.tower-a.model-d.details.first-floor.guest-section.majlis-guest-lounge",
-            "towers.tower-a.model-d.details.first-floor.guest-section.majlis-bathroom",
+            { key: "guest-reception-hall", dimensions: "3.10m x 2.60m" },
+            { key: "majlis-guest-lounge", dimensions: "6.10m x 3.60m" },
+            { key: "majlis-bathroom", dimensions: "1.90m x 1.90m" },
           ],
         },
         {
-          title:
-            "towers.tower-a.model-d.details.first-floor.family-wing-section.title",
+          title: "section-titles.family-wing-section",
           rooms: [
-            "towers.tower-a.model-d.details.first-floor.family-wing-section.living-room",
-            "towers.tower-a.model-d.details.first-floor.family-wing-section.storage-room",
-            "towers.tower-a.model-d.details.first-floor.family-wing-section.balcony",
-            "towers.tower-a.model-d.details.first-floor.family-wing-section.kitchen",
-            "towers.tower-a.model-d.details.first-floor.family-wing-section.bedroom-1",
-            "towers.tower-a.model-d.details.first-floor.family-wing-section.main-bathroom",
+            { key: "living-room", dimensions: "8.20m x 4.00m" },
+            { key: "storage-room", dimensions: "3.90m x 1.90m" },
+            { key: "balcony", dimensions: "2.45m x 1.40m" },
+            { key: "kitchen", dimensions: "4.00m x 3.50m" },
+            { key: "bedroom-1", dimensions: "4.00m x 4.00m" },
+            { key: "main-bathroom", dimensions: "2.00m x 1.90m" },
           ],
         },
         {
-          title:
-            "towers.tower-a.model-d.details.first-floor.master-bedroom-suite.title",
+          title: "section-titles.master-bedroom-suite",
           rooms: [
-            "towers.tower-a.model-d.details.first-floor.master-bedroom-suite.bedroom",
-            "towers.tower-a.model-d.details.first-floor.master-bedroom-suite.bathroom",
+            { key: "master-bedroom", dimensions: "4.00m x 4.00m" },
+            { key: "bathroom", dimensions: "1.90m x 1.80m" },
           ],
         },
       ],
@@ -76,24 +73,22 @@ export const modelD: ModelData<"Alhathaa-Towers"> = {
       ],
       sections: [
         {
-          title:
-            "towers.tower-a.model-d.details.second-floor.family-wing-section.title",
+          title: "section-titles.family-wing-section",
           rooms: [
-            "towers.tower-a.model-d.details.second-floor.family-wing-section.family-entrance",
-            "towers.tower-a.model-d.details.second-floor.family-wing-section.living-room",
-            "towers.tower-a.model-d.details.second-floor.family-wing-section.bedroom-1",
-            "towers.tower-a.model-d.details.second-floor.family-wing-section.bedroom-2",
-            "towers.tower-a.model-d.details.second-floor.family-wing-section.main-bathroom",
+            { key: "family-entrance", dimensions: "4.00m x 1.90m" },
+            { key: "living-room", dimensions: "8.20m x 4.60m" },
+            { key: "bedroom-1", dimensions: "4.00m x 4.00m" },
+            { key: "bedroom-2", dimensions: "4.00m x 4.00m" },
+            { key: "main-bathroom", dimensions: "1.90m x 1.80m" },
           ],
         },
         {
-          title:
-            "towers.tower-a.model-d.details.second-floor.master-bedroom-suite.title",
+          title: "section-titles.master-bedroom-suite",
           rooms: [
-            "towers.tower-a.model-d.details.second-floor.master-bedroom-suite.bedroom",
-            "towers.tower-a.model-d.details.second-floor.master-bedroom-suite.balcony",
-            "towers.tower-a.model-d.details.second-floor.master-bedroom-suite.dressing-room",
-            "towers.tower-a.model-d.details.second-floor.master-bedroom-suite.bathroom",
+            { key: "master-bedroom", dimensions: "5.20m x 5.10m" },
+            { key: "balcony", dimensions: "5.20m x 1.40m" },
+            { key: "dressing-room", dimensions: "5.20m x 1.90m" },
+            { key: "bathroom", dimensions: "3.10m x 1.90m" },
           ],
         },
       ],

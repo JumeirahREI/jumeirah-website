@@ -1,22 +1,17 @@
-import type { Messages } from "next-intl";
 import { StaticImageData } from "next/image";
 
 export type Project = "SanaaTowers" | "Alhathaa-Towers";
 
-// Utility type to get only leaf dot-path keys of a nested object
-type LeafPaths<T> = T extends object
-  ? {
-      [K in keyof T & string]: T[K] extends object
-        ? `${K}.${LeafPaths<T[K]>}`
-        : K;
-    }[keyof T & string]
-  : never;
+type BaseTranslation<T extends Project> = string & { _project?: T };
 
-type BaseTranslation<T extends Project> = LeafPaths<Messages[T]>;
+export type RoomEntry = {
+  key: string;
+  dimensions: string;
+};
 
 export type ModelDetailsSection<T extends Project> = {
   title: BaseTranslation<T>;
-  rooms: BaseTranslation<T>[];
+  rooms: RoomEntry[];
 };
 
 export type ImageData<T extends Project> = {

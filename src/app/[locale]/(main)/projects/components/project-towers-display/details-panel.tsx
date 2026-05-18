@@ -16,6 +16,7 @@ export default function DetailsPanel({
   projectData: ProjectData<Project>;
 }) {
   const t = useTranslations(projectData.projectKey);
+  const tk = (key: string) => key as Parameters<typeof t>[0];
   const {
     selectedDataTab,
     selectedTower,
@@ -31,7 +32,7 @@ export default function DetailsPanel({
   if (selectedDataTab === "layout") {
     return (
       <p className="leading-normal md:py-7 lg:w-10/12 lg:py-14 lg:text-lg">
-        {t(selectedModelData.layout.description)}
+        {t(tk(selectedModelData.layout.description))}
       </p>
     );
   }
@@ -50,7 +51,7 @@ export default function DetailsPanel({
             key={index}
             onClick={() => setSelectedMediaIndex(index)}
             src={image.image}
-            alt={t(image.alt)}
+            alt={t(tk(image.alt))}
             className="data-[selected=true]:border-primary block cursor-pointer rounded-3xl border border-[#7A7A7A]/30 transition-colors hover:bg-white/5 data-[selected=true]:bg-white/5"
             fill={false}
             data-selected={index === selectedMediaIndex}
@@ -117,10 +118,11 @@ function SectionDetails({
   start: number;
 }) {
   const t = useTranslations(projectKey);
+  const tk = (key: string) => key as Parameters<typeof t>[0];
 
   return (
     <div className="lg:has-[ol>li:nth-child(n+6)]:col-span-2">
-      <h3 className="mb-3 font-bold">{t(section.title)}</h3>
+      <h3 className="mb-3 font-bold">{t(tk(section.title))}</h3>
       <ol
         start={start}
         className="flex w-fit list-inside flex-col flex-wrap space-y-0.5 gap-x-7 ps-2 text-[#a5a5a5] lg:max-h-32"
@@ -130,7 +132,7 @@ function SectionDetails({
             key={index}
             className="list-decimal break-words whitespace-normal max-md:text-sm"
           >
-            {t(room)}
+            {t(tk(`rooms.${room.key}`), { dimensions: room.dimensions })}
           </li>
         ))}
       </ol>
