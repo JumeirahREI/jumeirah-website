@@ -1059,5 +1059,12 @@
     "collaboration-description": "We work with a one-team spirit and view our clients as partners in success.",
     "sustainability": "Sustainability",
     "sustainability-description": "We create and build integrated communities, developing projects that respect the environment and preserve resources for future generations."
+  },
+  "SocialsPage": {
+    "tagline": "Connect with us",
+    "instagram": "Instagram",
+    "facebook": "Facebook",
+    "email": "Email",
+    "website": "Website"
   }
 }
