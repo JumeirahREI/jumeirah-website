@@ -14,9 +14,7 @@ const nextConfig: NextConfig = {
       // Global security headers
       {
         source: "/:path*",
-        headers: [
-          { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
-        ],
+        headers: [{ key: "Cross-Origin-Opener-Policy", value: "same-origin" }],
       },
       // Baseline CORS for API routes; adjust origin/methods as needed
       {

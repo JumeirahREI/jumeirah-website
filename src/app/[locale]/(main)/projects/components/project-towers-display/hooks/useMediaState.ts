@@ -1,5 +1,5 @@
-import { useState, useCallback, useMemo } from 'react';
-import { MediaContainerData } from '../types';
+import { useState, useCallback, useMemo } from "react";
+import { MediaContainerData } from "../types";
 
 /**
  * Custom hook to manage media-related state
@@ -7,12 +7,13 @@ import { MediaContainerData } from '../types';
  * @returns An object containing media state and handlers
  */
 export const useMediaState = (initialData: MediaContainerData) => {
-  const [mediaContainerData, setMediaContainerData] = useState<MediaContainerData>(initialData);
+  const [mediaContainerData, setMediaContainerData] =
+    useState<MediaContainerData>(initialData);
   const [selectedMediaIndex, setSelectedMediaIndex] = useState(0);
 
   // Memoize the media data update handler
   const updateMediaContainerData = useCallback((data: MediaContainerData) => {
-    setMediaContainerData(prevData => {
+    setMediaContainerData((prevData) => {
       // Only update if data has changed
       if (prevData !== data) {
         return data;
@@ -25,22 +26,25 @@ export const useMediaState = (initialData: MediaContainerData) => {
 
   // Memoize the media index setter
   const handleSetSelectedMediaIndex = useCallback((index: number) => {
-    setSelectedMediaIndex(prevIndex => {
+    setSelectedMediaIndex((prevIndex) => {
       // Only update if index has changed
       return prevIndex !== index ? index : prevIndex;
     });
   }, []);
 
   // Memoize the return value to prevent unnecessary re-renders
-  return useMemo(() => ({
-    mediaContainerData,
-    selectedMediaIndex,
-    setMediaContainerData: updateMediaContainerData,
-    setSelectedMediaIndex: handleSetSelectedMediaIndex,
-  }), [
-    mediaContainerData,
-    selectedMediaIndex,
-    updateMediaContainerData,
-    handleSetSelectedMediaIndex,
-  ]);
+  return useMemo(
+    () => ({
+      mediaContainerData,
+      selectedMediaIndex,
+      setMediaContainerData: updateMediaContainerData,
+      setSelectedMediaIndex: handleSetSelectedMediaIndex,
+    }),
+    [
+      mediaContainerData,
+      selectedMediaIndex,
+      updateMediaContainerData,
+      handleSetSelectedMediaIndex,
+    ],
+  );
 };

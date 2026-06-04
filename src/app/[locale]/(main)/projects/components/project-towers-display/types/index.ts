@@ -8,7 +8,10 @@ export type DataTab = "layout" | "videos" | "photos" | "details";
 /**
  * Union type for the data that can be displayed in the media container
  */
-export type MediaContainerData = ImageData<Project> | ImageData<Project>[] | string;
+export type MediaContainerData =
+  | ImageData<Project>
+  | ImageData<Project>[]
+  | string;
 
 /**
  * The shape of the context value provided by TowersDisplayProvider

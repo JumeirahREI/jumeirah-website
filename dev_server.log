@@ -1,0 +1,19 @@
+
+> jumeirah-website@0.1.0 dev
+> next dev --turbopack
+
+ ⚠ Port 3000 is in use by an unknown process, using available port 3001 instead.
+   ▲ Next.js 15.5.7 (Turbopack)
+   - Local:        http://localhost:3001
+   - Network:      http://192.168.0.2:3001
+
+ ✓ Starting...
+ ✓ Compiled middleware in 424ms
+ ✓ Ready in 2.2s
+Killed
+npm notice
+npm notice New minor version of npm available! 11.11.0 -> 11.16.0
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v11.16.0
+npm notice To update run: npm install -g npm@11.16.0
+npm notice
+ ⚠ Found a change in next.config.ts. Restarting the server to apply the changes...

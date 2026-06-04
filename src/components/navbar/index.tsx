@@ -38,6 +38,8 @@ export default function Navbar() {
     setIsOpenMobile(false);
   }, [pathname]);
 
+  if (pathname === "/socials") return null;
+
   return (
     <nav className="fixed start-0 end-0 top-0 z-[999] !mb-0 md:py-4 lg:pointer-events-none lg:sticky">
       <div
