@@ -1,7 +1,7 @@
 import type { Messages } from "next-intl";
 import { StaticImageData } from "next/image";
 
-export type Project = "SanaaTowers" | "Alhathaa-Towers";
+export type Project = "SanaaTowers" | "Alhathaa-Towers" | "ManaratAlHudaydah";
 
 // Utility type to get only leaf dot-path keys of a nested object
 type LeafPaths<T> = T extends object

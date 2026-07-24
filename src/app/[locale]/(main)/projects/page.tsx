@@ -80,6 +80,12 @@ export async function generateMetadata({
           height: 1350,
           alt: t("alhathaa-towers.title"),
         },
+        {
+          url: `${baseUrl}/images/manarat-al-hudaydah.webp`,
+          width: 1080,
+          height: 1350,
+          alt: t("manarat-al-hudaydah.title"),
+        },
       ],
     },
   };

@@ -39,7 +39,7 @@ export default function ProjectDetails({
         {projectData.videoSection && <VideoSection projectData={projectData} />}
         <section className="relative z-30 container">
           <h2 className="mb-5 text-center text-3xl md:mb-6 md:text-4xl lg:mb-8">
-            {ct.rich("include-two-towers", {
+            {t.rich("towersSection.title", {
               span: (s) => <span className="text-primary">{s}</span>,
             })}
           </h2>

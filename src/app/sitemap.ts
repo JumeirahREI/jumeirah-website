@@ -20,6 +20,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
       changeFrequency: "weekly" as const,
     },
+    {
+      path: "/projects/manarat-al-hudaydah",
+      priority: 0.85,
+      changeFrequency: "weekly" as const,
+    },
     { path: "/about", priority: 0.7, changeFrequency: "monthly" as const },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
   ];

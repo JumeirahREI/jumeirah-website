@@ -1,4 +1,5 @@
 import alHathaaTowersImage from "@/../public/images/alhathaa-towers.webp";
+import manaratAlHudaydahImage from "@/../public/images/manarat-al-hudaydah.webp";
 import sanaaTowersImage from "@/../public/images/sanaa-towers.webp";
 import { AnimatedGroup } from "@/components/animated-group";
 import Carousel from "@/components/carousel";
@@ -24,6 +25,13 @@ const projects = [
     status: "complete",
     image: alHathaaTowersImage,
     href: "/projects/alhathaa-towers",
+  },
+  {
+    title: "manarat-al-hudaydah",
+    titleNoSpan: "manarat-al-hudaydah-no-span",
+    status: "under-construction",
+    image: manaratAlHudaydahImage,
+    href: "/projects/manarat-al-hudaydah",
   },
 ] as const;
 

@@ -2,6 +2,7 @@ import ProjectDetails from "@/app/[locale]/(main)/projects/[project]/project-det
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import ProjectStructuredData from "@/components/project-structured-data";
 import { alhathaaTowersData } from "@/data/alhathaa-towers";
+import { manaratAlHudaydahData } from "@/data/manarat-al-hudaydah";
 import { sanaaTowersData } from "@/data/sanaa-towers";
 import { Project, ProjectData } from "@/data/types";
 import { Metadata } from "next";
@@ -11,7 +12,7 @@ import { notFound } from "next/navigation";
 const projects = {
   "sanaa-towers": sanaaTowersData,
   "alhathaa-towers": alhathaaTowersData,
-  // "alhathaa-towers": {key: "Alhathaa-Towers", data: alhathaaTowersData},
+  "manarat-al-hudaydah": manaratAlHudaydahData,
 } as const;
 
 interface PageProps {

@@ -91,6 +91,9 @@ export default function ContactUsSection({
                     <FooterLink href="/projects/alhathaa-towers">
                       {projects("alhathaa-towers")}
                     </FooterLink>
+                    <FooterLink href="/projects/manarat-al-hudaydah">
+                      {projects("manarat-al-hudaydah")}
+                    </FooterLink>
                   </ul>
                 </div>
                 <div className="col-span-2 space-y-4">
