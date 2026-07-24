@@ -82,9 +82,9 @@ export default function Home() {
         <HeroBackground />
       </header>
       <main className="space-sections">
+        <OurProjectsSection />
         <OurServicesSection />
         <AboutUsCard />
-        <OurProjectsSection />
         <FAQsSection />
       </main>
     </div>

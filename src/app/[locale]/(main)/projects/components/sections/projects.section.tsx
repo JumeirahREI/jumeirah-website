@@ -1,4 +1,5 @@
 import alHathaaTowersImage from "@/../public/images/alhathaa-towers.webp";
+import manaratAlHudaydahImage from "@/../public/images/manarat-al-hudaydah.webp";
 import sanaaTowersImage from "@/../public/images/sanaa-towers.webp";
 import CategoryProjectItem from "@/app/[locale]/(main)/projects/components/category-project-item";
 import Carousel from "@/components/carousel";
@@ -35,6 +36,12 @@ export default function ProjectsSection() {
   const t = useTranslations("ProjectsPage");
 
   const projects = [
+    {
+      title: t("manarat-al-hudaydah.title"),
+      status: t("manarat-al-hudaydah.status"),
+      image: manaratAlHudaydahImage,
+      href: "/projects/manarat-al-hudaydah",
+    },
     {
       title: t("sanaa-towers.title"),
       status: t("sanaa-towers.status"),

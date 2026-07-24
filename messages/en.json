@@ -36,7 +36,8 @@
     "x": "X",
     "facebook": "Facebook",
     "instagram": "Instagram",
-    "linkedin": "LinkedIn"
+    "linkedin": "LinkedIn",
+    "view-gallery": "View Gallery"
   },
   "Metadata": {
     "title": "Jumeirah Real Estate Investments | Premier Properties in Yemen",
@@ -86,7 +87,8 @@
   },
   "ProjectTitles": {
     "sanaa-towers": "Sana'a Towers",
-    "alhathaa-towers": "Al-Hathaa Towers"
+    "alhathaa-towers": "Al-Hathaa Towers",
+    "manarat-al-hudaydah": "Manarat Al-Hudaydah"
   },
   "SanaaTowers": {
     "meta-description": "The new Sana'a Towers residential project consists of two towers located in the 50 Street district of the capital, Sana'a. Tower A includes five different types of residential apartments with structurally earthquake-resistant designs, modern luxury, spacious interiors, and practical implementation, including satellite networks and individual water and electricity meters for each apartment. Tower B includes five smaller, more economical models with the same high-quality designs and a compatible residential community.",
@@ -766,6 +768,9 @@
         "image-2-29": "Construction photo 2-29",
         "image-2-30": "Construction photo 2-30"
       }
+    },
+    "towersSection": {
+      "title": "<span>The</span> project includes two modern residential towers"
     }
   },
   "Alhathaa-Towers": {
@@ -975,6 +980,212 @@
       "water-project": "Water Project",
       "sanitary-system": "Sanitary System",
       "after-sale-support": "After-Sale Support"
+    },
+    "towersSection": {
+      "title": "<span>The</span> project includes two modern residential towers"
+    }
+  },
+  "ManaratAlHudaydah": {
+    "meta-description": "Manarat Al-Hudaydah is a luxury residential project in the commercial district of Al-Hudaydah, located on 30th and 16th Streets, featuring panoramic sea views, an earthquake-resistant structural system, strong foundations, premium finishes, and integrated hotel-style services including a health club, jacuzzi, cafe, and private parking.",
+    "title": "Manarat Al-Hudaydah",
+    "subtitle": "A luxury residential project in the commercial district of Al-Hudaydah, located on 30th and 16th Streets, with panoramic sea views and a modern lifestyle.",
+    "towers": {
+      "tower-a": {
+        "title": "Tower <span>A</span>",
+        "model-a": {
+          "name": "Model <span>A</span>",
+          "layout": {
+            "images": {
+              "image-1": "Apartment A layout"
+            },
+            "description": "Apartment A offers a well-distributed layout with a guest wing, a spacious family wing with two bedrooms, and a luxurious master suite overlooking the sea."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Wing",
+              "guest-reception-hall": "Guest Reception Hall: 1.45m x 2.30m",
+              "majlis-bathroom": "Majlis Bathroom: 1.60m x 2.15m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 6.00m x 3.20m"
+            },
+            "family-wing-section": {
+              "title": "Family Wing",
+              "living-room": "Living Room: 5.00m x 3.20m",
+              "balcony": "Balcony: 3.20m x 2.80m",
+              "kitchen": "Kitchen: 1.55m x 3.20m",
+              "bedroom-1": "Bedroom 1: 3.70m x 3.35m",
+              "bedroom-2": "Bedroom 2: 3.20m x 3.70m",
+              "main-bathroom": "Main Bathroom: 2.20m x 1.90m"
+            },
+            "master-bedroom-suite": {
+              "title": "Master Bedroom Suite",
+              "bedroom": "Master Bedroom: 5.00m x 3.40m",
+              "bathroom": "Bathroom: 2.40m x 1.45m"
+            }
+          }
+        },
+        "model-b": {
+          "name": "Model <span>B</span>",
+          "layout": {
+            "images": {
+              "image-1": "Apartment B layout"
+            },
+            "description": "Apartment B offers a cozy family wing and a master bedroom suite with direct sea views."
+          },
+          "details": {
+            "family-wing-section": {
+              "title": "Family Wing",
+              "living-room": "Living Room: 3.00m x 5.95m",
+              "balcony": "Balcony: 3.00m x 2.20m",
+              "kitchen": "Kitchen: 3.05m x 2.10m",
+              "bedroom-1": "Bedroom 1: 3.65m x 3.20m",
+              "main-bathroom": "Main Bathroom: 2.30m x 1.50m"
+            },
+            "master-bedroom-suite": {
+              "title": "Master Bedroom Suite",
+              "bedroom": "Master Bedroom: 5.00m x 3.00m",
+              "bathroom": "Bathroom: 2.30m x 1.50m"
+            }
+          }
+        },
+        "model-c": {
+          "name": "Model <span>C</span>",
+          "layout": {
+            "images": {
+              "image-1": "Apartment C layout"
+            },
+            "description": "Apartment C offers a well-distributed layout with a guest wing, a spacious family wing with two bedrooms, and a luxurious master suite overlooking the sea."
+          },
+          "details": {
+            "guest-section": {
+              "title": "Guest Wing",
+              "guest-reception-hall": "Guest Reception Hall: 1.45m x 2.30m",
+              "majlis-bathroom": "Majlis Bathroom: 1.60m x 1.55m",
+              "majlis-guest-lounge": "Majlis (Guest Lounge): 6.00m x 3.20m"
+            },
+            "family-wing-section": {
+              "title": "Family Wing",
+              "living-room": "Living Room: 5.00m x 3.20m",
+              "balcony": "Balcony: 3.20m x 2.80m",
+              "kitchen": "Kitchen: 1.55m x 3.20m",
+              "bedroom-1": "Bedroom 1: 3.70m x 3.35m",
+              "bedroom-2": "Bedroom 2: 3.20m x 3.70m",
+              "main-bathroom": "Main Bathroom: 2.20m x 1.90m"
+            },
+            "master-bedroom-suite": {
+              "title": "Master Bedroom Suite",
+              "bedroom": "Master Bedroom: 5.00m x 3.40m",
+              "bathroom": "Bathroom: 2.40m x 1.45m"
+            }
+          }
+        },
+        "model-d": {
+          "name": "Model <span>D</span>",
+          "layout": {
+            "images": {
+              "image-1": "Apartment D layout"
+            },
+            "description": "Apartment D features a spacious family layout with an entrance hall, a bedroom, and a master suite with sea views."
+          },
+          "details": {
+            "family-wing-section": {
+              "title": "Family Wing",
+              "entrance-hall": "Entrance Hall: 2.20m x 1.40m",
+              "living-room": "Living Room: 6.50m x 3.20m",
+              "balcony": "Balcony: 3.20m x 1.70m",
+              "kitchen": "Kitchen: 1.65m x 2.35m",
+              "bedroom-1": "Bedroom 1: 4.20m x 3.20m",
+              "main-bathroom": "Main Bathroom: 2.45m x 1.45m"
+            },
+            "master-bedroom-suite": {
+              "title": "Master Bedroom Suite",
+              "bedroom": "Master Bedroom: 4.20m x 3.40m",
+              "bathroom": "Bathroom: 2.40m x 1.45m"
+            }
+          }
+        },
+        "model-f": {
+          "name": "Model <span>F</span>",
+          "layout": {
+            "images": {
+              "image-1": "Apartment F layout"
+            },
+            "description": "Apartment F features a practical layout with an entrance hall, living room, and one bedroom with sea views."
+          },
+          "details": {
+            "family-wing-section": {
+              "title": "Family Wing",
+              "entrance-hall": "Entrance Hall: 3.45m x 1.58m",
+              "living-room": "Living Room: 4.65m x 3.15m",
+              "balcony": "Balcony: 3.15m x 1.00m",
+              "kitchen": "Kitchen: 1.65m x 3.27m",
+              "bedroom-1": "Bedroom 1: 4.70m x 4.20m",
+              "main-bathroom": "Main Bathroom: 1.90m x 1.47m"
+            }
+          }
+        },
+        "model-g": {
+          "name": "Model <span>G</span>",
+          "layout": {
+            "images": {
+              "image-1": "Apartment G layout"
+            },
+            "description": "Apartment G features a practical layout with an entrance hall, living room, and one bedroom with sea views."
+          },
+          "details": {
+            "family-wing-section": {
+              "title": "Family Wing",
+              "entrance-hall": "Entrance Hall: 1.58m x 2.75m",
+              "living-room": "Living Room: 5.25m x 3.15m",
+              "balcony": "Balcony: 3.15m x 1.15m",
+              "kitchen": "Kitchen: 1.65m x 3.27m",
+              "bedroom-1": "Bedroom 1: 4.70m x 4.20m",
+              "main-bathroom": "Main Bathroom: 1.90m x 1.47m"
+            }
+          }
+        },
+        "model-h": {
+          "name": "Model <span>H</span>",
+          "layout": {
+            "images": {
+              "image-1": "Apartment H layout"
+            },
+            "description": "Apartment H features a spacious family layout with an entrance hall, a bedroom, and a master suite with sea views."
+          },
+          "details": {
+            "family-wing-section": {
+              "title": "Family Wing",
+              "entrance-hall": "Entrance Hall: 1.60m x 1.35m",
+              "living-room": "Living Room: 6.50m x 3.20m",
+              "balcony": "Balcony: 3.20m x 1.70m",
+              "kitchen": "Kitchen: 1.80m x 2.30m",
+              "bedroom-1": "Bedroom 1: 3.55m x 3.20m",
+              "main-bathroom": "Main Bathroom: 2.45m x 1.45m"
+            },
+            "master-bedroom-suite": {
+              "title": "Master Bedroom Suite",
+              "bedroom": "Master Bedroom: 4.75m x 3.35m",
+              "bathroom": "Bathroom: 1.50m x 2.50m"
+            }
+          }
+        }
+      }
+    },
+    "featuresSection": {
+      "title": "Manarat Al-Hudaydah Features",
+      "subtitle": "Real estate solutions tailored to exceed your expectations.",
+      "prime-location": "Prime Location",
+      "sea-view": "Panoramic Sea View",
+      "earthquake-resistance": "Earthquake-Resistant",
+      "jacuzzi": "Private Jacuzzi",
+      "private-parking": "Private Parking",
+      "security": "Security & Cleaning Services"
+    },
+    "towersSection": {
+      "title": "<span>The</span> project includes a modern residential tower"
+    },
+    "videoSection": {
+      "title": "About Manarat Al-Hudaydah",
+      "description": "The project is located in the finest neighborhoods of Al-Hudaydah (the commercial district), on 30th and 16th Streets. The building features breathtaking sea views from all sides, offering residents a luxurious hotel-style living experience. The project will be executed according to the highest quality and safety standards, relying on an earthquake-resistant structural system with a strong foundation system (piles) ensuring durability and sustainability."
     }
   },
   "FAQsSection": {
@@ -1029,6 +1240,10 @@
     "alhathaa-towers": {
       "title": "Al-Hathaa Towers",
       "status": "Complete"
+    },
+    "manarat-al-hudaydah": {
+      "title": "Manarat Al-Hudaydah",
+      "status": "Under Construction"
     }
   },
   "OurPartnersSection": {

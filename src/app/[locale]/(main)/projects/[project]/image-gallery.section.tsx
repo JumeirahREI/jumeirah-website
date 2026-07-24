@@ -21,6 +21,7 @@ export default function ImageGallerySection({
 }) {
   const locale = useLocale();
   const t = useTranslations<Project>(projectData.projectKey);
+  const ct = useTranslations("Common");
   const { imageGallerySection: imgs } = projectData;
 
   const initialGallery = useMemo(() => imgs?.[0], [imgs]);
@@ -206,7 +207,7 @@ export default function ImageGallerySection({
               onClick={() => setIsModalOpen(true)}
               className="bg-primary pointer-events-auto mt-6 cursor-pointer rounded-full px-6 py-2 text-lg font-bold text-black transition-all hover:brightness-75 active:scale-95 active:brightness-75 lg:mt-8"
             >
-              View Gallery
+              {ct("view-gallery")}
             </button>
           </div>
         </div>
