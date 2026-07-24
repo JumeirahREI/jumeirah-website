@@ -1,3 +1,4 @@
+import manaratAlHudaydahImage from "@/../public/images/manarat-al-hudaydah.webp";
 import apartmentA from "@/../public/images/manarat-al-hudaydah/A.webp";
 import apartmentB from "@/../public/images/manarat-al-hudaydah/B.webp";
 import apartmentC from "@/../public/images/manarat-al-hudaydah/C.webp";
@@ -25,6 +26,11 @@ export const manaratAlHudaydahData: ProjectData<"ManaratAlHudaydah"> = {
   projectKey: "ManaratAlHudaydah",
   title: "title",
   subtitle: "subtitle",
+  videoSection: {
+    title: "videoSection.title",
+    description: "videoSection.description",
+    videoThumbnail: manaratAlHudaydahImage,
+  },
   towersSection: [
     {
       name: "towers.tower-a.title",

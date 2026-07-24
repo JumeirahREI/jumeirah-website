@@ -85,14 +85,14 @@ export default function ContactUsSection({
                     <FooterLink href="/projects">
                       {common("all-projects")}
                     </FooterLink>
+                    <FooterLink href="/projects/manarat-al-hudaydah">
+                      {projects("manarat-al-hudaydah")}
+                    </FooterLink>
                     <FooterLink href="/projects/sanaa-towers">
                       {projects("sanaa-towers")}
                     </FooterLink>
                     <FooterLink href="/projects/alhathaa-towers">
                       {projects("alhathaa-towers")}
-                    </FooterLink>
-                    <FooterLink href="/projects/manarat-al-hudaydah">
-                      {projects("manarat-al-hudaydah")}
                     </FooterLink>
                   </ul>
                 </div>

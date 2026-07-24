@@ -68,7 +68,7 @@ export type ProjectData<T extends Project> = {
   videoSection?: {
     title: BaseTranslation<T>;
     description: BaseTranslation<T>;
-    videoUrl: string;
+    videoUrl?: string;
     videoThumbnail: StaticImageData;
   };
   towersSection: TowerData<T>[];

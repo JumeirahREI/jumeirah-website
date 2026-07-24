@@ -13,6 +13,13 @@ import { useTranslations } from "next-intl";
 
 const projects = [
   {
+    title: "manarat-al-hudaydah",
+    titleNoSpan: "manarat-al-hudaydah-no-span",
+    status: "under-construction",
+    image: manaratAlHudaydahImage,
+    href: "/projects/manarat-al-hudaydah",
+  },
+  {
     title: "sanaa-towers",
     titleNoSpan: "sanaa-towers-no-span",
     status: "under-construction",
@@ -25,13 +32,6 @@ const projects = [
     status: "complete",
     image: alHathaaTowersImage,
     href: "/projects/alhathaa-towers",
-  },
-  {
-    title: "manarat-al-hudaydah",
-    titleNoSpan: "manarat-al-hudaydah-no-span",
-    status: "under-construction",
-    image: manaratAlHudaydahImage,
-    href: "/projects/manarat-al-hudaydah",
   },
 ] as const;
 

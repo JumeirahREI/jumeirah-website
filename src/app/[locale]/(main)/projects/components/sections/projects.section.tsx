@@ -37,6 +37,12 @@ export default function ProjectsSection() {
 
   const projects = [
     {
+      title: t("manarat-al-hudaydah.title"),
+      status: t("manarat-al-hudaydah.status"),
+      image: manaratAlHudaydahImage,
+      href: "/projects/manarat-al-hudaydah",
+    },
+    {
       title: t("sanaa-towers.title"),
       status: t("sanaa-towers.status"),
       image: sanaaTowersImage,
@@ -47,12 +53,6 @@ export default function ProjectsSection() {
       status: t("alhathaa-towers.status"),
       image: alHathaaTowersImage,
       href: "/projects/alhathaa-towers",
-    },
-    {
-      title: t("manarat-al-hudaydah.title"),
-      status: t("manarat-al-hudaydah.status"),
-      image: manaratAlHudaydahImage,
-      href: "/projects/manarat-al-hudaydah",
     },
   ] as const;
 

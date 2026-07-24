@@ -40,21 +40,23 @@ const ProjectTowersDisplay = React.memo(
           aria-label={t("title")}
           role="region"
         >
-          <div
-            role="tablist"
-            aria-label={ct("tabs.navigation")}
-            id={tabListId}
-            className="relative"
-          >
-            <div className="w-full">
-              <h2 className="sr-only">{ct("towers.title")}</h2>
-              <MemoizedTowerTabs
-                projectData={projectData}
-                tabPanelId={tabPanelId}
-                tabListId={tabListId}
-              />
+          {projectData.towersSection.length > 1 && (
+            <div
+              role="tablist"
+              aria-label={ct("tabs.navigation")}
+              id={tabListId}
+              className="relative"
+            >
+              <div className="w-full">
+                <h2 className="sr-only">{ct("towers.title")}</h2>
+                <MemoizedTowerTabs
+                  projectData={projectData}
+                  tabPanelId={tabPanelId}
+                  tabListId={tabListId}
+                />
+              </div>
             </div>
-          </div>
+          )}
 
           <div
             id={tabPanelId}
