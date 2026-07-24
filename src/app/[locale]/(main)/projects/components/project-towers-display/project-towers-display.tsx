@@ -78,7 +78,7 @@ const ProjectTowersDisplay = React.memo(
                 />
               )}
               <div
-                className="description text-foreground/90 scrollbar fade-y grow overflow-y-auto py-8 max-lg:my-2 ltr:lg:mr-4 rtl:lg:ml-4 [&>*]:px-[var(--padding-x)]"
+                className="description text-foreground/90 grow overflow-y-auto py-8 max-lg:my-2 ltr:lg:mr-4 rtl:lg:ml-4 [&>*]:px-[var(--padding-x)]"
                 aria-live="polite"
                 aria-atomic="true"
               >
