@@ -38,7 +38,7 @@ export default function DetailsPanel({
 
   if (selectedDataTab === "photos" && Array.isArray(mediaContainerData)) {
     return (
-      <div className="w-full max-w-full columns-2 space-y-4 overflow-x-hidden lg:columns-3">
+      <div className="w-full max-w-full columns-2 space-y-4 lg:columns-3">
         {mediaContainerData.map((image, index) => (
           // <div
           //   key={index}
@@ -87,7 +87,7 @@ function ModelDetailsPanel({
   return (
     <div
       aria-label="details"
-      className="grid grid-cols-1 gap-6 overflow-x-hidden lg:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
+      className="grid grid-cols-1 gap-6 lg:grid-cols-[repeat(auto-fill,minmax(250px,1fr))]"
     >
       {modelDetails.sections.map((section, index) => {
         const details = (
@@ -123,7 +123,7 @@ function SectionDetails({
       <h3 className="mb-3 font-bold">{t(section.title)}</h3>
       <ol
         start={start}
-        className="flex w-fit list-inside flex-col flex-wrap space-y-0.5 gap-x-7 ps-2 text-[#a5a5a5] lg:max-h-32"
+        className="flex w-full min-w-0 list-inside flex-col flex-wrap space-y-0.5 gap-x-7 ps-2 text-[#a5a5a5] lg:max-h-32"
       >
         {section.rooms.map((room, index) => (
           <li
