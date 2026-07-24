@@ -62,7 +62,7 @@ export default function VideoSection({
 
           {/* Content */}
           <div className="space-y-6">
-            <h2 className="text-3xl font-light md:text-4xl lg:text-5xl">
+            <h2 className="text-3xl font-bold md:text-4xl lg:text-5xl">
               {t(title)
                 .split("—")
                 .map((part, i) => (

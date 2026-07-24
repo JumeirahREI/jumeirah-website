@@ -38,7 +38,8 @@ export async function generateMetadata({
   const { locale } = await params;
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
-  const currentUrl = `${baseUrl}/${locale}/contact`;
+  const currentUrl =
+    locale === "ar" ? `${baseUrl}/contact` : `${baseUrl}/${locale}/contact`;
 
   return {
     title: `${t("contact-us")} | Jumeirah Real Estate Investment`,
@@ -47,7 +48,7 @@ export async function generateMetadata({
       canonical: currentUrl,
       languages: {
         en: `${baseUrl}/en/contact`,
-        ar: `${baseUrl}/ar/contact`,
+        ar: `${baseUrl}/contact`,
       },
     },
     openGraph: {

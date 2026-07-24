@@ -47,7 +47,8 @@ export async function generateMetadata({
   const { locale } = await params;
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
-  const currentUrl = `${baseUrl}/${locale}/projects`;
+  const currentUrl =
+    locale === "ar" ? `${baseUrl}/projects` : `${baseUrl}/${locale}/projects`;
 
   return {
     title: t("meta-title"),
@@ -56,7 +57,7 @@ export async function generateMetadata({
       canonical: currentUrl,
       languages: {
         en: `${baseUrl}/en/projects`,
-        ar: `${baseUrl}/ar/projects`,
+        ar: `${baseUrl}/projects`,
       },
     },
     openGraph: {

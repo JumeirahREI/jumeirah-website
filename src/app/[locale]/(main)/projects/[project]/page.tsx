@@ -64,7 +64,10 @@ export async function generateMetadata({
 
   const t = await getTranslations(projects[project].projectKey);
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
-  const currentUrl = `${baseUrl}/${locale}/projects/${project}`;
+  const currentUrl =
+    locale === "ar"
+      ? `${baseUrl}/projects/${project}`
+      : `${baseUrl}/${locale}/projects/${project}`;
 
   return {
     title: t("title"),
@@ -73,7 +76,7 @@ export async function generateMetadata({
       canonical: currentUrl,
       languages: {
         en: `${baseUrl}/en/projects/${project}`,
-        ar: `${baseUrl}/ar/projects/${project}`,
+        ar: `${baseUrl}/projects/${project}`,
       },
     },
     openGraph: {

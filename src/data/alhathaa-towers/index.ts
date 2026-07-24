@@ -1,9 +1,10 @@
+import alhathaaTowersImage from "@/../public/images/alhathaa-towers.webp";
 import afterSaleSupportIcon from "@/../public/svg/after-sale-support-icon.svg";
 import earthquakeResistanceIcon from "@/../public/svg/earthquake-resistance-icon.svg";
-import modernElevatorsIcon from "@/../public/svg/modern-elevators-icon.svg";
+import centralParkIcon from "@/../public/svg/garden.svg";
 import privateParkingIcon from "@/../public/svg/private-parking-icon.svg";
-import spaciousLayoutsIcon from "@/../public/svg/spacious-layouts-icon.svg";
-import trustedSecurityIcon from "@/../public/svg/trusted-security-icon.svg";
+import privateWaterProject from "@/../public/svg/private-water-project-icon.svg";
+import sewageIcon from "@/../public/svg/sewage-icon.svg";
 import { towers } from "@/data/alhathaa-towers/towers";
 import { ProjectData } from "@/data/types";
 
@@ -12,6 +13,12 @@ export const alhathaaTowersData: ProjectData<"Alhathaa-Towers"> = {
   title: "title",
   subtitle: "subtitle",
   towersSection: towers,
+  videoSection: {
+    title: "videoSection.title",
+    description: "videoSection.description",
+    videoUrl: "https://youtu.be/6nRVVZ8nmEY?si=7v3Y5SBQpn-M4Bdr",
+    videoThumbnail: alhathaaTowersImage,
+  },
   featuresSection: {
     title: "featuresSection.title",
     subtitle: "featuresSection.subtitle",
@@ -26,15 +33,15 @@ export const alhathaaTowersData: ProjectData<"Alhathaa-Towers"> = {
       },
       {
         title: "featuresSection.green-space",
-        icon: modernElevatorsIcon,
+        icon: centralParkIcon,
       },
       {
         title: "featuresSection.water-project",
-        icon: spaciousLayoutsIcon,
+        icon: privateWaterProject,
       },
       {
         title: "featuresSection.sanitary-system",
-        icon: trustedSecurityIcon,
+        icon: sewageIcon,
       },
       {
         title: "featuresSection.after-sale-support",

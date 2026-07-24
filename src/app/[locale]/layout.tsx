@@ -1,7 +1,10 @@
 import heroBackgroundImage from "@/../public/images/hero-background-image.webp";
+import FacebookPixel from "@/components/facebook-pixel";
+import GoogleAnalytics from "@/components/google-analytics";
 import LazyMotionProvider from "@/components/lazy-motion-provider";
 import Navbar from "@/components/navbar";
 import ParallaxScrollEffect from "@/components/parallax-scroll-effect";
+import { PostHogProvider } from "@/components/providers";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import StructuredData from "@/components/structured-data";
 import { aeonikFont, montserratArabicFont } from "@/fonts";
@@ -46,26 +49,34 @@ export default async function RootLayout({
       dir={locale === "ar" ? "rtl" : "ltr"}
       className={font.className}
     >
-      <body className="bg-background text-foreground relative min-h-svh max-w-svw font-sans not-supports-[overflow:clip]:overflow-x-hidden supports-[overflow:clip]:overflow-x-clip md:pt-4 lg:pt-10">
-        <StructuredData locale={locale} />
-        <div className="space-sections">
-          <LazyMotionProvider>
-            <BackgroundImage />
-            {process.env.NODE_ENV === "test" && <ScreenSizeIndicator />}
-            <NextIntlClientProvider locale={locale}>
-              <Navbar />
-              {children}
-            </NextIntlClientProvider>
-          </LazyMotionProvider>
-        </div>
-      </body>
+      <PostHogProvider>
+        <body className="bg-background text-foreground relative min-h-svh max-w-svw font-sans not-supports-[overflow:clip]:overflow-x-hidden supports-[overflow:clip]:overflow-x-clip md:pt-4 lg:pt-10">
+          {process.env.NEXT_PUBLIC_GA_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+          )}
+          {process.env.NEXT_PUBLIC_FB_PIXEL_ID && (
+            <FacebookPixel pixelId={process.env.NEXT_PUBLIC_FB_PIXEL_ID} />
+          )}
+          <StructuredData locale={locale} />
+          <div className="space-sections">
+            <LazyMotionProvider>
+              <BackgroundImage />
+              {process.env.NODE_ENV === "test" && <ScreenSizeIndicator />}
+              <NextIntlClientProvider locale={locale}>
+                <Navbar />
+                {children}
+              </NextIntlClientProvider>
+            </LazyMotionProvider>
+          </div>
+        </body>
+      </PostHogProvider>
     </html>
   );
 }
 
 function BackgroundImage() {
   return (
-    <div className="absolute top-0 right-0 left-0 -z-[9999] !mb-0 h-full max-h-[40rem] overflow-hidden md:max-h-[50rem] lg:max-h-[60rem]">
+    <div className="absolute top-0 right-0 left-0 -z-9999 mb-0! h-full max-h-160 overflow-hidden md:max-h-200 lg:max-h-240">
       <ParallaxScrollEffect
         aria-hidden
         className="pointer-events-none relative size-full"
@@ -100,7 +111,7 @@ export async function generateMetadata({
   const { locale } = await params;
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
-  const currentUrl = `${baseUrl}/${locale}`;
+  const currentUrl = locale === "ar" ? baseUrl : `${baseUrl}/${locale}`;
 
   return {
     title: t("title"),
@@ -124,7 +135,7 @@ export async function generateMetadata({
       canonical: currentUrl,
       languages: {
         en: `${baseUrl}/en`,
-        ar: `${baseUrl}/ar`,
+        ar: baseUrl,
       },
     },
     openGraph: {

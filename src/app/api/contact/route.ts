@@ -130,6 +130,7 @@ export const POST = async (request: Request) => {
     // Send to sales management system
     try {
       const apiUrl = process.env.SALES_API_URL || "http://localhost:8000/api";
+      console.log("Sales API URL:", apiUrl);
       const response = await fetch(`${apiUrl}/contact`, {
         method: "POST",
         headers: {
@@ -169,6 +170,8 @@ export const POST = async (request: Request) => {
         JSON.stringify({
           success: false,
           error: "Failed to process contact request",
+          details:
+            apiError instanceof Error ? apiError.message : String(apiError),
         }),
         { status: 500, headers: { "Content-Type": "application/json" } },
       );
@@ -179,6 +182,7 @@ export const POST = async (request: Request) => {
       JSON.stringify({
         success: false,
         error: "An error occurred. Please try again later.",
+        details: error instanceof Error ? error.message : String(error),
       }),
       { status: 500, headers: { "Content-Type": "application/json" } },
     );

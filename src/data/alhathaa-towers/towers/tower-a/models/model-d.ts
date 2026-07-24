@@ -1,7 +1,7 @@
-import modelD1Image from "@/../public/images/alhathaa-towers/alhathaa-towers-model-d1.webp";
-import modelD2Image from "@/../public/images/alhathaa-towers/alhathaa-towers-model-d2.webp";
-import modelD1NumberedImage from "@/../public/images/alhathaa-towers/alhathaa-towers-numbered-model-d1.webp";
-import modelD2NumberedImage from "@/../public/images/alhathaa-towers/alhathaa-towers-numbered-model-d2.webp";
+import modelD1Image from "@/../public/images/alhathaa-towers/alhathaa-towers-model-3d-d1.webp";
+import modelD2Image from "@/../public/images/alhathaa-towers/alhathaa-towers-model-3d-d2.webp";
+import modelD1NumberedImage from "@/../public/images/alhathaa-towers/alhathaa-towers-numbered-model-3d-d1.webp";
+import modelD2NumberedImage from "@/../public/images/alhathaa-towers/alhathaa-towers-numbered-model-3d-d2.webp";
 import { ModelData } from "@/data/types";
 
 export const modelD: ModelData<"Alhathaa-Towers"> = {

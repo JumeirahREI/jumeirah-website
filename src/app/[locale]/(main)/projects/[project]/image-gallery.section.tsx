@@ -43,6 +43,7 @@ export default function ImageGallerySection({
         slidesToScroll: 1,
         align: "center",
         containScroll: false,
+        skipSnaps: true,
       },
     },
   });

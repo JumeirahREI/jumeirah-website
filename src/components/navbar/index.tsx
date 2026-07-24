@@ -12,12 +12,16 @@ import { useEffect, useState } from "react";
 
 const SCROLL_THRESHOLD = 110;
 
+const HIDDEN_PATHS = ["/socials"];
+
 export default function Navbar() {
   const [isOpenMobile, setIsOpenMobile] = useState(false);
   const pathname = usePathname();
   const [showNavBackground, setShowNavBackground] = useState(false);
+  const hidden = HIDDEN_PATHS.includes(pathname);
 
   useEffect(() => {
+    if (hidden) return;
     const handleScroll = () => {
       if (window.scrollY > SCROLL_THRESHOLD) {
         setShowNavBackground(true);
@@ -32,11 +36,13 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [setIsOpenMobile]);
+  }, [setIsOpenMobile, hidden]);
 
   useEffect(() => {
     setIsOpenMobile(false);
   }, [pathname]);
+
+  if (hidden) return null;
 
   return (
     <nav className="fixed start-0 end-0 top-0 z-[999] !mb-0 md:py-4 lg:pointer-events-none lg:sticky">

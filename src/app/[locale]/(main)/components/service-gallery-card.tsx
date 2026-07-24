@@ -45,8 +45,8 @@ export function ServiceGalleryCard({
     >
       <m.div
         initial="initial"
-        whileHover="actives"
-        whileInView={!breakpoint.md ? "actives" : ""}
+        whileHover="active"
+        whileInView={!breakpoint.md ? "active" : ""}
         viewport={{ amount: 1 }}
         className="flex h-full flex-col items-center justify-center p-5 py-16 lg:py-30"
       >
@@ -73,11 +73,17 @@ export function ServiceGalleryCard({
             delay: !breakpoint.md ? 0.3 : 0,
           }}
         >
-          <ul className="list-disc pt-4 text-xl font-thin text-white/80">
+          <ul className="list-inside list-disc space-y-2 pt-10 text-lg font-thin text-white/80">
             {options.map((option, index) => (
-              <li key={index}>{t(option as Parameters<typeof t>[0])}</li>
+              <li key={index} className="">
+                {t(option as Parameters<typeof t>[0])}
+              </li>
             ))}
           </ul>
+          <div
+            aria-hidden
+            className="!pointer-events-none absolute inset-0 -z-10 bg-linear-[208deg] from-zinc-900/0 to-zinc-900 opacity-60 rtl:bg-linear-[152deg]"
+          />
         </m.div>
       </m.div>
     </ImageContainer>
