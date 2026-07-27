@@ -70,7 +70,7 @@ export default function OurProjectsSection() {
         <AnimatedGroup
           variants={transitionVariants}
           className="flex gap-4 md:justify-center md:gap-6 lg:gap-12"
-          childrenClassName="embla__slide md:mx-2 flex-[0_0_90%] sm:flex-[0_0_80%] md:flex-[0_0_47%] lg:flex-[0_0_40%] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch] not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary"
+          childrenClassName="embla__slide md:mx-2 flex-[0_0_90%] sm:flex-[0_0_80%] md:flex-[0_0_calc((100%-3rem)/3)] lg:flex-[0_0_calc((100%-6rem)/3)] first:[&_h3]:from-[1.5ch] first:[&_h3]:to-[1.5ch] not-first:[&_h3]:text-foreground not-first:[&_h3]:first-letter-primary"
           inherit
         >
           {projects.map((p) => (
