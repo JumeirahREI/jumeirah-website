@@ -5,6 +5,7 @@ import PlayButtonIcon from "@/components/icons/play-button-icon";
 import { Project, ProjectData } from "@/data/types";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { AnimatePresence, m } from "motion/react";
 import { useState } from "react";
 
 export default function VideoSection({
@@ -42,10 +43,10 @@ export default function VideoSection({
             <div className="relative aspect-square w-full overflow-hidden rounded-4xl bg-gradient-to-br from-blue-400/30 to-blue-600/30 backdrop-blur">
               {videoUrl && (
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex size-36 items-center justify-center rounded-full bg-white/5 backdrop-blur-xs transition-all duration-500 group-hover:size-28 group-hover:bg-white/20">
-                    <div className="flex size-28 items-center justify-center rounded-full bg-white/10 transition-all duration-500 group-hover:size-28">
-                      <div className="flex size-20 items-center justify-center rounded-full bg-white/10 transition-all duration-500 group-hover:size-28">
-                        <PlayButtonIcon className="ml-1 size-9 transition-all duration-500 group-hover:size-10" />
+                  <div className="flex size-36 items-center justify-center rounded-full bg-white/5 backdrop-blur-xs transition-transform duration-500 ease-out group-hover:scale-[0.78] group-hover:bg-white/20">
+                    <div className="flex size-28 items-center justify-center rounded-full bg-white/10 transition-transform duration-500 ease-out group-hover:scale-100">
+                      <div className="flex size-20 items-center justify-center rounded-full bg-white/10 transition-transform duration-500 ease-out group-hover:scale-[1.4]">
+                        <PlayButtonIcon className="ml-1 size-9 transition-transform duration-500 ease-out group-hover:scale-110" />
                       </div>
                     </div>
                   </div>
@@ -54,7 +55,7 @@ export default function VideoSection({
               <Image
                 src={projectData.videoSection.videoThumbnail}
                 alt={t(projectData.videoSection.title)}
-                className="-z-10 object-cover brightness-75 transition group-hover:brightness-90"
+                className="-z-10 object-cover brightness-75 transition-opacity duration-300 group-hover:opacity-90"
                 fill
                 sizes="(max-width: 640px) 90vw, (max-width: 768px) 80vw, (max-width: 1024px) 47vw, (max-width: 1536px) 40vw, 28vw"
               />
@@ -84,14 +85,14 @@ export default function VideoSection({
               {videoUrl && (
                 <button
                   onClick={() => setIsModalOpen(true)}
-                  className="cursor-pointer rounded-full border border-white/30 px-6 py-3 transition-all hover:bg-white/10"
+                  className="cursor-pointer rounded-full border border-white/30 px-6 py-3 transition-colors duration-150 ease-out hover:bg-white/10"
                 >
                   {ct("watch-trailer")}
                 </button>
               )}
               <AppLink
                 href="/contact"
-                className="rounded-full bg-yellow-400 px-6 py-3 font-medium text-black transition-all hover:bg-yellow-500"
+                className="rounded-full bg-yellow-400 px-6 py-3 font-medium text-black hover:bg-yellow-500"
               >
                 {ct("contact-us")}
               </AppLink>
@@ -101,42 +102,48 @@ export default function VideoSection({
       </section>
 
       {/* Modal */}
-      {isModalOpen && videoUrl && (
-        <div
-          className="fixed inset-0 z-50 flex size-full items-center justify-center bg-black/90 p-4"
-          onClick={() => setIsModalOpen(false)}
-        >
-          <button
+      <AnimatePresence>
+        {isModalOpen && videoUrl && (
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 flex size-full items-center justify-center bg-black/90 p-4"
             onClick={() => setIsModalOpen(false)}
-            className="absolute top-24 left-5 text-white transition-colors hover:text-gray-300 lg:left-52"
           >
-            <svg
-              className="h-8 w-8"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
+            <button
+              onClick={() => setIsModalOpen(false)}
+              className="absolute top-24 left-5 text-white transition-colors hover:text-gray-300 lg:left-52"
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
+              <svg
+                className="h-8 w-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <div
+              className="relative aspect-video w-full max-w-5xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <iframe
+                src={getYouTubeEmbedUrl(videoUrl)}
+                className="h-full w-full rounded-lg"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
               />
-            </svg>
-          </button>
-          <div
-            className="relative aspect-video w-full max-w-5xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <iframe
-              src={getYouTubeEmbedUrl(videoUrl)}
-              className="h-full w-full rounded-lg"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </div>
-      )}
+            </div>
+          </m.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }

@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
+import { m } from "motion/react";
 
 export interface FullscreenModalProps {
   mediaData: Array<{ image: StaticImageData; alt: string }>;
@@ -68,7 +69,13 @@ export default function FullscreenModal({
   }, [onClose, currentIndex, hasMultipleImages]);
 
   return (
-    <div className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm">
+    <m.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.98 }}
+      transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+      className="fixed inset-0 z-[9999] bg-black/95 backdrop-blur-sm"
+    >
       <TransformWrapper
         initialScale={0.8}
         minScale={0.5}
@@ -239,7 +246,7 @@ export default function FullscreenModal({
                           <button
                             onClick={() => handleThumbnailClick(index)}
                             className={cn(
-                              "relative aspect-square w-full overflow-hidden rounded-lg border-2 transition-all",
+                              "relative aspect-square w-full overflow-hidden rounded-lg border-2 transition-transform transition-colors duration-200 ease-out",
                               index === currentIndex
                                 ? "scale-105 border-white"
                                 : "border-white/30 hover:border-white/60",
@@ -264,6 +271,6 @@ export default function FullscreenModal({
           </>
         )}
       </TransformWrapper>
-    </div>
+    </m.div>
   );
 }

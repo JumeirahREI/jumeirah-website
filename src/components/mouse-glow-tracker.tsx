@@ -43,7 +43,7 @@ export default function MouseGlowTracker({
           top: mouseY,
           opacity,
         }}
-        className={`pointer-events-none absolute hidden size-[40rem] -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-white blur-3xl transition-opacity duration-300 lg:block`}
+        className={`pointer-events-none absolute hidden size-[40rem] -translate-x-1/2 -translate-y-1/2 transform rounded-full bg-white blur-3xl will-change-transform lg:block`}
       />
       {children}
     </div>

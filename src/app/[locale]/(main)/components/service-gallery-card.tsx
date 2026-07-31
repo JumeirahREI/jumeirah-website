@@ -10,11 +10,11 @@ import Image, { StaticImageData } from "next/image";
 const listVariants: Variants = {
   initial: {
     opacity: 0,
-    height: 0,
+    gridTemplateRows: "0fr",
   },
   active: {
     opacity: 1,
-    height: "auto",
+    gridTemplateRows: "1fr",
   },
 };
 
@@ -69,21 +69,24 @@ export function ServiceGalleryCard({
           variants={listVariants}
           transition={{
             duration: 0.5,
-            ease: easings.softEaseInOut,
+            ease: [0.23, 1, 0.32, 1],
             delay: !breakpoint.md ? 0.3 : 0,
           }}
+          className="grid"
         >
-          <ul className="list-inside list-disc space-y-2 pt-10 text-lg font-thin text-white/80">
-            {options.map((option, index) => (
-              <li key={index} className="">
-                {t(option as Parameters<typeof t>[0])}
-              </li>
-            ))}
-          </ul>
-          <div
-            aria-hidden
-            className="!pointer-events-none absolute inset-0 -z-10 bg-linear-[208deg] from-zinc-900/0 to-zinc-900 opacity-60 rtl:bg-linear-[152deg]"
-          />
+          <div className="min-h-0">
+            <ul className="list-inside list-disc space-y-2 pt-10 text-lg font-thin text-white/80">
+              {options.map((option, index) => (
+                <li key={index} className="">
+                  {t(option as Parameters<typeof t>[0])}
+                </li>
+              ))}
+            </ul>
+            <div
+              aria-hidden
+              className="!pointer-events-none absolute inset-0 -z-10 bg-linear-[208deg] from-zinc-900/0 to-zinc-900 opacity-60 rtl:bg-linear-[152deg]"
+            />
+          </div>
         </m.div>
       </m.div>
     </ImageContainer>

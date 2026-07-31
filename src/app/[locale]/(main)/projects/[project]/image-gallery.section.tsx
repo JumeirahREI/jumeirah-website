@@ -6,6 +6,7 @@ import { EmblaCarouselType, EmblaEventType } from "embla-carousel";
 import useEmblaCarousel from "embla-carousel-react";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
+import { AnimatePresence } from "motion/react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import GalleryFullscreenModal from "../components/gallery-fullscreen-modal";
 
@@ -164,7 +165,7 @@ export default function ImageGallerySection({
         alt={t(activeImage.alt)}
         fill
         sizes="100vw"
-        className="object-cover opacity-40 transition-all duration-700"
+        className="object-cover opacity-40 transition-opacity duration-700"
         priority
       />
       <div className="from-background to-background/20 via-background/80 absolute inset-0 bg-linear-to-t" />
@@ -178,7 +179,7 @@ export default function ImageGallerySection({
                 key={gallery.title}
                 onClick={() => handleGalleryChange(index)}
                 className={cn(
-                  "z-10 flex-1 shrink-0 cursor-pointer rounded-xl p-2 font-bold transition-all lg:whitespace-nowrap",
+                  "z-10 flex-1 shrink-0 cursor-pointer rounded-xl p-2 font-bold transition-colors duration-150 ease-out lg:whitespace-nowrap",
                   activeGalleryIndex === index
                     ? "bg-[#616161] text-white"
                     : "text-[#D9D9D9] hover:bg-white/10 hover:text-white",
@@ -205,7 +206,7 @@ export default function ImageGallerySection({
             </p>
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-primary pointer-events-auto mt-6 cursor-pointer rounded-full px-6 py-2 text-lg font-bold text-black transition-all hover:brightness-75 active:scale-95 active:brightness-75 lg:mt-8"
+              className="bg-primary pointer-events-auto mt-6 cursor-pointer rounded-full px-6 py-2 text-lg font-bold text-black transition-transform duration-150 ease-out hover:opacity-90 active:scale-[0.97] lg:mt-8"
             >
               {ct("view-gallery")}
             </button>
@@ -240,20 +241,22 @@ export default function ImageGallerySection({
       </div>
 
       {/* Gallery Modal */}
-      {isModalOpen && (
-        <GalleryFullscreenModal
-          sections={imgs.map((gallery) => ({
-            title: t(gallery.title),
-            images: gallery.images.map((img) => ({
-              image: img.src,
-              alt: t(img.alt),
-            })),
-          }))}
-          initialSectionIndex={activeGalleryIndex}
-          initialImageIndex={0}
-          onClose={() => setIsModalOpen(false)}
-        />
-      )}
+      <AnimatePresence>
+        {isModalOpen && (
+          <GalleryFullscreenModal
+            sections={imgs.map((gallery) => ({
+              title: t(gallery.title),
+              images: gallery.images.map((img) => ({
+                image: img.src,
+                alt: t(img.alt),
+              })),
+            }))}
+            initialSectionIndex={activeGalleryIndex}
+            initialImageIndex={0}
+            onClose={() => setIsModalOpen(false)}
+          />
+        )}
+      </AnimatePresence>
     </section>
   );
 }

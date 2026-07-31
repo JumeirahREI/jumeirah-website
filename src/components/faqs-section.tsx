@@ -5,7 +5,7 @@ import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { cn } from "@/lib/utils";
 import { Minus, Plus } from "lucide-react";
-import { AnimatePresence, LayoutGroup, m, Variants } from "motion/react";
+import { AnimatePresence, LayoutGroup, m } from "motion/react";
 import { useTranslations } from "next-intl";
 import { StaticImageData } from "next/image";
 import { useState } from "react";
@@ -69,25 +69,6 @@ export default function FAQsSection() {
   );
 }
 
-const faqCardVariants: Variants = {
-  inactive: {
-    width: "var(--max-width-inactive)",
-    transition: {
-      type: "tween",
-      duration: 0.4,
-      ease: "linear",
-    },
-  },
-  active: {
-    width: "var(--max-width-active)",
-    transition: {
-      type: "tween",
-      duration: 0.1,
-      ease: "linear",
-    },
-  },
-};
-
 function FAQCard({
   question,
   answer,
@@ -108,10 +89,15 @@ function FAQCard({
       <LayoutGroup>
         <m.div
           layout="position"
-          variants={faqCardVariants}
-          initial="inactive"
-          animate={isActive ? "active" : "inactive"}
-          className="flex w-full cursor-pointer gap-6 rounded-2xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl duration-300 ease-in-out [--max-width-active:100%] [--max-width-inactive:100%] md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:[--max-width-active:90%] lg:[--max-width-inactive:66%]"
+          className={cn(
+            "flex cursor-pointer gap-6 rounded-2xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6",
+            "w-full lg:w-[var(--max-width-inactive)]",
+            isActive && "lg:w-[var(--max-width-active)]",
+          )}
+          style={{
+            "--max-width-active": "90%",
+            "--max-width-inactive": "66%",
+          } as React.CSSProperties}
           onClick={onClick}
         >
           <span className="text-primary font-semibold md:text-lg">
@@ -122,23 +108,20 @@ function FAQCard({
             <AnimatePresence initial={false}>
               {isActive && (
                 <m.div
-                  layout
-                  initial={{
-                    opacity: 0,
-                    maxHeight: 0,
+                  initial={{ opacity: 0, gridTemplateRows: "0fr" }}
+                  animate={{ opacity: 1, gridTemplateRows: "1fr" }}
+                  exit={{ opacity: 0, gridTemplateRows: "0fr" }}
+                  transition={{
+                    duration: 0.2,
+                    ease: [0.23, 1, 0.32, 1],
                   }}
-                  animate={{
-                    opacity: 1,
-                    maxHeight: 300,
-                  }}
-                  transition={{ duration: 0.3, ease: "easeOut" }}
-                  exit={{
-                    opacity: 0,
-                    maxHeight: 0,
-                  }}
-                  className="max-w-[40rem] overflow-hidden"
+                  className="grid max-w-[40rem]"
                 >
-                  <p className="pt-4 pb-4 text-[#9C9C9C] lg:pt-8">{answer}</p>
+                  <div className="overflow-hidden">
+                    <p className="pt-4 pb-4 text-[#9C9C9C] lg:pt-8">
+                      {answer}
+                    </p>
+                  </div>
                 </m.div>
               )}
             </AnimatePresence>

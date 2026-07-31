@@ -7,6 +7,7 @@ import FullscreenModal from "@/app/[locale]/(main)/projects/components/project-t
 import { Project } from "@/data/types";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { AnimatePresence } from "motion/react";
 import { useState } from "react";
 
 export default function MediaDisplay({
@@ -74,14 +75,16 @@ export default function MediaDisplay({
             />
           </div>
         </MediaContainer>
-        {isFullscreen && (
-          <FullscreenModal
-            mediaData={mediaContainerData}
-            initialIndex={selectedMediaIndex}
-            onClose={() => setIsFullscreen(false)}
-            getAlt={(index) => t(mediaContainerData[index].alt)}
-          />
-        )}
+        <AnimatePresence>
+          {isFullscreen && (
+            <FullscreenModal
+              mediaData={mediaContainerData}
+              initialIndex={selectedMediaIndex}
+              onClose={() => setIsFullscreen(false)}
+              getAlt={(index) => t(mediaContainerData[index].alt)}
+            />
+          )}
+        </AnimatePresence>
       </>
     );
   }

@@ -1,4 +1,5 @@
 "use client";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { transitions } from "@/lib/transitions"; // your luxury presets
 import { Variants, m } from "motion/react";
 import React, { ReactNode } from "react";
@@ -103,6 +104,9 @@ const AnimatedGroup = ({
   inherit = false,
   ref,
 }: AnimatedGroupProps) => {
+  const shouldReduceMotion = useReducedMotion();
+  const isDisabled = disabled || shouldReduceMotion;
+
   const containerVariants = variants?.container || defaultContainerVariants;
   const itemVariants = mergeVariants(
     defaultItemVariants,
@@ -112,7 +116,7 @@ const AnimatedGroup = ({
   const MotionComponent: React.ComponentType<any> =
     ((m as any)[as as keyof typeof m] as React.ComponentType<any>) || m.div;
 
-  if (disabled) {
+  if (isDisabled) {
     const ContainerTag = as as React.ElementType;
     return (
       <ContainerTag className={className} ref={ref}>

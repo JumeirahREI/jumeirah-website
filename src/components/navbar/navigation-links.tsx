@@ -42,7 +42,13 @@ export function NavigationLinks({
   const handleLinkClick = (e: React.MouseEvent, href: string) => {
     if (pathname === href) {
       e.preventDefault();
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      const prefersReducedMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      window.scrollTo({
+        top: 0,
+        behavior: prefersReducedMotion ? "auto" : "smooth",
+      });
     }
     onLinkClick?.();
   };

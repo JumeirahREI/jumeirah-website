@@ -1,4 +1,5 @@
 "use client";
+import { useReducedMotion } from "@/lib/use-reduced-motion";
 import { cn } from "@/lib/utils";
 import type {
   TargetAndTransition,
@@ -186,9 +187,9 @@ const presetVariants: Record<
   scale: {
     container: defaultContainerVariants,
     item: {
-      hidden: { opacity: 0, scale: 0 },
+      hidden: { opacity: 0, scale: 0.9 },
       visible: { opacity: 1, scale: 1 },
-      exit: { opacity: 0, scale: 0 },
+      exit: { opacity: 0, scale: 0.9 },
     },
   },
   fade: {
@@ -363,6 +364,8 @@ export function TextEffect({
   disabled = false,
   inherit = false,
 }: TextEffectProps) {
+  const shouldReduceMotion = useReducedMotion();
+  const isDisabled = disabled || shouldReduceMotion;
   const segments = splitChildren(children, per);
   const MotionTag = m[as as keyof typeof m] as typeof m.div;
 
@@ -401,7 +404,7 @@ export function TextEffect({
     }),
   };
 
-  if (disabled) {
+  if (isDisabled) {
     const Tag = as;
     return React.createElement(Tag, { className, style }, children);
   }

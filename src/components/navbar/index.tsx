@@ -49,14 +49,14 @@ export default function Navbar() {
       <div
         aria-hidden
         className={cn(
-          "from-background to-background/0 pointer-events-none fixed inset-0 start-0 -top-4 hidden h-64 w-8/12 -translate-x-1/2 -translate-y-1/2 bg-radial opacity-0 blur-2xl transition-opacity duration-500 ease-in-out lg:block rtl:translate-x-1/2",
+          "from-background to-background/0 pointer-events-none fixed inset-0 start-0 -top-4 hidden h-64 w-8/12 -translate-x-1/2 -translate-y-1/2 bg-radial opacity-0 blur-2xl transition-opacity duration-300 ease-out lg:block rtl:translate-x-1/2",
           showNavBackground && "opacity-80",
         )}
       />
       <div className="container max-lg:pt-2 max-md:!px-3">
         <div
           className={cn(
-            "transition-[border-radius, backdrop-filter, background-color, border-color] mx-auto grid grid-cols-2 items-center justify-between rounded-md border border-white/0 backdrop-blur-none duration-400 max-lg:px-4 max-lg:py-1 lg:relative lg:container lg:flex lg:border-none lg:bg-transparent lg:backdrop-blur-none",
+            "transition-[border-radius, background-color, border-color] mx-auto grid grid-cols-2 items-center justify-between rounded-md border border-white/0 backdrop-blur-none duration-300 ease-out max-lg:px-4 max-lg:py-1 lg:relative lg:container lg:flex lg:border-none lg:bg-transparent lg:backdrop-blur-none",
             (showNavBackground || isOpenMobile) &&
               "rounded-2xl border-white/20 bg-[#00010151] backdrop-blur",
           )}

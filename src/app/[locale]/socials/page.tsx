@@ -85,7 +85,7 @@ function SocialLinkCard({
       rel={isExternal ? "noopener noreferrer" : undefined}
       className={cn(
         "group flex items-center justify-center gap-3 rounded-2xl border border-white/20 bg-white/10 px-6 py-4 text-center backdrop-blur-lg",
-        "transition-all duration-300 hover:border-white/40 hover:bg-white/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)]",
+        "transition-colors transition-shadow duration-300 ease-out hover:border-white/40 hover:bg-white/20 hover:shadow-[0_8px_30px_rgba(0,0,0,0.25)]",
       )}
     >
       {icon ? (

@@ -2,6 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
+import { m } from "motion/react";
 import { useEffect, useState } from "react";
 import { TransformComponent, TransformWrapper } from "react-zoom-pan-pinch";
 
@@ -78,7 +79,13 @@ export default function GalleryFullscreenModal({
   if (!currentImage) return null;
 
   return (
-    <div className="fixed inset-0 z-[99999] bg-black">
+    <m.div
+      initial={{ opacity: 0, scale: 0.98 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.98 }}
+      transition={{ duration: 0.25, ease: [0.23, 1, 0.32, 1] }}
+      className="fixed inset-0 z-[99999] bg-black"
+    >
       <TransformWrapper
         initialScale={1}
         minScale={0.5}
@@ -193,7 +200,7 @@ export default function GalleryFullscreenModal({
                                 handleThumbnailClick(sectionIndex, imageIndex)
                               }
                               className={cn(
-                                "relative aspect-square size-20 shrink-0 overflow-hidden rounded-lg border-2 transition-all md:h-auto md:w-auto",
+                                "relative aspect-square size-20 shrink-0 overflow-hidden rounded-lg border-2 transition-transform transition-colors duration-200 ease-out md:h-auto md:w-auto",
                                 sectionIndex === currentSectionIndex &&
                                   imageIndex === currentImageIndex
                                   ? "scale-105 border-white ring-2 ring-white/50"
@@ -283,6 +290,6 @@ export default function GalleryFullscreenModal({
           </>
         )}
       </TransformWrapper>
-    </div>
+    </m.div>
   );
 }

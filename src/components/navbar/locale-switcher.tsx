@@ -4,7 +4,7 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { luxuryPresets } from "@/lib/luxury-presets";
 import { cn } from "@/lib/utils";
 import { GlobeIcon } from "lucide-react";
-import { m, Variants } from "motion/react";
+import { AnimatePresence, m, Variants } from "motion/react";
 import { useLocale } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -160,51 +160,57 @@ function DesktopLocaleDropdown({
         <GlobeIcon className="size-6" />
       </button>
 
-      {open && (
-        <m.div
-          className="absolute right-0 z-[1000] mt-3 min-w-44 overflow-hidden rounded-xl border border-white/10 bg-[#0F0F0F]/80 p-1 shadow-lg backdrop-blur"
-          initial={animated ? { opacity: 0, y: 8 } : undefined}
-          animate={animated ? { opacity: 1, y: 0 } : undefined}
-          transition={{ duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
-        >
-          <m.ul
-            className="flex flex-col gap-1"
-            variants={animated ? listVariants : undefined}
-            initial={animated ? "hidden" : undefined}
-            animate={animated ? "visible" : undefined}
+      <AnimatePresence>
+        {open && (
+          <m.div
+            className={cn(
+              "absolute right-0 z-[1000] mt-3 min-w-44 origin-top-right overflow-hidden rounded-xl border border-white/10 bg-[#0F0F0F]/80 p-1 shadow-lg backdrop-blur",
+              "rtl:left-0 rtl:right-auto rtl:origin-top-left",
+            )}
+            initial={{ opacity: 0, y: 8, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 8, scale: 0.95 }}
+            transition={{ duration: 0.2, ease: [0.23, 1, 0.32, 1] }}
           >
-            {available.map((loc) => {
-              const isActive = loc.code === currentLocale;
-              return (
-                <m.li
-                  key={loc.label}
-                  variants={animated ? itemVariants : undefined}
-                >
-                  <Link
-                    href={pathname}
-                    locale={loc.code}
-                    scroll={false}
-                    className={cn(
-                      "flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-white/90",
-                      "hover:bg-white/5",
-                      isActive && "text-primary !bg-white/10",
-                    )}
-                    onClick={(e) => {
-                      setOpen(false);
-                      if (isActive) {
-                        e.preventDefault();
-                      }
-                    }}
+            <m.ul
+              className="flex flex-col gap-1"
+              variants={animated ? listVariants : undefined}
+              initial={animated ? "hidden" : undefined}
+              animate={animated ? "visible" : undefined}
+            >
+              {available.map((loc) => {
+                const isActive = loc.code === currentLocale;
+                return (
+                  <m.li
+                    key={loc.label}
+                    variants={animated ? itemVariants : undefined}
                   >
-                    <span className="size-1.5 rounded-full bg-white/40" />
-                    {loc.label}
-                  </Link>
-                </m.li>
-              );
-            })}
-          </m.ul>
-        </m.div>
-      )}
+                    <Link
+                      href={pathname}
+                      locale={loc.code}
+                      scroll={false}
+                      className={cn(
+                        "flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-white/90",
+                        "hover:bg-white/5",
+                        isActive && "text-primary !bg-white/10",
+                      )}
+                      onClick={(e) => {
+                        setOpen(false);
+                        if (isActive) {
+                          e.preventDefault();
+                        }
+                      }}
+                    >
+                      <span className="size-1.5 rounded-full bg-white/40" />
+                      {loc.label}
+                    </Link>
+                  </m.li>
+                );
+              })}
+            </m.ul>
+          </m.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
