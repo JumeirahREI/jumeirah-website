@@ -175,10 +175,10 @@ export default function ImageGallerySection({
         <div className="relative z-40 mx-auto mb-8 rounded-2xl bg-black/60 p-2 backdrop-blur-lg lg:mb-12 lg:inline-block">
           {shouldScrollTabs ? (
             <div
-              className="fade-x w-full px-3 lg:mask-none"
+              className="fade-x w-full lg:px-3 lg:mask-none"
               style={{ "--fade-start": "3%", "--fade-end": "97%" } as React.CSSProperties}
             >
-              <div className="flex w-full gap-4 overflow-x-auto no-scrollbar">
+              <div className="flex w-full gap-2 overflow-x-auto px-2 no-scrollbar lg:gap-4 lg:px-0">
                 {imgs!.map((gallery, index) => (
                   <button
                     key={gallery.title}
