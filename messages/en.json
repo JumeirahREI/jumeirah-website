@@ -1186,6 +1186,119 @@
     "videoSection": {
       "title": "About Manarat Al-Hudaydah",
       "description": "The project is located in one of the finest neighborhoods of Al-Hudaydah — the commercial district — in a vibrant location that offers residents easy access and breathtaking sea views from all sides, making the project an ideal choice for those seeking luxury living or a promising real estate investment in Al-Hudaydah."
+    },
+    "imageGallerySection": {
+      "interior-designs": "Interior Designs",
+      "exterior": "Exterior",
+      "parking": "Parking",
+      "spa-and-swimming-pool": "Spa & Swimming Pool",
+      "headings": {
+        "interior-designs": {
+          "title": "<span>Interior</span> Designs",
+          "subtitle": "Interior and layout visualizations for all apartments."
+        },
+        "exterior": {
+          "title": "<span>Exterior</span> Gallery",
+          "subtitle": "Exterior architectural renders of the tower."
+        },
+        "parking": {
+          "title": "<span>Parking</span> Gallery",
+          "subtitle": "Parking and garage visuals."
+        },
+        "spa-and-swimming-pool": {
+          "title": "<span>Spa & Swimming Pool</span> Gallery",
+          "subtitle": "Spa and swimming pool renders."
+        }
+      },
+      "images": {
+        "interior-designs": {
+          "image-1": "Interior Designs view 1",
+          "image-2": "Interior Designs view 2",
+          "image-3": "Interior Designs view 3",
+          "image-4": "Interior Designs view 4",
+          "image-5": "Interior Designs view 5",
+          "image-6": "Interior Designs view 6",
+          "image-7": "Interior Designs view 7",
+          "image-8": "Interior Designs view 8",
+          "image-9": "Interior Designs view 9",
+          "image-10": "Interior Designs view 10",
+          "image-11": "Interior Designs view 11",
+          "image-12": "Interior Designs view 12",
+          "image-13": "Interior Designs view 13",
+          "image-14": "Interior Designs view 14",
+          "image-15": "Interior Designs view 15",
+          "image-16": "Interior Designs view 16",
+          "image-17": "Interior Designs view 17",
+          "image-18": "Interior Designs view 18",
+          "image-19": "Interior Designs view 19",
+          "image-20": "Interior Designs view 20",
+          "image-21": "Interior Designs view 21",
+          "image-22": "Interior Designs view 22",
+          "image-23": "Interior Designs view 23",
+          "image-24": "Interior Designs view 24",
+          "image-25": "Interior Designs view 25",
+          "image-26": "Interior Designs view 26",
+          "image-27": "Interior Designs view 27",
+          "image-28": "Interior Designs view 28",
+          "image-29": "Interior Designs view 29",
+          "image-30": "Interior Designs view 30",
+          "image-31": "Interior Designs view 31",
+          "image-32": "Interior Designs view 32",
+          "image-33": "Interior Designs view 33",
+          "image-34": "Interior Designs view 34",
+          "image-35": "Interior Designs view 35",
+          "image-36": "Interior Designs view 36",
+          "image-37": "Interior Designs view 37",
+          "image-38": "Interior Designs view 38",
+          "image-39": "Interior Designs view 39",
+          "image-40": "Interior Designs view 40",
+          "image-41": "Interior Designs view 41",
+          "image-42": "Interior Designs view 42",
+          "image-43": "Interior Designs view 43",
+          "image-44": "Interior Designs view 44",
+          "image-45": "Interior Designs view 45",
+          "image-46": "Interior Designs view 46",
+          "image-47": "Interior Designs view 47",
+          "image-48": "Interior Designs view 48",
+          "image-49": "Interior Designs view 49",
+          "image-50": "Interior Designs view 50",
+          "image-51": "Interior Designs view 51"
+        },
+        "exterior": {
+          "image-1": "Exterior view 1",
+          "image-2": "Exterior view 2",
+          "image-3": "Exterior view 3",
+          "image-4": "Exterior view 4",
+          "image-5": "Exterior view 5",
+          "image-6": "Exterior view 6",
+          "image-7": "Exterior view 7"
+        },
+        "parking": {
+          "image-1": "Parking view 1",
+          "image-2": "Parking view 2",
+          "image-3": "Parking view 3",
+          "image-4": "Parking view 4",
+          "image-5": "Parking view 5"
+        },
+        "spa-and-swimming-pool": {
+          "image-1": "Spa & Swimming Pool view 1",
+          "image-2": "Spa & Swimming Pool view 2",
+          "image-3": "Spa & Swimming Pool view 3",
+          "image-4": "Spa & Swimming Pool view 4",
+          "image-5": "Spa & Swimming Pool view 5",
+          "image-6": "Spa & Swimming Pool view 6",
+          "image-7": "Spa & Swimming Pool view 7",
+          "image-8": "Spa & Swimming Pool view 8",
+          "image-9": "Spa & Swimming Pool view 9",
+          "image-10": "Spa & Swimming Pool view 10",
+          "image-11": "Spa & Swimming Pool view 11",
+          "image-12": "Spa & Swimming Pool view 12",
+          "image-13": "Spa & Swimming Pool view 13",
+          "image-14": "Spa & Swimming Pool view 14",
+          "image-15": "Spa & Swimming Pool view 15",
+          "image-16": "Spa & Swimming Pool view 16"
+        }
+      }
     }
   },
   "FAQsSection": {

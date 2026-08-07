@@ -12,6 +12,7 @@ import jacuzziIcon from "@/../public/svg/jacuzzi-icon.svg";
 import locationIcon from "@/../public/svg/location-icon.svg";
 import privateParkingIcon from "@/../public/svg/private-parking-icon.svg";
 import trustedSecurityIcon from "@/../public/svg/trusted-security-icon.svg";
+import { imageGallerySection } from "./gallery";
 import { ProjectData } from "@/data/types";
 
 const modelAImage = apartmentA;
@@ -363,4 +364,5 @@ export const manaratAlHudaydahData: ProjectData<"ManaratAlHudaydah"> = {
       },
     ],
   },
+  imageGallerySection,
 };
