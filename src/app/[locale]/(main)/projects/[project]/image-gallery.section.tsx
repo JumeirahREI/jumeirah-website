@@ -173,30 +173,46 @@ export default function ImageGallerySection({
       {/* Gallery Tabs */}
       <div className="container">
         <div className="relative z-40 mx-auto mb-8 rounded-2xl bg-black/60 p-2 backdrop-blur-lg lg:mb-12 lg:inline-block">
-          <div
-          className={cn(
-            "flex gap-4",
-            shouldScrollTabs && "no-scrollbar overflow-x-auto",
-          )}
-        >
-          {imgs!.map((gallery, index) => (
-            <button
-              key={gallery.title}
-              onClick={() => handleGalleryChange(index)}
-              className={cn(
-                "z-10 cursor-pointer rounded-xl p-2 font-bold transition-all",
-                shouldScrollTabs
-                  ? "shrink-0 whitespace-nowrap"
-                  : "flex-1 shrink-0 lg:whitespace-nowrap",
-                activeGalleryIndex === index
-                  ? "bg-[#616161] text-white"
-                  : "text-[#D9D9D9] hover:bg-white/10 hover:text-white",
-              )}
+          {shouldScrollTabs ? (
+            <div
+              className="fade-x w-full px-3 lg:mask-none"
+              style={{ "--fade-start": "3%", "--fade-end": "97%" } as React.CSSProperties}
             >
-              {t(gallery.title)}
-            </button>
-          ))}
-        </div>
+              <div className="flex w-full gap-4 overflow-x-auto no-scrollbar">
+                {imgs!.map((gallery, index) => (
+                  <button
+                    key={gallery.title}
+                    onClick={() => handleGalleryChange(index)}
+                    className={cn(
+                      "z-10 shrink-0 cursor-pointer whitespace-nowrap rounded-xl px-4 py-2 font-bold transition-all",
+                      activeGalleryIndex === index
+                        ? "bg-[#616161] text-white"
+                        : "text-[#D9D9D9] hover:bg-white/10 hover:text-white",
+                    )}
+                  >
+                    {t(gallery.title)}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="flex w-full gap-4">
+              {imgs!.map((gallery, index) => (
+                <button
+                  key={gallery.title}
+                  onClick={() => handleGalleryChange(index)}
+                  className={cn(
+                    "z-10 flex-1 shrink-0 cursor-pointer rounded-xl px-4 py-2 font-bold transition-all lg:whitespace-nowrap",
+                    activeGalleryIndex === index
+                      ? "bg-[#616161] text-white"
+                      : "text-[#D9D9D9] hover:bg-white/10 hover:text-white",
+                  )}
+                >
+                  {t(gallery.title)}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 
