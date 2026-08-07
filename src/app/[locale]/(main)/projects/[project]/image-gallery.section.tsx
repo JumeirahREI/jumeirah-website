@@ -26,6 +26,7 @@ export default function ImageGallerySection({
 
   const initialGallery = useMemo(() => imgs?.[0], [imgs]);
   const [activeGalleryIndex, setActiveGalleryIndex] = useState(0);
+  const shouldScrollTabs = (imgs?.length ?? 0) > 2;
   const currentGallery = imgs?.[activeGalleryIndex];
   const [activeImage, setActiveImage] = useState(
     () => initialGallery?.images[0],
@@ -172,22 +173,30 @@ export default function ImageGallerySection({
       {/* Gallery Tabs */}
       <div className="container">
         <div className="relative z-40 mx-auto mb-8 rounded-2xl bg-black/60 p-2 backdrop-blur-lg lg:mb-12 lg:inline-block">
-          <div className="flex gap-4">
-            {imgs!.map((gallery, index) => (
-              <button
-                key={gallery.title}
-                onClick={() => handleGalleryChange(index)}
-                className={cn(
-                  "z-10 flex-1 shrink-0 cursor-pointer rounded-xl p-2 font-bold transition-all lg:whitespace-nowrap",
-                  activeGalleryIndex === index
-                    ? "bg-[#616161] text-white"
-                    : "text-[#D9D9D9] hover:bg-white/10 hover:text-white",
-                )}
-              >
-                {t(gallery.title)}
-              </button>
-            ))}
-          </div>
+          <div
+          className={cn(
+            "flex gap-4",
+            shouldScrollTabs && "no-scrollbar overflow-x-auto",
+          )}
+        >
+          {imgs!.map((gallery, index) => (
+            <button
+              key={gallery.title}
+              onClick={() => handleGalleryChange(index)}
+              className={cn(
+                "z-10 cursor-pointer rounded-xl p-2 font-bold transition-all",
+                shouldScrollTabs
+                  ? "shrink-0 whitespace-nowrap"
+                  : "flex-1 shrink-0 lg:whitespace-nowrap",
+                activeGalleryIndex === index
+                  ? "bg-[#616161] text-white"
+                  : "text-[#D9D9D9] hover:bg-white/10 hover:text-white",
+              )}
+            >
+              {t(gallery.title)}
+            </button>
+          ))}
+        </div>
         </div>
       </div>
 
