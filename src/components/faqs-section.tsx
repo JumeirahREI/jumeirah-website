@@ -114,7 +114,7 @@ function FAQCard({
               onClick={onClick}
               aria-expanded={isActive}
               aria-controls={answerId}
-              className="block w-full cursor-pointer border-0 bg-transparent p-0 text-start font-bold"
+              className="-my-2 block w-[calc(100%_+_1rem)] cursor-pointer border-0 bg-transparent py-2 text-start font-bold md:-my-4 md:w-[calc(100%_+_1.5rem)] md:py-4 lg:-my-6 lg:w-[calc(100%_+_2rem)] lg:py-6"
             >
               {question}
             </button>
