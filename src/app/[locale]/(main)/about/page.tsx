@@ -10,7 +10,7 @@ import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import ImageContainer from "@/components/image-container";
 import PageHeader from "@/components/page-header";
 import Section from "@/components/section";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 import { Metadata } from "next";
 import { useLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -164,9 +164,7 @@ export async function generateMetadata({
   const t = await getTranslations("AboutUs");
   const { locale } = await params;
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
-  const currentUrl =
-    locale === "ar" ? `${baseUrl}/about` : `${baseUrl}/${locale}/about`;
+  const currentUrl = absoluteUrl(locale, "/about");
 
   return {
     title: t("meta-title"),
@@ -174,8 +172,8 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        en: `${baseUrl}/en/about`,
-        ar: `${baseUrl}/about`,
+        en: absoluteUrl("en", "/about"),
+        ar: absoluteUrl("ar", "/about"),
       },
     },
     openGraph: {
@@ -187,7 +185,7 @@ export async function generateMetadata({
       siteName: "Jumeirah Real Estate Investment",
       images: [
         {
-          url: `${baseUrl}/images/company-history-image.webp`,
+          url: `${siteConfig.baseUrl}/images/company-history-image.webp`,
           width: 1080,
           height: 1350,
           alt: t("meta-title"),

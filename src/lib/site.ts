@@ -17,8 +17,6 @@ export const siteConfig = {
   logo: `${baseUrl}/images/logo.png`,
   /** Canonical E.164 phone number. */
   phone: "+967778265522",
-  /** Human-readable rendering of `phone`. */
-  phoneDisplay: "+967 778 265 522",
   email: "info@jumeirahye.com",
   address: {
     country: "YE",
@@ -50,7 +48,7 @@ export const siteConfig = {
     "https://www.facebook.com/JumeirahYemen",
     "https://www.instagram.com/JumeirahYemen",
     "https://www.linkedin.com/company/jumeirahye",
-    "https://www.x.com/JumeirahYemen",
+    "https://x.com/JumeirahYemen",
   ],
   organizationId: `${baseUrl}/#organization`,
 } as const;

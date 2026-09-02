@@ -13,6 +13,8 @@ export default function ContactStructuredData({ locale }: { locale: string }) {
     "@id": siteConfig.organizationId,
     url: siteConfig.baseUrl,
     telephone: siteConfig.phone,
+    email: siteConfig.email,
+    areaServed: siteConfig.address.country,
     address: {
       "@type": "PostalAddress",
       streetAddress: t("street-address"),
@@ -43,6 +45,7 @@ export default function ContactStructuredData({ locale }: { locale: string }) {
     url: absoluteUrl(locale, "/contact"),
     mainEntity: {
       "@type": "RealEstateAgent",
+      "@id": siteConfig.organizationId,
       name: siteConfig.name,
       contactPoint: {
         "@type": "ContactPoint",

@@ -38,9 +38,7 @@ export async function generateMetadata({
   const t = await getTranslations("ContactUs");
   const { locale } = await params;
 
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
-  const currentUrl =
-    locale === "ar" ? `${baseUrl}/contact` : `${baseUrl}/${locale}/contact`;
+  const currentUrl = absoluteUrl(locale, "/contact");
 
   return {
     title: t("meta-title"),
@@ -48,8 +46,8 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        en: `${baseUrl}/en/contact`,
-        ar: `${baseUrl}/contact`,
+        en: absoluteUrl("en", "/contact"),
+        ar: absoluteUrl("ar", "/contact"),
       },
     },
     openGraph: {

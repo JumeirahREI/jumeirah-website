@@ -5,7 +5,7 @@ import { alhathaaTowersData } from "@/data/alhathaa-towers";
 import { manaratAlHudaydahData } from "@/data/manarat-al-hudaydah";
 import { sanaaTowersData } from "@/data/sanaa-towers";
 import { Project, ProjectData } from "@/data/types";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, siteConfig } from "@/lib/site";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -72,11 +72,7 @@ export async function generateMetadata({
   // Al-Hudaydah) — fall back to the plain `title` rather than rendering a
   // missing-message placeholder.
   const metaTitle = t.has("meta-title") ? t("meta-title") : t("title");
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
-  const currentUrl =
-    locale === "ar"
-      ? `${baseUrl}/projects/${project}`
-      : `${baseUrl}/${locale}/projects/${project}`;
+  const currentUrl = absoluteUrl(locale, `/projects/${project}`);
 
   return {
     title: metaTitle,
@@ -84,8 +80,8 @@ export async function generateMetadata({
     alternates: {
       canonical: currentUrl,
       languages: {
-        en: `${baseUrl}/en/projects/${project}`,
-        ar: `${baseUrl}/projects/${project}`,
+        en: absoluteUrl("en", `/projects/${project}`),
+        ar: absoluteUrl("ar", `/projects/${project}`),
       },
     },
     openGraph: {
@@ -97,7 +93,7 @@ export async function generateMetadata({
       siteName: "Jumeirah Real Estate Investment",
       images: [
         {
-          url: `${baseUrl}/images/${project}.webp`,
+          url: `${siteConfig.baseUrl}/images/${project}.webp`,
           width: 1200,
           height: 630,
           alt: t("title"),
@@ -108,7 +104,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: metaTitle,
       description: t("meta-description"),
-      images: [`${baseUrl}/images/${project}-twitter.jpg`],
+      images: [`${siteConfig.baseUrl}/images/${project}-twitter.jpg`],
     },
   };
 }

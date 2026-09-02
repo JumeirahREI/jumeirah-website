@@ -39,12 +39,12 @@ const socials = [
   },
   {
     key: "email",
-    href: "mailto:info@jumeirahye.com",
+    href: `mailto:${siteConfig.email}`,
     icon: emailIcon,
   },
   {
     key: "website",
-    href: "https://jumeirahye.com/",
+    href: siteConfig.baseUrl,
     icon: null,
   },
 ] as const;

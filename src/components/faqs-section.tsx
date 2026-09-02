@@ -1,6 +1,5 @@
 "use client";
 
-import faqImage from "@/../public/images/faqs-image.webp";
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { faqKeys } from "@/data/faqs";
@@ -8,7 +7,6 @@ import { cn } from "@/lib/utils";
 import { Minus, Plus } from "lucide-react";
 import { LayoutGroup, m, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
-import { StaticImageData } from "next/image";
 import { useState } from "react";
 
 export default function FAQsSection() {
@@ -19,7 +17,6 @@ export default function FAQsSection() {
   const questions = faqKeys.map((key) => ({
     question: t(`${key}.question`),
     answer: t(`${key}.answer`),
-    image: faqImage,
   }));
 
   return (
@@ -81,14 +78,12 @@ const faqAnswerVariants: Variants = {
 function FAQCard({
   question,
   answer,
-  image,
   index,
   onClick,
   isActive,
 }: {
   question: string;
   answer: string;
-  image: StaticImageData;
   index: number;
   onClick: () => void;
   isActive: boolean;
@@ -109,6 +104,10 @@ function FAQCard({
             {String(index + 1).padStart(2, "0")}
           </span>
           <div className="w-full">
+            {/* Width/negative-margin values here must stay in sync with the
+                outer card's own padding (px-4 py-2 / md:px-6 md:py-4 /
+                lg:px-8 lg:py-6 on the m.div above) — changing one without
+                the other silently breaks the click/tap hit-area fix. */}
             <button
               type="button"
               onClick={onClick}
@@ -125,6 +124,7 @@ function FAQCard({
               animate={isActive ? "open" : "closed"}
               variants={faqAnswerVariants}
               transition={{ duration: 0.3, ease: "easeOut" }}
+              aria-hidden={!isActive}
               className="max-w-[40rem] overflow-hidden"
             >
               <p className="pt-4 pb-4 text-[#9C9C9C] lg:pt-8">{answer}</p>

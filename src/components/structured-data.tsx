@@ -9,6 +9,7 @@ export default function StructuredData({ locale }: { locale: string }) {
     "@type": "RealEstateAgent",
     "@id": siteConfig.organizationId,
     name: siteConfig.name,
+    legalName: siteConfig.legalName,
     url: siteConfig.baseUrl,
     logo: siteConfig.logo,
     description: t("description"),
