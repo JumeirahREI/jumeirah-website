@@ -1,0 +1,5 @@
+[build.environment]
+  # The Netlify secret scanner flags the SENTRY_ORG value in build artifacts
+  # (webpack cache) as a leaked secret, but this site does not use Sentry.
+  # Unsetting it for the build avoids the false-positive deploy failure.
+  SENTRY_ORG = ""
