@@ -12,6 +12,7 @@ import ContactUsForm from "@/components/contact-us-form";
 import GlassCard from "@/components/ui/glass-card";
 import Logo from "@/components/ui/logo";
 import { Link } from "@/i18n/navigation";
+import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
@@ -43,13 +44,22 @@ export default function ContactUsSection({
             <div className="flex flex-col gap-5 lg:flex-row lg:gap-5">
               <div className="flex items-center gap-3">
                 <Icon src={phoneIcon} alt="Phone Icon" />
-                <p dir="ltr" className="text-nowrap">
-                  +(967) 778265522
-                </p>
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  dir="ltr"
+                  className="text-nowrap text-[#9C9C9C]"
+                >
+                  {siteConfig.phone}
+                </a>
               </div>
               <div className="flex items-center gap-3">
                 <Icon src={emailIcon} alt="Email Icon" />
-                <p>info@jumeirahye.com</p>
+                <a
+                  href={`mailto:${siteConfig.email}`}
+                  className="text-[#9C9C9C]"
+                >
+                  {siteConfig.email}
+                </a>
               </div>
             </div>
             <div className="flex items-start gap-4">

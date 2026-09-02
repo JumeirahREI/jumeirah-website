@@ -10,6 +10,7 @@ import ContactUsForm from "@/components/contact-us-form";
 import GlassCard from "@/components/ui/glass-card";
 import Logo from "@/components/ui/logo";
 import { Link } from "@/i18n/navigation";
+import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
@@ -36,13 +37,17 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-3">
                 <Icon src={emailIcon} alt="Email Icon" />
-                <p>info@jumeirahye.com</p>
+                <a href={`mailto:${siteConfig.email}`}>{siteConfig.email}</a>
               </div>
               <div className="flex items-center gap-3">
                 <Icon src={phoneIcon} alt="Phone Icon" />
-                <p dir="ltr" className="text-nowrap">
-                  +967778265522
-                </p>
+                <a
+                  href={`tel:${siteConfig.phone}`}
+                  dir="ltr"
+                  className="text-nowrap"
+                >
+                  {siteConfig.phone}
+                </a>
               </div>
             </div>
           </div>
