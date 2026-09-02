@@ -10,6 +10,7 @@ import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import ImageContainer from "@/components/image-container";
 import PageHeader from "@/components/page-header";
 import Section from "@/components/section";
+import { absoluteUrl } from "@/lib/site";
 import { Metadata } from "next";
 import { useLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -58,8 +59,8 @@ export default function AboutUsPage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: homeT("home"), url: `/${locale}` },
-          { name: homeT("about"), url: `/${locale}/about` },
+          { name: homeT("home"), url: absoluteUrl(locale) },
+          { name: homeT("about"), url: absoluteUrl(locale, "/about") },
         ]}
       />
       <PageHeader title={t("title")} subTitle={t("subtitle")}>

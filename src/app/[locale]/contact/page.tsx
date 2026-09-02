@@ -1,6 +1,7 @@
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import ContactStructuredData from "@/components/contact-structured-data";
 import ContactUsSection from "@/components/contact-us-section";
+import { absoluteUrl } from "@/lib/site";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -17,8 +18,8 @@ export default async function ContactPage({
       <ContactStructuredData locale={locale} />
       <BreadcrumbSchema
         items={[
-          { name: t("home"), url: `/${locale}` },
-          { name: t("contact-us"), url: `/${locale}/contact` },
+          { name: t("home"), url: absoluteUrl(locale) },
+          { name: t("contact-us"), url: absoluteUrl(locale, "/contact") },
         ]}
       />
       <main className="bg-transparent pt-20 lg:pt-13">

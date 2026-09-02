@@ -2,6 +2,7 @@ import ProjectsSection from "@/app/[locale]/(main)/projects/components/sections/
 import AppLink from "@/components/app-link";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import PageHeader from "@/components/page-header";
+import { absoluteUrl } from "@/lib/site";
 import { Metadata } from "next";
 import { useLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -16,8 +17,8 @@ export default function ProjectsPage() {
     <>
       <BreadcrumbSchema
         items={[
-          { name: homeT("home"), url: `/${locale}` },
-          { name: homeT("projects"), url: `/${locale}/projects` },
+          { name: homeT("home"), url: absoluteUrl(locale) },
+          { name: homeT("projects"), url: absoluteUrl(locale, "/projects") },
         ]}
       />
       <PageHeader title={t("title")} subTitle={t("sub-title")}>

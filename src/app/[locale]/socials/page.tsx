@@ -1,23 +1,41 @@
 import emailIcon from "@/../public/svg/email-icon.svg";
 import facebookIcon from "@/../public/svg/facebook.svg";
 import instagramIcon from "@/../public/svg/instagram.svg";
+import linkedinIcon from "@/../public/svg/linkedin.svg";
+import xIcon from "@/../public/svg/x-icon.svg";
 import Logo from "@/components/ui/logo";
 import { Link } from "@/i18n/navigation";
+import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Globe } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
 
+// siteConfig.sameAs order: Facebook, Instagram, LinkedIn, X (see src/lib/site.ts).
+// Sourcing hrefs from siteConfig.sameAs keeps the profiles linked here in
+// sync with the profiles claimed by the sameAs JSON-LD structured data.
+const [facebookUrl, instagramUrl, linkedinUrl, xUrl] = siteConfig.sameAs;
+
 const socials = [
   {
     key: "instagram",
-    href: "https://www.instagram.com/jumeirahyemen",
+    href: instagramUrl,
     icon: instagramIcon,
   },
   {
     key: "facebook",
-    href: "https://www.facebook.com/share/1MDft5MQCh/",
+    href: facebookUrl,
     icon: facebookIcon,
+  },
+  {
+    key: "linkedin",
+    href: linkedinUrl,
+    icon: linkedinIcon,
+  },
+  {
+    key: "x",
+    href: xUrl,
+    icon: xIcon,
   },
   {
     key: "email",

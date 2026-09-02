@@ -5,6 +5,7 @@ import { alhathaaTowersData } from "@/data/alhathaa-towers";
 import { manaratAlHudaydahData } from "@/data/manarat-al-hudaydah";
 import { sanaaTowersData } from "@/data/sanaa-towers";
 import { Project, ProjectData } from "@/data/types";
+import { absoluteUrl } from "@/lib/site";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -38,9 +39,12 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
       />
       <BreadcrumbSchema
         items={[
-          { name: t("home"), url: `/${locale}` },
-          { name: t("projects"), url: `/${locale}/projects` },
-          { name: projectT("title"), url: `/${locale}/projects/${project}` },
+          { name: t("home"), url: absoluteUrl(locale) },
+          { name: t("projects"), url: absoluteUrl(locale, "/projects") },
+          {
+            name: projectT("title"),
+            url: absoluteUrl(locale, `/projects/${project}`),
+          },
         ]}
       />
       <ProjectDetails projectData={projects[project] as ProjectData<Project>} />

@@ -1,7 +1,7 @@
+import { absoluteUrl } from "@/lib/site";
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
   const locales = ["en", "ar"];
 
   const sitemapEntries: MetadataRoute.Sitemap = [];
@@ -31,18 +31,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   routeConfig.forEach(({ path, priority, changeFrequency }) => {
     locales.forEach((locale) => {
-      const url =
-        locale === "ar" ? `${baseUrl}${path}` : `${baseUrl}/${locale}${path}`;
-
       sitemapEntries.push({
-        url,
+        url: absoluteUrl(locale, path),
         lastModified: new Date(),
         changeFrequency,
         priority,
         alternates: {
           languages: {
-            en: `${baseUrl}/en${path}`,
-            ar: `${baseUrl}${path}`,
+            en: absoluteUrl("en", path),
+            ar: absoluteUrl("ar", path),
           },
         },
       });
