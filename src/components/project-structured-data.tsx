@@ -45,6 +45,7 @@ export default async function ProjectStructuredData({
     image: `${siteConfig.baseUrl}/images/${projectSlug}.webp`,
     provider: {
       "@type": "RealEstateAgent",
+      "@id": siteConfig.organizationId,
       name: siteConfig.name,
       url: siteConfig.baseUrl,
     },

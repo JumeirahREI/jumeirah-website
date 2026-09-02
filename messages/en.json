@@ -1334,6 +1334,7 @@
     "message": "Message",
     "send-message": "Send Message",
     "location": "Yemen, Sana'a – Political District, parallel to Hadda Street, next to Al-Tawfeer Hyper",
+    "street-address": "Political District, parallel to Hadda Street, next to Al-Tawfeer Hyper",
     "success-message": "Message sent successfully! We will get back to you soon.",
     "error-message": "Please fill in all required fields and provide at least one contact method (email or phone)."
   },

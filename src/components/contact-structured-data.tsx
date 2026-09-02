@@ -15,7 +15,7 @@ export default function ContactStructuredData({ locale }: { locale: string }) {
     telephone: siteConfig.phone,
     address: {
       "@type": "PostalAddress",
-      streetAddress: t("location"),
+      streetAddress: t("street-address"),
       addressLocality: siteConfig.address.locality,
       addressRegion: siteConfig.address.region,
       addressCountry: siteConfig.address.country,
