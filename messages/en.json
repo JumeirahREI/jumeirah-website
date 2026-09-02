@@ -91,6 +91,7 @@
     "manarat-al-hudaydah": "Manarat Al-Hudaydah"
   },
   "SanaaTowers": {
+    "meta-title": "Sana'a Towers | Jumeirah Real Estate Investment, Sana'a Yemen",
     "meta-description": "The new Sana'a Towers residential project consists of two towers located in the 50 Street district of the capital, Sana'a. Tower A includes five different types of residential apartments with structurally earthquake-resistant designs, modern luxury, spacious interiors, and practical implementation, including satellite networks and individual water and electricity meters for each apartment. Tower B includes five smaller, more economical models with the same high-quality designs and a compatible residential community.",
     "title": "Sana'a Towers",
     "subtitle": "A modern residential complex for an integrated lifestyle, representing a qualitative addition to the Sana'a skyline and the Yemeni real estate market.",
@@ -775,6 +776,7 @@
   },
   "Alhathaa-Towers": {
     "title": "Al-Hathaa Residential Towers",
+    "meta-title": "Al-Hathaa Residential Towers | Jumeirah Real Estate Investment, Sana'a Yemen",
     "meta-description": "Jumeirah Real Estate Investment Company has introduced a unique project that embodies its vision of developing modern residential communities that enhance the quality of life. The project features a sophisticated architectural design that provides an integrated environment that combines comfort, privacy, and security, offering residents a lifestyle filled with tranquility and peace of mind.",
     "subtitle": "Jumeirah Real Estate Investment Company has introduced a unique project that embodies its vision of developing modern residential communities that enhance the quality of life. The project features a sophisticated architectural design that provides an integrated environment that combines comfort, privacy, and security, offering residents a lifestyle filled with tranquility and peace of mind.",
     "towers": {
@@ -1326,6 +1328,7 @@
   },
   "ContactUs": {
     "contact-us": "Contact Us",
+    "meta-title": "Contact Us | Jumeirah Real Estate Investment",
     "description": "We are happy to receive your inquiries, and our team is ready to provide the necessary support:",
     "first-name": "First Name",
     "last-name": "Last Name",

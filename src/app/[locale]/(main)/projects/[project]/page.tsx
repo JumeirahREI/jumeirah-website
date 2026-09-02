@@ -68,6 +68,10 @@ export async function generateMetadata({
   }
 
   const t = await getTranslations(projects[project].projectKey);
+  // Not every project namespace has a `meta-title` key yet (e.g. Manarat
+  // Al-Hudaydah) — fall back to the plain `title` rather than rendering a
+  // missing-message placeholder.
+  const metaTitle = t.has("meta-title") ? t("meta-title") : t("title");
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://jumeirahye.com";
   const currentUrl =
     locale === "ar"
@@ -75,7 +79,7 @@ export async function generateMetadata({
       : `${baseUrl}/${locale}/projects/${project}`;
 
   return {
-    title: t("title"),
+    title: metaTitle,
     description: t("meta-description"),
     alternates: {
       canonical: currentUrl,
@@ -88,7 +92,7 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "ar" ? "ar_YE" : "en_US",
       url: currentUrl,
-      title: t("title"),
+      title: metaTitle,
       description: t("meta-description"),
       siteName: "Jumeirah Real Estate Investment",
       images: [
@@ -102,7 +106,7 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: t("title"),
+      title: metaTitle,
       description: t("meta-description"),
       images: [`${baseUrl}/images/${project}-twitter.jpg`],
     },

@@ -43,7 +43,7 @@ export async function generateMetadata({
     locale === "ar" ? `${baseUrl}/contact` : `${baseUrl}/${locale}/contact`;
 
   return {
-    title: `${t("contact-us")} | Jumeirah Real Estate Investment`,
+    title: t("meta-title"),
     description: t("description"),
     alternates: {
       canonical: currentUrl,
@@ -56,7 +56,7 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "ar" ? "ar_YE" : "en_US",
       url: currentUrl,
-      title: `${t("contact-us")} | Jumeirah Real Estate Investment`,
+      title: t("meta-title"),
       description: t("description"),
       siteName: "Jumeirah Real Estate Investment",
     },
