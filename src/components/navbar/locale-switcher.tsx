@@ -1,11 +1,13 @@
 "use client";
 
-import { Link, usePathname } from "@/i18n/navigation";
+import { getPathname, usePathname } from "@/i18n/navigation";
 import { luxuryPresets } from "@/lib/luxury-presets";
 import { cn } from "@/lib/utils";
 import { GlobeIcon } from "lucide-react";
 import { AnimatePresence, m, Variants } from "motion/react";
 import { useLocale } from "next-intl";
+import type { Route } from "next";
+import NextLink from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 type AppLocale = "en" | "ar";
@@ -73,14 +75,24 @@ export function LocaleSwitcher({
       >
         {available.map((loc) => {
           const isActive = loc.code === currentLocale;
+          // next-intl's own <Link locale=...> always forces a locale
+          // prefix, even for "ar" (the unprefixed default locale under
+          // localePrefix: "as-needed") — every switch to Arabic would
+          // render /ar/... and cost a 307 to the canonical, unprefixed
+          // URL. getPathname() computes the canonical target directly, so
+          // this renders the real destination instead of a redirect hop.
+          const href = getPathname({
+            href: pathname,
+            locale: loc.code ?? (currentLocale as AppLocale),
+          });
           return (
             <m.div
               key={loc.label}
               variants={animated ? itemVariants : undefined}
             >
-              <Link
-                href={pathname}
-                locale={loc.code}
+              <NextLink
+                href={href as Route}
+                hrefLang={loc.code}
                 className={cn(
                   "rounded-full border border-white/15 px-7 py-2 text-sm transition-colors",
                   "bg-white/5 hover:bg-white/15",
@@ -94,7 +106,7 @@ export function LocaleSwitcher({
                 }}
               >
                 {loc.label}
-              </Link>
+              </NextLink>
             </m.div>
           );
         })}
@@ -177,14 +189,21 @@ function DesktopLocaleDropdown({
             >
               {available.map((loc) => {
                 const isActive = loc.code === currentLocale;
+                // See the mobile variant above: getPathname() gives the
+                // canonical target URL directly instead of the prefixed
+                // form next-intl's <Link locale=...> would force.
+                const href = getPathname({
+                  href: pathname,
+                  locale: loc.code ?? (currentLocale as AppLocale),
+                });
                 return (
                   <m.li
                     key={loc.label}
                     variants={animated ? itemVariants : undefined}
                   >
-                    <Link
-                      href={pathname}
-                      locale={loc.code}
+                    <NextLink
+                      href={href as Route}
+                      hrefLang={loc.code}
                       scroll={false}
                       className={cn(
                         "flex w-full items-center gap-2 rounded-lg px-3 py-2 text-sm text-white/90",
@@ -200,7 +219,7 @@ function DesktopLocaleDropdown({
                     >
                       <span className="size-1.5 rounded-full bg-white/40" />
                       {loc.label}
-                    </Link>
+                    </NextLink>
                   </m.li>
                 );
               })}

@@ -80,3 +80,17 @@ export function hreflangAlternates(path = "") {
     "x-default": absoluteUrl("ar", path),
   };
 }
+
+/**
+ * The one place the "| Jumeirah Real Estate Investment" / "| جميرا
+ * للاستثمار العقاري" disambiguation suffix is written. The root layout's
+ * `title.template` (`src/app/[locale]/layout.tsx`) applies it to every
+ * `<title>` automatically; call this directly for fields the template
+ * doesn't reach — `openGraph.title` and `twitter.title` are set explicitly
+ * per page and don't inherit it. Previously each page hand-wrote its own
+ * variant of this suffix (or omitted it), so search results and shared
+ * links carried three different, inconsistent brand strings.
+ */
+export function withBrandSuffix(locale: string, title: string) {
+  return `${title} | ${locale === "ar" ? "جميرا للاستثمار العقاري" : "Jumeirah Real Estate Investment"}`;
+}

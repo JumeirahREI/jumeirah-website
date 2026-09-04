@@ -2,7 +2,12 @@ import ProjectsSection from "@/app/[locale]/(main)/projects/components/sections/
 import AppLink from "@/components/app-link";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import PageHeader from "@/components/page-header";
-import { absoluteUrl, hreflangAlternates, siteConfig } from "@/lib/site";
+import {
+  absoluteUrl,
+  hreflangAlternates,
+  siteConfig,
+  withBrandSuffix,
+} from "@/lib/site";
 import { Metadata } from "next";
 import { useLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -57,7 +62,7 @@ export async function generateMetadata({
       type: "website",
       locale: locale === "ar" ? "ar_YE" : "en_US",
       url: currentUrl,
-      title: t("meta-title"),
+      title: withBrandSuffix(locale, t("meta-title")),
       description: t("meta-description"),
       siteName: "Jumeirah Real Estate Investment",
       images: [
