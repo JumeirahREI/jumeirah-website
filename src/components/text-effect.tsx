@@ -305,6 +305,19 @@ const splitChildren = (children: ReactNode, per: PerType): ReactNode[] => {
   return result;
 };
 
+/**
+ * Best-effort plain-text flattening of TextEffect's children, used for the
+ * accessible label — see the aria-label note where MotionTag is rendered.
+ */
+const extractText = (node: ReactNode): string => {
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(extractText).join("");
+  if (isValidElement<{ children?: ReactNode }>(node)) {
+    return extractText(node.props.children);
+  }
+  return "";
+};
+
 const hasTransition = (
   variant?: Variant,
 ): variant is TargetAndTransition & { transition?: Transition } => {
@@ -423,11 +436,21 @@ export function TextEffect({
           exit: "exit" as const,
         };
 
+  // The per-word/char segments below are individually aria-hidden (see
+  // AnimationComponent), so assistive tech needs the plain string some other
+  // way. It used to be a second, visually-hidden text node — which put the
+  // same string in the DOM twice, and crawlers that read raw textContent
+  // (rather than the accessibility tree) rendered it as "TitleTitle". An
+  // aria-label carries the same string as an attribute, not a text node, so
+  // it reaches assistive tech without duplicating visible/indexable text.
+  const plainText = per !== "line" ? extractText(children) : undefined;
+
   return (
     <AnimatePresence mode="popLayout">
       {trigger && (
         <MotionTag
           {...motionVisibilityProps}
+          {...(plainText ? { "aria-label": plainText } : {})}
           variants={computedVariants.container}
           className={className}
           onAnimationComplete={onAnimationComplete}
@@ -443,7 +466,6 @@ export function TextEffect({
               segmentWrapperClassName={segmentWrapperClassName}
             />
           ))}
-          {per !== "line" ? <span className="sr-only">{children}</span> : null}
         </MotionTag>
       )}
     </AnimatePresence>

@@ -75,13 +75,13 @@ export default function ContactUsSection({
             )}
           </Card>
           {isFooter && (
-            <Card className="flex flex-grow flex-col justify-between gap-8 [&_h5]:font-semibold [&_li]:text-sm">
+            <Card className="flex flex-grow flex-col justify-between gap-8 [&_li]:text-sm">
               <footer className="inline-flex flex-col items-center self-start text-center">
                 <Logo wideLogo className="w-40 md:w-60 lg:w-52" />
               </footer>
               <nav className="grid grid-cols-2 gap-y-8 lg:grid-cols-4">
                 <div className="flex-1 space-y-4">
-                  <h5>{common("company")}</h5>
+                  <p className="font-semibold">{common("company")}</p>
                   <ul className="space-y-2 text-[#D2D2D2]">
                     <FooterLink href="/about">{common("about")}</FooterLink>
                     <FooterLink href="/contact">
@@ -90,7 +90,7 @@ export default function ContactUsSection({
                   </ul>
                 </div>
                 <div className="flex-1 space-y-4">
-                  <h5>{common("projects")}</h5>
+                  <p className="font-semibold">{common("projects")}</p>
                   <ul className="space-y-2 text-[#D2D2D2]">
                     <FooterLink href="/projects">
                       {common("all-projects")}
@@ -107,7 +107,7 @@ export default function ContactUsSection({
                   </ul>
                 </div>
                 <div className="col-span-2 space-y-4">
-                  <h5>{common("subscribe")}</h5>
+                  <p className="font-semibold">{common("subscribe")}</p>
                   <p className="text-sm text-[#9C9C9C]">
                     {common("subscribe-description")}
                   </p>

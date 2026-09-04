@@ -48,7 +48,13 @@ const ProjectTowersDisplay = React.memo(
               className="relative"
             >
               <div className="w-full">
-                <h2 className="sr-only">{ct("towers.title")}</h2>
+                {/* No heading here: the tablist above already carries
+                    aria-label={ct("tabs.navigation")}, and the visible
+                    "towersSection.title" <h2> in project-details-page.tsx
+                    already introduces this section — a second, sr-only H2
+                    added nothing accessible-tech couldn't already get from
+                    the tablist's own label, only an extra heading in the
+                    document outline. */}
                 <MemoizedTowerTabs
                   projectData={projectData}
                   tabPanelId={tabPanelId}
