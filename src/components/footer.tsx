@@ -55,14 +55,14 @@ export default function Footer() {
           {/* Column 2: Navigation */}
           <nav className="grid grid-cols-2 gap-y-14 self-center">
             <div className="flex-1 space-y-4">
-              <h5 className="font-semibold">{common("company")}</h5>
+              <p className="font-semibold">{common("company")}</p>
               <ul className="space-y-2 text-[#D2D2D2]">
                 <FooterLink href="/about">{common("about")}</FooterLink>
                 <FooterLink href="/contact">{common("contact-us")}</FooterLink>
               </ul>
             </div>
             <div className="flex-1 space-y-4">
-              <h5 className="font-semibold">{common("projects")}</h5>
+              <p className="font-semibold">{common("projects")}</p>
               <ul className="space-y-2 text-[#D2D2D2]">
                 <FooterLink href="/projects">
                   {common("all-projects")}
@@ -79,7 +79,7 @@ export default function Footer() {
               </ul>
             </div>
             <div className="col-span-2 space-y-4">
-              <h5 className="font-semibold">{common("subscribe")}</h5>
+              <p className="font-semibold">{common("subscribe")}</p>
               <p className="text-sm text-[#9C9C9C]">
                 {common("subscribe-description")}
               </p>

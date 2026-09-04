@@ -41,7 +41,11 @@ export async function generateMetadata({
   const currentUrl = absoluteUrl(locale, "/contact");
 
   return {
-    title: t("meta-title"),
+    // absolute: this title already ends in the sales-office phone number —
+    // the highest-value differentiator for a contact page — so it opts out
+    // of the root layout's title.template rather than pushing that number
+    // further from the SERP truncation boundary.
+    title: { absolute: t("meta-title") },
     description: t("meta-description"),
     alternates: {
       canonical: currentUrl,

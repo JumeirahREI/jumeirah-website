@@ -27,6 +27,12 @@ export const manaratAlHudaydahData: ProjectData<"ManaratAlHudaydah"> = {
   projectKey: "ManaratAlHudaydah",
   title: "title",
   subtitle: "subtitle",
+  location: {
+    streetAddress: "30th Street & 16th Street",
+    addressLocality: "Al-Hudaydah",
+    addressRegion: "Al-Hudaydah Governorate",
+  },
+  dateModified: "2026-09-04",
   videoSection: {
     title: "videoSection.title",
     description: "videoSection.description",

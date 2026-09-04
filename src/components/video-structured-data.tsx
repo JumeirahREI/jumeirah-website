@@ -14,6 +14,9 @@ interface VideoStructuredDataProps {
 // Fill it in with the actual upload date from YouTube Studio for each video
 // once known: sanaa-towers -> https://youtu.be/gcCwNqkCMGk,
 // alhathaa-towers -> https://youtu.be/6nRVVZ8nmEY
+//
+// thumbnailUrl also remains the project's portrait (4:5 or 3:4) hero photo
+// rather than a proper ~16:9 video thumbnail — no such crop exists yet.
 export default async function VideoStructuredData({
   projectData,
   projectSlug,
@@ -29,8 +32,11 @@ export default async function VideoStructuredData({
     name: t(projectData.videoSection.title),
     description: t(projectData.videoSection.description),
     thumbnailUrl: `${siteConfig.baseUrl}/images/${projectSlug}.webp`,
+    // embedUrl only: contentUrl must point at the actual media file, and a
+    // YouTube watch URL isn't one — the previous version set both fields
+    // to the same watch URL, which is the wrong field for a video we don't
+    // host ourselves. VideoObject only requires one of the two.
     embedUrl: videoUrl,
-    contentUrl: videoUrl,
   };
 
   return (

@@ -37,12 +37,20 @@
     "facebook": "Facebook",
     "instagram": "Instagram",
     "linkedin": "LinkedIn",
-    "view-gallery": "View Gallery"
+    "view-gallery": "View Gallery",
+    "specifications": {
+      "title": "Full Specifications",
+      "subtitle": "Every model's floor area and room-by-room layout.",
+      "area": "Area",
+      "updated": "Information updated"
+    },
+    "faqs": {
+      "title": "Frequently Asked Questions"
+    }
   },
   "Metadata": {
     "title": "Apartments for Sale in Sana'a & Al-Hudaydah | Jumeirah",
     "description": "Jumeirah builds and sells apartments in Sana'a and Al-Hudaydah: three tower projects since 2013, earthquake-resistant, with installment plans.",
-    "keywords": "real estate Yemen, property investment Yemen, luxury apartments Yemen, Sana'a real estate, residential towers Yemen, Jumeirah Real Estate Investment, real estate development, property management Yemen",
     "og-image-alt": "Jumeirah Real Estate Investment - Premier Properties in Yemen",
     "og-slogan": "More Than Just a Living Space"
   },
@@ -93,7 +101,7 @@
   },
   "SanaaTowers": {
     "meta-title": "Sana'a Towers: Apartments for Sale on 50th Street, Sana'a",
-    "meta-description": "Two towers on 50th Street, Sana'a. Ten apartment layouts from 310 m2, earthquake-resistant structure, private meters per unit. Floor plans and payment plans.",
+    "meta-description": "Two towers on 50th Street, Sana'a: twelve apartment layouts from 171-424 m², earthquake-resistant. Floor plans and payment plans on request.",
     "title": "Sana'a Towers",
     "subtitle": "A modern residential complex for an integrated lifestyle, representing a qualitative addition to the Sana'a skyline and the Yemeni real estate market.",
     "towers": {
@@ -146,37 +154,37 @@
             "description": " With a total area of 330 square meters, Model B features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite."
           },
           "photos": {
-            "image-1": "Apartment B photo 1",
-            "image-2": "Apartment B photo 2",
-            "image-3": "Apartment B photo 3",
-            "image-4": "Apartment B photo 4",
-            "image-5": "Apartment B photo 5",
-            "image-6": "Apartment B photo 6",
-            "image-7": "Apartment B photo 7",
-            "image-8": "Apartment B photo 8",
-            "image-9": "Apartment B photo 9",
-            "image-10": "Apartment B photo 10",
-            "image-11": "Apartment B photo 11",
-            "image-12": "Apartment B photo 12",
-            "image-13": "Apartment B photo 13",
-            "image-14": "Apartment B photo 14",
-            "image-15": "Apartment B photo 15",
-            "image-16": "Apartment B photo 16",
-            "image-17": "Apartment B photo 17",
-            "image-18": "Apartment B photo 18",
-            "image-19": "Apartment B photo 19",
-            "image-20": "Apartment B photo 20",
-            "image-21": "Apartment B photo 21",
-            "image-22": "Apartment B photo 22",
-            "image-23": "Apartment B photo 23",
-            "image-24": "Apartment B photo 24",
-            "image-25": "Apartment B photo 25",
-            "image-26": "Apartment B photo 26",
-            "image-27": "Apartment B photo 27",
-            "image-28": "Apartment B photo 28",
-            "image-29": "Apartment B photo 29",
-            "image-30": "Apartment B photo 30",
-            "image-31": "Apartment B photo 31"
+            "image-1": "Sana'a Towers, Model B interior, photo 1",
+            "image-2": "Sana'a Towers, Model B interior, photo 2",
+            "image-3": "Sana'a Towers, Model B interior, photo 3",
+            "image-4": "Sana'a Towers, Model B interior, photo 4",
+            "image-5": "Sana'a Towers, Model B interior, photo 5",
+            "image-6": "Sana'a Towers, Model B interior, photo 6",
+            "image-7": "Sana'a Towers, Model B interior, photo 7",
+            "image-8": "Sana'a Towers, Model B interior, photo 8",
+            "image-9": "Sana'a Towers, Model B interior, photo 9",
+            "image-10": "Sana'a Towers, Model B interior, photo 10",
+            "image-11": "Sana'a Towers, Model B interior, photo 11",
+            "image-12": "Sana'a Towers, Model B interior, photo 12",
+            "image-13": "Sana'a Towers, Model B interior, photo 13",
+            "image-14": "Sana'a Towers, Model B interior, photo 14",
+            "image-15": "Sana'a Towers, Model B interior, photo 15",
+            "image-16": "Sana'a Towers, Model B interior, photo 16",
+            "image-17": "Sana'a Towers, Model B interior, photo 17",
+            "image-18": "Sana'a Towers, Model B interior, photo 18",
+            "image-19": "Sana'a Towers, Model B interior, photo 19",
+            "image-20": "Sana'a Towers, Model B interior, photo 20",
+            "image-21": "Sana'a Towers, Model B interior, photo 21",
+            "image-22": "Sana'a Towers, Model B interior, photo 22",
+            "image-23": "Sana'a Towers, Model B interior, photo 23",
+            "image-24": "Sana'a Towers, Model B interior, photo 24",
+            "image-25": "Sana'a Towers, Model B interior, photo 25",
+            "image-26": "Sana'a Towers, Model B interior, photo 26",
+            "image-27": "Sana'a Towers, Model B interior, photo 27",
+            "image-28": "Sana'a Towers, Model B interior, photo 28",
+            "image-29": "Sana'a Towers, Model B interior, photo 29",
+            "image-30": "Sana'a Towers, Model B interior, photo 30",
+            "image-31": "Sana'a Towers, Model B interior, photo 31"
           },
           "details": {
             "guest-section": {
@@ -401,48 +409,48 @@
             "description": " With a total area of 171 square meters, Model L features a private guest suite, a spacious family wing with a living room, balcony, and modern kitchen, in addition to cozy bedrooms and a luxurious master suite."
           },
           "photos": {
-            "image-1": "Apartment L photo 1",
-            "image-2": "Apartment L photo 2",
-            "image-3": "Apartment L photo 3",
-            "image-4": "Apartment L photo 4",
-            "image-5": "Apartment L photo 5",
-            "image-6": "Apartment L photo 6",
-            "image-7": "Apartment L photo 7",
-            "image-8": "Apartment L photo 8",
-            "image-9": "Apartment L photo 9",
-            "image-10": "Apartment L photo 10",
-            "image-11": "Apartment L photo 11",
-            "image-12": "Apartment L photo 12",
-            "image-13": "Apartment L photo 13",
-            "image-14": "Apartment L photo 14",
-            "image-15": "Apartment L photo 15",
-            "image-16": "Apartment L photo 16",
-            "image-17": "Apartment L photo 17",
-            "image-18": "Apartment L photo 18",
-            "image-19": "Apartment L photo 19",
-            "image-20": "Apartment L photo 20",
-            "image-21": "Apartment L photo 21",
-            "image-22": "Apartment L photo 22",
-            "image-23": "Apartment L photo 23",
-            "image-24": "Apartment L photo 24",
-            "image-25": "Apartment L photo 25",
-            "image-26": "Apartment L photo 26",
-            "image-27": "Apartment L photo 27",
-            "image-28": "Apartment L photo 28",
-            "image-29": "Apartment L photo 29",
-            "image-30": "Apartment L photo 30",
-            "image-31": "Apartment L photo 31",
-            "image-32": "Apartment L photo 32",
-            "image-33": "Apartment L photo 33",
-            "image-34": "Apartment L photo 34",
-            "image-35": "Apartment L photo 35",
-            "image-36": "Apartment L photo 36",
-            "image-37": "Apartment L photo 37",
-            "image-38": "Apartment L photo 38",
-            "image-39": "Apartment L photo 39",
-            "image-40": "Apartment L photo 40",
-            "image-41": "Apartment L photo 41",
-            "image-42": "Apartment L photo 42"
+            "image-1": "Sana'a Towers, Model L interior, photo 1",
+            "image-2": "Sana'a Towers, Model L interior, photo 2",
+            "image-3": "Sana'a Towers, Model L interior, photo 3",
+            "image-4": "Sana'a Towers, Model L interior, photo 4",
+            "image-5": "Sana'a Towers, Model L interior, photo 5",
+            "image-6": "Sana'a Towers, Model L interior, photo 6",
+            "image-7": "Sana'a Towers, Model L interior, photo 7",
+            "image-8": "Sana'a Towers, Model L interior, photo 8",
+            "image-9": "Sana'a Towers, Model L interior, photo 9",
+            "image-10": "Sana'a Towers, Model L interior, photo 10",
+            "image-11": "Sana'a Towers, Model L interior, photo 11",
+            "image-12": "Sana'a Towers, Model L interior, photo 12",
+            "image-13": "Sana'a Towers, Model L interior, photo 13",
+            "image-14": "Sana'a Towers, Model L interior, photo 14",
+            "image-15": "Sana'a Towers, Model L interior, photo 15",
+            "image-16": "Sana'a Towers, Model L interior, photo 16",
+            "image-17": "Sana'a Towers, Model L interior, photo 17",
+            "image-18": "Sana'a Towers, Model L interior, photo 18",
+            "image-19": "Sana'a Towers, Model L interior, photo 19",
+            "image-20": "Sana'a Towers, Model L interior, photo 20",
+            "image-21": "Sana'a Towers, Model L interior, photo 21",
+            "image-22": "Sana'a Towers, Model L interior, photo 22",
+            "image-23": "Sana'a Towers, Model L interior, photo 23",
+            "image-24": "Sana'a Towers, Model L interior, photo 24",
+            "image-25": "Sana'a Towers, Model L interior, photo 25",
+            "image-26": "Sana'a Towers, Model L interior, photo 26",
+            "image-27": "Sana'a Towers, Model L interior, photo 27",
+            "image-28": "Sana'a Towers, Model L interior, photo 28",
+            "image-29": "Sana'a Towers, Model L interior, photo 29",
+            "image-30": "Sana'a Towers, Model L interior, photo 30",
+            "image-31": "Sana'a Towers, Model L interior, photo 31",
+            "image-32": "Sana'a Towers, Model L interior, photo 32",
+            "image-33": "Sana'a Towers, Model L interior, photo 33",
+            "image-34": "Sana'a Towers, Model L interior, photo 34",
+            "image-35": "Sana'a Towers, Model L interior, photo 35",
+            "image-36": "Sana'a Towers, Model L interior, photo 36",
+            "image-37": "Sana'a Towers, Model L interior, photo 37",
+            "image-38": "Sana'a Towers, Model L interior, photo 38",
+            "image-39": "Sana'a Towers, Model L interior, photo 39",
+            "image-40": "Sana'a Towers, Model L interior, photo 40",
+            "image-41": "Sana'a Towers, Model L interior, photo 41",
+            "image-42": "Sana'a Towers, Model L interior, photo 42"
           },
           "details": {
             "guest-section": {
@@ -773,11 +781,41 @@
     },
     "towersSection": {
       "title": "<span>The</span> project includes two modern residential towers"
+    },
+    "faqs": {
+      "location": {
+        "question": "Where is Sana'a Towers located?",
+        "answer": "Sana'a Towers is in the Hadeed area, south of 50th Street in Sana'a, with views over the city and the green Hadeed mountains."
+      },
+      "layouts": {
+        "question": "How many apartment layouts does Sana'a Towers have?",
+        "answer": "Twelve models across two towers, ranging from 171 to 424 square meters, each with its own room layout and floor plan."
+      },
+      "delivery": {
+        "question": "Is Sana'a Towers complete or still under construction?",
+        "answer": "Sana'a Towers is currently under construction. Contact our sales office for the latest progress and expected handover date."
+      },
+      "amenities": {
+        "question": "What amenities are included at Sana'a Towers?",
+        "answer": "A closed compound, private parking, fitness centers, a sauna, a private swimming pool, a jacuzzi, a central park, a supermarket, a nursery, and shops."
+      },
+      "earthquake": {
+        "question": "Is Sana'a Towers earthquake-resistant?",
+        "answer": "Yes. The towers are built with an earthquake-resistant structure as part of the project's core engineering."
+      },
+      "payment": {
+        "question": "Are payment plans available for Sana'a Towers?",
+        "answer": "Yes, installment payment plans are available. Contact our sales team for current pricing and payment plan options."
+      },
+      "after-sales": {
+        "question": "Does Jumeirah provide after-sales support at Sana'a Towers?",
+        "answer": "Yes, Sana'a Towers includes after-sale support for residents once they move in."
+      }
     }
   },
   "Alhathaa-Towers": {
     "title": "Al-Hathaa Residential Towers",
-    "meta-title": "Al-Hathaa Towers, Sana'a: Completed Apartments | Jumeirah",
+    "meta-title": "Al-Hathaa Towers, Sana'a: Completed Apartments",
     "meta-description": "Al-Hathaa Towers is a completed gated residential compound in Sana'a: two towers, secured parking, landscaped grounds, and full after-sales maintenance.",
     "subtitle": "Jumeirah Real Estate Investment Company has introduced a unique project that embodies its vision of developing modern residential communities that enhance the quality of life. The project features a sophisticated architectural design that provides an integrated environment that combines comfort, privacy, and security, offering residents a lifestyle filled with tranquility and peace of mind.",
     "towers": {
@@ -986,10 +1024,40 @@
     },
     "towersSection": {
       "title": "<span>The</span> project includes two modern residential towers"
+    },
+    "faqs": {
+      "location": {
+        "question": "Where is Al-Hathaa Towers located?",
+        "answer": "Al-Hathaa Towers is on 50th Street in the Al-Hathaa area of Sana'a."
+      },
+      "layouts": {
+        "question": "How many apartment layouts does Al-Hathaa Towers have?",
+        "answer": "Five models across two towers, ranging from 210 to 740 square meters, including one duplex layout."
+      },
+      "delivery": {
+        "question": "Is Al-Hathaa Towers ready to move into?",
+        "answer": "Yes. Al-Hathaa Towers is a completed project — apartments are ready for occupancy now."
+      },
+      "amenities": {
+        "question": "What amenities are included at Al-Hathaa Towers?",
+        "answer": "Secured private parking, green landscaped space, a dedicated water project, a sanitary system, and after-sale maintenance support."
+      },
+      "earthquake": {
+        "question": "Is Al-Hathaa Towers earthquake-resistant?",
+        "answer": "Yes. The towers are built with an earthquake-resistant structure as part of the project's core engineering."
+      },
+      "payment": {
+        "question": "Are payment plans available for Al-Hathaa Towers?",
+        "answer": "Contact our sales team for current pricing and payment options for the completed units."
+      },
+      "after-sales": {
+        "question": "Does Jumeirah provide after-sales support at Al-Hathaa Towers?",
+        "answer": "Yes, full after-sale maintenance support is included for residents."
+      }
     }
   },
   "ManaratAlHudaydah": {
-    "meta-description": "Sea-view apartments on 30th and 16th Streets, Al-Hudaydah. Four layouts, earthquake-resistant structure, health club, jacuzzi, cafe, private parking.",
+    "meta-description": "Sea-view apartments on 30th and 16th Streets, Al-Hudaydah. Seven layouts, earthquake-resistant, private jacuzzi, security and cleaning, private parking.",
     "title": "Manarat Al-Hudaydah",
     "subtitle": "Manarat Al-Hudaydah Tower — luxury living… sea views… and an opportunity to own and invest in the heart of Al-Hudaydah. One of the modern projects designed to deliver a refined residential experience that combines a prime location, sea views, quality of execution, and diverse spaces to suit various residential and investment needs.",
     "towers": {
@@ -1303,7 +1371,37 @@
         }
       }
     },
-    "meta-title": "Manarat Al-Hudaydah | Jumeirah, Al-Hudaydah Yemen"
+    "meta-title": "Manarat Al-Hudaydah, Al-Hudaydah Yemen",
+    "faqs": {
+      "location": {
+        "question": "Where is Manarat Al-Hudaydah located?",
+        "answer": "Manarat Al-Hudaydah is at the intersection of 30th and 16th Streets in Al-Hudaydah, with sea views."
+      },
+      "layouts": {
+        "question": "How many apartment layouts does Manarat Al-Hudaydah have?",
+        "answer": "Seven models in one tower, each with its own layout and sea-facing orientation."
+      },
+      "delivery": {
+        "question": "Is Manarat Al-Hudaydah complete or under construction?",
+        "answer": "Manarat Al-Hudaydah is currently under construction. Contact our sales office for the latest progress and expected handover date."
+      },
+      "amenities": {
+        "question": "What amenities are included at Manarat Al-Hudaydah?",
+        "answer": "A private jacuzzi, private parking, and security and cleaning services, in a prime sea-view location."
+      },
+      "earthquake": {
+        "question": "Is Manarat Al-Hudaydah earthquake-resistant?",
+        "answer": "Yes. The tower is built with an earthquake-resistant structure as part of the project's core engineering."
+      },
+      "payment": {
+        "question": "Are payment plans available for Manarat Al-Hudaydah?",
+        "answer": "Contact our sales team for current pricing and payment plan options."
+      },
+      "after-sales": {
+        "question": "Does Jumeirah provide after-sales support at Manarat Al-Hudaydah?",
+        "answer": "Contact our sales team to learn about after-sales services for Manarat Al-Hudaydah."
+      }
+    }
   },
   "FAQsSection": {
     "title": "Frequently Asked Questions",
@@ -1345,7 +1443,7 @@
     "meta-description": "Talk to Jumeirah's sales team in Sana'a about Sana'a Towers, Al-Hathaa Towers, and Manarat Al-Hudaydah. Call +967 778 265 522 or send a message."
   },
   "ProjectsPage": {
-    "meta-title": "Residential Tower Projects in Sana'a & Al-Hudaydah | Jumeirah",
+    "meta-title": "Residential Tower Projects in Sana'a & Al-Hudaydah",
     "meta-description": "Three tower developments by Jumeirah: Sana'a Towers, the completed Al-Hathaa Towers, and sea-view Manarat Al-Hudaydah. Floor plans and availability.",
     "title": "Jumeirah Projects",
     "sub-title": "Discover our projects that reflect excellence and innovation in the world of investment and real estate. We offer a diverse range of investment and property opportunities tailored to your aspirations",

@@ -159,14 +159,14 @@ export default function ImageGallerySection({
 
   return (
     <section className="relative overflow-hidden py-10">
-      {/* Background Preview */}
+      {/* Background Preview — decorative, below the fold; never the LCP
+          candidate, so it must not compete with the real one for priority. */}
       <Image
         src={activeImage.src}
         alt={t(activeImage.alt)}
         fill
         sizes="100vw"
         className="object-cover opacity-40 transition-all duration-700"
-        priority
       />
       <div className="from-background to-background/20 via-background/80 absolute inset-0 bg-linear-to-t" />
 
@@ -220,11 +220,11 @@ export default function ImageGallerySection({
         {/* Gallery Header */}
         <div className="lg:start from-background to-background/0 via-background/5 z-30 lg:pointer-events-none lg:absolute lg:flex lg:size-full lg:items-center lg:bg-linear-to-r lg:pt-28 lg:rtl:bg-linear-to-l">
           <div className="container mx-3 space-y-2 text-center lg:text-start">
-            <h3 className="text-3xl font-bold lg:max-w-xs lg:text-4xl lg:leading-tight">
+            <h2 className="text-3xl font-bold lg:max-w-xs lg:text-4xl lg:leading-tight">
               {t.rich(currentGallery.headingTitle, {
                 span: (s) => <span className="text-primary">{s}</span>,
               })}
-            </h3>
+            </h2>
             <p className="text-[#a0a0a0] lg:max-w-sm lg:text-lg">
               {t(currentGallery.headingSubtitle)}
             </p>
@@ -255,7 +255,6 @@ export default function ImageGallerySection({
                     // height={427}
                     placeholder="blur"
                     loading={index < 3 ? "eager" : "lazy"}
-                    priority={index < 3}
                   />
                 </div>
               </div>
