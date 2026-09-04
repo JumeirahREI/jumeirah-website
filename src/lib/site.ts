@@ -67,3 +67,16 @@ export function absoluteUrl(locale: string, path = "") {
     ? `${siteConfig.baseUrl}${path}`
     : `${siteConfig.baseUrl}/${locale}${path}`;
 }
+
+/**
+ * Builds the full `alternates.languages` map for a given path, including
+ * `x-default`. The default locale ("ar") also serves the unprefixed root,
+ * so it's the correct x-default target per Google's hreflang guidance.
+ */
+export function hreflangAlternates(path = "") {
+  return {
+    en: absoluteUrl("en", path),
+    ar: absoluteUrl("ar", path),
+    "x-default": absoluteUrl("ar", path),
+  };
+}

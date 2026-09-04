@@ -1,4 +1,4 @@
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, hreflangAlternates } from "@/lib/site";
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -29,18 +29,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
   ];
 
+  // No lastModified field: this site has no per-page content-change
+  // tracking, and stamping every URL with the build time on every deploy
+  // (regardless of whether that page's content actually changed) teaches
+  // crawlers to distrust the signal. Omit it rather than fake it — Google
+  // falls back to its own crawl-based freshness detection.
   routeConfig.forEach(({ path, priority, changeFrequency }) => {
     locales.forEach((locale) => {
       sitemapEntries.push({
         url: absoluteUrl(locale, path),
-        lastModified: new Date(),
         changeFrequency,
         priority,
         alternates: {
-          languages: {
-            en: absoluteUrl("en", path),
-            ar: absoluteUrl("ar", path),
-          },
+          languages: hreflangAlternates(path),
         },
       });
     });
