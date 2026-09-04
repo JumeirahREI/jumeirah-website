@@ -9,12 +9,40 @@ transform), never markup, layout, or visual styling.
 
 | # | Title | Severity | Category | Status |
 | --- | --- | --- | --- | --- |
-| [001](001-faq-card-motion.md) | Fix FAQ card open/close motion (width easing, timing) | HIGH | Performance / Easing / Interruptibility | TODO |
-| [002](002-mobile-menu-height-to-transform.md) | Move mobile nav menu open/close off layout property | MEDIUM | Performance | TODO |
-| [003](003-service-card-hover-height.md) | Service card hover list: stop animating height | MEDIUM | Performance | TODO |
+| [001](001-faq-card-motion.md) | Fix FAQ card open/close motion (width easing, timing) | HIGH | Performance / Easing / Interruptibility | DONE |
+| [002](002-mobile-menu-height-to-transform.md) | Move mobile nav menu open/close off layout property | MEDIUM | Performance | DONE |
+| [003](003-service-card-hover-height.md) | Service card hover list: stop animating height | MEDIUM | Performance | DONE |
 | [004](004-shorthand-transform-shared-presets.md) | Shared entrance presets use y/scale shorthand | LOW | Performance | DEFERRED |
-| [005](005-locale-dropdown-exit-and-origin.md) | Locale dropdown: add exit animation + anchor to trigger | MEDIUM | Missed opportunity | TODO |
-| [006](006-applink-press-feedback.md) | Add press feedback to primary CTA links | LOW | Missed opportunity | TODO |
+| [005](005-locale-dropdown-exit-and-origin.md) | Locale dropdown: add exit animation + anchor to trigger | MEDIUM | Missed opportunity | DONE |
+| [006](006-applink-press-feedback.md) | Add press feedback to primary CTA links | LOW | Missed opportunity | DONE |
+
+## Manual test pass (2026-09-04)
+
+All five executed plans were exercised in a running dev server (Chromium,
+1280×1000 desktop + 390×844 mobile viewports, both `en` and `ar` locales):
+
+- **001 FAQ card** — open/close now uses `luxuryEaseOut` with asymmetric
+  durations (0.35s open / 0.2s close) instead of linear/inverted timing;
+  width transition reads as smooth, no snap-back observed across repeated
+  toggles.
+- **002 Mobile menu** — open/close animates opacity + `scaleY` from
+  `origin-top` with the `height` collapse delayed to follow, so it no longer
+  visibly jumps on layout; verified on a 390px viewport.
+- **003 Service card hover** — hover list now animates `opacity`/`y` instead
+  of `height`; reveal is smooth, no reflow jump, confirmed on the "Real
+  Estate Project Development" card.
+- **005 Locale dropdown** — now wrapped in `AnimatePresence` with a mirrored
+  exit (fade + scale + y), anchored to the trigger via `origin-top-right`
+  (and `origin-top-left` in RTL/Arabic) instead of a fixed page corner;
+  confirmed in both `en` and `ar`.
+- **006 CTA press feedback** — `active:scale-[0.97]` with a 150ms transform
+  transition applied via the shared `appLinkVariants`; confirmed present on
+  the primary hero CTA.
+
+No console/page errors were introduced by these changes (pre-existing
+PostHog-missing-token warnings and a hydration warning on the contact form's
+`caret-color` style are unrelated to this branch). Plan 004 remains
+deferred per the scope note below.
 
 ## Execution order
 
