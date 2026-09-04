@@ -10,8 +10,22 @@ interface MobileMenuProps {
 }
 
 const navMenuVariants: Variants = {
-  open: { opacity: 1, height: "auto" },
-  closed: { opacity: 0, height: 0 },
+  open: {
+    opacity: 1,
+    scaleY: 1,
+    height: "auto",
+    transition: { duration: 0.2, ease: easings.gentleEaseOut },
+  },
+  closed: {
+    opacity: 0,
+    scaleY: 0.96,
+    height: 0,
+    transition: {
+      duration: 0.2,
+      ease: easings.gentleEaseOut,
+      height: { delay: 0.2 },
+    },
+  },
 };
 
 export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
@@ -20,8 +34,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       variants={navMenuVariants}
       initial="closed"
       animate={isOpen ? "open" : "closed"}
-      transition={{ duration: 0.2, ease: easings.gentleEaseOut }}
-      className="col-span-2 space-y-5 overflow-hidden lg:hidden"
+      className="col-span-2 origin-top space-y-5 overflow-hidden lg:hidden"
     >
       <div className="space-y-1 pt-10 pb-4">
         <NavigationLinks
