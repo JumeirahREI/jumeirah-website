@@ -8,8 +8,21 @@ import { Link } from "@/i18n/navigation";
 import { siteConfig } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { Globe } from "lucide-react";
+import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import Image, { StaticImageData } from "next/image";
+
+// A link-in-bio page for social profiles has no unique content of its own —
+// keep it reachable but out of the index so it doesn't compete with the
+// homepage for the site's brand-name query.
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    robots: {
+      index: false,
+      follow: true,
+    },
+  };
+}
 
 // siteConfig.sameAs order: Facebook, Instagram, LinkedIn, X (see src/lib/site.ts).
 // Sourcing hrefs from siteConfig.sameAs keeps the profiles linked here in

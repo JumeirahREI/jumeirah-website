@@ -9,7 +9,7 @@ import ScreenSizeIndicator from "@/components/screen-size-indicator";
 import StructuredData from "@/components/structured-data";
 import { aeonikFont, montserratArabicFont } from "@/fonts";
 import { routing } from "@/i18n/routing";
-import { absoluteUrl, siteConfig } from "@/lib/site";
+import { absoluteUrl, hreflangAlternates, siteConfig } from "@/lib/site";
 import { Metadata, Viewport } from "next";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -133,10 +133,7 @@ export async function generateMetadata({
     },
     alternates: {
       canonical: currentUrl,
-      languages: {
-        en: absoluteUrl("en"),
-        ar: absoluteUrl("ar"),
-      },
+      languages: hreflangAlternates(),
     },
     openGraph: {
       type: "website",
@@ -147,7 +144,7 @@ export async function generateMetadata({
       siteName: "Jumeirah Real Estate Investment",
       images: [
         {
-          url: `${siteConfig.baseUrl}/images/og-image.jpg`,
+          url: `${siteConfig.baseUrl}/images/${locale === "ar" ? "og-image-ar" : "og-image"}.png`,
           width: 1200,
           height: 630,
           alt: t("og-image-alt"),
@@ -158,8 +155,10 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: t("title"),
       description: t("description"),
-      images: [`${siteConfig.baseUrl}/images/twitter-image.jpg`],
-      creator: "@jumeirah_rei",
+      images: [
+        `${siteConfig.baseUrl}/images/${locale === "ar" ? "og-image-ar" : "og-image"}.png`,
+      ],
+      creator: "@JumeirahYemen",
     },
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,

@@ -1,11 +1,12 @@
 import ProjectDetails from "@/app/[locale]/(main)/projects/[project]/project-details-page";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import ProjectStructuredData from "@/components/project-structured-data";
+import VideoStructuredData from "@/components/video-structured-data";
 import { alhathaaTowersData } from "@/data/alhathaa-towers";
 import { manaratAlHudaydahData } from "@/data/manarat-al-hudaydah";
 import { sanaaTowersData } from "@/data/sanaa-towers";
 import { Project, ProjectData } from "@/data/types";
-import { absoluteUrl, siteConfig } from "@/lib/site";
+import { absoluteUrl, hreflangAlternates, siteConfig } from "@/lib/site";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { notFound } from "next/navigation";
@@ -35,6 +36,10 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
       <ProjectStructuredData
         projectData={projects[project] as ProjectData<Project>}
         locale={locale}
+        projectSlug={project}
+      />
+      <VideoStructuredData
+        projectData={projects[project] as ProjectData<Project>}
         projectSlug={project}
       />
       <BreadcrumbSchema
@@ -79,10 +84,7 @@ export async function generateMetadata({
     description: t("meta-description"),
     alternates: {
       canonical: currentUrl,
-      languages: {
-        en: absoluteUrl("en", `/projects/${project}`),
-        ar: absoluteUrl("ar", `/projects/${project}`),
-      },
+      languages: hreflangAlternates(`/projects/${project}`),
     },
     openGraph: {
       type: "website",
@@ -104,7 +106,9 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: metaTitle,
       description: t("meta-description"),
-      images: [`${siteConfig.baseUrl}/images/${project}-twitter.jpg`],
+      // Reuse the same real project photo as openGraph.images — the
+      // per-project "-twitter.jpg" files this pointed to never existed.
+      images: [`${siteConfig.baseUrl}/images/${project}.webp`],
     },
   };
 }

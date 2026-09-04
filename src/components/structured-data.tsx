@@ -1,4 +1,4 @@
-import { absoluteUrl, siteConfig } from "@/lib/site";
+import { siteConfig } from "@/lib/site";
 import { useTranslations } from "next-intl";
 
 export default function StructuredData({ locale }: { locale: string }) {
@@ -49,14 +49,6 @@ export default function StructuredData({ locale }: { locale: string }) {
     url: siteConfig.baseUrl,
     description: t("description"),
     inLanguage: [locale],
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${absoluteUrl(locale, "/projects")}?search={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 
   return (

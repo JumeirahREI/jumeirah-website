@@ -2,7 +2,7 @@ import ProjectsSection from "@/app/[locale]/(main)/projects/components/sections/
 import AppLink from "@/components/app-link";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import PageHeader from "@/components/page-header";
-import { absoluteUrl, siteConfig } from "@/lib/site";
+import { absoluteUrl, hreflangAlternates, siteConfig } from "@/lib/site";
 import { Metadata } from "next";
 import { useLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -23,9 +23,6 @@ export default function ProjectsPage() {
       />
       <PageHeader title={t("title")} subTitle={t("sub-title")}>
         <div className="flex items-center justify-center gap-4 text-xs font-semibold md:gap-6 md:text-sm lg:text-base">
-          <AppLink variant="outline" href="#" className="lg:py-2">
-            {ct("our-services")}
-          </AppLink>
           <AppLink href="/contact" className="lg:py-2">
             {ct("contact-us")}
           </AppLink>
@@ -54,10 +51,7 @@ export async function generateMetadata({
     description: t("meta-description"),
     alternates: {
       canonical: currentUrl,
-      languages: {
-        en: absoluteUrl("en", "/projects"),
-        ar: absoluteUrl("ar", "/projects"),
-      },
+      languages: hreflangAlternates("/projects"),
     },
     openGraph: {
       type: "website",

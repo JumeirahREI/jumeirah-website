@@ -10,7 +10,7 @@ import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import ImageContainer from "@/components/image-container";
 import PageHeader from "@/components/page-header";
 import Section from "@/components/section";
-import { absoluteUrl, siteConfig } from "@/lib/site";
+import { absoluteUrl, hreflangAlternates, siteConfig } from "@/lib/site";
 import { Metadata } from "next";
 import { useLocale, useTranslations } from "next-intl";
 import { getTranslations } from "next-intl/server";
@@ -171,10 +171,7 @@ export async function generateMetadata({
     description: t("meta-description"),
     alternates: {
       canonical: currentUrl,
-      languages: {
-        en: absoluteUrl("en", "/about"),
-        ar: absoluteUrl("ar", "/about"),
-      },
+      languages: hreflangAlternates("/about"),
     },
     openGraph: {
       type: "website",

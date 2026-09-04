@@ -69,8 +69,12 @@ export default async function ProjectStructuredData({
           addressCountry: siteConfig.address.country,
           addressLocality: siteConfig.address.locality,
         },
-        numberOfBedrooms: "2-4",
-        numberOfBathroomsTotal: "2-3",
+        // numberOfBedrooms/numberOfBathroomsTotal deliberately omitted: the
+        // data model has no numeric field for either (src/data/types.ts
+        // ModelData only carries free-form room-label lists), and the
+        // previous hardcoded "2-4"/"2-3" was identical across all three
+        // projects regardless of actual unit size — worse than omitting.
+        // Add real per-project ranges here once known.
         amenityFeature: projectData.featuresSection?.features.map(
           (feature) => ({
             "@type": "LocationFeatureSpecification",
