@@ -1,7 +1,7 @@
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import ContactStructuredData from "@/components/contact-structured-data";
 import ContactUsSection from "@/components/contact-us-section";
-import { absoluteUrl } from "@/lib/site";
+import { absoluteUrl, hreflangAlternates } from "@/lib/site";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
@@ -42,20 +42,17 @@ export async function generateMetadata({
 
   return {
     title: t("meta-title"),
-    description: t("description"),
+    description: t("meta-description"),
     alternates: {
       canonical: currentUrl,
-      languages: {
-        en: absoluteUrl("en", "/contact"),
-        ar: absoluteUrl("ar", "/contact"),
-      },
+      languages: hreflangAlternates("/contact"),
     },
     openGraph: {
       type: "website",
       locale: locale === "ar" ? "ar_YE" : "en_US",
       url: currentUrl,
       title: t("meta-title"),
-      description: t("description"),
+      description: t("meta-description"),
       siteName: "Jumeirah Real Estate Investment",
     },
   };
