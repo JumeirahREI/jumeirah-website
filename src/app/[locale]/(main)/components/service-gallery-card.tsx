@@ -10,11 +10,11 @@ import Image, { StaticImageData } from "next/image";
 const listVariants: Variants = {
   initial: {
     opacity: 0,
-    height: 0,
+    y: 12,
   },
   active: {
     opacity: 1,
-    height: "auto",
+    y: 0,
   },
 };
 
