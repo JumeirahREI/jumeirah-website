@@ -3,6 +3,7 @@
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { faqKeys } from "@/data/faqs";
+import { easings } from "@/lib/easings";
 import { cn } from "@/lib/utils";
 import { Minus, Plus } from "lucide-react";
 import { LayoutGroup, m, Variants } from "motion/react";
@@ -50,16 +51,16 @@ const faqCardVariants: Variants = {
     width: "var(--max-width-inactive)",
     transition: {
       type: "tween",
-      duration: 0.4,
-      ease: "linear",
+      duration: 0.2,
+      ease: easings.luxuryEaseOut,
     },
   },
   active: {
     width: "var(--max-width-active)",
     transition: {
       type: "tween",
-      duration: 0.1,
-      ease: "linear",
+      duration: 0.35,
+      ease: easings.luxuryEaseOut,
     },
   },
 };
