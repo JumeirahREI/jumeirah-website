@@ -1,7 +1,8 @@
 "use client";
 
+import { useNavigationProgress } from "@/components/navigation-progress";
 import { getPathname, usePathname } from "@/i18n/navigation";
-import { luxuryPresets } from "@/lib/luxury-presets";
+import { exit, glide } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { GlobeIcon } from "lucide-react";
 import { AnimatePresence, m, Variants } from "motion/react";
@@ -14,7 +15,9 @@ type AppLocale = "en" | "ar";
 
 interface LocaleSwitcherProps {
   locales?: { code: AppLocale | undefined; label: string }[];
-  onSelect?: () => void;
+  /** Fired only when the tap doesn't navigate, i.e. the locale picked is
+   * the one already active. */
+  onSameLocaleSelect?: () => void;
   variant?: "desktop" | "mobile";
   className?: string;
   animated?: boolean;
@@ -29,7 +32,7 @@ const DEFAULT_LOCALES = [
 
 export function LocaleSwitcher({
   locales,
-  onSelect,
+  onSameLocaleSelect,
   variant = "desktop",
   className,
   animated = true,
@@ -38,30 +41,31 @@ export function LocaleSwitcher({
 }: LocaleSwitcherProps) {
   const pathname = usePathname();
   const currentLocale = useLocale();
+  // These are raw next/link elements rather than progress-link, on
+  // purpose (see the comment on the href below), so they have to report
+  // navigation to the progress bar themselves.
+  const { start } = useNavigationProgress();
   const available: { code: AppLocale | undefined; label: string }[] =
     locales && locales.length ? locales : [...DEFAULT_LOCALES];
 
-  const container = luxuryPresets.cascade.container;
-  const item = luxuryPresets.cascade.item;
-
+  // In the mobile menu the buttons follow the navigation links; in the
+  // desktop dropdown they follow the panel almost immediately.
   const listVariants: Variants = {
-    hidden: container.hidden || { opacity: 0 },
+    hidden: {},
     visible: {
-      ...(container.visible as object),
       transition: {
-        ...(container.visible?.transition as object),
         staggerChildren: stagger,
-        delayChildren: 0.2,
+        delayChildren: variant === "mobile" ? 0.28 : 0.05,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { ...(item.hidden as object), y: 8 },
+    hidden: { opacity: 0, y: 8 },
     visible: {
-      ...(item.visible as object),
+      opacity: 1,
       y: 0,
-      transition: { ...(item.visible?.transition as object), duration: 0.4 },
+      transition: { y: glide(0.6), opacity: { duration: 0.45, ease: "easeOut" } },
     },
   };
 
@@ -99,11 +103,11 @@ export function LocaleSwitcher({
                   isActive && "text-primary border-white/30 bg-white/20",
                 )}
                 onClick={(e) => {
-                  onSelect?.();
-                  if (isActive) {
-                    e.preventDefault();
-                  }
+                  if (!isActive) return;
+                  e.preventDefault();
+                  onSameLocaleSelect?.();
                 }}
+                onNavigate={() => start()}
               >
                 {loc.label}
               </NextLink>
@@ -146,6 +150,7 @@ function DesktopLocaleDropdown({
 }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
+  const { start } = useNavigationProgress();
 
   const onDocumentClick = useCallback((e: MouseEvent) => {
     if (!ref.current) return;
@@ -178,8 +183,12 @@ function DesktopLocaleDropdown({
             className="absolute end-0 top-full z-[1000] mt-3 min-w-44 origin-top-right overflow-hidden rounded-xl border border-white/10 bg-[#0F0F0F]/80 p-1 shadow-lg backdrop-blur rtl:origin-top-left"
             initial={animated ? { opacity: 0, scale: 0.95, y: 8 } : undefined}
             animate={animated ? { opacity: 1, scale: 1, y: 0 } : undefined}
-            exit={animated ? { opacity: 0, scale: 0.95, y: 8 } : undefined}
-            transition={{ duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
+            exit={
+              animated
+                ? { opacity: 0, scale: 0.97, y: 4, transition: exit(0.15) }
+                : undefined
+            }
+            transition={glide(0.35)}
           >
             <m.ul
               className="flex flex-col gap-1"
@@ -216,6 +225,7 @@ function DesktopLocaleDropdown({
                           e.preventDefault();
                         }
                       }}
+                      onNavigate={() => start()}
                     >
                       <span className="size-1.5 rounded-full bg-white/40" />
                       {loc.label}

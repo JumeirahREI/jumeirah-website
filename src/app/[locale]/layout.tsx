@@ -3,6 +3,7 @@ import FacebookPixel from "@/components/facebook-pixel";
 import GoogleAnalytics from "@/components/google-analytics";
 import LazyMotionProvider from "@/components/lazy-motion-provider";
 import Navbar from "@/components/navbar";
+import { NavigationProgressProvider } from "@/components/navigation-progress";
 import ParallaxScrollEffect from "@/components/parallax-scroll-effect";
 import { PostHogProvider } from "@/components/providers";
 import ScreenSizeIndicator from "@/components/screen-size-indicator";
@@ -69,8 +70,15 @@ export default async function RootLayout({
               <BackgroundImage />
               {process.env.NODE_ENV === "test" && <ScreenSizeIndicator />}
               <NextIntlClientProvider locale={locale}>
-                <Navbar />
-                {children}
+                {/* Inside LazyMotionProvider so the bar's `m.*` elements
+                    resolve, and inside NextIntlClientProvider because the
+                    links it tracks resolve their target with useLocale().
+                    `children` is passed through as a prop, so it stays
+                    server-rendered. */}
+                <NavigationProgressProvider>
+                  <Navbar />
+                  {children}
+                </NavigationProgressProvider>
               </NextIntlClientProvider>
             </LazyMotionProvider>
           </div>
@@ -89,7 +97,7 @@ function BackgroundImage() {
       >
         <Image
           src={heroBackgroundImage}
-          className="-z-50 h-full w-full object-cover object-top-right md:object-top ltr:rotate-y-180 rtl:max-md:object-top-left"
+          className="motion-safe:animate-hero-settle -z-50 h-full w-full object-cover object-top-right md:object-top ltr:rotate-y-180 rtl:max-md:object-top-left"
           alt="Jumeirah Real Estate Investment luxury residential towers in Yemen"
           placeholder="blur"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
