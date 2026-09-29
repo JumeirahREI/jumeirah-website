@@ -143,7 +143,7 @@ export const sanaaTowersData: ProjectData<"SanaaTowers"> = {
   title: "title",
   subtitle: "subtitle",
   location: {
-    streetAddress: "Hadeed area, south of 50th Street",
+    streetAddress: "Hadda area, south of 50th Street",
     addressLocality: "Sana'a",
     addressRegion: "Sana'a Governorate",
   },

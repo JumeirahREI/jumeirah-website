@@ -1,6 +1,5 @@
 import ProjectDetails from "@/app/[locale]/(main)/projects/[project]/project-details-page";
 import ProjectFaqStructuredData from "@/app/[locale]/(main)/projects/[project]/project-faq-structured-data";
-import BreadcrumbNav from "@/components/breadcrumb-nav";
 import BreadcrumbSchema from "@/components/breadcrumb-schema";
 import ProjectStructuredData from "@/components/project-structured-data";
 import VideoStructuredData from "@/components/video-structured-data";
@@ -49,8 +48,9 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
   const t = await getTranslations("Common");
   const projectT = await getTranslations(projects[project].projectKey);
 
-  // Single source for both the JSON-LD trail and the visible nav below it —
-  // previously BreadcrumbSchema described a path the page never rendered.
+  // The trail exists only as JSON-LD: a visible breadcrumb row overlapped
+  // the navbar logo and pushed the page header down, exposing the hero
+  // photo below the header's gradient.
   const breadcrumbItems = [
     { name: t("home"), path: "/" },
     { name: t("projects"), path: "/projects" },
@@ -75,12 +75,6 @@ export default async function ProjectDetailsPage({ params }: PageProps) {
         items={breadcrumbItems.map(({ name, path }) => ({
           name,
           url: absoluteUrl(locale, path === "/" ? "" : path),
-        }))}
-      />
-      <BreadcrumbNav
-        items={breadcrumbItems.map(({ name, path }, index) => ({
-          name,
-          href: index === breadcrumbItems.length - 1 ? undefined : path,
         }))}
       />
       <ProjectDetails projectData={projects[project] as ProjectData<Project>} />

@@ -6,9 +6,7 @@ import { ProjectTowersDisplay } from "@/app/[locale]/(main)/projects/components/
 import AppLink from "@/components/app-link";
 import PageHeader from "@/components/page-header";
 import { Project, ProjectData } from "@/data/types";
-import locationIcon from "@/../public/svg/location-icon.svg";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 import ImageGallerySection from "./image-gallery.section";
 import VideoSection from "./video.section";
 
@@ -39,13 +37,6 @@ export default function ProjectDetails({
           </AppLink>
         </div>
       </PageHeader>
-      {/* Plain visible address — previously the project's location only
-          existed inside a <meta> tag and JSON-LD, never on the page a
-          person (or a crawler reading rendered text) actually sees. */}
-      <p className="relative z-30 container -mt-8 mb-8 flex items-center justify-center gap-2 text-center text-sm text-white/60 md:-mt-10 md:mb-10">
-        <Image src={locationIcon} alt="" aria-hidden className="size-4" />
-        {projectData.location.streetAddress}, {projectData.location.addressLocality}
-      </p>
       <main className="bg-background mb-32 space-y-32 lg:mb-52 lg:space-y-52">
         {projectData.videoSection && <VideoSection projectData={projectData} />}
         <section className="relative z-30 container">
