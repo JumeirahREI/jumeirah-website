@@ -2,7 +2,7 @@
 
 import { useNavigationProgress } from "@/components/navigation-progress";
 import { getPathname, usePathname } from "@/i18n/navigation";
-import { luxuryPresets } from "@/lib/luxury-presets";
+import { exit, glide } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { GlobeIcon } from "lucide-react";
 import { AnimatePresence, m, Variants } from "motion/react";
@@ -48,27 +48,24 @@ export function LocaleSwitcher({
   const available: { code: AppLocale | undefined; label: string }[] =
     locales && locales.length ? locales : [...DEFAULT_LOCALES];
 
-  const container = luxuryPresets.cascade.container;
-  const item = luxuryPresets.cascade.item;
-
+  // In the mobile menu the buttons follow the navigation links; in the
+  // desktop dropdown they follow the panel almost immediately.
   const listVariants: Variants = {
-    hidden: container.hidden || { opacity: 0 },
+    hidden: {},
     visible: {
-      ...(container.visible as object),
       transition: {
-        ...(container.visible?.transition as object),
         staggerChildren: stagger,
-        delayChildren: 0.2,
+        delayChildren: variant === "mobile" ? 0.28 : 0.05,
       },
     },
   };
 
   const itemVariants: Variants = {
-    hidden: { ...(item.hidden as object), y: 8 },
+    hidden: { opacity: 0, y: 8 },
     visible: {
-      ...(item.visible as object),
+      opacity: 1,
       y: 0,
-      transition: { ...(item.visible?.transition as object), duration: 0.4 },
+      transition: { y: glide(0.6), opacity: { duration: 0.45, ease: "easeOut" } },
     },
   };
 
@@ -186,8 +183,12 @@ function DesktopLocaleDropdown({
             className="absolute end-0 top-full z-[1000] mt-3 min-w-44 origin-top-right overflow-hidden rounded-xl border border-white/10 bg-[#0F0F0F]/80 p-1 shadow-lg backdrop-blur rtl:origin-top-left"
             initial={animated ? { opacity: 0, scale: 0.95, y: 8 } : undefined}
             animate={animated ? { opacity: 1, scale: 1, y: 0 } : undefined}
-            exit={animated ? { opacity: 0, scale: 0.95, y: 8 } : undefined}
-            transition={{ duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
+            exit={
+              animated
+                ? { opacity: 0, scale: 0.97, y: 4, transition: exit(0.15) }
+                : undefined
+            }
+            transition={glide(0.35)}
           >
             <m.ul
               className="flex flex-col gap-1"

@@ -3,9 +3,8 @@
 import Section from "@/components/section";
 import SectionLink from "@/components/ui/section-link";
 import { faqKeys } from "@/data/faqs";
-import { easings } from "@/lib/easings";
+import { exit, glide, settle } from "@/lib/motion";
 import { cn } from "@/lib/utils";
-import { Minus, Plus } from "lucide-react";
 import { LayoutGroup, m, Variants } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -46,35 +45,69 @@ export default function FAQsSection() {
   );
 }
 
+// Width and height run on one clock: Glide when opening, Settle when
+// closing. Nothing else may transition these properties — a CSS
+// transition on the same element re-targets every frame Motion writes and
+// turns the motion to mush.
+const OPEN = glide(0.6);
+const CLOSE = settle(0.45);
+
 const faqCardVariants: Variants = {
-  inactive: {
-    width: "var(--max-width-inactive)",
-    transition: {
-      type: "tween",
-      duration: 0.2,
-      ease: easings.luxuryEaseOut,
-    },
-  },
-  active: {
-    width: "var(--max-width-active)",
-    transition: {
-      type: "tween",
-      duration: 0.35,
-      ease: easings.luxuryEaseOut,
-    },
-  },
+  inactive: { width: "var(--max-width-inactive)", transition: CLOSE },
+  active: { width: "var(--max-width-active)", transition: OPEN },
 };
 
 const faqAnswerVariants: Variants = {
-  open: {
-    height: "auto",
-    opacity: 1,
-  },
-  closed: {
-    height: 0,
-    opacity: 0,
-  },
+  open: { height: "auto", transition: OPEN },
+  closed: { height: 0, transition: CLOSE },
 };
+
+// The text follows the box open, and leaves first when it closes.
+const faqAnswerTextVariants: Variants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { ...glide(0.5), delay: 0.12 },
+  },
+  closed: { opacity: 0, y: 8, transition: exit(0.15) },
+};
+
+/**
+ * lucide's Plus, with its vertical stroke able to turn. Rotated a quarter
+ * turn it lies exactly on the horizontal stroke — lucide's Minus — so the
+ * resting states are the two original icons.
+ */
+function PlusMinusIcon({ open }: { open: boolean }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M5 12h14" />
+      <m.path
+        d="M12 5v14"
+        initial={false}
+        // Once it lands it hands over to the horizontal stroke, so the open
+        // state is a single stroke (two overlapping anti-aliased edges
+        // would render a hair heavier than lucide's Minus).
+        animate={{ rotate: open ? 90 : 0, opacity: open ? 0 : 1 }}
+        transition={
+          open
+            ? { rotate: glide(0.5), opacity: { duration: 0, delay: 0.5 } }
+            : { rotate: settle(0.4), opacity: { duration: 0 } }
+        }
+      />
+    </svg>
+  );
+}
 
 function FAQCard({
   question,
@@ -99,7 +132,8 @@ function FAQCard({
           variants={faqCardVariants}
           initial="inactive"
           animate={isActive ? "active" : "inactive"}
-          className="flex w-full gap-6 rounded-2xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl duration-300 ease-in-out [--max-width-active:100%] [--max-width-inactive:100%] md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:[--max-width-active:90%] lg:[--max-width-inactive:66%]"
+          transition={{ layout: OPEN }}
+          className="flex w-full gap-6 rounded-2xl border border-white/30 bg-white/5 px-4 py-2 backdrop-blur-xl [--max-width-active:100%] [--max-width-inactive:100%] md:gap-7 md:px-6 md:py-4 lg:rounded-[2.5rem] lg:px-8 lg:py-6 lg:[--max-width-active:90%] lg:[--max-width-inactive:66%]"
         >
           <span className="text-primary font-semibold md:text-lg">
             {String(index + 1).padStart(2, "0")}
@@ -124,26 +158,34 @@ function FAQCard({
               initial={false}
               animate={isActive ? "open" : "closed"}
               variants={faqAnswerVariants}
-              transition={{ duration: 0.3, ease: "easeOut" }}
               aria-hidden={!isActive}
               className="max-w-[40rem] overflow-hidden"
             >
-              <p className="pt-4 pb-4 text-[#9C9C9C] lg:pt-8">{answer}</p>
+              <m.p
+                variants={faqAnswerTextVariants}
+                className="pt-4 pb-4 text-[#9C9C9C] lg:pt-8"
+              >
+                {answer}
+              </m.p>
             </m.div>
           </div>
         </m.div>
-        <m.div layout className="hidden flex-grow-1 lg:block">
+        <m.div
+          layout
+          transition={{ layout: OPEN }}
+          className="hidden flex-grow-1 lg:block"
+        >
           <button
             type="button"
             onClick={onClick}
             aria-hidden="true"
             tabIndex={-1}
             className={cn(
-              "text-primary aspect-square cursor-pointer rounded-full border border-white/30 bg-white/5 p-6 text-3xl backdrop-blur-xl transition-colors duration-300",
-              isActive && "bg-primary text-black",
+              "text-primary fill-grow aspect-square cursor-pointer rounded-full border border-white/30 bg-white/5 p-6 text-3xl backdrop-blur-xl",
+              isActive && "fill-grow-full text-black",
             )}
           >
-            {isActive ? <Minus /> : <Plus />}
+            <PlusMinusIcon open={isActive} />
           </button>
         </m.div>
       </LayoutGroup>

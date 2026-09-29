@@ -1,4 +1,4 @@
-import { easings } from "@/lib/easings";
+import { exit, glide, settle } from "@/lib/motion";
 import { m, Variants } from "motion/react";
 import { LocaleSwitcher } from "./locale-switcher";
 import { NavigationLinks } from "./navigation-links";
@@ -16,22 +16,18 @@ interface MobileMenuProps {
   onNonNavigatingSelect?: () => void;
 }
 
-const closedState = { opacity: 0, scaleY: 0.96, height: 0 };
+const closedState = { opacity: 0, height: 0 };
 
 const navMenuVariants: Variants = {
   open: {
     opacity: 1,
-    scaleY: 1,
     height: "auto",
-    transition: { duration: 0.2, ease: easings.gentleEaseOut },
+    transition: { height: glide(0.55), opacity: { duration: 0.2, ease: "easeOut" } },
   },
+  // Content fades first, then the panel folds away behind it.
   closed: {
     ...closedState,
-    transition: {
-      duration: 0.2,
-      ease: easings.gentleEaseOut,
-      height: { delay: 0.2 },
-    },
+    transition: { opacity: exit(0.18), height: { ...settle(0.4), delay: 0.04 } },
   },
   // A separate variant rather than a `transition` prop override: Motion
   // gives a variant's own transition priority over the prop, so the prop
@@ -63,7 +59,7 @@ export function MobileMenu({
           linkClassName="block p-2 !text-2xl"
           animated
           isOpen={isOpen}
-          stagger={0.08}
+          stagger={0.05}
         />
       </div>
       <div className="px-4 pb-2">
@@ -72,7 +68,7 @@ export function MobileMenu({
           className="justify-center gap-6"
           onSameLocaleSelect={onNonNavigatingSelect}
           animated
-          stagger={0.08}
+          stagger={0.04}
           isOpen={isOpen}
         />
       </div>
@@ -83,7 +79,7 @@ export function MobileMenu({
           anchorClassName="rounded-full p-4 transition-colors active:bg-white/20"
           animated
           isOpen={isOpen}
-          stagger={0.1}
+          stagger={0.04}
         />
       </div>
     </m.div>

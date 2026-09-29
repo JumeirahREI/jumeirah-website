@@ -1,6 +1,6 @@
 "use client";
 
-import { easings } from "@/lib/easings";
+import { ease } from "@/lib/motion";
 import {
   animate,
   m,
@@ -125,7 +125,7 @@ export function NavigationProgressProvider({
         if (runIdRef.current !== runId) return;
         return animate(opacity, 0, {
           duration: FADE_OUT_DURATION_S,
-          ease: easings.gentleEaseOut,
+          ease: ease.exit,
         });
       })
       .then(() => {

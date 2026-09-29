@@ -97,7 +97,7 @@ function BackgroundImage() {
       >
         <Image
           src={heroBackgroundImage}
-          className="-z-50 h-full w-full object-cover object-top-right md:object-top ltr:rotate-y-180 rtl:max-md:object-top-left"
+          className="motion-safe:animate-hero-settle -z-50 h-full w-full object-cover object-top-right md:object-top ltr:rotate-y-180 rtl:max-md:object-top-left"
           alt="Jumeirah Real Estate Investment luxury residential towers in Yemen"
           placeholder="blur"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
