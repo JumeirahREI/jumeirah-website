@@ -110,7 +110,8 @@ Things that will bite you here:
 The mobile menu (`navbar/index.tsx`, `navbar/mobile-menu.tsx`) closes **only**
 on navigation — not on scroll, not on link click. Navigation-triggered closes
 are instant via a dedicated `closedInstantly` variant; a deliberate tap on the
-hamburger keeps the animated collapse. Note that Motion gives a variant's own
+hamburger keeps the animated collapse (content fades, then the panel folds).
+Note that Motion gives a variant's own
 `transition` priority over the `transition` prop, so overriding the prop alone
 is silently ignored — which is why the instant close is a separate variant.
 
@@ -121,8 +122,47 @@ is silently ignored — which is why the instant close is a separate variant.
 ### Styling/animation conventions
 
 - `cn()` in `src/lib/utils.ts` (`clsx` + `tailwind-merge`) is the standard class-merging helper used throughout.
-- `src/lib/easings.ts`, `src/lib/transitions.ts`, `src/lib/luxury-presets.ts` centralize Motion (Framer Motion successor, imported as `motion`) animation presets/easing curves — reuse these instead of inlining new easing curves.
-- `src/components/lazy-motion-provider.tsx` wraps the app in Motion's `LazyMotion` — prefer the `m.*` components over `motion.*` inside providers to keep this optimization intact.
+- `src/components/lazy-motion-provider.tsx` wraps the app in Motion's `LazyMotion` — prefer the `m.*` components over `motion.*` inside providers to keep this optimization intact. It also sets `MotionConfig reducedMotion="user"`.
+
+### Motion system
+
+All animation (Motion, the Framer Motion successor, imported from
+`motion/react`) comes from `src/lib/motion.ts`: three curves (`glide` for
+entrances, `settle` for two-way/closing state, `exit` for fade-outs), helper
+transitions, and the `reveal.*` variants. The same curves exist in CSS as
+`--ease-glide` / `--ease-settle` / `--ease-exit` (Tailwind `ease-glide` etc.) in
+`globals.css`; keep the two in sync. Don't inline new curves or durations.
+
+The hard rule: **motion must never change the resting UI.** Every animation
+ends on exactly the frame the page would show without it. This was verified by
+pixel-diffing every route (both locales, 390/768/1440px) before and after the
+motion rewrite; keep it that way. The traps that break it:
+
+- **Tailwind v4 `scale-*`/`translate-*` are the standalone `scale`/`translate`
+  CSS properties; Motion writes `transform`.** They compose, which is why CSS
+  hovers (`group-hover:scale-[1.06]`) and Motion reveals can share an element.
+  Don't switch either side to the other's property.
+- **Never put a CSS `transition` on a property Motion animates** (the FAQ
+  card used to carry `duration-300 ease-in-out` while Motion animated its
+  width; the browser re-transitions every frame Motion writes).
+- **CSS keyframes on the hero photo use `backwards`, not `both`.** A finished
+  `both` animation stays attached and keeps the image on its own compositor
+  layer, which resamples it a hair differently at rest (visible in Arabic, where
+  the photo isn't mirrored).
+- **`TextEffect` keeps the old word-box structure** (`inline-block
+  whitespace-pre` segments with the trailing space inside) so line breaks can't
+  move. The mask is a `clip-path` (`reveal-mask` utility), not overflow or
+  padding, so it has no layout effect; the moving inner span is `block` so
+  `first-letter-primary` still reaches the first letter. Its `aria-label`
+  replaces the per-word, `aria-hidden` segments for assistive tech and crawlers.
+- **Every reveal triggers itself** (`whileInView`, once). There is no
+  section-level trigger any more; `AnimatedGroup trigger="view-each"` is for
+  stacked cards so the lower ones never animate off-screen.
+- **Reveals always include opacity on its own short clock.** Under
+  `reducedMotion="user"` Motion drops transforms, and that opacity is what
+  remains. Scroll-linked effects (hero backdrop, hero copy) check
+  `useReducedMotion()` and swap in constant motion values rather than dropping
+  the `style` prop, so server and client markup match.
 - `eslint.config.mjs` turns off `@typescript-eslint/no-explicit-any`, `@typescript-eslint/no-unused-vars`, `react-hooks/exhaustive-deps`, and `react/display-name` — don't rely on lint to catch these.
 - Path alias `@/*` → `./src/*` (see `tsconfig.json`); asset imports from `public/` use `@/../public/...`.
 
