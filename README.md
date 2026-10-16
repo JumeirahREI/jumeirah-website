@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Cloudflare Workers
+
+Use Node.js 22+ and Bun. See [Cloudflare deployment](CLOUDFLARE.md) for environment
+variables, image bindings, Git integration, and local Worker verification.
+
+```sh
+bun install --frozen-lockfile
+bun run preview   # Build and preview locally in the Workers runtime
+bun run deploy    # Build and publish to Cloudflare (requires authentication)
+```
+
+The existing `build`, `dev`, and `start` scripts still support regular Next.js.
+This is a Worker deployment, not a Pages static export.
+
 ## Getting Started
 
 First, run the development server:

@@ -50,6 +50,7 @@ export const POST = async (request: Request) => {
     // Get client IP for rate limiting
     const headersList = await headers();
     const ip =
+      headersList.get("cf-connecting-ip") ||
       headersList.get("x-forwarded-for")?.split(",")[0] ||
       headersList.get("x-real-ip") ||
       "unknown";

@@ -1,4 +1,5 @@
 import withBundleAnalyzer from "@next/bundle-analyzer";
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 import { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
 
@@ -45,3 +46,5 @@ const withNextIntl = createNextIntlPlugin();
 export default withBundleAnalyzer({ enabled: process.env.ANALYZE === "true" })(
   withNextIntl(nextConfig),
 );
+
+initOpenNextCloudflareForDev();
